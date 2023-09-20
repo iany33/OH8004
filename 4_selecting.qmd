@@ -1,0 +1,130 @@
+
+# Selecting Studies {#sec-selecting}
+
+A structured, reliable, and transparent approach is needed to select articles for inclusion in a systematic review. The first step is selecting from the references identified in the search is to conduct a formal **relevance screening** of the titles and abstracts. A second level of screening can be conducted if needed following this on the full-text articles, or an **article characterization** stage that confirms relevance and extracts study details.
+
+![](images/meme_rs.jpg)
+
+::: callout-important
+## Multiple reviewers
+
+The relevance screening, article characterization, data extraction, and risk-of-bias assessment steps should be conducted by **two independent reviewers** to reduce bias and the chance of human errors.
+:::
+
+## Relevance Screening
+
+A relevance screening form should be developed, pilot tested, and included in the review protocol. It is easiest and most straightforward for this to contain only **one key question** if possible to streamline the process. The form should explicitly identify the eligibility criteria and any key definitions. An example from Young et al. [-@youngEffectivenessFoodHandler2019] is shown below:
+
+![Relevance Screening Form Example](images/rs_form_example.png)
+
+### Pilot Testing
+
+The relevance screening form should be pilot tested before use to ensure the eligibility and inclusion decisions are valid and reliable. The recommended process is as follows:
+
+-   **Purposively select** a small number of abstracts for pre-testing (e.g, 30-50) to ensure the sample includes those known to be relevant, not relevant, and potentially relevant
+-   Each reviewer assesses each abstract using the form and records their results
+-   Assess agreement in the pilot test using the **kappa statistic**
+-   A kappa of \>0.8 is often recommended for "almost perfect agreement" [e.g, @simKappaStatisticReliability2005]
+
+::: callout-note
+### Kappa Agreement Example
+
+We will simulate reviewer inclusion/exclusion (i.e., yes/no) ratings for a sample of 30 abstracts. Assume that Reviewer 1 included 50% pf the abstracts, including two that Reviewer 2 did not include. Assume Reviewer 2 included 16 abstracts, including three of the abstracts that Reviewer 1 did not include.
+
+```{r}
+# Create simulated rating data
+reviewer1 <- rep(0:1, each = 15)
+reviewer2 <- c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2))
+
+# Bind the two dataframes together
+rs_test <- cbind(reviewer1, reviewer2)
+rs_test
+```
+
+Now we can evaluate the kappa agreement between the two reviewer's ratings.
+
+```{r}
+pacman::p_load(irr)
+
+kappa2(rs_test)
+```
+
+The agreement is moderate, and below an ideal level of 0.8 or higher.
+
+What happens if we re-run the simulation but this time each reviewer only differs by one abstract each (i.e., there are only two conflicts)?
+
+```{r}
+# Create the new simulated rating data
+reviewer1 <- c(rep(0, times = 15), rep(1, times = 15))
+reviewer2 <- c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1))
+rs_test <- cbind(reviewer1, reviewer2)
+
+kappa2(rs_test)
+```
+
+This is now an acceptable level of reviewer disagreement.
+:::
+
+### Systematic Review Management Software
+
+Systematic management programs, such as **Covidence**, automatically calculate a kappa agreement statistic, along with other inter-rater reliability measures. The relevance screening form in Covidence defaults to having three options: yes, no, or maybe. Answers of *maybe* are considered the same as *yes* for screening and inter-rated reliability calculation purposes. For Covidence, a CSV file can be downloaded to show the screening reliability statistics for each pair of reviewers. An example of this output is shown in the figure below.
+
+![](images/covidence_kappa.png)
+
+
+::: callout-tip
+### Relevance Screening Exercise
+
+Using the example relevance screening form above, from Young et al. [-@youngEffectivenessFoodHandler2019], assess the relevance of the [following five abstracts captured in the search from that review](assets/Example_RS_Form.docx) and record your answers for discussion.
+:::
+
+## Article Procurement
+
+Following relevance screening, full-text PDFs should be obtained for all references considered relevant. These can be saved to a folder and uploaded/linked to the applicable reference IDs in the systematic review management program used.
+
+::: callout-important
+## Finding Articles
+
+You should be able to identify most PDFs using a combination of simple Google Searching (for open-access papers) and the [TMU scholarly paper search feature](https://library.torontomu.ca/).
+
+Occasionally, you may need to search for TMU access to the specific journal of interest, then search for the paper in specific databases if the global search does not find the paper(s) you need.
+
+In cases where you cannot find the paper via these methods, you can ask the librarian for assistance, or make a special request for the paper through the [Interlibrary Loan Service: RACER](https://library.torontomu.ca/services/ill/).
+:::
+
+## Article Characterization
+
+It is often useful to include a separate screening confirmation (sometimes referred to as second-level screening) step and an article characterization step (i.e., data charting). The relevance confirmation step can be used to exclude irrelevant papers, which can be combined with article characterization to subsequently extract key characteristics of the relevant articles. This step is sometimes combined with data extraction, where study outcomes are also extracted. The confirmation of relevance should include a checkbox to indicate the primary reason for exclusion for articles that are not relevant.
+
+The data captured in this form should be summarized in a characteristics of included studies table in the review results. Additionally, some of the variables captured in this form may also be used in the analysis (e.g., subgroup analysis or meta-regression). Some frequently important variables to capture include:
+
+-   Document type, year of publication, language
+-   Study design
+-   Study dates and location(s)
+-   Recruitment and sampling methods
+-   Characteristics of participants (e.g., age, gender)
+-   Characteristics of the intervention or exposure (e.g., dose, length, how they were measured)
+-   Characteristics of the control or comparison group (if applicable)
+-   Types of outcomes measured and how they were measured
+
+It is often useful to develop outlines of the anticipated figures and tables that you plan to include in the results section of your systematic review. This will help you to decide on which important characteristics to extract.
+
+::: callout-warning
+## Multiple reports of the same study
+
+It is sometimes the case that the same study is reported in multiple publications. In the case of authors splitting results of a study across multiple journal papers, it might be easiest to treat these as separate studies at this stage and note that they are from the same larger study. In cases where preliminary data are published in a thesis or abstract, usually you will want to keep only the published journal article as the main source for that study.
+:::
+
+### Pilot Testing
+
+It is also important to pilot test the article characterization form. Usually this can be done on a small selection of articles (e.g., 5-10). Instead of checking kappa agreement, you should compare reviewer answers, look for discrepancies in interpretation of questions, discuss, and modify the form to enhance its clarify and ensure consistent interpretation.
+
+::: callout-tip
+## Article Characterization Exercise
+
+Use the [example article characterization form](assets/Example_Article_Characterization_Form.docx) from Young et al. [-@youngEffectivenessFoodHandler2019] to extract data from the three full-text articles captured and screened as potentially relevant in that review]. Then record your answers for discussion.
+
+The three articles are available at the following shared folder: <https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing>.
+:::
+
+

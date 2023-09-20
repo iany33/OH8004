@@ -1,0 +1,111 @@
+# Review Question and Eligibility Criteria {#sec-questions}
+
+Perhaps the most important decision to make when planning a systematic review is to define the question. Review questions must be **clearly defined** and will guide many of your subsequent decisions and review methods. The question should incorporate aspects of your eligibility criteria, which will also guide your search strategy and other review steps.
+
+![](images/meme_question.jpg)
+
+::: callout-important
+When considering a review topic, you should first search the [PROSPERO register of systematic reviews](http://www.crd.york.ac.uk/prospero) to check if a similar review is already in progress or has been recently published. Similarly, it would be useful to search Scopus, PubMed (MEDLINE), or a similar database to find any published systematic reviews on the topic, as not all reviews may be registered in PROSPERO.
+:::
+
+It is often useful to address questions of **relevance** to stakeholders and knowledge users (e.g., occupational and public health agencies or governments). These agencies can be engaged to identify relevant, priority issues where a systematic review might be needed to inform policy or practice decisions.
+
+## Review Question
+
+In defining a question, different approaches are used depending on the type of question being considered (e.g., intervention, exposure-outcome relationship, prevalence or incidence of an outcome). Types of questions can be categorized as follows [@munnWhatKindSystematic2018].
+
+-   Intervention (effectiveness) reviews
+-   Etiology or risk factor reviews
+-   Prevalence or incidence reviews
+-   Diagnostic test accuracy reviews
+-   Qualitative (experiential) reviews
+-   "Umbrella" reviews (reviews of reviews)
+-   Others (e.g., economic evaluations, policy reviews)
+
+For the purposes of this course, we will mainly focus on **intervention** reviews, which are the most common, but will address aspects of **etiology/risk factor** and **incidence/prevalence** reviews, which are common in occupational and public health research. These scenarios are further defined below. For more details on the other types of reviews, see Munn et al. [-@munnWhatKindSystematic2018] and the [JBI Manual for Evidence Synthesis](https://jbi-global-wiki.refined.site/space/MANUAL).
+
+### Intervention Reviews
+
+Systematic reviews of interventions should have questions that follow the **PICO** framework. PICO refers to the Population, Intervention, Comparison, and Outcome. Sometimes an **S** is added for Study Design.
+
+**Population** includes the study participants and settings of interests. This could include populations with specific socio-demographic characteristics (e.g., age groups, sex, ethnicity), different occupational or other groups, or specific settings (e.g., community-based, institutions).
+
+**Intervention** includes the specific process, technique, policy, or other change being evaluated in the populations of interest. It is important to define exactly what is being delivered (e.g., materials, procedures), by whom and to who, how, where, when and how much. The [TIDieR Checklist](https://www.equator-network.org/reporting-guidelines/tidier/) is a useful framework to consider these factors and which types of interventions might be relevant. Interventions can then be grouped or sub-grouped into specific labels based on their characteristics, if appropriate, with separate analyses conducted on each group. E.g., a review of falls prevention interventions might have groups such as exercise, medication, supportive environments.
+
+**Comparisons** includes the control groups being considered. This could include placebo groups, those receiving no intervention or a current "standard" or "typical" procedure, or groups receiving an alternative or competing intervention.
+
+**Outcome** includes the set of measures that will determine intervention effectiveness. You should select a limited number of the **most important** outcomes relevant to your topic, and avoid extracting data on all possible outcomes. The [Cochrane Collaboration recommends](https://training.cochrane.org/handbook/current/chapter-03) no more than **seven** critical outcomes for their review summary documents. Similar to interventions, outcomes should be grouped into similar categories or **domains** (e.g., knowledge, behaviours, biological); this can include hierarchical groupings if appropriate. Consider what time points of measurement will be used, and measurement methods (e.g., lab-based, self-reported, objective). It can be useful to consider **logic models** to map out the possible outcomes and their relationships when deciding what is relevant to the review.
+
+**Study designs** usually focus on RCTs for intervention reviews, though non-randomized trials, and sometimes observational studies, can also be included. For occupational and public health questions (compared to clinical questions), RCTs may be limited or not feasible, so it is often beneficial to include non-randomized studies.
+
+::: callout-tip
+## PICO Question Exercise
+
+Consider the following intervention review questions. Identify the PICO elements of each one, and discuss how the questions could be made broader (more inclusive) or more targeted (restrictive).
+
+> What is the efficacy of different training and education interventions to improve the food safety knowledge, attitudes, and behaviours of food handlers working at retail and food service? [@youngEffectivenessFoodHandler2019]
+
+> What is the effect of workplace-delivered mindfulness-based interventions for non-clinical working populations? [@bartlettSystematicReviewMetaanalysis2019] <https://www.crd.york.ac.uk/prospero/display_record.php?RecordID=36650>
+:::
+
+### Etiology/Risk Factor Reviews
+
+These reviews assess the **association** between an exposure of interest and outcomes of interest. Review questions of this type can be defined using the **PECO** framework, which is similar to **PICO** but replaces the *intervention* with the *exposure* of interest. These review rely heavily on **observational studies** (e.g., cohort, case-control), so there are additional concerns related to possible biases that need to be considered at the risk of bias stage.
+
+**Exposures** could include a risk factor or other determinant of a health outcome. The time period or length of time of the exposure should also be specified if relevant.
+
+### Prevalence/Incidence Reviews
+
+These reviews assess the health or disease burden in a specific population, and are useful to describe the distribution of a health outcome in different locations (e.g., countries) and population groups. This type of review is used in global burden of disease studies. Questions of this type can be expressed using the **CoCoPop** framework: Condition, Context, and Population [@munnMethodologicalGuidanceSystematic2015]. The **population** consideration is similar to what is mentioned above for interventions.
+
+**Condition** refers to the variable of interest, and could be a disease, other health outcome, symptom, or other factor (e.g., knowledge, behaviour).
+
+**Context** refers to the specific setting (e.g., seasons, communities) or geographical areas of interest to the review.
+
+::: callout-tip
+## Other Questions Exercise
+
+Consider the following review questions. Identify the elements of each one, and discuss how the questions could be made broader (more inclusive) or more targeted (restrictive).
+
+> What is the evidence on the association between long-term exposure to residential green spaces and mortality in adults? [@rojas-ruedaGreenSpacesMortality2019]
+
+> What is the global prevalence and incidence of tinnitus? [@jarachGlobalPrevalenceIncidence2022]
+
+> What is the global prevalence of occupational morbidity in migrant workers, and what are the occupational health risks and outcomes associated with specific industries? [@hargreavesOccupationalHealthOutcomes2019]
+
+> What is the evidence for the association between (1) silicosis and pulmonary tuberculosis and (2) silica exposure and pulmonary tuberculosis, excluding or controlling for radiological silicosis [@ehrlichAssociationSilicaExposure2021]
+:::
+
+## Additional Eligibility Criteria
+
+### Document Type
+
+One of the first considerations in deciding which types of studies will be eligible for inclusion in the review is the document source. Most of your relevant articles will be **peer-reviewed journal articles**. Other documents to consider include:
+
+-   **Conference papers or abstracts**: care must be taken to avoid double-counting studies that are subsequently published as journal articles. Also, information in an abstract is often very limited.
+-   **Dissertations and theses**: may be useful if the research was not published. [Research has shown that disserations are often not published](https://doi.org/10.1371/journal.pone.0192219). But the research may not have been peer-reviewed (especially master's theses) beyond the advisory committee, and the documents can be very long and onerous to review.
+-   **Research reports**: unpublished reports, such as those published by government and non-profit agencies, could be relevant depending on the review topic.
+
+::: callout-important
+## Unit of analysis
+
+In systematic reviews, the **unit of analysis** is individual *studies*, which may be reported in multiple references or reports. These should be identified and linked together, usually easiest at the full-text assessment stages. They can be identified by noting similar author names, locations/settings, study details, and results.
+:::
+
+### Language
+
+**Language** of articles is another important consideration. Limiting inclusion to only articles in English can lead to a language bias. While practical considerations may limit ability to review in additional languages, it is important to at least capture such articles in the search strategy (if possible) and report on the number of articles excluded due to language. The role of language and the impact of excluding non-English articles [likely depends on the specific topic being investigated](https://doi.org/10.1016/j.jclinepi.2004.08.021). 
+
+Tools such as [Google Translate have been found to be quite reliable for data extraction in systematic reviews](https://doi.org/10.7326/M19-0891), while capabilities and other tools (e.g., large language AI models) likely to continue to improve in the future. 
+
+::: callout-tip
+## Review Question and Eligibility Criteria Exercise
+
+Using the article you identified for your homework exercise from last week, determine:
+
+- The type of review conducted (using the categorization system described above)
+- The review question
+- The specific elements of the question (e.g., population, intervention/exposure)
+- Other eligibility criteria (e.g., document type, language)
+:::
+

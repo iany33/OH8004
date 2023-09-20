@@ -1,0 +1,40 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "OH8004 Knowledge Synthesis in Occupational and Public Health"
+  author: "Ian Young"
+  date: "Winter 2024"
+  
+  chapters:
+    - index.qmd
+    - 1_intro.qmd
+    - 2_question.qmd
+    - 3_searching.qmd
+    - 4_selecting.qmd
+    - 5_bias.qmd
+    - 6_extraction.qmd
+    - 7_analysis.qmd
+    - 8_meta.qmd
+    - 9_meta2.qmd
+    - 10_grade.qmd
+    - references.qmd
+
+  page-footer:
+    left: |
+      OH8004 Knowledge Synthesis: Course Website.
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  repo-url: https://github.com/iany33/OH8004
+  sidebar:
+    logo: "OH8004.png"
+    search: TRUE
+
+bibliography: OH8004.bib
+
+format:
+  html:
+    theme: flatly
+    code-fold: true
+

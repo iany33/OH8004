@@ -1,0 +1,234 @@
+# Data Extraction and Outcome Measures {#sec-extraction}
+
+This section will cover the important considerations involved in extracting **outcome data** from the relevant studies. At this stage, it is important to consider the different possible outcome **measures of effect** that could be reported in the studies and which are of primary interest and relevance to your review question.
+
+![](images/meme_de.jpg)
+
+## Types of Outcomes and Measures of Effect
+
+A key first step in designing the outcome data extraction form and planning for analysis is to determine the relevant types of **outcome data measures** for the review. The most common types are listed below:
+
+-   Dichotomous (AKA binary)
+-   Continuous
+-   Ordinal
+-   Counts and rates
+-   Time-to-event (survival data)
+
+Each of these are discussed further below. For each study, we will want to either directly extract a **measure of effect** (i.e., effect measure, effect size) from the study, or extract the **raw data** and use that data to calculate a measure of effect. Typically, for reviews of RCTs, the raw data is sufficient for extraction (if available), as the randomization process should mitigate the impact of confounding bias. When extracting data from observational studies and non-randomization trials, typically the *adjusted* measure of effect should be extracted as it reduces to the impact of confounding variables. Additionally, it is preferable to extract measures of effect directly from RCTs that have adjusted for clustering or baseline measurements.
+
+**Measures of effect** can be expressed as ratios (e.g., odds ratio, risk ratio, hazard ratio) or differences (e.g., mean difference, risk difference). For reviews of prevalence and incidence questions, the **measure of effect** is simply the prevalence or incidence point estimate(s) of interest.
+
+::: callout-note
+### Ratio Measures of Effect
+
+Ratio measures of effect, such as odds ratios, are analyzed on the natural log scale, so must be log-transformed for all studies prior to analysis.
+:::
+
+## Unit of Analysis
+
+When extracting outcomes from studies you will likely encounter **unit-of-analysis issues**. These are situations where outcomes are nested within larger units, or there are repeated measurements on the same participants, and this extra level of variation must be accounted for when conducting analysis. The following are common situations of this:
+
+-   The study has **clusters** (e.g., schools, communities) with outcomes measured and reported on participants within the cluster
+-   There are **repeated measurements** on participants (e.g., outcomes are reported at multiple follow-up periods)
+-   Each participant receives **multiple treatments or interventions**
+-   There are **multiple variations of the same outcome** reported for participants in the same study
+-   There are **multiple intervention groups** compared in the same study
+
+Statistical approaches to address some of these issues will be covered in a later section.
+
+## Data Extraction Form
+
+The **data extraction form** should be designed so that multiple outcomes can be extracted for each study. The suggested approach is to pre-determine **outcome categories** for analysis based on your review question. These should represent specific groups of similar outcomes that will combined together in the same analysis. You can also include additional questions on the form that might have *difference responses for different outcome categories* (e.g., how the outcome was measured). You may also have different categories for intervention or exposure groups of interest.
+
+An example of a data extraction form from Young et al. [-@youngEffectivenessFoodHandler2019] is [available for download here](https://docs.google.com/document/d/1Voi7-t3a_uplIEGT254yw5LyI42cCAof/edit?usp=sharing&ouid=103236720816475008712&rtpof=true&sd=true).
+
+## Dichotomous Measures
+
+**Dichotomous outcomes** are those with only two possibilities (e.g., disease positive or disease negative). Two common measures of effect for these outcomes are **odds ratios** (OR) and **risk ratios** (RR). An RR is a ratio of the risk of the event in each group, while the OR is ratio of the odds of event (compared to a non-event) in each group. The table below shows how these two measures are calculated:
+
+|              | Event | Non-Event | Total   |
+|--------------|-------|-----------|---------|
+| Intervention | A     | B         | ${N_1}$ |
+| Control      | C     | D         | ${N_2}$ |
+
+: 2 X 2 table for an intervention study
+
+$$
+\text{RR} = \frac{\text{A}/{N_1}}{\text{C}/{N_2}}
+$$
+
+$$
+\text{OR} = \frac{\text{A}/{B}}{\text{C}/{D}}
+$$
+
+The RR and the OR are only similar when the event is rare.
+
+Another possible measure for dichotomous outcomes is the **risk difference** (RD). This measure reflects the difference between the two observed groups risks. The practical significance of the RD depends greatly on the baseline risk of the event in the population. 
+
+$$
+\text{RD} = \left(\frac{\text{A}}{N_1}\right)-\left(\frac{\text{C}}{N_2}\right)
+$$
+
+To conduct a meta-analysis of dichotomous data, we typically need one of the following sets of values for the intervention (or association) effect:
+
+-   Numerator and denominator in each group
+-   Proportion + EITHER numerator or denominator in each group, or
+-   Measure of effect (e.g., OR, RR) + a measure of variability
+
+## Continuous Measures
+
+**Continuous outcomes** can theoretically take any value within a specified range. The two most common measures of effect for continuous data are the **mean difference** (MD) and the **standardization mean difference** (SMD). 
+
+The **MD** can be used when the outcome is reported on a meaningful scale (e.g., weight in kg, blood pressure in mmHg), and the *same scale is used in all studies*. This measure is easy and intuitive to interpret if possible to calculate. 
+
+The **SMD** can be used when the studies in a SR measure the same outcome, but in different ways (e.g., different scales). The SMD is calculated by dividing a study's mean different by its standard deviation (SD) to create an index. There are different SMD metrics, the most common of which is called **Hedges' g**, which uses a pooled SD in the denominator based on outcome data in both groups being compared, and assuming that the SDs of the two groups are similar.  
+
+For continuous data outcomes, we typically require the mean, sample size, and SD in each group to calculate either the MD or SMD. Alternatively, a pre-calculated measure of effect (e.g., MD) and its measure of variability (e.g., standard error) can also be used directly in a meta-analysis.
+
+::: callout-warning
+### Change from baseline data
+
+Some studies will report baseline and post-intervention values (often with different follow-up time points). It can be useful to extract both values if they are available and compare any differences. However, often the standard deviation (SD) of the change score is missing and needs to be [imputed or estimated to include the score in a meta-analysis](https://training.cochrane.org/handbook/current/chapter-06#section-6-5-2-8). This process involves many assumptions that should be evaluated through sensitivity analysis.
+:::
+
+## Other Outcomes
+
+**Ordinal outcomes** occur when there are multiple, ordered categories of an outcome (e.g., low, moderate, and high knowledge levels). As the number of ordinal categories increases, they start to resemble continuous outcomes, and could potentially be analyzed using those methods. If there is an obvious cut-point, the categories could be combined and used in a dichotomous analysis. Otherwise, if the same categories are used across all studies, this outcome can be analyzed using a proportional odds model.
+
+**Count outcomes** occur when the outcome can happen multiple times for each participant. These are usually expressed as **rates** (e.g., number of events per person-year), with the comparison of two rates being expressed as a rate ratio. The most common situation involving rate data is that studies directly report rate ratios and a measure of variability (e.g., standard error) from regression models, which can be extracted and combined in a meta-analysis. 
+
+**Time-to-event outcomes** refer to the measurement of the time elapsed until some event (e.g., death) is experienced (e.g., survival data). These data are usually analyzed in studies using survival analysis and expressed as a **hazard ratio** (HR). Hazard measures instantaneous risk and can change continuously over time. As above, studies usually report the HR and a measure of variability which can be extracted directly and included in a meta-analysis.
+
+::: callout-tip
+## Data Extraction Exercise
+
+Consider again the Young et al. [-@youngEffectivenessFoodHandler2019] systematic review about the effectiveness of food handler training interventions. [Using three example articles](https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing), identify the outcomes of interest in each study and which data should be extracted. 
+
+- How many relevant outcomes are reported in each study?
+- Are any important outcomes or values (e.g., measures of variability) missing? 
+:::
+
+## Data Required for Meta-Analysis
+
+If you are interested or planning to conduct a meta-analysis, data must be sufficiently reported in the article to allow calculation of a summary measure of effect and to allow inclusion in a meta-analysis. Often, many studies will be missing information on one of the common inputs required. However, we can thankfully use various formulas to estimate the missing information in many cases. Some common scenarios are highlighted below.
+
+### Convert Confidence Interval to a Standard Error (SE)
+
+If only a 95% confidence interval (CI) is reported for an absolute measure of effect (e.g., standardized mean difference, risk difference), the SE can be calculated from the following formula:
+
+$$
+\text{SE} = \frac{(\text{Upper limit}-\text{Lower limit})}{3.92}
+$$
+
+For ratio measures (e.g., odds ratio, risk ratio), the upper and lower CI limits, and intervention effect estimate, should be on the natural log scale.
+
+The same formula can also be used to convert a CI of a mean value within each group (e.g., intervention, control) to its SE. However, in this case, if the sample size in each group is small (e.g., \<60), then the CIs should have been calculated using a t distribution and the divisor (3.92) [should be replaced by a different number from a t distribution](https://training.cochrane.org/handbook/current/chapter-06#section-6-5-2-2).
+
+### Convert SE for Each Group to a SD for Each Goup
+
+If only a SE, and not a SD, is reported within each group being compared, the SD can be obtained from this formula:
+
+$$
+\text{SD} = \text{SE}\sqrt{N}
+$$
+
+::: callout-note
+### Example SE to SD conversion
+
+We can illustrate this conversion with some simulated data in *R*.
+
+```{r}
+pacman::p_load(tidyverse)
+
+# Simulate some study data for meta-analysis
+data <- tibble(study_ID = as.factor(rep(1:4, times = 1)),
+               treat_mean = c(1.5, 2.1, 2.2, 2.7),
+               treat_SE = c(0.03, 0.06, 0.07, 0.08),
+               treat_n = c(100, 50, 70, 60),
+               control_mean = c(1.3, 1.8, 2.0, 2.2),
+               control_SE = c(0.03, 0.07, 0.07, 0.09),
+               control_n = c(100, 50, 70, 50),
+                )
+data
+```
+
+Now calculate a SD variable for each group using the formula above.
+
+```{r}
+data <- data |> mutate(
+  treat_SD = treat_SE*sqrt(treat_n),
+  control_SD = control_SE*sqrt(control_n)
+)
+data |> select(-treat_SE, -control_SE)
+```
+:::
+
+### Convert from SE, CI, t value, or P value to a SD for Mean Differences
+
+When using the raw MD as the outcome, missing SD values can be estimated from a SE, CI, t value, or P value. These conversions assume that the SD values are the same in both groups being compared.
+
+To calculate the t value from a P value (from a t-test), we can use the `qt` function, inputting the P value first (divided by 2), and the degrees of freedom next (equal to the sample size in each group minus 2). For example, for a study with a P value of 0.03 and a sample size of 20 in each group, we could use this formula:
+
+```{r}
+qt(p=0.03/2, df=40-2, lower.tail=FALSE)
+```
+
+To convert from a t value to a SE, we can use the following formula:
+
+$$
+\text{SE} = |\frac{\text{MD}}{\text{t value}}|
+$$
+
+The SE can then be converted to a within-group SD using the following formula, where $N_1$ and $N_2$ represent the sample size in each group:
+
+$$ 
+\text{SD} = \frac{\text{SE}}{\sqrt{\frac{1}{N_1}+{\frac{1}{N_2}}}}
+$$
+
+The SD is the average of the SDs of each group, and should be entered for both groups.
+
+### Conversions to a Standardized Mean Difference
+
+There are various formulas available to convert from SEs, ANOVA F values, t-test values, regression beta coefficients to SMD measures such as Hedges' *g*, a log odds ratio, or a correlation coefficient *r*.
+
+These use formulas from the [practical meta-analysis effect size calculator](http://mason.gmu.edu/~dwilsonb/downloads/esformulas.pdf) and are implemented in the [**esc**](https://cran.r-project.org/web/packages/esc/) package in *R*. Some examples are given in the [Doing Meta-Analysis in R](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/es-calc.html) online textbook.
+
+Two examples are shown below for a one-way ANOVA F test and for a $chi^2$ test.
+
+::: callout-note
+### Example F Test and $chi^2$ Test Converison
+
+Suppose we have a study that only reports the F value from a one-way ANOVA test, instead of means and SDs within each group or a MD value. If the F value is 6.23, and the sample size is 190 in the intervention group and 80 in the control group, we can calculate the SMD (as Hedges' *g*) as follows:
+
+```{r}
+pacman::p_load(esc)
+
+esc_f(f = 6.23, grp1n = 190, grp2n = 80, es.type = "g")
+```
+
+Similarly, if we had study that only reported a $chi^2$ test value for a dichotomous association, we could convert that to a log odds ratio and its SE. Note that this conversion assumes a degrees of freedom of 1. For example, suppose the $chi^2$ value was 2.5 and the sample size was 20:
+
+```{r}
+esc <- esc_chisq(chisq = 2.5, totaln = 20, es.type = "logit")
+esc
+```
+
+We can then load the data from the saved object into the applicable row in the dataset. For example, suppose the previous conversion was conducted for Study 3 as per the mock dataset below:
+
+```{r}
+data2 <- tibble(study_ID = as.factor(rep(1:3, times = 1)),
+               log_or = c(1.1, 0.8, NA),
+               log_se = c(0.05, 0.04, NA),
+               n = c(100, 150, 150)
+                )
+data2
+```
+
+We can then use the following code to insert the saved conversion values into the applicable columns for Study 3:
+
+```{r}
+data2$log_or["Study ID" = 3] <- esc$es
+data2$log_se["Study ID" = 3] <- esc$se
+data2
+```
+:::
