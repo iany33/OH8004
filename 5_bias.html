@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>OH8004 Knowledge Synthesis in Occupational and Public Health - 5&nbsp; Risk-of-Bias Assessment</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./6_extraction.html" rel="next">
+<link href="./4_selecting.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./5_bias.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk-of-Bias Assessment</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./OH8004.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">OH8004 Knowledge Synthesis in Occupational and Public Health</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/iany33/OH8004" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2_question.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Review Question and Eligibility Criteria</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_searching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Search Strategy</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4_selecting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5_bias.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk-of-Bias Assessment</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6_extraction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction and Outcome Measures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./8_meta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Meta-Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./9_meta2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Subgroup Analysis, Meta-Regression, and Complex Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_grade.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Quality of Evidence and Reporting</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#risk-of-bias" id="toc-risk-of-bias" class="nav-link active" data-scroll-target="#risk-of-bias"><span class="header-section-number">5.1</span> Risk of bias</a></li>
+  <li><a href="#cochrane-tool-for-rcts" id="toc-cochrane-tool-for-rcts" class="nav-link" data-scroll-target="#cochrane-tool-for-rcts"><span class="header-section-number">5.2</span> Cochrane Tool for RCTs</a>
+  <ul class="collapse">
+  <li><a href="#rct-bias-domains" id="toc-rct-bias-domains" class="nav-link" data-scroll-target="#rct-bias-domains"><span class="header-section-number">5.2.1</span> RCT Bias Domains</a></li>
+  </ul></li>
+  <li><a href="#non-randomized-and-observational-study-designs" id="toc-non-randomized-and-observational-study-designs" class="nav-link" data-scroll-target="#non-randomized-and-observational-study-designs"><span class="header-section-number">5.3</span> Non-Randomized and Observational Study Designs</a>
+  <ul class="collapse">
+  <li><a href="#robins-e-tool" id="toc-robins-e-tool" class="nav-link" data-scroll-target="#robins-e-tool"><span class="header-section-number">5.3.1</span> ROBINS-E Tool</a></li>
+  <li><a href="#other-risk-of-bias-tools" id="toc-other-risk-of-bias-tools" class="nav-link" data-scroll-target="#other-risk-of-bias-tools"><span class="header-section-number">5.3.2</span> Other Risk-of-Bias Tools</a></li>
+  </ul></li>
+  <li><a href="#risk-of-bias-for-missing-data" id="toc-risk-of-bias-for-missing-data" class="nav-link" data-scroll-target="#risk-of-bias-for-missing-data"><span class="header-section-number">5.4</span> Risk-of-Bias for Missing Data</a></li>
+  <li><a href="#reporting-risk-of-bias-results" id="toc-reporting-risk-of-bias-results" class="nav-link" data-scroll-target="#reporting-risk-of-bias-results"><span class="header-section-number">5.5</span> Reporting Risk-of-Bias Results</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-bias" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk-of-Bias Assessment</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Systematic reviews must aim to assess the <strong>risk of bias</strong> in the included studies to determine the reliability of the results and possible impacts on measures of effect. Biases are defined as <strong>systematic errors</strong> that can lead to over- or under-estimation of the true measure of effect. In addition to biases within individual studies, there is another form of bias called <strong>non-reporting biases</strong> (e.g., publication bias), that relates to the result of meta-analysis and whether any important outcomes might be missing. Both forms of bias will be considered, with additional information about publication bias considered in the meta-analysis section (<a href="9_meta2.html"><span>Chapter&nbsp;9</span></a>).</p>
+<p><img src="images/meme_bias.jpg" class="img-fluid"></p>
+<section id="risk-of-bias" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="risk-of-bias"><span class="header-section-number">5.1</span> Risk of bias</h2>
+<p>There is strong evidence that certain study design features (e.g., lack of blinding in clinical studies, lack of allocation concealment) can lead to a higher risk of bias, which can affect the magnitude and direction of the results. Biases can be introduced into a study through different mechanisms. These can be classified into different <strong>domains</strong>, which form the basis for risk-of-bias assessment tools. Risk of bias should be assessment differently for <strong>each unique outcome</strong> in a review, because some domains (e.g., blinding) may be important for some outcomes (e.g., subjective measures) but less important for others (e.g., death).</p>
+<p>Risk-of-bias assessments should use recommended, and ideally validated tools, and should be conducted by two independent reviewers, especially as judgement are frequently required in these assessments. Pilot testing of risk-of-bias assessment tools is important for all reviewers involved in a review (e.g., on 3-5 papers) to ensure criteria are applied consistently.</p>
+</section>
+<section id="cochrane-tool-for-rcts" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="cochrane-tool-for-rcts"><span class="header-section-number">5.2</span> Cochrane Tool for RCTs</h2>
+<p>The Cochrane Collaboration has developed a structured, domain-based <a href="https://sites.google.com/site/riskofbiastool/welcome/rob-2-0-tool">tool to assess risk of bias in RCTs</a> <span class="citation" data-cites="sterneRoBRevisedTool2019">(<a href="references.html#ref-sterneRoBRevisedTool2019" role="doc-biblioref">Sterne et al. 2019</a>)</span>. The tool, called <strong>RoB 2</strong>, uses a series of <em>signalling questions</em> to determine the risk of bias within each domain. Questions are answered with options of “yes”, “probably yes”, “probably no”, “no”, and “no information”. There are also variations of the tool available for <em>cluster-randomized trials</em> and <em>crossover trials</em>. As noted above, the tool should be applied at the <strong>outcome level</strong>, so multiple assessments may be needed for a study if it reports multiple relevant outcomes.</p>
+<p>Based on the results of the signalling questions, each domain will then receive a <strong>risk-of-bias judgement</strong> (or rating) of low, some concerns, or high. The tool includes flow charts to guide which judgement is most appropriate given the responses to the signalling questions. Each signalling question also contains a <strong>free-text box</strong> to record supporting information about the answer. Reviewers can copy and paste direct quotes from the article in this section to support their answers and add transparency. Optionally, reviewers can make a judgement about the likely <strong>direction of bias</strong> for each domain and overall, if this is possible to assess.</p>
+<p>Once the risk of bias of each domain is assessed, an <strong>overall risk-of-bias judgement</strong> is made for the study-specific outcome. The overall risk judgement cannot be lower than the judgement assigned to any individual domain (e.g., if one domain is judged as “some concerns” and all others are “low risk”, then the overall risk must be at least “some concerns”).</p>
+<p>One of the first decisions in applying this tool is determine whether you are interested in the effect of <strong>assignment to the interventions at baseline</strong> (i.e., intention-to-treat effect), or the effect of <strong>adhering to the interventions as specified in the protocol</strong> (i.e., per-protocol effect). The former is usually more important for occupational and public health reviews, as it reflects population-level realities of intervention administration.</p>
+<section id="rct-bias-domains" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="rct-bias-domains"><span class="header-section-number">5.2.1</span> RCT Bias Domains</h3>
+<p><strong>Bias arising from the randomization process</strong> This domain assesses whether intervention allocation process was random, and whether it was adequately concealed. Proper randomization is critical to mitigate the possibility of <em>confounding bias</em>. Randomization can be conducted in multiple different ways (e.g., simple, blocked, stratified, minimization). It is also important to prevent participants or trial personnel from knowing the next assignment (e.g., intervention or control), as this can enable selective enrollment. Baseline differences between intervention groups can be examined, and if identified (beyond what is expected by chance), suggest a problem with the randomization process.</p>
+<p><strong>Bias due to deviations from intended interventions</strong> This domain assesses whether there were any important deviations from the intended interventions that could bias results. For example, if participants or trial personnel were not “blinded” to the intervention group status, this could affect certain outcomes (e.g., behaviours). If blinding was not conducted or not possible, the possibility that deviations arose because of the trial context should be considered. If so, whether these deviations could have affected the outcome should also be considered, including whether any deviations were balanced across groups. This domain also considers whether the analysis correctly followed intention-to-treat principles (assuming the interest is in the effect of assignment to interventions).</p>
+<p><strong>Bias due to missing outcome data</strong> This domain assesses whether outcome data were available for all, or nearly all, of the trial participants. For continuous outcomes, data from at least 95% of participants will often be sufficient to mitigate missing data biases. For dichotomous outcomes, the proportion of acceptable missing data depends on the risk of the event. If missing data are a possible concern, we should look for evidence in the study that the result was not biased due to the missing data (e.g., from bias-corrected analysis or sensitivity analysis). We can use additional information in the study to determine whether missing data could or likely depended on the true value of the outcome, including any differences between groups in missing data, reported reasons for missing data, and circumstances of the trial.</p>
+<p><strong>Bias in measurement of the outcome</strong> This domain assesses the appropriateness of the method of measuring the outcome, whether the measurement method differed across intervention groups, and whether outcome assessors were blinded to the intervention group status of participants. It aims to determine if there were any <em>differential</em> measurement or misclassification errors. If outcome assessors were not blinded to group status, then it should be considered whether this knowledge could have influenced their assessment.</p>
+<p><strong>Bias in selection of the reported result</strong> This domain assesses whether the result reported in the study is likely to have been selected from multiple outcome measurements or multiple analyses (e.g., due to being statistically significant). Assessors should consider whether the trial was analyzed in accordance with a pre-specific analysis plan (e.g., published protocol). Evidence of selecting reporting should be examined, including reporting only one or a subset of multiple instruments, scales, time points, or analyses.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+RCT Risk-of-Bias Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An example of the outcome-specific risk-of-bias assessment results for <em>two studies</em> from a systematic review of music interventions to improve various health outcomes in people with cancer is shown below <span class="citation" data-cites="bradtMusicInterventionsImproving2021">(<a href="references.html#ref-bradtMusicInterventionsImproving2021" role="doc-biblioref">Bradt et al. 2021</a>)</span>. In this review, separate assessments were made for objective (e.g., blood pressure) and subjective (e.g., self-reported anxiety) outcomes.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rob_rct_example1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Example 1: Liao 2013</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rob_rct_example2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Example 2: Chen 2013</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+RCT Risk-of-Bias Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> systematic review about the effectiveness of food handler training interventions. <a href="https://drive.google.com/drive/folders/1i2EyYpMA4O6uSX0XAARcNXwQ77mAZZMw?usp=sharing">Using two example RCT articles from that review</a>, conduct a risk-of-bias assessment using the Cochrane RoB tool. For the Mancini et al.&nbsp;article, the outcome to assess is food inspection scores, while for Richard et al., the relevant outcome is food safety knowledge.</p>
+<ul>
+<li>What is your risk-of-bias judgement for each domain?</li>
+<li>What is your overall risk-of-bias judgement for each study?</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="non-randomized-and-observational-study-designs" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="non-randomized-and-observational-study-designs"><span class="header-section-number">5.3</span> Non-Randomized and Observational Study Designs</h2>
+<p><strong>Non-randomized studies</strong> may be important to include in reviews of the effects of <em>interventions</em>. For example, for population-level interventions (e.g., legislation changes) and investigations of long-term or rare outcomes are often more feasible to investigate in non-randomized studies. Non-randomized intervention studies are often at a higher risk of bias than RCTs due to the lack of randomization and other study features. The Cochrane Collaboration has developed a special risk-of-bias tool called <a href="https://www.riskofbias.info/welcome/home/current-version-of-robins-i"><strong>ROBINS-I</strong></a> to evaluate risks of bias in non-randomized studies.</p>
+<p><strong>Observational studies</strong> are critical to answer questions about <em>exposures</em> and health outcomes. For these types of questions, RCTs are often not feasible or ethical to conduct, and they suffer other limitations (e.g., shorter follow-up times). An international collaboration has developed a new risk-of-bias assessment tool for observations studies in exposure/risk factor reviews, called <a href="https://www.riskofbias.info/welcome/robins-e-tool"><strong>ROBINS-E</strong></a>. ROBINS-E is based on the same framework and approach as the Cochrane RoB tool and ROBINS-I. We will consider how to apply this tool below. However, it is designed for <strong>cohort studies</strong>, so for reviews that focus on other designs (e.g.., case-control studies), other tools may be needed.</p>
+<section id="robins-e-tool" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="robins-e-tool"><span class="header-section-number">5.3.1</span> ROBINS-E Tool</h3>
+<p>One of the first steps in using the ROBINS-E tool is to pre-specify <strong>important confounding factors</strong> that are likely to influence the association between the exposure and outcome of interest. These will be specified for each outcome in each study and details recorded in Part E. The outcome of interest is first identified (Part A), then studies are <em>screened</em> to assess if they are at very high risk of bias (Part B), which would avoid the need for a detailed assessment. This involves answering key questions from the tool about whether <strong>confounding</strong> was controlled for and may be a concern, and whether the method of measuring exposure and outcome was inappropriate.</p>
+<p>For each study, details of the participants, exposure, and outcome are extracted (Part C). Then the <strong>causal effect</strong> estimated by the study must be specified (Part D). This represents the target effect assuming no potential for confounding (e.g., target experiment). Bias risks are then assessed across <strong>seven domains</strong> using signalling questions (Part E), and an overall risk judgement is also determined. Risks of bias in each domain is assessed as low, some concerns, high, or very high. The <strong>predicted direction of bias</strong> and whether it may <strong>threaten conclusions</strong> is also assessed for each outcome.</p>
+<p>There is a <a href="https://docs.google.com/spreadsheets/d/1BX7RtezcfXNPV-guBOMmY_2VoXNue10j/edit?usp=sharing&amp;ouid=117320835758974012541&amp;rtpof=true&amp;sd=true">spreadsheet version of the tool online</a> you can download and use to help complete the risk-of-bias assessments.</p>
+<section id="robins-e-domains" class="level4" data-number="5.3.1.1">
+<h4 data-number="5.3.1.1" class="anchored" data-anchor-id="robins-e-domains"><span class="header-section-number">5.3.1.1</span> ROBINS-E Domains</h4>
+<p><strong>Risk of bias due to confounding</strong> Confounding occurs when there are common causes of the exposure and outcome of interest. This domain assesses whether the study appropriately measured and controlled for all of the important confounding factors. Common control methods include stratification, matching, regression, standardization, or inverse probability weighting. This domain also assesses whether any post-exposure variables were controlled for in the analysis, which can introduce bias. If <strong>time-varying confounding</strong> is also a concern, additional questions are used to assess the impact of this bias. Time-varying confounding occurs when the exposure <em>changes over time</em> and prognostic factors affect exposure status during the exposure time period.</p>
+<blockquote class="blockquote">
+<p>Even if all important confounders were identified and controlled for in analysis, there is always a possibility for <em>uncontrolled confounding</em> due to unmeasured factors, imprecise measurement of confounding factors, or because measurement confounding factors were not adjusted for in the analysis. Therefore, there will always be some concerns about uncontrolled confounding even with a low risk judgement.</p>
+</blockquote>
+<p><strong>Risk of bias arising from measurement of the exposure</strong> This domain addresses the risk of possible measurement error (continuous variables) or misclassification (categorical variables). Different variants of this domain are used depending on whether there are multiple measures of the exposure over time and how those measurements are used in the analysis. This domain considers how well the exposure variable represents the target exposure of interest, whether the exposure was likely to be measured with error (or was misclassified), and whether any measurement errors or misclassification could have been differential (i.e., related to the outcome or risk of outcome). An example of differential error is <em>recall bias</em> in case-control studies.</p>
+<p><strong>Risk of bias in selection of participants into the study</strong> This domain assesses possible <em>selection bias</em>, where some participants, follow-up time of of some participants, or some outcome events are excluded in a way that leads to an association between the exposure and outcome. Questions assess whether selection was based on characteristics observed after the start of the exposure window, and whether these characteristics were related to both the exposure and outcome. Questions also assess whether follow-up began at or close to the start of the exposure window, and whether the exposure is likely to be constant over time. Methods of analysis to correct for potential selection biases are also considered.</p>
+<p><strong>Risk of bias due to post-exposure interventions</strong> This domain considers whether the exposure leads to administration of interventions that can alter the exposure-outcome relationship. For example, in a study of individuals exposed to asbestos, the most highly exposed were more likely to receive a CT scan, this could affect their risk of lung cancer mortality. If no interventions are administered to alleviate the effects of the exposure, there should be no issues with this domain.</p>
+<p><strong>Risk of bias due to missing data</strong> This domain assesses risks of missing data for exposures, outcomes, or confounding variables, and whether this led to bias. The approach to analysis is considered in making this assessment (complete case analysis or multiple imputation).</p>
+<p><strong>Risk of bias arising from measurement of the outcome</strong> This domain assess risks of non-differential or differential measurement errors in the outcome. It considers if measurements could have differed by group, whether outcome assessors were award of participants’ exposure history, and whether this could have affected the outcome measurement.</p>
+<p><strong>Risk of bias in selection of the reported result</strong> This domain assess selective reporting of the exposure (from multiple measurement methods), the outcome (from multiple measurement methods), the results (from multiple analysis methods), and the participants (from a larger cohort). Unlike RCTs, it is unlikely that pre-specified analysis plans are available to compare with a study’s results, and clues must be gained from comparing the methods and results sections.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+ROBINS-E Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A systematic review and meta-analysis of the association between ambient air pollution and clinical dementia used the ROBINS-E tool to assess risk of bias in relevant studies <span class="citation" data-cites="wilkerAmbientAirPollution2023">(<a href="references.html#ref-wilkerAmbientAirPollution2023" role="doc-biblioref">Wilker, Osman, and Weisskopf 2023</a>)</span>. A total of 51 relevant studies were included. Results of the ROBINS-E assessment were summarized in a table. The first several studies of this summary table are shown below:</p>
+<p><img src="images/robins-e_example.png" class="img-fluid"></p>
+<p>In this table, an asterisk (*) Indicates that the likely direction of bias would be towards the null. The table legend is as follows: A = Confounding; B = Post-exposure intervention; C = Missing data; D = Measurement of the outcome. All studies were rated as <em>some concerns</em> in the domains of “Measurement of the exposure” and “Selection of reported results”, all studies were rated as “Low risk” in the “Selection of participants” domain.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="other-risk-of-bias-tools" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="other-risk-of-bias-tools"><span class="header-section-number">5.3.2</span> Other Risk-of-Bias Tools</h3>
+<p>There are various other <strong>risk-of-bias tools</strong> that have been developed and applied to different study designs. However, not all of these tools have been validated, and some use outdated methods (e.g., scoring systems). For reviews of <strong>interventions</strong>, the Cochrane Collaboration tools are highly recommended. For reviews of <strong>exposures</strong>, the ROBINS-E tool is recommended if the predominant design is cohort studies. For other types of reviews, the <a href="https://jbi.global/critical-appraisal-tools">tools from <strong>Joanna Briggs Institute (JBI)</strong></a> are recommended. For example, JBI has developed critical appraisal tools for:</p>
+<ul>
+<li>Analytical cross-sectional studies</li>
+<li>Case-control studies</li>
+<li>Case reports and case series</li>
+<li>Prevalence studies</li>
+<li>Qualitative research</li>
+<li>Text and opinion articles</li>
+<li>Economic evaluations, and many others.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Observational Study Risk-of-Bias Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will practice using the ROBINS-E tool on two studies that were included in the systematic review of the association between green spaces and mortality <span class="citation" data-cites="rojas-ruedaGreenSpacesMortality2019">(<a href="references.html#ref-rojas-ruedaGreenSpacesMortality2019" role="doc-biblioref">Rojas-Rueda et al. 2019</a>)</span>. The two articles are <a href="https://drive.google.com/drive/folders/1iE-1OAijSX1dM2Xy3M-LupBFWMTgdSP2?usp=sharing">available in the following shared folder</a>.</p>
+<p>For the purposes of this exercise, consider confounders of interest to be any of the following <em>socio-economic factors</em>: age, sex, ethnicity, marital status, education, income, and employment.</p>
+<ul>
+<li>What is your risk-of-bias judgement for each domain?</li>
+<li>What is your overall risk-of-bias judgement for each study?</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="risk-of-bias-for-missing-data" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="risk-of-bias-for-missing-data"><span class="header-section-number">5.4</span> Risk-of-Bias for Missing Data</h2>
+<p>The risk-of-bias tools covered above include an item to assess possible risks from <em>selective reporting of results when multiple measurements or analyses were made</em>. In cases where the result for an outcome is omitted entirely, the risk of bias should be assessed at the overall synthesis level. The Cochrane Collaboration describes a process that can be used to <strong>assess possible biases due to missing data</strong>:</p>
+<ol type="1">
+<li>Select syntheses to assess for risk of missing data</li>
+<li>Determine which studies are eligible for the synthesis</li>
+<li>Determine whether any of the studies have missing data that cannot contribute to the synthesis.</li>
+<li>Consider whether the synthesis is likely to be biased due to missing data</li>
+<li>Consider whether results from additional studies are likely to be missing.</li>
+<li>Reach an overall judgement about risk of bias from missing data in the synthesis.</li>
+</ol>
+<p>This process aims to first determine if any studies might have measured relevant results for a synthesis, but did not report them at all or in a format usable for the synthesis (e.g., meta-analysis). This is especially important if the results were not reported because they were not statistically significant or did not support the authors’ hypotheses. This process may involve checking a study’s protocol (if published), methods, analysis plan, or other supporting documents. <a href="https://sites.google.com/site/riskofbiastool/welcome/rob-me-tool?authuser=0">A risk-of-bias tool for this purpose is currently <em>under development</em></a> that would assess these factors at the synthesis level.</p>
+</section>
+<section id="reporting-risk-of-bias-results" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="reporting-risk-of-bias-results"><span class="header-section-number">5.5</span> Reporting Risk-of-Bias Results</h2>
+<p>Risk-of-bias summary tables or figures should be provided in the systematic review report. A table or plot should be included that contains the risk-of-bias judgement for each domain for each study outcome, or this data can be made available in the supplementary materials if there are many included studies. In that case, it can be useful to provide a summary table in the manuscript text. An example from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> is shown below. Additionally, the domain-specific judgements or overall judgement can also be included alongside each study in meta-analysis <strong>forest plots</strong>.</p>
+<p><img src="images/bias_table_example.png" class="img-fluid"></p>
+<p>There is an online R Shiny App called <a href="https://mcguinlu.shinyapps.io/robvis/">robvis</a> that can be used to create high-quality risk-of-bias figures for the Cochrane Collaboration risk-of-bias tools. The app contains template spreadsheets that can be altered with your review risk-of-bias results, which are then uploaded to create a Cochrane-style risk-of-bias plot as per below.</p>
+<p><img src="images/risk_of_bias.png" class="img-fluid"></p>
+<p>The risk-of-bias results should be incorporated into the summary assessment for each outcome in a review. For example, if conducting meta-analysis, a <strong>subgroup analysis</strong> (<a href="9_meta2.html"><span>Chapter&nbsp;9</span></a>) could be conducted to examine differences in measures of effect for studies at different risks of bias. Alternatively, the analysis could be restricted to only studies at low risk of bias, but if this is done, a sensitivity analysis should be conducted to compare the results with those including all of the studies. If all studies are included, the summary risk of bias should be incorporated into a <strong>certainty of evidence assessment</strong> (<a href="10_grade.html"><span>Chapter&nbsp;10</span></a>) (e.g., certainty of evidence would be lowered if many studies at high risk of bias).</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-bradtMusicInterventionsImproving2021" class="csl-entry" role="listitem">
+Bradt, Joke, Cheryl Dileo, Katherine Myers-Coffman, and Jacelyn Biondo. 2021. <span>“Music Interventions for Improving Psychological and Physical Outcomes in People with Cancer.”</span> <em>Cochrane Database of Systematic Reviews</em>, no. 10. <a href="https://doi.org/10.1002/14651858.CD006911.pub4">https://doi.org/10.1002/14651858.CD006911.pub4</a>.
+</div>
+<div id="ref-rojas-ruedaGreenSpacesMortality2019" class="csl-entry" role="listitem">
+Rojas-Rueda, David, Mark J. Nieuwenhuijsen, Mireia Gascon, Daniela Perez-Leon, and Pierpaolo Mudu. 2019. <span>“Green Spaces and Mortality: A Systematic Review and Meta-Analysis of Cohort Studies.”</span> <em>The Lancet Planetary Health</em> 3 (11): e469–77. <a href="https://doi.org/10.1016/S2542-5196(19)30215-3">https://doi.org/10.1016/S2542-5196(19)30215-3</a>.
+</div>
+<div id="ref-sterneRoBRevisedTool2019" class="csl-entry" role="listitem">
+Sterne, Jonathan A. C., Jelena Savović, Matthew J. Page, Roy G. Elbers, Natalie S. Blencowe, Isabelle Boutron, Christopher J. Cates, et al. 2019. <span>“<span>RoB</span> 2: <span>A</span> Revised Tool for Assessing Risk of Bias in Randomised Trials.”</span> <em>The BMJ</em> 366. <a href="https://doi.org/10.1136/bmj.l4898">https://doi.org/10.1136/bmj.l4898</a>.
+</div>
+<div id="ref-wilkerAmbientAirPollution2023" class="csl-entry" role="listitem">
+Wilker, Elissa H., Marwa Osman, and Marc G. Weisskopf. 2023. <span>“Ambient Air Pollution and Clinical Dementia: Systematic Review and Meta-Analysis.”</span> <em>BMJ</em> 381 (April): e071620. <a href="https://doi.org/10.1136/bmj-2022-071620">https://doi.org/10.1136/bmj-2022-071620</a>.
+</div>
+<div id="ref-youngEffectivenessFoodHandler2019" class="csl-entry" role="listitem">
+Young, Ian, Judy Greig, Barbara J. Wilhelm, and Lisa A. Waddell. 2019. <span>“Effectiveness of Food Handler Training and Education Interventions: A Systematic Review and Meta-Analysis.”</span> <em>Journal of Food Protection</em> 82 (10): 1714–28. <a href="https://doi.org/10.4315/0362-028X.JFP-19-108">https://doi.org/10.4315/0362-028X.JFP-19-108</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./4_selecting.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./6_extraction.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction and Outcome Measures</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">OH8004 Knowledge Synthesis: Course Website.</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">This book was built with <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

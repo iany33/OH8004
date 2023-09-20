@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>OH8004 Knowledge Synthesis in Occupational and Public Health - 6&nbsp; Data Extraction and Outcome Measures</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./7_analysis.html" rel="next">
+<link href="./5_bias.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./6_extraction.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction and Outcome Measures</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./OH8004.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">OH8004 Knowledge Synthesis in Occupational and Public Health</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/iany33/OH8004" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2_question.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Review Question and Eligibility Criteria</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_searching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Search Strategy</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4_selecting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5_bias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk-of-Bias Assessment</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6_extraction.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction and Outcome Measures</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./8_meta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Meta-Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./9_meta2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Subgroup Analysis, Meta-Regression, and Complex Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_grade.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Quality of Evidence and Reporting</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#types-of-outcomes-and-measures-of-effect" id="toc-types-of-outcomes-and-measures-of-effect" class="nav-link active" data-scroll-target="#types-of-outcomes-and-measures-of-effect"><span class="header-section-number">6.1</span> Types of Outcomes and Measures of Effect</a></li>
+  <li><a href="#unit-of-analysis" id="toc-unit-of-analysis" class="nav-link" data-scroll-target="#unit-of-analysis"><span class="header-section-number">6.2</span> Unit of Analysis</a></li>
+  <li><a href="#data-extraction-form" id="toc-data-extraction-form" class="nav-link" data-scroll-target="#data-extraction-form"><span class="header-section-number">6.3</span> Data Extraction Form</a></li>
+  <li><a href="#dichotomous-measures" id="toc-dichotomous-measures" class="nav-link" data-scroll-target="#dichotomous-measures"><span class="header-section-number">6.4</span> Dichotomous Measures</a></li>
+  <li><a href="#continuous-measures" id="toc-continuous-measures" class="nav-link" data-scroll-target="#continuous-measures"><span class="header-section-number">6.5</span> Continuous Measures</a></li>
+  <li><a href="#other-outcomes" id="toc-other-outcomes" class="nav-link" data-scroll-target="#other-outcomes"><span class="header-section-number">6.6</span> Other Outcomes</a></li>
+  <li><a href="#data-required-for-meta-analysis" id="toc-data-required-for-meta-analysis" class="nav-link" data-scroll-target="#data-required-for-meta-analysis"><span class="header-section-number">6.7</span> Data Required for Meta-Analysis</a>
+  <ul class="collapse">
+  <li><a href="#convert-confidence-interval-to-a-standard-error-se" id="toc-convert-confidence-interval-to-a-standard-error-se" class="nav-link" data-scroll-target="#convert-confidence-interval-to-a-standard-error-se"><span class="header-section-number">6.7.1</span> Convert Confidence Interval to a Standard Error (SE)</a></li>
+  <li><a href="#convert-se-for-each-group-to-a-sd-for-each-goup" id="toc-convert-se-for-each-group-to-a-sd-for-each-goup" class="nav-link" data-scroll-target="#convert-se-for-each-group-to-a-sd-for-each-goup"><span class="header-section-number">6.7.2</span> Convert SE for Each Group to a SD for Each Goup</a></li>
+  <li><a href="#convert-from-se-ci-t-value-or-p-value-to-a-sd-for-mean-differences" id="toc-convert-from-se-ci-t-value-or-p-value-to-a-sd-for-mean-differences" class="nav-link" data-scroll-target="#convert-from-se-ci-t-value-or-p-value-to-a-sd-for-mean-differences"><span class="header-section-number">6.7.3</span> Convert from SE, CI, t value, or P value to a SD for Mean Differences</a></li>
+  <li><a href="#conversions-to-a-standardized-mean-difference" id="toc-conversions-to-a-standardized-mean-difference" class="nav-link" data-scroll-target="#conversions-to-a-standardized-mean-difference"><span class="header-section-number">6.7.4</span> Conversions to a Standardized Mean Difference</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-extraction" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction and Outcome Measures</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>This section will cover the important considerations involved in extracting <strong>outcome data</strong> from the relevant studies. At this stage, it is important to consider the different possible outcome <strong>measures of effect</strong> that could be reported in the studies and which are of primary interest and relevance to your review question.</p>
+<p><img src="images/meme_de.jpg" class="img-fluid"></p>
+<section id="types-of-outcomes-and-measures-of-effect" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="types-of-outcomes-and-measures-of-effect"><span class="header-section-number">6.1</span> Types of Outcomes and Measures of Effect</h2>
+<p>A key first step in designing the outcome data extraction form and planning for analysis is to determine the relevant types of <strong>outcome data measures</strong> for the review. The most common types are listed below:</p>
+<ul>
+<li>Dichotomous (AKA binary)</li>
+<li>Continuous</li>
+<li>Ordinal</li>
+<li>Counts and rates</li>
+<li>Time-to-event (survival data)</li>
+</ul>
+<p>Each of these are discussed further below. For each study, we will want to either directly extract a <strong>measure of effect</strong> (i.e., effect measure, effect size) from the study, or extract the <strong>raw data</strong> and use that data to calculate a measure of effect. Typically, for reviews of RCTs, the raw data is sufficient for extraction (if available), as the randomization process should mitigate the impact of confounding bias. When extracting data from observational studies and non-randomization trials, typically the <em>adjusted</em> measure of effect should be extracted as it reduces to the impact of confounding variables. Additionally, it is preferable to extract measures of effect directly from RCTs that have adjusted for clustering or baseline measurements.</p>
+<p><strong>Measures of effect</strong> can be expressed as ratios (e.g., odds ratio, risk ratio, hazard ratio) or differences (e.g., mean difference, risk difference). For reviews of prevalence and incidence questions, the <strong>measure of effect</strong> is simply the prevalence or incidence point estimate(s) of interest.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ratio Measures of Effect
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ratio measures of effect, such as odds ratios, are analyzed on the natural log scale, so must be log-transformed for all studies prior to analysis.</p>
+</div>
+</div>
+</section>
+<section id="unit-of-analysis" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="unit-of-analysis"><span class="header-section-number">6.2</span> Unit of Analysis</h2>
+<p>When extracting outcomes from studies you will likely encounter <strong>unit-of-analysis issues</strong>. These are situations where outcomes are nested within larger units, or there are repeated measurements on the same participants, and this extra level of variation must be accounted for when conducting analysis. The following are common situations of this:</p>
+<ul>
+<li>The study has <strong>clusters</strong> (e.g., schools, communities) with outcomes measured and reported on participants within the cluster</li>
+<li>There are <strong>repeated measurements</strong> on participants (e.g., outcomes are reported at multiple follow-up periods)</li>
+<li>Each participant receives <strong>multiple treatments or interventions</strong></li>
+<li>There are <strong>multiple variations of the same outcome</strong> reported for participants in the same study</li>
+<li>There are <strong>multiple intervention groups</strong> compared in the same study</li>
+</ul>
+<p>Statistical approaches to address some of these issues will be covered in a later section.</p>
+</section>
+<section id="data-extraction-form" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="data-extraction-form"><span class="header-section-number">6.3</span> Data Extraction Form</h2>
+<p>The <strong>data extraction form</strong> should be designed so that multiple outcomes can be extracted for each study. The suggested approach is to pre-determine <strong>outcome categories</strong> for analysis based on your review question. These should represent specific groups of similar outcomes that will combined together in the same analysis. You can also include additional questions on the form that might have <em>difference responses for different outcome categories</em> (e.g., how the outcome was measured). You may also have different categories for intervention or exposure groups of interest.</p>
+<p>An example of a data extraction form from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> is <a href="https://docs.google.com/document/d/1Voi7-t3a_uplIEGT254yw5LyI42cCAof/edit?usp=sharing&amp;ouid=103236720816475008712&amp;rtpof=true&amp;sd=true">available for download here</a>.</p>
+</section>
+<section id="dichotomous-measures" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="dichotomous-measures"><span class="header-section-number">6.4</span> Dichotomous Measures</h2>
+<p><strong>Dichotomous outcomes</strong> are those with only two possibilities (e.g., disease positive or disease negative). Two common measures of effect for these outcomes are <strong>odds ratios</strong> (OR) and <strong>risk ratios</strong> (RR). An RR is a ratio of the risk of the event in each group, while the OR is ratio of the odds of event (compared to a non-event) in each group. The table below shows how these two measures are calculated:</p>
+<table class="table">
+<caption>2 X 2 table for an intervention study</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th>Event</th>
+<th>Non-Event</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intervention</td>
+<td>A</td>
+<td>B</td>
+<td><span class="math inline">\({N_1}\)</span></td>
+</tr>
+<tr class="even">
+<td>Control</td>
+<td>C</td>
+<td>D</td>
+<td><span class="math inline">\({N_2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[
+\text{RR} = \frac{\text{A}/{N_1}}{\text{C}/{N_2}}
+\]</span></p>
+<p><span class="math display">\[
+\text{OR} = \frac{\text{A}/{B}}{\text{C}/{D}}
+\]</span></p>
+<p>The RR and the OR are only similar when the event is rare.</p>
+<p>Another possible measure for dichotomous outcomes is the <strong>risk difference</strong> (RD). This measure reflects the difference between the two observed groups risks. The practical significance of the RD depends greatly on the baseline risk of the event in the population.</p>
+<p><span class="math display">\[
+\text{RD} = \left(\frac{\text{A}}{N_1}\right)-\left(\frac{\text{C}}{N_2}\right)
+\]</span></p>
+<p>To conduct a meta-analysis of dichotomous data, we typically need one of the following sets of values for the intervention (or association) effect:</p>
+<ul>
+<li>Numerator and denominator in each group</li>
+<li>Proportion + EITHER numerator or denominator in each group, or</li>
+<li>Measure of effect (e.g., OR, RR) + a measure of variability</li>
+</ul>
+</section>
+<section id="continuous-measures" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="continuous-measures"><span class="header-section-number">6.5</span> Continuous Measures</h2>
+<p><strong>Continuous outcomes</strong> can theoretically take any value within a specified range. The two most common measures of effect for continuous data are the <strong>mean difference</strong> (MD) and the <strong>standardization mean difference</strong> (SMD).</p>
+<p>The <strong>MD</strong> can be used when the outcome is reported on a meaningful scale (e.g., weight in kg, blood pressure in mmHg), and the <em>same scale is used in all studies</em>. This measure is easy and intuitive to interpret if possible to calculate.</p>
+<p>The <strong>SMD</strong> can be used when the studies in a SR measure the same outcome, but in different ways (e.g., different scales). The SMD is calculated by dividing a study’s mean different by its standard deviation (SD) to create an index. There are different SMD metrics, the most common of which is called <strong>Hedges’ g</strong>, which uses a pooled SD in the denominator based on outcome data in both groups being compared, and assuming that the SDs of the two groups are similar.</p>
+<p>For continuous data outcomes, we typically require the mean, sample size, and SD in each group to calculate either the MD or SMD. Alternatively, a pre-calculated measure of effect (e.g., MD) and its measure of variability (e.g., standard error) can also be used directly in a meta-analysis.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Change from baseline data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Some studies will report baseline and post-intervention values (often with different follow-up time points). It can be useful to extract both values if they are available and compare any differences. However, often the standard deviation (SD) of the change score is missing and needs to be <a href="https://training.cochrane.org/handbook/current/chapter-06#section-6-5-2-8">imputed or estimated to include the score in a meta-analysis</a>. This process involves many assumptions that should be evaluated through sensitivity analysis.</p>
+</div>
+</div>
+</section>
+<section id="other-outcomes" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="other-outcomes"><span class="header-section-number">6.6</span> Other Outcomes</h2>
+<p><strong>Ordinal outcomes</strong> occur when there are multiple, ordered categories of an outcome (e.g., low, moderate, and high knowledge levels). As the number of ordinal categories increases, they start to resemble continuous outcomes, and could potentially be analyzed using those methods. If there is an obvious cut-point, the categories could be combined and used in a dichotomous analysis. Otherwise, if the same categories are used across all studies, this outcome can be analyzed using a proportional odds model.</p>
+<p><strong>Count outcomes</strong> occur when the outcome can happen multiple times for each participant. These are usually expressed as <strong>rates</strong> (e.g., number of events per person-year), with the comparison of two rates being expressed as a rate ratio. The most common situation involving rate data is that studies directly report rate ratios and a measure of variability (e.g., standard error) from regression models, which can be extracted and combined in a meta-analysis.</p>
+<p><strong>Time-to-event outcomes</strong> refer to the measurement of the time elapsed until some event (e.g., death) is experienced (e.g., survival data). These data are usually analyzed in studies using survival analysis and expressed as a <strong>hazard ratio</strong> (HR). Hazard measures instantaneous risk and can change continuously over time. As above, studies usually report the HR and a measure of variability which can be extracted directly and included in a meta-analysis.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data Extraction Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider again the Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> systematic review about the effectiveness of food handler training interventions. <a href="https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing">Using three example articles</a>, identify the outcomes of interest in each study and which data should be extracted.</p>
+<ul>
+<li>How many relevant outcomes are reported in each study?</li>
+<li>Are any important outcomes or values (e.g., measures of variability) missing?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="data-required-for-meta-analysis" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="data-required-for-meta-analysis"><span class="header-section-number">6.7</span> Data Required for Meta-Analysis</h2>
+<p>If you are interested or planning to conduct a meta-analysis, data must be sufficiently reported in the article to allow calculation of a summary measure of effect and to allow inclusion in a meta-analysis. Often, many studies will be missing information on one of the common inputs required. However, we can thankfully use various formulas to estimate the missing information in many cases. Some common scenarios are highlighted below.</p>
+<section id="convert-confidence-interval-to-a-standard-error-se" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="convert-confidence-interval-to-a-standard-error-se"><span class="header-section-number">6.7.1</span> Convert Confidence Interval to a Standard Error (SE)</h3>
+<p>If only a 95% confidence interval (CI) is reported for an absolute measure of effect (e.g., standardized mean difference, risk difference), the SE can be calculated from the following formula:</p>
+<p><span class="math display">\[
+\text{SE} = \frac{(\text{Upper limit}-\text{Lower limit})}{3.92}
+\]</span></p>
+<p>For ratio measures (e.g., odds ratio, risk ratio), the upper and lower CI limits, and intervention effect estimate, should be on the natural log scale.</p>
+<p>The same formula can also be used to convert a CI of a mean value within each group (e.g., intervention, control) to its SE. However, in this case, if the sample size in each group is small (e.g., &lt;60), then the CIs should have been calculated using a t distribution and the divisor (3.92) <a href="https://training.cochrane.org/handbook/current/chapter-06#section-6-5-2-2">should be replaced by a different number from a t distribution</a>.</p>
+</section>
+<section id="convert-se-for-each-group-to-a-sd-for-each-goup" class="level3" data-number="6.7.2">
+<h3 data-number="6.7.2" class="anchored" data-anchor-id="convert-se-for-each-group-to-a-sd-for-each-goup"><span class="header-section-number">6.7.2</span> Convert SE for Each Group to a SD for Each Goup</h3>
+<p>If only a SE, and not a SD, is reported within each group being compared, the SD can be obtained from this formula:</p>
+<p><span class="math display">\[
+\text{SD} = \text{SE}\sqrt{N}
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example SE to SD conversion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can illustrate this conversion with some simulated data in <em>R</em>.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate some study data for meta-analysis</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">study_ID =</span> <span class="fu">as.factor</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">times =</span> <span class="dv">1</span>)),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">treat_mean =</span> <span class="fu">c</span>(<span class="fl">1.5</span>, <span class="fl">2.1</span>, <span class="fl">2.2</span>, <span class="fl">2.7</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">treat_SE =</span> <span class="fu">c</span>(<span class="fl">0.03</span>, <span class="fl">0.06</span>, <span class="fl">0.07</span>, <span class="fl">0.08</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">treat_n =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">50</span>, <span class="dv">70</span>, <span class="dv">60</span>),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">control_mean =</span> <span class="fu">c</span>(<span class="fl">1.3</span>, <span class="fl">1.8</span>, <span class="fl">2.0</span>, <span class="fl">2.2</span>),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">control_SE =</span> <span class="fu">c</span>(<span class="fl">0.03</span>, <span class="fl">0.07</span>, <span class="fl">0.07</span>, <span class="fl">0.09</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">control_n =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">50</span>, <span class="dv">70</span>, <span class="dv">50</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 7
+  study_ID treat_mean treat_SE treat_n control_mean control_SE control_n
+  &lt;fct&gt;         &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;
+1 1               1.5     0.03     100          1.3       0.03       100
+2 2               2.1     0.06      50          1.8       0.07        50
+3 3               2.2     0.07      70          2         0.07        70
+4 4               2.7     0.08      60          2.2       0.09        50</code></pre>
+</div>
+</div>
+<p>Now calculate a SD variable for each group using the formula above.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span> <span class="fu">mutate</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">treat_SD =</span> treat_SE<span class="sc">*</span><span class="fu">sqrt</span>(treat_n),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">control_SD =</span> control_SE<span class="sc">*</span><span class="fu">sqrt</span>(control_n)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="sc">-</span>treat_SE, <span class="sc">-</span>control_SE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 7
+  study_ID treat_mean treat_n control_mean control_n treat_SD control_SD
+  &lt;fct&gt;         &lt;dbl&gt;   &lt;dbl&gt;        &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+1 1               1.5     100          1.3       100    0.3        0.3  
+2 2               2.1      50          1.8        50    0.424      0.495
+3 3               2.2      70          2          70    0.586      0.586
+4 4               2.7      60          2.2        50    0.620      0.636</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="convert-from-se-ci-t-value-or-p-value-to-a-sd-for-mean-differences" class="level3" data-number="6.7.3">
+<h3 data-number="6.7.3" class="anchored" data-anchor-id="convert-from-se-ci-t-value-or-p-value-to-a-sd-for-mean-differences"><span class="header-section-number">6.7.3</span> Convert from SE, CI, t value, or P value to a SD for Mean Differences</h3>
+<p>When using the raw MD as the outcome, missing SD values can be estimated from a SE, CI, t value, or P value. These conversions assume that the SD values are the same in both groups being compared.</p>
+<p>To calculate the t value from a P value (from a t-test), we can use the <code>qt</code> function, inputting the P value first (divided by 2), and the degrees of freedom next (equal to the sample size in each group minus 2). For example, for a study with a P value of 0.03 and a sample size of 20 in each group, we could use this formula:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qt</span>(<span class="at">p=</span><span class="fl">0.03</span><span class="sc">/</span><span class="dv">2</span>, <span class="at">df=</span><span class="dv">40-2</span>, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.254648</code></pre>
+</div>
+</div>
+<p>To convert from a t value to a SE, we can use the following formula:</p>
+<p><span class="math display">\[
+\text{SE} = |\frac{\text{MD}}{\text{t value}}|
+\]</span></p>
+<p>The SE can then be converted to a within-group SD using the following formula, where <span class="math inline">\(N_1\)</span> and <span class="math inline">\(N_2\)</span> represent the sample size in each group:</p>
+<p><span class="math display">\[
+\text{SD} = \frac{\text{SE}}{\sqrt{\frac{1}{N_1}+{\frac{1}{N_2}}}}
+\]</span></p>
+<p>The SD is the average of the SDs of each group, and should be entered for both groups.</p>
+</section>
+<section id="conversions-to-a-standardized-mean-difference" class="level3" data-number="6.7.4">
+<h3 data-number="6.7.4" class="anchored" data-anchor-id="conversions-to-a-standardized-mean-difference"><span class="header-section-number">6.7.4</span> Conversions to a Standardized Mean Difference</h3>
+<p>There are various formulas available to convert from SEs, ANOVA F values, t-test values, regression beta coefficients to SMD measures such as Hedges’ <em>g</em>, a log odds ratio, or a correlation coefficient <em>r</em>.</p>
+<p>These use formulas from the <a href="http://mason.gmu.edu/~dwilsonb/downloads/esformulas.pdf">practical meta-analysis effect size calculator</a> and are implemented in the <a href="https://cran.r-project.org/web/packages/esc/"><strong>esc</strong></a> package in <em>R</em>. Some examples are given in the <a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/es-calc.html">Doing Meta-Analysis in R</a> online textbook.</p>
+<p>Two examples are shown below for a one-way ANOVA F test and for a <span class="math inline">\(chi^2\)</span> test.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example F Test and <span class="math inline">\(chi^2\)</span> Test Converison
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose we have a study that only reports the F value from a one-way ANOVA test, instead of means and SDs within each group or a MD value. If the F value is 6.23, and the sample size is 190 in the intervention group and 80 in the control group, we can calculate the SMD (as Hedges’ <em>g</em>) as follows:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(esc)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">esc_f</span>(<span class="at">f =</span> <span class="fl">6.23</span>, <span class="at">grp1n =</span> <span class="dv">190</span>, <span class="at">grp2n =</span> <span class="dv">80</span>, <span class="at">es.type =</span> <span class="st">"g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Effect Size Calculation for Meta Analysis
+
+     Conversion: F-value (one-way-Anova) to effect size Hedges' g
+    Effect Size:   0.3317
+ Standard Error:   0.1340
+       Variance:   0.0180
+       Lower CI:   0.0690
+       Upper CI:   0.5945
+         Weight:  55.6542</code></pre>
+</div>
+</div>
+<p>Similarly, if we had study that only reported a <span class="math inline">\(chi^2\)</span> test value for a dichotomous association, we could convert that to a log odds ratio and its SE. Note that this conversion assumes a degrees of freedom of 1. For example, suppose the <span class="math inline">\(chi^2\)</span> value was 2.5 and the sample size was 20:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>esc <span class="ot">&lt;-</span> <span class="fu">esc_chisq</span>(<span class="at">chisq =</span> <span class="fl">2.5</span>, <span class="at">totaln =</span> <span class="dv">20</span>, <span class="at">es.type =</span> <span class="st">"logit"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>esc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Effect Size Calculation for Meta Analysis
+
+     Conversion: chi-squared-value to effect size logits
+    Effect Size:   1.3711
+ Standard Error:   0.8672
+       Variance:   0.7520
+       Lower CI:  -0.3285
+       Upper CI:   3.0707
+         Weight:   1.3298</code></pre>
+</div>
+</div>
+<p>We can then load the data from the saved object into the applicable row in the dataset. For example, suppose the previous conversion was conducted for Study 3 as per the mock dataset below:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">study_ID =</span> <span class="fu">as.factor</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">times =</span> <span class="dv">1</span>)),</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">log_or =</span> <span class="fu">c</span>(<span class="fl">1.1</span>, <span class="fl">0.8</span>, <span class="cn">NA</span>),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">log_se =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.04</span>, <span class="cn">NA</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">150</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>data2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  study_ID log_or log_se     n
+  &lt;fct&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 1           1.1   0.05   100
+2 2           0.8   0.04   150
+3 3          NA    NA      150</code></pre>
+</div>
+</div>
+<p>We can then use the following code to insert the saved conversion values into the applicable columns for Study 3:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data2<span class="sc">$</span>log_or[<span class="st">"Study ID"</span> <span class="ot">=</span> <span class="dv">3</span>] <span class="ot">&lt;-</span> esc<span class="sc">$</span>es</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>data2<span class="sc">$</span>log_se[<span class="st">"Study ID"</span> <span class="ot">=</span> <span class="dv">3</span>] <span class="ot">&lt;-</span> esc<span class="sc">$</span>se</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>data2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  study_ID log_or log_se     n
+  &lt;fct&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 1          1.1   0.05    100
+2 2          0.8   0.04    150
+3 3          1.37  0.867   150</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-youngEffectivenessFoodHandler2019" class="csl-entry" role="listitem">
+Young, Ian, Judy Greig, Barbara J. Wilhelm, and Lisa A. Waddell. 2019. <span>“Effectiveness of Food Handler Training and Education Interventions: A Systematic Review and Meta-Analysis.”</span> <em>Journal of Food Protection</em> 82 (10): 1714–28. <a href="https://doi.org/10.4315/0362-028X.JFP-19-108">https://doi.org/10.4315/0362-028X.JFP-19-108</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./5_bias.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk-of-Bias Assessment</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./7_analysis.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">OH8004 Knowledge Synthesis: Course Website.</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">This book was built with <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>
