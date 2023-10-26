@@ -232,3 +232,15 @@ data2$log_se["Study ID" = 3] <- esc$se
 data2
 ```
 :::
+
+::: callout-tip
+## Data Conversions Exercise
+
+Using the systematic review article you identified earlier in the course, review the article to examine whether meta-analysis was conducted. If it wasn't, you can answer the following questions based on this systematic review and meta-analysis of the effectiveness of workplace mindfulness training interventions [@bartlettSystematicReviewMetaanalysis2019]. Consider the following questions for the article analyzed:
+
+- What was the main outcome measure extracted and analyzed?
+- Did the authors report whether any data conversions were necessary? If so, which ones, how many, and how were they conducted?
+- Did the authors provide any references or rationale for any conversions conducted?
+- Were any sensitivity analyses conducted related to the data conversions or assumptions made?
+:::
+

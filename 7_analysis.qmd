@@ -122,8 +122,7 @@ Assuming an overall true effect of $\theta$, under a **fixed-effect** model, the
 
 $$
 \hat{\theta_j} = \theta + \epsilon_j
-$$
-Studies are then **weighted** by the *inverse* of the variance (which is equal to the SE squared). For study *j*, the weight would be calculated as follows:
+$$ Studies are then **weighted** by the *inverse* of the variance (which is equal to the SE squared). For study *j*, the weight would be calculated as follows:
 
 $$
 {W_j} = \frac{1}{SE_j^2}
@@ -147,7 +146,7 @@ $$
 {W_j} = \frac{1}{{SE_j^2}+{\tau^2}}
 $$
 
-The adjusted weight is then used to calculate the weighted average measure of effect. There are several methods to estimate $\tau^2$. The most famous is called the **DerSimonian-Laird (DL)** method. This method has straightforward calculations, and is often the default method in various software packages. However, this method can be biased and results in confidence intervals that are too narrow when the number of studies is small and heterogeneity is high. 
+The adjusted weight is then used to calculate the weighted average measure of effect. There are several methods to estimate $\tau^2$. The most famous is called the **DerSimonian-Laird (DL)** method. This method has straightforward calculations, and is often the default method in various software packages. However, this method can be biased and results in confidence intervals that are too narrow when the number of studies is small and heterogeneity is high.
 
 Based on simulation studies, the **restricted maximum likelihood estimator (REML)** approach seems to be good choice for *continuous* outcome data [@langanComparisonHeterogeneityVariance2019; @veronikiMethodsEstimateBetweenstudy2016]. For **dichotomous** (binary) outcome data, **Paule-Mandel estimator**, or the **Empirical Bayes** method, seems to be good choice. You can always conduct a sensitivity analysis to compare with other approaches or the standard DL method.
 
@@ -162,9 +161,8 @@ In contrast, **random-effects** models are more appropriate when there are diffe
 ::: callout-tip
 ### Meta-Analysis Exercise
 
-Using the systematic review article you identified earlier, review the article to examine whether meta-analysis was conducted. If not, search for another paper that conducted meta-analysis. Consider the following questions for the article analyzed:
+Using the systematic review article you identified earlier in the course, review the article to examine whether meta-analysis was conducted. If not, search for another paper on the topic that conducted meta-analysis or examine one of the other example articles given in @sec-refs. Consider the following questions for the article analyzed:
 
-- Did they conduct a fixed-effect or random-effects model, and what rationale (if any) was given for the choice?
-- If a random-effects model was used, which method was used to estimate $\tau^2$?
+-   Did they conduct a fixed-effect or random-effects model, and what rationale (if any) was given for the choice?
+-   If a random-effects model was used, which method was used to estimate $\tau^2$?
 :::
-
