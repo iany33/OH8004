@@ -96,7 +96,7 @@ In systematic reviews, the **unit of analysis** is individual *studies*, which m
 
 **Language** of articles is another important consideration. Limiting inclusion to only articles in English can lead to a language bias. While practical considerations may limit ability to review in additional languages, it is important to at least capture such articles in the search strategy (if possible) and report on the number of articles excluded due to language. The role of language and the impact of excluding non-English articles [likely depends on the specific topic being investigated](https://doi.org/10.1016/j.jclinepi.2004.08.021). 
 
-Tools such as [Google Translate have been found to be quite reliable for data extraction in systematic reviews](https://doi.org/10.7326/M19-0891), while capabilities and other tools (e.g., large language AI models) likely to continue to improve in the future. 
+Tools such as Google Translate [have been found to be quite reliable for data extraction in systematic reviews](https://doi.org/10.7326/M19-0891). These translation capabilities and other tools (e.g., large language AI models) are likely to continue to improve in the future. 
 
 ::: callout-tip
 ## Review Question and Eligibility Criteria Exercise
