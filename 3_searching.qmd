@@ -13,17 +13,19 @@ The most important place to search for potentially relevant studies for a system
 -   **Scopus**: is a multi-disciplinary database that covers multiple research fields, including all journals indexed in MEDLINE. It covers \>14,000 scholarly sources.
 -   **Web of Science**: is another multi-disciplinary database containing references from \>8500 international research journals.
 
-In addition to the above, subject-specific and specialized databases may be useful to search depending on the topic. Examples of these include: **PsycINFO** for psychological literature, **CINAHL** for nursing and allied health literature, **OSH References Collection** for occupational health and safety literature, and **Food Science and Technology Abstracts** for food safety and nutrition literature.
+In addition to the above, subject-specific and specialized databases may be useful to search depending on the topic. Examples of these include: **PsycINFO** for psychological literature, **CINAHL** for nursing and allied health literature, **OSH References Collection** for occupational health and safety literature, and **Food Science and Technology Abstracts** for food safety and nutrition literature. There are no specific rules for the number of databases to include, as this will depend on the review question, topic, and other factors, but typically reviews might search 3-7 different databases.
 
 ## Search Algorithm
 
 A **search algorithm** needs to be developed based on the review question, and implemented in each bibliographic database. The algorithm should be developed and tested in *one* of the databases before being adapted to the other databases. Developing a search algorithm for a systematic review is very complex and librarian assistance is **strongly recommended**.
 
+Prior to developing a search algorithm, it is useful to identify some **seed articles** (i.e., examples of relevant articles). These are articles that you would expect to identify and include as relevant in your review based on the review question and eligibility criteria. Specifically, the title, abstract, and keywords of these articles should be reviewed to identify **keywords** that can be used to build the search algorithm. The keywords can also be used to help develop **controlled vocabulary** terms (see below for more details). Once the algorithm is fully developed, it should be tested in a database to ensure that it captures each of the seed articles.
+
 The search algorithm should aim to balance *sensitivity* (i.e, the proportion of relevant studies identified from all relevant studies) with *precision* (i.e, the proportion of relevant studies identified from all studies/references identified). Increasing the sensitivity of the search will reduce its precision, and lead to a need to review more references.
 
-The search algorithm will typically include combinations of search terms for each category of the question. For example, an intervention review would have search terms related to the **population**, the **intervention**, and the **outcome**, with additional potential terms for the **topic or setting** or other criteria. Within each category, terms are combined with the OR Boolean operator, and across categories with the AND operator. 
+The search algorithm will typically include combinations of search terms for each category of the question. For example, an intervention review would have search terms related to the **population**, the **intervention**, and the **outcome**, with additional potential terms for the **topic or setting** or other criteria. Within each category, terms are combined in parentheses (or through multiple individual searches) with the OR Boolean operator, and across categories with the AND operator. A NOT operator can also be used to exclude specific terms, but should be used with caution. To search for an extra phrase, it should be placed within quotation marks (e.g., "food safety", "occupational health").
 
-::: {.callout-tip}
+::: callout-tip
 ## Example Search Algorithms
 
 An example search algorithm from Young et al. [-@youngEffectivenessFoodHandler2019] is shown below:
@@ -33,12 +35,11 @@ An example search algorithm from Young et al. [-@youngEffectivenessFoodHandler20
 Another example is shown below for an occupational health risk factor review [@ehrlichAssociationSilicaExposure2021], as implemented in PubMed:
 
 ![](images/search_example2.png)
-
 :::
 
 In addition to the Boolean operators above, you can also consider **proximity** operators, which will search for a word within a certain number of places of another word (e.g., *food adj3 safety* in the OVID platform will search for those terms within three places of other).
 
-Many databases have **controlled vocabulary** (i.e., standardized subject terms) that should also be searched as part of the search strategy in addition to text words (i.e., keywords). In MEDLINE, these are called **MeSH** terms.
+Many databases have **controlled vocabulary** (i.e., standardized subject terms) that should also be searched as part of the search strategy in addition to text words (i.e., keywords). In MEDLINE, these are called [**MeSH** terms](https://www.ncbi.nlm.nih.gov/mesh/). Finally, specific limits can be placed on certain search fields, such as publication dates or languages, if desired. The approach to implement such limits varies by database. An [example of implementing a complex search in MEDLINE accessed through OVID is available here](https://hslmcmaster.libguides.com/c.php?g=716883&p=5113578).
 
 ::: {callout-note}
 ## MeHS Headings Examples
@@ -48,7 +49,7 @@ You can see all MeSH terms related to *public health* in [the following tree bra
 If using the PubMed interface, you can include a MeSH term in your search by adding 'MeSH' in square brackets beside the term (e.g., "Public Health"\[Mesh\]).
 :::
 
-For text word searches, you should account for spelling variations and plural forms of words. For example, an asterisk symbol `*` is often used at the end of a word to capture all variant endings of the word (e.g., practice\* will capture practices, practicing, practiced, etc.) Other *wildcard* terms can also be used to capture variant spellings. For example, in OVID, `#` in place of a letter will search for any letter in that spot (e.g., *wom#n* will search for woman and women).
+For text word searches, you should account for spelling variations and plural forms of words. For example, an asterisk symbol `*` is often used at the end of a word to capture all variant endings of the word (e.g., practice\* will capture variations such as practices, practicing, practiced). Other *wildcard* terms can also be used to capture variant spellings. For example, in OVID, `#` in place of a letter will search for any letter in that spot (e.g., *wom#n* will search for woman and women).
 
 For additional guidance on these different search approaches, see the [McGill Library Knowledge Synthesis Search Guide](https://libraryguides.mcgill.ca/knowledge-syntheses/search-tips).
 
@@ -58,11 +59,21 @@ For additional guidance on these different search approaches, see the [McGill Li
 As each database has its own searching rules, subject headings, and differences, the algorithm will need to be adapted to each database. There is a useful online tool called [SRA Polyglot](https://iebh.github.io/sra-polyglot/) that can help translate search algorithms from one database to another.
 :::
 
+::: callout-tip
+## Keyword Exercise
+
+Using the article you identified for your homework exercise from the last two weeks, determine the following:
+
+-   The search algorithm used, including any specific Boolean operators used
+-   Whether any controlled vocabulary terms or search filters were used
+-   The number and types of databases that were searched
+:::
+
 ## Saving Search Results and De-duplication
 
 Once the searches are implemented, the records can be saved as RIS (or other) files and imported into a reference management program, systematic review management program, or de-duplication tool for de-duplication. Some databases have restrictions on how many references can be exported at once, in which case the results will need to be exported in batches. All results should be **documented**, including saving the exact algorithm used in each database, search dates, and number of hits in each database.
 
-Some systematic review management programs (see below) will automatically de-duplicate references (e.g., Covidence). Reference management programs (e.g., Zotero, Mendeley) can also be used for de-duplication, with the de-duplicated file exported and imported into the systematic review management program of choice. Finally, there is an online [**Systematic Review De-duplicator Tool**](https://sr-accelerator.com/#/deduplicator) that can be used for this purpose. 
+Some systematic review management programs (see below) will automatically de-duplicate references (e.g., Covidence). Reference management programs (e.g., Zotero, Mendeley) can also be used for de-duplication, with the de-duplicated file exported and imported into the systematic review management program of choice. Finally, there is an online [**Systematic Review De-duplicator Tool**](https://sr-accelerator.com/#/deduplicator) that can be used for this purpose.
 
 ::: callout-tip
 ## Search Exercise
@@ -71,11 +82,10 @@ Using [Scopus via the TMU Library](https://ezproxy.lib.torontomu.ca/login?url=ht
 
 `TITLE-ABS-KEY(("food safety" OR "food-borne" OR foodborne OR "food poisoning" OR “food hygiene” OR “safe food” OR HACCP) AND (handler* OR worker* OR employee* OR manager* OR chef* OR cater* OR vendor* OR staff OR service OR business* OR restaurant* OR premise* OR retail) AND (behaviour* OR behavior* OR practice* OR attitude* OR knowledge OR belief* OR perceive* OR perception OR understanding OR violation*) AND (intervention OR train* OR educat* OR course))`
 
-How many hits did you get?
-
-Try setting a publication date restriction to exclude publications from 2018 to present to approximately reproduce the original search (which was conducted in January, 2018). Now how many hits to do you get?
-
-Now save the results as an RIS file. When exporting, make sure you select the abstract and keywords fields to include in your exported file.
+-   How many hits did you get?
+-   Try setting a publication date restriction to exclude publications from 2018 to present to approximately reproduce the original search (which was conducted in January, 2018). Now how many hits to do you get?
+-   Now try saving the results as an RIS file. When exporting, make sure you select the abstract and keywords fields to include in your exported file. Try importing it into a reference management program such as Zotero Mendeley.
+-   Finally, how might you translate this search algorithm into MEDLINE (OVID)? [You can access MEDLINE through the TMU OVID account](https://library.torontomu.ca/eresource/ovid-databases/)? What MeSH terms might you use for this algorithm?
 :::
 
 ## Grey Literature
@@ -91,7 +101,7 @@ It may be useful to search for *grey literature* as part of your search strategy
 
 It is important to verify that your search did not miss any important studies. One common method used for verification is to **search the reference lists** of all of your relevant articles (this can be done after you have reached the data extraction stage). You can also search the reference lists of other literature review articles conducted on the same topic as your review.
 
-It is increasingly recommended to consider having your search strategy **peer reviewed** for accuracy before implementation. The [**Peer Review of Electronic Search Strategies (PRESS) Statement**](https://doi.org/10.1016/j.jclinepi.2016.01.021) can be used as a checklist for this purpose. 
+It is increasingly recommended to consider having your search strategy **peer reviewed** for accuracy before implementation. The [**Peer Review of Electronic Search Strategies (PRESS) Statement**](https://doi.org/10.1016/j.jclinepi.2016.01.021) can be used as a checklist for this purpose.
 
 ## Review Management
 
@@ -108,4 +118,7 @@ An example of a **Covidence** project and interface is shown below. TMU currentl
 
 ![](images/covidence.png)
 
+## Homework
+
+For next week, and to help with preparing your second assignment, identify a few different *seed articles* related to your proposed systematic review topic. Use these seed articles, along with your review question, to identify some keywords and keyword categories required to start building your search algorithm. We will discuss your findings at the start of next week's class. 
 
