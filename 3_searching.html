@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -76,7 +76,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -95,7 +96,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3_searching.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Search Strategy</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -112,7 +113,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">OH8004 Knowledge Synthesis in Occupational and Public Health</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/iany33/OH8004" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/iany33/OH8004" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -212,6 +213,7 @@ div.csl-indent {
   <li><a href="#grey-literature" id="toc-grey-literature" class="nav-link" data-scroll-target="#grey-literature"><span class="header-section-number">3.5</span> Grey Literature</a></li>
   <li><a href="#search-verification-and-peer-review" id="toc-search-verification-and-peer-review" class="nav-link" data-scroll-target="#search-verification-and-peer-review"><span class="header-section-number">3.6</span> Search Verification and Peer Review</a></li>
   <li><a href="#review-management" id="toc-review-management" class="nav-link" data-scroll-target="#review-management"><span class="header-section-number">3.7</span> Review Management</a></li>
+  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework"><span class="header-section-number">3.8</span> Homework</a></li>
   </ul>
 </nav>
     </div>
@@ -246,13 +248,14 @@ div.csl-indent {
 <li><strong>Scopus</strong>: is a multi-disciplinary database that covers multiple research fields, including all journals indexed in MEDLINE. It covers &gt;14,000 scholarly sources.</li>
 <li><strong>Web of Science</strong>: is another multi-disciplinary database containing references from &gt;8500 international research journals.</li>
 </ul>
-<p>In addition to the above, subject-specific and specialized databases may be useful to search depending on the topic. Examples of these include: <strong>PsycINFO</strong> for psychological literature, <strong>CINAHL</strong> for nursing and allied health literature, <strong>OSH References Collection</strong> for occupational health and safety literature, and <strong>Food Science and Technology Abstracts</strong> for food safety and nutrition literature.</p>
+<p>In addition to the above, subject-specific and specialized databases may be useful to search depending on the topic. Examples of these include: <strong>PsycINFO</strong> for psychological literature, <strong>CINAHL</strong> for nursing and allied health literature, <strong>OSH References Collection</strong> for occupational health and safety literature, and <strong>Food Science and Technology Abstracts</strong> for food safety and nutrition literature. There are no specific rules for the number of databases to include, as this will depend on the review question, topic, and other factors, but typically reviews might search 3-7 different databases.</p>
 </section>
 <section id="search-algorithm" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="search-algorithm"><span class="header-section-number">3.2</span> Search Algorithm</h2>
 <p>A <strong>search algorithm</strong> needs to be developed based on the review question, and implemented in each bibliographic database. The algorithm should be developed and tested in <em>one</em> of the databases before being adapted to the other databases. Developing a search algorithm for a systematic review is very complex and librarian assistance is <strong>strongly recommended</strong>.</p>
+<p>Prior to developing a search algorithm, it is useful to identify some <strong>seed articles</strong> (i.e., examples of relevant articles). These are articles that you would expect to identify and include as relevant in your review based on the review question and eligibility criteria. Specifically, the title, abstract, and keywords of these articles should be reviewed to identify <strong>keywords</strong> that can be used to build the search algorithm. The keywords can also be used to help develop <strong>controlled vocabulary</strong> terms (see below for more details). Once the algorithm is fully developed, it should be tested in a database to ensure that it captures each of the seed articles.</p>
 <p>The search algorithm should aim to balance <em>sensitivity</em> (i.e, the proportion of relevant studies identified from all relevant studies) with <em>precision</em> (i.e, the proportion of relevant studies identified from all studies/references identified). Increasing the sensitivity of the search will reduce its precision, and lead to a need to review more references.</p>
-<p>The search algorithm will typically include combinations of search terms for each category of the question. For example, an intervention review would have search terms related to the <strong>population</strong>, the <strong>intervention</strong>, and the <strong>outcome</strong>, with additional potential terms for the <strong>topic or setting</strong> or other criteria. Within each category, terms are combined with the OR Boolean operator, and across categories with the AND operator.</p>
+<p>The search algorithm will typically include combinations of search terms for each category of the question. For example, an intervention review would have search terms related to the <strong>population</strong>, the <strong>intervention</strong>, and the <strong>outcome</strong>, with additional potential terms for the <strong>topic or setting</strong> or other criteria. Within each category, terms are combined in parentheses (or through multiple individual searches) with the OR Boolean operator, and across categories with the AND operator. A NOT operator can also be used to exclude specific terms, but should be used with caution. To search for an extra phrase, it should be placed within quotation marks (e.g., “food safety”, “occupational health”).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -270,14 +273,14 @@ Example Search Algorithms
 </div>
 </div>
 <p>In addition to the Boolean operators above, you can also consider <strong>proximity</strong> operators, which will search for a word within a certain number of places of another word (e.g., <em>food adj3 safety</em> in the OVID platform will search for those terms within three places of other).</p>
-<p>Many databases have <strong>controlled vocabulary</strong> (i.e., standardized subject terms) that should also be searched as part of the search strategy in addition to text words (i.e., keywords). In MEDLINE, these are called <strong>MeSH</strong> terms.</p>
+<p>Many databases have <strong>controlled vocabulary</strong> (i.e., standardized subject terms) that should also be searched as part of the search strategy in addition to text words (i.e., keywords). In MEDLINE, these are called <a href="https://www.ncbi.nlm.nih.gov/mesh/"><strong>MeSH</strong> terms</a>. Finally, specific limits can be placed on certain search fields, such as publication dates or languages, if desired. The approach to implement such limits varies by database. An <a href="https://hslmcmaster.libguides.com/c.php?g=716883&amp;p=5113578">example of implementing a complex search in MEDLINE accessed through OVID is available here</a>.</p>
 </section>
 <section id="mehs-headings-examples" class="level2 {callout-note}" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="mehs-headings-examples"><span class="header-section-number">3.3</span> MeHS Headings Examples</h2>
 <p>You can see all MeSH terms related to <em>public health</em> in <a href="https://www.ncbi.nlm.nih.gov/mesh/68011634">the following tree branch</a>.</p>
 <p>If using the PubMed interface, you can include a MeSH term in your search by adding ‘MeSH’ in square brackets beside the term (e.g., “Public Health”[Mesh]).</p>
 </section>
-<p>For text word searches, you should account for spelling variations and plural forms of words. For example, an asterisk symbol <code>*</code> is often used at the end of a word to capture all variant endings of the word (e.g., practice* will capture practices, practicing, practiced, etc.) Other <em>wildcard</em> terms can also be used to capture variant spellings. For example, in OVID, <code>#</code> in place of a letter will search for any letter in that spot (e.g., <em>wom#n</em> will search for woman and women).</p>
+<p>For text word searches, you should account for spelling variations and plural forms of words. For example, an asterisk symbol <code>*</code> is often used at the end of a word to capture all variant endings of the word (e.g., practice* will capture variations such as practices, practicing, practiced). Other <em>wildcard</em> terms can also be used to capture variant spellings. For example, in OVID, <code>#</code> in place of a letter will search for any letter in that spot (e.g., <em>wom#n</em> will search for woman and women).</p>
 <p>For additional guidance on these different search approaches, see the <a href="https://libraryguides.mcgill.ca/knowledge-syntheses/search-tips">McGill Library Knowledge Synthesis Search Guide</a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -290,6 +293,24 @@ Search Algorithm Translation
 </div>
 <div class="callout-body-container callout-body">
 <p>As each database has its own searching rules, subject headings, and differences, the algorithm will need to be adapted to each database. There is a useful online tool called <a href="https://iebh.github.io/sra-polyglot/">SRA Polyglot</a> that can help translate search algorithms from one database to another.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Keyword Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using the article you identified for your homework exercise from the last two weeks, determine the following:</p>
+<ul>
+<li>The search algorithm used, including any specific Boolean operators used</li>
+<li>Whether any controlled vocabulary terms or search filters were used</li>
+<li>The number and types of databases that were searched</li>
+</ul>
 </div>
 </div>
 <section id="saving-search-results-and-de-duplication" class="level2" data-number="3.4">
@@ -308,9 +329,12 @@ Search Exercise
 <div class="callout-body-container callout-body">
 <p>Using <a href="https://ezproxy.lib.torontomu.ca/login?url=http://www.scopus.com/">Scopus via the TMU Library</a>, conduct an “Advanced document search” by reproducing the following algorithm from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span>.</p>
 <p><code>TITLE-ABS-KEY(("food safety" OR "food-borne" OR foodborne OR "food poisoning" OR “food hygiene” OR “safe food” OR HACCP) AND (handler* OR worker* OR employee* OR manager* OR chef* OR cater* OR vendor* OR staff OR service OR business* OR restaurant* OR premise* OR retail) AND (behaviour* OR behavior* OR practice* OR attitude* OR knowledge OR belief* OR perceive* OR perception OR understanding OR violation*) AND (intervention OR train* OR educat* OR course))</code></p>
-<p>How many hits did you get?</p>
-<p>Try setting a publication date restriction to exclude publications from 2018 to present to approximately reproduce the original search (which was conducted in January, 2018). Now how many hits to do you get?</p>
-<p>Now save the results as an RIS file. When exporting, make sure you select the abstract and keywords fields to include in your exported file.</p>
+<ul>
+<li>How many hits did you get?</li>
+<li>Try setting a publication date restriction to exclude publications from 2018 to present to approximately reproduce the original search (which was conducted in January, 2018). Now how many hits to do you get?</li>
+<li>Now try saving the results as an RIS file. When exporting, make sure you select the abstract and keywords fields to include in your exported file. Try importing it into a reference management program such as Zotero Mendeley.</li>
+<li>Finally, how might you translate this search algorithm into MEDLINE (OVID)? <a href="https://library.torontomu.ca/eresource/ovid-databases/">You can access MEDLINE through the TMU OVID account</a>? What MeSH terms might you use for this algorithm?</li>
+</ul>
 </div>
 </div>
 </section>
@@ -341,6 +365,10 @@ Search Exercise
 <p>Most of these programs require a subscription to use, though some may offer free trials or discounts for students (e.g., Covidence). Other non-subscription based options could include spreadsheets or online forms (e.g., Google Forms), but these would be challenging to use for larger projects and could be prone to errors.</p>
 <p>An example of a <strong>Covidence</strong> project and interface is shown below. TMU currently does not offer an institutional subscription to Covidence, though this may be provided in future years. Covidence does provide a free trial for students, which allows screening of up to 500 references and up to two reviewers per project. As such, it can be used for your course assignment 2.</p>
 <p><img src="images/covidence.png" class="img-fluid"></p>
+</section>
+<section id="homework" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="homework"><span class="header-section-number">3.8</span> Homework</h2>
+<p>For next week, and to help with preparing your second assignment, identify a few different <em>seed articles</em> related to your proposed systematic review topic. Use these seed articles, along with your review question, to identify some keywords and keyword categories required to start building your search algorithm. We will discuss your findings at the start of next week’s class.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
