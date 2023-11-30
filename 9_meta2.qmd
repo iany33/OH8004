@@ -25,7 +25,7 @@ pacman::p_load(
   here,       # loading data using relative path
   tidyverse,  # data management
   meta,       # meta-analysis
-  DT          # to visualize the dataset online
+  DT          # to visualize the dataset 
 )
 
 Hartmann_2018 <- import(here("assets", "Hartmann_2018.xlsx"))
@@ -159,6 +159,15 @@ bubble(Bradt_reg, studlab = TRUE)
 We will load data from the Young et al. [-@youngEffectivenessFoodHandler2019] systematic review and meta-analysis of the effectiveness of food handler training and education interventions. 
 
 ```{r}
+# First load necessary packages
+pacman::p_load(
+  rio,        # load in an Excel file
+  here,       # loading data using relative path
+  tidyverse,  # data management
+  meta,       # meta-analysis
+  DT          # to visualize the dataset 
+)
+
 Young_2019 <- import(here("assets", "Young_2019_ma.xlsx"))
 
 Young_2019 |> datatable(
@@ -411,12 +420,12 @@ In this example, we want to combine the two training interventions in Study 3. W
 
 ```{r}
 # Reference the required values below using the respective row numbers
-combined <- pool.groups(n1 = data[3,]$treat_n, 
-                        n2 = data[4,]$treat_n,
-                        m1 = data[3,]$treat_mean, 
-                        sd1 = data[3,]$treat_SD,
-                        m2 = data[4,]$treat_mean, 
-                        sd2 = data[4,]$treat_SD)
+combined <- pool.groups(n1 = data$treat_n["study_ID" = 3], 
+                        n2 = data$treat_n["study_ID" = 4],
+                        m1 = data$treat_mean["study_ID" = 3], 
+                        sd1 = data$treat_SD["study_ID" = 3],
+                        m2 = data$treat_mean["study_ID"=4], 
+                        sd2 = data$treat_SD["study_ID"=4])
 ```
 
 We can now create a new version of the dataframe, remove one of the treatment rows, and enter the new combined values in place of the previous intervention values.

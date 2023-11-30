@@ -43,7 +43,7 @@ pacman::p_load(
   here,       # loading data using relative path
   tidyverse,  # data management
   meta,       # meta-analysis
-  DT          # to visualize the dataset online
+  DT          # to visualize the dataset 
 )
 
 Bradt_2021 <- import(here("assets", "Bradt_2021.xlsx"))
@@ -247,6 +247,15 @@ Bradt_meta |> forest.meta(sortvar = TE,        # sort studies by effect size
 We will load data from the Young et al. [-@youngEffectivenessFoodHandler2019] systematic review and meta-analysis of the effectiveness of food handler training and education interventions. The dataset can be loaded and visualized as per below:
 
 ```{r}
+# First load necessary packages
+pacman::p_load(
+  rio,        # load in an Excel file
+  here,       # loading data using relative path
+  tidyverse,  # data management
+  meta,       # meta-analysis
+  DT          # to visualize the dataset 
+)
+
 Young_2019 <- import(here("assets", "Young_2019_ma.xlsx"))
 
 Young_2019 |> datatable(
