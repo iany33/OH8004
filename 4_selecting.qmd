@@ -71,6 +71,11 @@ Systematic management programs, such as **Covidence**, automatically calculate a
 
 ![](images/covidence_kappa.png)
 
+### Machine Learning for Relevance Screening
+
+Many systematic management programs have implemented or are developing **machine learning tools** to semi-automate the relevance screening process. The tools work by prioritizing the abstracts that are most likely to be included (*screening prioritization*), and suggesting a percentage that can be "safely" excluded (*screening truncation*), which can both enhance review efficiency. The screening truncation process usually uses a stopping rule or threshold, such as 95% estimated recall, after which point the review team can decide not to review the remaining references or to use a modified process (e.g., only one reviewer). 
+
+These tools requires careful training and pilot testing on a subset of abstracts (e.g., 2% of total abstracts) to ensure the algorithm can make more accurate predictions. Research has shown that such machine learning tools can perform with high accuracy and reliability, and can result in substantial time savings for review teams [@hamelEvaluationDistillerSRMachine2020; @tsouMachineLearningScreening2020]. [Recent guidance is available](https://doi.org/10.1186/s12874-021-01451-2) for reviewers who are interested to adopt these tools in their review [@hamelGuidanceUsingArtificial2021]. 
 
 ::: callout-tip
 ### Relevance Screening Exercise
