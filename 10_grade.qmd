@@ -1,6 +1,6 @@
 # Quality of Evidence and Reporting {#sec-grade}
 
-It is important to present the results of a systematic review and meta-analysis in a user-friendly and transparent way for knowledge users and decision-makers. **Summary of findings tables** have been developed by the Cochrane Collaboration as a standard format for summarize knowledge synthesis results. Such tables should incorporate a rating of the **certainty in evidence** for each specific outcome assessed in the review. The Cochrane Collaboration has developed an approach called **GRADE** (Grading of Recommendations Assessment, Development and Evaluation) to assess the certainty (or quality) of evidence for outcomes in a systematic review.
+It is important to present the results of a systematic review and meta-analysis in a user-friendly and transparent way for knowledge users and decision-makers. **Summary of findings tables** have been developed by the Cochrane Collaboration as a standard format for summarize knowledge synthesis results. Such tables should incorporate a rating of the **certainty in evidence** for each specific outcome assessed in the review. The Cochrane Collaboration has developed an approach called **GRADE** (Grading of Recommendations Assessment, Development and Evaluation) to assess the certainty (or quality) of evidence for outcomes in a systematic review. Finally, we will introduce different tools that can be used to critically appraise published systematic reviews.
 
 ![](images/meme_grade.jpg)
 
@@ -98,27 +98,27 @@ This criterion assesses whether the studies contributing evidence to a particula
 
 ### Imprecision
 
-If there is sufficient uncertainty about the magnitude and direction of the meta-analysis estimate, one can rate downgrade for **imprecision**. In the most recent suggested approach to this criterion [@schunemannGRADEGuidance352022], it is recommended to pre-identify key *thresholds* for what is a considered a small, moderate, or large effect for the outcome of interest. This imprecision assessment and the threshold should be on the *absolute* scale, so should use the **corresponding intervention risk** approach as described above. Then determine if you expect the meta-analysis effect will lie between two thresholds or beyond a threshold (e.g., small or greater). This is the target rating of the uncertainty. 
+If there is sufficient uncertainty about the magnitude and direction of the meta-analysis estimate, one can rate downgrade for **imprecision**. In the most recent suggested approach to this criterion [@schunemannGRADEGuidance352022], it is recommended to pre-identify key *thresholds* for what is a considered a small, moderate, or large effect for the outcome of interest. This imprecision assessment and the threshold should be on the *absolute* scale, so should use the **corresponding intervention risk** approach as described above. Then determine if you expect the meta-analysis effect will lie between two thresholds or beyond a threshold (e.g., small or greater). This is the target rating of the uncertainty.
 
-The next step is to assess whether the CI for the *corresponding intervention risk* crosses one or more threshold boundaries, and downgrade a number of levels for each threshold crossed. For example, if we set our target at detecting a small or greater effect, and the effect was moderate but the CI also include the null (zero effect), evidence would be downgraded one level for crossing below the "small" threshold. 
+The next step is to assess whether the CI for the *corresponding intervention risk* crosses one or more threshold boundaries, and downgrade a number of levels for each threshold crossed. For example, if we set our target at detecting a small or greater effect, and the effect was moderate but the CI also include the null (zero effect), evidence would be downgraded one level for crossing below the "small" threshold.
 
-For continuous outcomes, one can use the well-defined SMD thresholds of small = 0.2, moderate = 0.5, and large = 0.8 [@schunemannGRADEGuidance352022]. If analyzing a raw mean difference, one should use established thresholds for the outcome scale (if there are any), otherwise you can re-express the outcome as a SMD for the purposes of conducting the imprecision rating. 
+For continuous outcomes, one can use the well-defined SMD thresholds of small = 0.2, moderate = 0.5, and large = 0.8 [@schunemannGRADEGuidance352022]. If analyzing a raw mean difference, one should use established thresholds for the outcome scale (if there are any), otherwise you can re-express the outcome as a SMD for the purposes of conducting the imprecision rating.
 
 Note that when conducting random-effects meta-analysis, high heterogeneity can also cause imprecision (wide CIs), so authors may need to consider this and may decide to rate down only for inconsistency and not for imprecision (especially if the total number of participants across included studies is reasonably large). For example, to detect a SMD of at least 0.2, a sufficient sample size will often be 800 (400 per comparison group) [@schunemannGRADEGuidance352022].
 
 ### Publication bias
 
-The final downgrading criterion relates to possible **publication bias**. This criterion can be informed by a separate risk-of-bias assessment for missing data, as described in @sec-bias, to determine the extent that additional studies might have been excluded from the meta-analysis because they were not published. Evaluation of meta-analysis funnel plots and publication bias tests (if appropriate) can also inform this criterion. 
+The final downgrading criterion relates to possible **publication bias**. This criterion can be informed by a separate risk-of-bias assessment for missing data, as described in @sec-bias, to determine the extent that additional studies might have been excluded from the meta-analysis because they were not published. Evaluation of meta-analysis funnel plots and publication bias tests (if appropriate) can also inform this criterion.
 
 ### Upgrading criteria
 
-There are three possible criteria that could lead to increasing the GRADE rating for an outcome: large effect, dose response, or all plausible confounding and bias would reduce (rather than increase) the effect. However, it is rare that the evidence will meet the necessary criteria to be upgraded based on any of these factors. 
+There are three possible criteria that could lead to increasing the GRADE rating for an outcome: large effect, dose response, or all plausible confounding and bias would reduce (rather than increase) the effect. However, it is rare that the evidence will meet the necessary criteria to be upgraded based on any of these factors.
 
-**Large effects**: If evidence predominantly comes from well-conducted, low risk of bias studies and the effect estimate is large (e.g., RR>2 or <0.5), one could consider upgrading. 
+**Large effects**: If evidence predominantly comes from well-conducted, low risk of bias studies and the effect estimate is large (e.g., RR\>2 or \<0.5), one could consider upgrading.
 
-**Dose-response**: The presence of a dose-response gradient for the effect can increase confidence and certainty in the effect, potentially warranting upgrading. 
+**Dose-response**: The presence of a dose-response gradient for the effect can increase confidence and certainty in the effect, potentially warranting upgrading.
 
-**Plausible confounding**: Sometimes all plausible confounding factors would be expected to under-estimate the apparent effect estimate, which increases our confidence that the actual effect should be larger than what is reported. 
+**Plausible confounding**: Sometimes all plausible confounding factors would be expected to under-estimate the apparent effect estimate, which increases our confidence that the actual effect should be larger than what is reported.
 
 ::: callout-note
 ### GRADE Example
@@ -135,8 +135,17 @@ In this GRADE assessment, footnote 1 indicates the evidence was downgraded two l
 
 Using the systematic review of the association between long-term exposure to residential green spaces and mortality in adults [@rojas-ruedaGreenSpacesMortality2019], as investigated in the earlier exercise, we will now attempt to conduct a GRADE evaluation of the evidence contributing to the main all-cause mortality outcome.
 
-- [Review the article, including tables and figures](https://doi.org/10.1016/S2542-5196(19)30215-3), and come up with a proposed GRADE assessment for each of the five downgrading criteria. Note that you will need to [examine the supplementary material](https://www.thelancet.com/cms/10.1016/S2542-5196(19)30215-3/attachment/59042c24-c529-4f2a-833a-99ffcc7a4e2a/mmc1.pdf) for detailed results of the risk-of-bias and publication bias assessments.
-- Based on the information available, would you consider upgrading any levels based on the upgrading criteria?
-- What is your proposed overall GRADE rating for this outcome? 
+-   [Review the article, including tables and figures](https://doi.org/10.1016/S2542-5196(19)30215-3), and come up with a proposed GRADE assessment for each of the five downgrading criteria. Note that you will need to [examine the supplementary material](https://www.thelancet.com/cms/10.1016/S2542-5196(19)30215-3/attachment/59042c24-c529-4f2a-833a-99ffcc7a4e2a/mmc1.pdf) for detailed results of the risk-of-bias and publication bias assessments.
+-   Based on the information available, would you consider upgrading any levels based on the upgrading criteria?
+-   What is your proposed overall GRADE rating for this outcome?
 :::
 
+## Critical Appraisal of Systematic Reviews
+
+The **risk of bias** tools discussed in @sec-bias are designed for individual studies within a systematic review, while the **PRISMA** reporting guideline is primarily meant to assess the completeness and transparency of reporting of a systematic review to allow reproducibility. To **critically appraise** published systematic reviews, there are a few different tools that can be used:
+
+-   [AMSTAR 2](https://amstar.ca/Amstar-2.php): contains 16 individual assessment items, which contribute to an overall rating of confidence in the results of the review (critically low, low, moderate, or high) [@sheaAMSTARCriticalAppraisal2017].
+-   [ROBIS](https://www.bristol.ac.uk/population-health-sciences/projects/robis/robis-tool/): designed to assess risk of bias in systematic reviews through three phases (identifying relevance, identifying concerns with the review process, and judging risk of bias). The second phase covers numerous questions across four domains: study eligibility criteria, identification and selection of studies, data collection and study appraisal, and synthesis and findings [@whitingROBISNewTool2016]. The overall risk of bias is then determined as low, high, or unclear.
+-   [JBI Systematic Review Checklist](https://jbi.global/critical-appraisal-tools): contains 10 key questions to assess risk of bias in systematic reviews [@aromatarisSummarizingSystematicReviews2015].
+
+Recent studies have compared the AMSTAR 2 and ROBIS tools, finding that they are both valid, moderately reliable, and comparable [@lorenzPsychometricStudyFound2019; @perryComparisonTwoAssessment2021]. However, AMSTAR 2 is more straightforward and easier to use.
