@@ -50,7 +50,7 @@ Consider the following intervention review questions. Identify the PICO elements
 
 ### Etiology/Risk Factor Reviews
 
-These reviews assess the **association** between an exposure of interest and outcomes of interest. Review questions of this type can be defined using the **PECO** framework, which is similar to **PICO** but replaces the *intervention* with the *exposure* of interest. These review rely heavily on **observational studies** (e.g., cohort, case-control), so there are additional concerns related to possible biases that need to be considered at the risk of bias stage.
+These reviews assess the **association** between an exposure of interest and outcomes of interest. Review questions of this type can be defined using the **PECO** framework, which is similar to **PICO** but replaces the *intervention* with the *exposure* of interest. These reviews rely heavily on **observational studies** (e.g., cohort, case-control), so there are additional concerns related to possible biases that need to be considered at the risk of bias stage.
 
 **Exposures** could include a risk factor or other determinant of a health outcome. The time period or length of time of the exposure should also be specified if relevant.
 
