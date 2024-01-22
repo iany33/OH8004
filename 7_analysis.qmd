@@ -116,13 +116,14 @@ In a systematic review about the prevalence of knowledge, practices, and trainin
 
 Meta-analysis is a **statistical technique** that involves combining the measure of effect for each study along with its weight to calculate a weighted average of the measure of effect. Each study receives a **weight** based on its standard error (SE), so studies with greater precision (i.e., less error) receive more weight. There are two main approaches to meta-analysis, which determine how weights are calculated: fixed-effect and random-effects.
 
-A **fixed-effect** meta-analysis assumes there is one *true effect size* among all of the included studies, and that any observed differences in the effects are due only to sampling error. In contrast, **random-effects** meta-analysis models assume that the study effects represent a random sample of possible effect sizes (that usually follows a normal distribution). The null hypothesis under a fixed-effect model is that *there is zero effect in every study*, while for a random-effects model the null hypothesis is that *average effect is zero*. Both models will give identical results when there is no statistical heterogeneity among the studies.
+A **fixed-effect** meta-analysis assumes there is one *true effect size* among all of the included studies, and that any observed differences in the effects are due only to sampling error. In contrast, **random-effects** meta-analysis models assume that the study effects represent a random sample of possible effect sizes (that usually follows a normal distribution). The null hypothesis under a fixed-effect model is that *there is zero effect in every study*, while for a random-effects model the null hypothesis is that the *average effect is zero*. Both models will give identical results when there is no statistical heterogeneity among the studies.
 
 Assuming an overall true effect of $\theta$, under a **fixed-effect** model, the observed effect of study *j*, $\theta_j$, differs from the overall true effect only because of its sampling error ($\epsilon_j$):
 
 $$
 \hat{\theta_j} = \theta + \epsilon_j
-$$ Studies are then **weighted** by the *inverse* of the variance (which is equal to the SE squared). For study *j*, the weight would be calculated as follows:
+$$ 
+Studies are then **weighted** by the *inverse* of the variance (which is equal to the SE squared). For study *j*, the weight would be calculated as follows:
 
 $$
 {W_j} = \frac{1}{SE_j^2}
@@ -148,7 +149,7 @@ $$
 
 The adjusted weight is then used to calculate the weighted average measure of effect. There are several methods to estimate $\tau^2$. The most famous is called the **DerSimonian-Laird (DL)** method. This method has straightforward calculations, and is often the default method in various software packages. However, this method can be biased and results in confidence intervals that are too narrow when the number of studies is small and heterogeneity is high.
 
-Based on simulation studies, the **restricted maximum likelihood estimator (REML)** approach seems to be good choice for *continuous* outcome data [@langanComparisonHeterogeneityVariance2019; @veronikiMethodsEstimateBetweenstudy2016]. For **dichotomous** (binary) outcome data, **Paule-Mandel estimator**, or the **Empirical Bayes** method, seems to be good choice. You can always conduct a sensitivity analysis to compare with other approaches or the standard DL method.
+Based on simulation studies, the **restricted maximum likelihood estimator (REML)** approach seems to be good choice for *continuous* outcome data [@langanComparisonHeterogeneityVariance2019; @veronikiMethodsEstimateBetweenstudy2016]. For **dichotomous** (binary) outcome data, the **Paule-Mandel estimator** or the **Empirical Bayes** method seem to be good choices. You can always conduct a sensitivity analysis to compare with other approaches or the standard DL method.
 
 Additionally, it is generally recommended to apply **Knapp-Hartung adjustments** if the option is available, as this method widens the confidence interval of the weighted measure of effect to account for uncertainty in the estimation of $\tau^2$.
 
@@ -156,7 +157,7 @@ Additionally, it is generally recommended to apply **Knapp-Hartung adjustments**
 
 Fixed-effect models are **usually not appropriate** for reviews in occupational and public health, as they assume that all studies are essentially identical, which is usually only the case under highly controlled and replicable conditions. The results from such an analysis are only applicable to the participants in each study, and cannot be generalized for other populations.
 
-In contrast, **random-effects** models are more appropriate when there are differences across studies beyond what we would expect from sampling error alone (e.g., differences in interventions, populations, how outcomes are measured). However, this approach gives more weight to smaller studies, which can exacerbate potential biases that may be present in smaller studies. Additionally, if the number of included studies is very small, the estimate of between-study variance $\tau^2$ will have poor precision and is less reliable. Unfortunately, there is no clear guidance which approach should be used in this situation; Bayesian methods are one approach but require more advanced expertise.
+In contrast, **random-effects** models are more appropriate when there are differences across studies beyond what we would expect from sampling error alone (e.g., differences in interventions, populations, how outcomes are measured). However, this approach gives more weight to smaller studies, which can exacerbate potential biases that may be present in smaller studies. Additionally, if the number of included studies is very small, the estimate of between-study variance $\tau^2$ will have poor precision and is less reliable. Unfortunately, there is no clear guidance which approach should be used in this situation; *Bayesian methods* are one approach but require more advanced expertise.
 
 ::: callout-tip
 ### Meta-Analysis Exercise

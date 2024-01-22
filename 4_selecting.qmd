@@ -94,7 +94,7 @@ You should be able to identify most PDFs using a combination of simple Google Se
 
 Occasionally, you may need to search for TMU access to the specific journal of interest, then search for the paper in specific databases if the global search does not find the paper(s) you need.
 
-In cases where you cannot find the paper via these methods, you can ask the librarian for assistance, or make a special request for the paper through the [Interlibrary Loan Service: RACER](https://library.torontomu.ca/services/ill/).
+In cases where you cannot find the paper via these methods, you can ask the librarian for assistance, or make a special request for the paper through the [Interlibrary Loan Service](https://library.torontomu.ca/services/ill/).
 :::
 
 ## Article Characterization

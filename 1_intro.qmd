@@ -59,7 +59,7 @@ Review the checklist and compare to the relevant sections of the article. Was ea
 The following organizations are important resources for knowledge synthesis research:
 
 - [The Cochrane Collaboration](https://www.cochrane.org/) publishes the [Handbook of Systematic Reviews of Interventions](https://training.cochrane.org/handbook), as well as systematic reviews of various healthcare and related topics in the [Cochrane Library](https://www.cochranelibrary.com/).\
-- [The Joanna Briggs Collaboration](https://joannabriggs.org/) has published a [Manual for Evidence Synthesis](https://jbi-global-wiki.refined.site/space/MANUAL) of different types of reviews and questions. Of particular note are [critical appraisal tools](https://jbi.global/critical-appraisal-tools) for various types of study designs. 
+- [The Joanna Briggs Institute](https://joannabriggs.org/) has published a [Manual for Evidence Synthesis](https://jbi-global-wiki.refined.site/space/MANUAL) of different types of reviews and questions. Of particular note are [critical appraisal tools](https://jbi.global/critical-appraisal-tools) for various types of study designs. 
 - [The McGill Library](https://libraryguides.mcgill.ca/knowledge-syntheses/home) has compiled numerous resources and suggested articles related to the process of conducting a knowledge synthesis.
 
 ## Homework

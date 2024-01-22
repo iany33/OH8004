@@ -85,7 +85,7 @@ Using [Scopus via the TMU Library](https://ezproxy.lib.torontomu.ca/login?url=ht
 -   How many hits did you get?
 -   Try setting a publication date restriction to exclude publications from 2018 to present to approximately reproduce the original search (which was conducted in January, 2018). Now how many hits to do you get?
 -   Now try saving the results as an RIS file. When exporting, make sure you select the abstract and keywords fields to include in your exported file. Try importing it into a reference management program such as Zotero Mendeley.
--   Finally, how might you translate this search algorithm into MEDLINE (OVID)? [You can access MEDLINE through the TMU OVID account](https://library.torontomu.ca/eresource/ovid-databases/)? What MeSH terms might you use for this algorithm?
+-   Finally, how might you translate this search algorithm into MEDLINE (OVID)? [You can access MEDLINE through the TMU OVID account](https://library.torontomu.ca/eresource/ovid-databases/). What MeSH terms might you use for this algorithm?
 :::
 
 ## Grey Literature
