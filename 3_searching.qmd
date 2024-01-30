@@ -84,7 +84,7 @@ Using [Scopus via the TMU Library](https://ezproxy.lib.torontomu.ca/login?url=ht
 
 -   How many hits did you get?
 -   Try setting a publication date restriction to exclude publications from 2018 to present to approximately reproduce the original search (which was conducted in January, 2018). Now how many hits to do you get?
--   Now try saving the results as an RIS file. When exporting, make sure you select the abstract and keywords fields to include in your exported file. Try importing it into a reference management program such as Zotero Mendeley.
+-   Now try saving the results as an RIS file. When exporting, make sure you select the abstract and keywords fields to include in your exported file. Try importing it into a reference management program such as Zotero or Mendeley.
 -   Finally, how might you translate this search algorithm into MEDLINE (OVID)? [You can access MEDLINE through the TMU OVID account](https://library.torontomu.ca/eresource/ovid-databases/). What MeSH terms might you use for this algorithm?
 :::
 
@@ -92,7 +92,7 @@ Using [Scopus via the TMU Library](https://ezproxy.lib.torontomu.ca/login?url=ht
 
 It may be useful to search for *grey literature* as part of your search strategy. This may help to identify studies that are not published in peer-reviewed journal articles, or those not indexed in major bibliographic databases. Some grey literature search options are noted below:
 
--   **Google search**: a series of simple Google searches may help to identify unpublished studies. The search algorithm will need to be simplified for these searches. Limits will need to be placed on the number of hits reviewed (e.g., top 50-100) to be this manageable and balance disminishing returns.
+-   **Google search**: a series of simple Google searches may help to identify unpublished studies. The search algorithm will need to be simplified for these searches. Limits will need to be placed on the number of hits reviewed (e.g., top 50-100) to be this manageable and balance diminishing returns.
 -   **Google Scholar**: this will specifically search for scholarly publications, most of which should be captured by your bibliographic database search, but could uncover additional studies.
 -   **OpenGrey**: this is a [grey literature database](https://opengrey.eu/) in Europe that contains reports, dissertations, and other types of research documents.
 -   **Targeted websites of organizations**: you can search through the websites of specific organizations (e.g., governments, non-profit groups) that are known to publish research reports or other documents that might be relevant. This can also include targeted searching of the conference proceedings from prior relevant conferences (if not already indexed elsewhere).
