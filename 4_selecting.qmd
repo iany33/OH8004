@@ -29,7 +29,7 @@ The relevance screening form should be pilot tested before use to ensure the eli
 ::: callout-note
 ### Kappa Agreement Example
 
-We will simulate reviewer inclusion/exclusion (i.e., yes/no) ratings for a sample of 30 abstracts. Assume that Reviewer 1 included 50% pf the abstracts, including two that Reviewer 2 did not include. Assume Reviewer 2 included 16 abstracts, including three of the abstracts that Reviewer 1 did not include.
+We will simulate reviewer inclusion/exclusion (i.e., yes/no) ratings for a sample of 30 abstracts. Assume that Reviewer 1 included 50% of the abstracts, including two that Reviewer 2 did not include. Assume Reviewer 2 included 16 abstracts, including three of the abstracts that Reviewer 1 did not include.
 
 ```{r}
 # Create simulated rating data
