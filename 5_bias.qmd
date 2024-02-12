@@ -146,7 +146,7 @@ For the purposes of this exercise, consider confounders of interest to be any of
 
 ## Risk-of-Bias for Missing Data
 
-The risk-of-bias tools covered above include an item to assess possible risks from *selective reporting of results when multiple measurements or analyses were made*. In cases where the result for an outcome is omitted entirely, the risk of bias should be assessed at the overall synthesis level. A new risk-of-bias tool called [**ROB-ME**](https://sites.google.com/site/riskofbiastool/welcome/rob-me-tool?authuser=0) has been developed to assess these factors at the synthesis level. The tool uses the following process to **assess possible biases due to missing data** in a meta-analysis:
+The risk-of-bias tools covered above include an item to assess possible risks from *selective reporting of results when multiple measurements or analyses were made*. In cases where the result for an outcome is omitted entirely, the risk of bias should be assessed at the overall synthesis level. A new risk-of-bias tool called [**ROB-ME**](https://sites.google.com/site/riskofbiastool/welcome/rob-me-tool?authuser=0) has been developed to assess these factors at the synthesis level [@pageROBMEToolAssessing2023]. The tool uses the following process to **assess possible biases due to missing data** in a meta-analysis:
 
 1.  Select syntheses that will be assessed for risk of missing data.
 2.  Determine which studies that are eligible for the synthesis have missing results.
