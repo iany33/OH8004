@@ -38,13 +38,13 @@ Statistical approaches to address some of these issues will be covered in a late
 
 ## Data Extraction Form
 
-The **data extraction form** should be designed so that multiple outcomes can be extracted for each study. The suggested approach is to pre-determine **outcome categories** for analysis based on your review question. These should represent specific groups of similar outcomes that will combined together in the same analysis. You can also include additional questions on the form that might have *difference responses for different outcome categories* (e.g., how the outcome was measured). You may also have different categories for intervention or exposure groups of interest.
+The **data extraction form** should be designed so that multiple outcomes can be extracted for each study. The suggested approach is to pre-determine **outcome categories** for analysis based on your review question. These should represent specific groups of similar outcomes that will combined together in the same analysis. You can also include additional questions on the form that might have *different responses for different outcome categories* (e.g., how the outcome was measured). You may also have different categories for intervention or exposure groups of interest.
 
 An example of a data extraction form from Young et al. [-@youngEffectivenessFoodHandler2019] is [available for download here](https://docs.google.com/document/d/1Voi7-t3a_uplIEGT254yw5LyI42cCAof/edit?usp=sharing&ouid=103236720816475008712&rtpof=true&sd=true).
 
 ## Dichotomous Measures
 
-**Dichotomous outcomes** are those with only two possibilities (e.g., disease positive or disease negative). Two common measures of effect for these outcomes are **odds ratios** (OR) and **risk ratios** (RR). An RR is a ratio of the risk of the event in each group, while the OR is ratio of the odds of event (compared to a non-event) in each group. The table below shows how these two measures are calculated:
+**Dichotomous outcomes** are those with only two possibilities (e.g., disease positive or negative). Two common measures of effect for these outcomes are **odds ratios** (OR) and **risk ratios** (RR). An RR is a ratio of the risk of the event in each group, while the OR is ratio of the odds of event (compared to a non-event) in each group. The table below shows how these two measures are calculated:
 
 |              | Event | Non-Event | Total   |
 |--------------|-------|-----------|---------|
@@ -81,7 +81,7 @@ To conduct a meta-analysis of dichotomous data, we typically need one of the fol
 
 The **MD** can be used when the outcome is reported on a meaningful scale (e.g., weight in kg, blood pressure in mmHg), and the *same scale is used in all studies*. This measure is easy and intuitive to interpret if possible to calculate. 
 
-The **SMD** can be used when the studies in a SR measure the same outcome, but in different ways (e.g., different scales). The SMD is calculated by dividing a study's mean different by its standard deviation (SD) to create an index. There are different SMD metrics, the most common of which is called **Hedges' g**, which uses a pooled SD in the denominator based on outcome data in both groups being compared, and assuming that the SDs of the two groups are similar.  
+The **SMD** can be used when the studies in a SR measure the same outcome, but in different ways (e.g., different scales). The SMD is calculated by dividing a study's mean difference by its standard deviation (SD) to create an index. There are different SMD metrics, the most common of which is called **Hedges' g**, which uses a pooled SD in the denominator based on outcome data in both groups being compared, and assuming that the SDs of the two groups are similar.  
 
 For continuous data outcomes, we typically require the mean, sample size, and SD in each group to calculate either the MD or SMD. Alternatively, a pre-calculated measure of effect (e.g., MD) and its measure of variability (e.g., standard error) can also be used directly in a meta-analysis.
 
@@ -110,7 +110,7 @@ Consider again the Young et al. [-@youngEffectivenessFoodHandler2019] systematic
 
 ## Data Required for Meta-Analysis
 
-If you are interested or planning to conduct a meta-analysis, data must be sufficiently reported in the article to allow calculation of a summary measure of effect and to allow inclusion in a meta-analysis. Often, many studies will be missing information on one of the common inputs required. However, we can thankfully use various formulas to estimate the missing information in many cases. Some common scenarios are highlighted below.
+If you are interested or planning to conduct a meta-analysis, data must be sufficiently reported in the article to allow calculation of a summary measure of effect and to allow inclusion in a meta-analysis. Often, many studies will be missing information on one of the common inputs required. Thankfully, in many cases we can use various formulas to estimate the missing information. Some common scenarios are highlighted below.
 
 ### Convert Confidence Interval to a Standard Error (SE)
 

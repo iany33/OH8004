@@ -91,7 +91,7 @@ Using the systematic reviews you identified in previous weeks related to your th
 
 ## Methods of Analyzing Measures of Effect
 
-The recommended approach to analyze our outcome data (i.e., measures of effect), if possible and reasonable to do so, is **meta-analysis**. Meta-analysis is defined as statistical method for combining the results of two or more studies.
+The recommended approach to analyze outcome data (i.e., measures of effect), if possible and reasonable to do so, is **meta-analysis**. Meta-analysis is defined as statistical method for combining the results of two or more studies.
 
 There are some situations where it may not be possible to use meta-analysis, for example:
 
@@ -102,12 +102,12 @@ There are some situations where it may not be possible to use meta-analysis, for
 
 In these cases, one can consider conducting a **descriptive and narrative summary** of the evidence. This includes presenting *summary tables* of the results of each study and some discussion of the results of each study. Tables can be grouped by relevant criteria from the question (e.g., intervention groups, outcome domains), or by other factors such as strength of evidence or risk of bias.
 
-Another option when summary measures of effect are available from studies, but not measures of variability needed to conduct meta-analysis, is to summarize the effect estimates directly using box-and-whisker (and/or violin) plots. This type of summary provides information about the size and range of effects across studies, but does not account for the differences in sample size across studies. Combining **P values** is another method that can be used when only P values are available, and aims to determine is there is evidence of an effect in at least one study. For more information on these and other alternative analysis methods, [see the relevant chapter in the Cochrane Collaboration Handbook](https://training.cochrane.org/handbook/current/chapter-12).
+Another option that can be used when summary measures of effect are available from studies, but measures of variability needed to conduct meta-analysis are *not available*, is to summarize the effect estimates directly using **box (and/or violin) plots**. This type of summary provides information about the size and range of effects across studies, but does not account for the differences in sample size across studies. Combining **P values** is another method that can be used when only P values are available, and aims to determine is there is evidence of an effect in at least one study. For more information on these and other alternative analysis methods, [see the relevant chapter in the Cochrane Collaboration Handbook](https://training.cochrane.org/handbook/current/chapter-12).
 
 ::: callout-note
 ### Example of when Meta-Analysis was Not Feasible
 
-In a systematic review about the prevalence of knowledge, practices, and training outcomes among restaurant and food service personnel toward food allergies and Celiac disease [@youngSystematicReviewMetaregression2018], the authors did not conduct meta-analysis on the outcome due to substantive differences in the populations assessed, their characteristics, and how outcomes were measured. Instead, they summarized the **distribution** of prevalence outcomes across studies within each outcome domain using box-and-whisker plots. The figure below shows the prevalence of food allergy and Celiac disease **behaviour outcomes** reported across studies:
+In a systematic review about the prevalence of knowledge, practices, and training outcomes among restaurant and food service personnel toward food allergies and Celiac disease [@youngSystematicReviewMetaregression2018], the authors did not conduct meta-analysis on the outcome due to substantive differences in the populations assessed, their characteristics, and how outcomes were measured. Instead, they summarized the **distribution** of prevalence outcomes across studies within each outcome domain using box plots. The figure below shows the prevalence of food allergy and Celiac disease **behaviour outcomes** reported across studies:
 
 ![](images/non_MA_example.png)
 :::
@@ -157,7 +157,7 @@ Additionally, it is generally recommended to apply **Knapp-Hartung adjustments**
 
 Fixed-effect models are **usually not appropriate** for reviews in occupational and public health, as they assume that all studies are essentially identical, which is usually only the case under highly controlled and replicable conditions. The results from such an analysis are only applicable to the participants in each study, and cannot be generalized for other populations.
 
-In contrast, **random-effects** models are more appropriate when there are differences across studies beyond what we would expect from sampling error alone (e.g., differences in interventions, populations, how outcomes are measured). However, this approach gives more weight to smaller studies, which can exacerbate potential biases that may be present in smaller studies. Additionally, if the number of included studies is very small, the estimate of between-study variance $\tau^2$ will have poor precision and is less reliable. Unfortunately, there is no clear guidance which approach should be used in this situation; *Bayesian methods* are one approach but require more advanced expertise.
+In contrast, **random-effects** models are more appropriate when there are differences across studies beyond what we would expect from sampling error alone (e.g., differences in interventions, populations, how outcomes are measured). However, this approach gives more weight to smaller studies, which can exacerbate potential biases that may be present in smaller studies. Additionally, if the number of included studies is very small, the estimate of between-study variance $\tau^2$ will have poor precision and is less reliable. Unfortunately, there is no clear guidance about which approach should be used in this situation. **Bayesian methods** are probably the best option, but require more advanced expertise.
 
 ::: callout-tip
 ### Meta-Analysis Exercise
