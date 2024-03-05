@@ -549,11 +549,11 @@ Effect Size Calculation for Meta Analysis
          Weight:  55.6542</code></pre>
 </div>
 </div>
-<p>Similarly, if we had study that only reported a <span class="math inline">\(chi^2\)</span> test value for a dichotomous association, we could convert that to a log odds ratio and its SE. Note that this conversion assumes a degrees of freedom of 1. For example, suppose the <span class="math inline">\(chi^2\)</span> value was 2.5 and the sample size was 20:</p>
+<p>Similarly, if we had study that only reported a <span class="math inline">\(chi^2\)</span> test value for a dichotomous association, we could convert that to a log odds ratio and its SE. Note that this conversion assumes a degrees of freedom of 1. For example, suppose the <span class="math inline">\(chi^2\)</span> value was 2.5 and the sample size was 120:</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>esc <span class="ot">&lt;-</span> <span class="fu">esc_chisq</span>(<span class="at">chisq =</span> <span class="fl">2.5</span>, <span class="at">totaln =</span> <span class="dv">20</span>, <span class="at">es.type =</span> <span class="st">"logit"</span>)</span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>esc <span class="ot">&lt;-</span> <span class="fu">esc_chisq</span>(<span class="at">chisq =</span> <span class="fl">2.5</span>, <span class="at">totaln =</span> <span class="dv">120</span>, <span class="at">es.type =</span> <span class="st">"logit"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>esc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -561,12 +561,12 @@ Effect Size Calculation for Meta Analysis
 Effect Size Calculation for Meta Analysis
 
      Conversion: chi-squared-value to effect size logits
-    Effect Size:   1.3711
- Standard Error:   0.8672
-       Variance:   0.7520
-       Lower CI:  -0.3285
-       Upper CI:   3.0707
-         Weight:   1.3298</code></pre>
+    Effect Size:   0.5291
+ Standard Error:   0.3347
+       Variance:   0.1120
+       Lower CI:  -0.1268
+       Upper CI:   1.1851
+         Weight:   8.9289</code></pre>
 </div>
 </div>
 <p>We can then load the data from the saved object into the applicable row in the dataset. For example, suppose the previous conversion was conducted for Study 3 as per the mock dataset below:</p>
@@ -575,8 +575,8 @@ Effect Size Calculation for Meta Analysis
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">study_ID =</span> <span class="fu">as.factor</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">times =</span> <span class="dv">1</span>)),</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">log_or =</span> <span class="fu">c</span>(<span class="fl">1.1</span>, <span class="fl">0.8</span>, <span class="cn">NA</span>),</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">log_se =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.04</span>, <span class="cn">NA</span>),</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">150</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">log_se =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.4</span>, <span class="cn">NA</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">120</span>)</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                )</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>data2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -584,9 +584,9 @@ Effect Size Calculation for Meta Analysis
 <pre><code># A tibble: 3 × 4
   study_ID log_or log_se     n
   &lt;fct&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
-1 1           1.1   0.05   100
-2 2           0.8   0.04   150
-3 3          NA    NA      150</code></pre>
+1 1           1.1    0.5   100
+2 2           0.8    0.4   150
+3 3          NA     NA     120</code></pre>
 </div>
 </div>
 <p>We can then use the following code to insert the saved conversion values into the applicable columns for Study 3:</p>
@@ -601,9 +601,9 @@ Effect Size Calculation for Meta Analysis
 <pre><code># A tibble: 3 × 4
   study_ID log_or log_se     n
   &lt;fct&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
-1 1          1.1   0.05    100
-2 2          0.8   0.04    150
-3 3          1.37  0.867   150</code></pre>
+1 1         1.1    0.5     100
+2 2         0.8    0.4     150
+3 3         0.529  0.335   120</code></pre>
 </div>
 </div>
 </div>
