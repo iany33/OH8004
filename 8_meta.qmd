@@ -82,7 +82,7 @@ Based on this analysis, we can see that the anxiety scores were lower among part
 If we wanted to change any settings, we can use the `update.meta` function to update our analysis. For example, we could run an updated analysis to compare how the results might change with a different method of calculating $\tau^2$.
 
 ```{r}
-Bradt_meta_update <- update.meta(Bradt_meta,
+Bradt_meta_update <- update(Bradt_meta,
                            method.tau = "PM") # Update to Paule-Mandel method
 
 # Compare pooled estimates and tau^2 values
@@ -207,7 +207,7 @@ We will explore in the next session @sec-meta2 how to investigate different caus
 We will go back to our first meta-analysis example that examined the effect of music interventions plus standard care vs. standard care alone to reduce anxiety levels among people with cancer [@bradtMusicInterventionsImproving2021]. We will update the analysis to include a prediction interval (PI), then interpret the heterogeneity.
 
 ```{r}
-Bradt_meta <- update.meta(Bradt_meta, prediction = TRUE)
+Bradt_meta <- update(Bradt_meta, prediction = TRUE)
 Bradt_meta
 ```
 
@@ -221,7 +221,7 @@ We can see in the results that the $Q$ test for heterogeneity is significant, an
 Below we will create a forest plot from the meta-analysis of music interventions on reducing anxiety levels in people with cancer, from the earlier example [@bradtMusicInterventionsImproving2021]. Using the **meta package**, we can generate a forest plot for our saved meta-analysis results using the `forest.meta` function.
 
 ```{r}
-Bradt_meta |> forest.meta(digits.mean = 1,  # Limiting significant digits on left columns
+Bradt_meta |> forest(digits.mean = 1,  # Limiting significant digits on left columns
                     digits.sd = 1,
                     fontsize = 7,           # Decrease fontsize so all text fits on image
                     spacing = 0.9           # Decrease spacing to ensure text fits
@@ -231,7 +231,7 @@ Bradt_meta |> forest.meta(digits.mean = 1,  # Limiting significant digits on lef
 We can clean up the display of this plot by removing the data on the left side of the plot, and also adding in a prediction interval at the bottom. Other [customization options](https://cran.r-project.org/web/packages/meta/meta.pdf) can be made as needed.
 
 ```{r}
-Bradt_meta |> forest.meta(sortvar = TE,        # sort studies by effect size
+Bradt_meta |> forest(sortvar = TE,        # sort studies by effect size
                     prediction = TRUE,         # add prediction interval
                     print.tau2 = FALSE,        # do not show tau2 at the bottom
                     leftcols = "study",        # show only the study ID on the left

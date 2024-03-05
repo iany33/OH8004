@@ -229,7 +229,7 @@ Hartmann_meta
 ```{r}
 col.contour = c("gray50", "gray70", "gray90")  # set custom contour colours
 
-funnel.meta(Hartmann_meta, 
+funnel(Hartmann_meta, 
             contour = c(0.9, 0.95, 0.99),      # set contour P value regions
             col.contour = col.contour)         # apply custom contour colour
 
@@ -255,7 +255,7 @@ Hartmann_meta_trim
 We can see that data from 23 missing studies were imputed. As expected, the updated RR is slightly more conservative compared to the original RR estimate. We can also produce a new funnel plot with the imputed missing studies.
 
 ```{r}
-funnel.meta(Hartmann_meta_trim, 
+funnel(Hartmann_meta_trim, 
             contour = c(0.9, 0.95, 0.99),  
             col.contour = col.contour)
 
