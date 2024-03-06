@@ -79,7 +79,7 @@ summary(Bradt_meta)
 
 Based on this analysis, we can see that the anxiety scores were lower among participants that received music interventions in addition to standard care vs. standard care alone.
 
-If we wanted to change any settings, we can use the `update.meta` function to update our analysis. For example, we could run an updated analysis to compare how the results might change with a different method of calculating $\tau^2$.
+If we wanted to change any settings, we can use the `update` function to update our analysis. For example, we could run an updated analysis to compare how the results might change with a different method of calculating $\tau^2$.
 
 ```{r}
 Bradt_meta_update <- update(Bradt_meta,
@@ -218,7 +218,7 @@ We can see in the results that the $Q$ test for heterogeneity is significant, an
 
 **Forest plots** are the most common way to visualize meta-analysis results. They show the measure of effect estimate, confidence interval, and weight of each study, and the pooled or average estimate at the bottom. They can also include a prediction interval.
 
-Below we will create a forest plot from the meta-analysis of music interventions on reducing anxiety levels in people with cancer, from the earlier example [@bradtMusicInterventionsImproving2021]. Using the **meta package**, we can generate a forest plot for our saved meta-analysis results using the `forest.meta` function.
+Below we will create a forest plot from the meta-analysis of music interventions on reducing anxiety levels in people with cancer, from the earlier example [@bradtMusicInterventionsImproving2021]. Using the **meta package**, we can generate a forest plot for our saved meta-analysis results using the `forest` function.
 
 ```{r}
 Bradt_meta |> forest(digits.mean = 1,  # Limiting significant digits on left columns

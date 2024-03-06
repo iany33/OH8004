@@ -420,12 +420,12 @@ In this example, we want to combine the two training interventions in Study 3. W
 
 ```{r}
 # Reference the required values below using the respective row numbers
-combined <- pool.groups(n1 = data$treat_n["study_ID" = 3], 
-                        n2 = data$treat_n["study_ID" = 4],
-                        m1 = data$treat_mean["study_ID" = 3], 
-                        sd1 = data$treat_SD["study_ID" = 3],
-                        m2 = data$treat_mean["study_ID"=4], 
-                        sd2 = data$treat_SD["study_ID"=4])
+combined <- pool.groups(n1 = data$treat_n[3], 
+                        n2 = data$treat_n[4],
+                        m1 = data$treat_mean[3], 
+                        sd1 = data$treat_SD[3],
+                        m2 = data$treat_mean[4], 
+                        sd2 = data$treat_SD[4])
 ```
 
 We can now create a new version of the dataframe, remove one of the treatment rows, and enter the new combined values in place of the previous intervention values.
