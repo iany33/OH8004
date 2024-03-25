@@ -40,7 +40,7 @@ Statistical approaches to address some of these issues will be covered in a late
 
 The **data extraction form** should be designed so that multiple outcomes can be extracted for each study. The suggested approach is to pre-determine **outcome categories** for analysis based on your review question. These should represent specific groups of similar outcomes that will combined together in the same analysis. You can also include additional questions on the form that might have *different responses for different outcome categories* (e.g., how the outcome was measured). You may also have different categories for intervention or exposure groups of interest.
 
-An example of a data extraction form from Young et al. [-@youngEffectivenessFoodHandler2019] is [available for download here](https://docs.google.com/document/d/1Voi7-t3a_uplIEGT254yw5LyI42cCAof/edit?usp=sharing&ouid=103236720816475008712&rtpof=true&sd=true).
+An example of a data extraction form from Young et al. [-@youngEffectivenessFoodHandler2019] is [available for download here](assets/Example_DE_Form.docx).
 
 ## Dichotomous Measures
 
