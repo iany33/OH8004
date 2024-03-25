@@ -290,7 +290,7 @@ $$
 DEFF = 1 + (M - 1)ICC
 $$
 
-In this formula, $M$ refers to the average cluster size in the study, and $ICC$ is the intra-class correlation coefficient. This value is rarely reported, so would need to be estimated from a similar study or other literature. The sample size in each group can then be divided by the design effect to obtain proper estimates. For dichotomous outcomes, both the number of events and sample size should be divided by this effect. Alternatively, the standard error of the measure of effect of the study can be multiplied by the square root fo the design effect.
+In this formula, $M$ refers to the average cluster size in the study, and $ICC$ is the intra-class correlation coefficient. This value is rarely reported, so would need to be estimated from a similar study or other literature. The sample size in each group can then be divided by the design effect to obtain proper estimates. For dichotomous outcomes, both the number of events and sample size should be divided by this effect. Alternatively, the standard error of the measure of effect of the study can be multiplied by the square root of the design effect.
 
 ::: callout-note
 #### Cluster Trial Adjustment Example
