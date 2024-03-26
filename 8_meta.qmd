@@ -193,7 +193,7 @@ $$
 I^2 = \frac{Q-(N-1)}{Q}
 $$
 
-$I^2$ refers to the percentage of variation in measures of effect across studies that is due to heterogeneity rather than sampling error. While thresholds are often used in practice, these are discouraged. Instead, the amount of heterogeneity that is important depends on the content (e.g., magnitude and direction of effects, strength of evidence for heterogeneity). In general, $I^2$ values of 0-40% might not be important, values of 75-100% usually indicate considerable heterogeneity, while values in 30-60% and 50-90% might indicate moderate to substantial heterogeneity [@higginsCochraneHandbookSystematic2022].
+$I^2$ refers to the percentage of variation in measures of effect across studies that is due to heterogeneity rather than sampling error. While thresholds are often used in practice, these are discouraged. Instead, the amount of heterogeneity that is important depends on the context (e.g., magnitude and direction of effects, strength of evidence for heterogeneity). In general, $I^2$ values of 0-40% might not be important, values of 75-100% usually indicate considerable heterogeneity, while values in 30-60% and 50-90% might indicate moderate to substantial heterogeneity [@higginsCochraneHandbookSystematic2022].
 
 However, because $I^2$ is a relative measure, it should not be the only measure of heterogeneity reported. We can also examine $\tau$ and its 95% CI, which represents the estimated SD of the true effects across studies (it is on the same scale as the measure of effect used in the analysis).
 
