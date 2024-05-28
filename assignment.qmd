@@ -1,0 +1,78 @@
+---
+webr:
+  packages: ['dplyr', 'meta']
+---
+
+# Meta-Analysis Assignment {#sec-assignment}
+
+This section provides a coding template to conduct your meta-analysis assignment fully within `webr`.
+
+## Enter your Dataset
+
+As a first step, you will directly enter the outcome data from your studies into a data frame using the following coding template. This template is for continuous outcomes with a mean, SD, and sample size in each group/comparison. You will need to modify the code accordingly for other data types (e.g., pre-calculated measures of effect, binary data).
+
+```{webr-r}
+data <- data.frame(study_ID = c(rep(1:3, times = 1)),
+                   author = c("A", "B", "C"),
+                   year = c("2020", "2021", "2022"),
+                   intervention = c("1", "2", "2"),
+                   int_mean  = c(1, 1, 1),
+                   int_sd = c(1, 1, 1),
+                   int_n = c(10, 10, 10),
+                   con_mean = c(0, 0, 0),
+                   con_sd = c(1, 1, 1),
+                   con_n = c(10, 10, 10))
+data
+```
+
+## Conduct your Meta-analysis
+
+The following coding template can be modified to conduct your meta-analysis. As above, this is set up for continuous data inputs and will need to be modified as needed based on your data.
+
+```{webr-r}
+library(meta)
+
+meta <- data |> 
+  metacont(n.e = int_n,  
+           mean.e = int_mean,
+           sd.e = int_sd,   
+           n.c = con_n, 
+           mean.c = con_mean,  
+           sd.c = con_sd, 
+           studlab = paste(author, year),   
+           sm = "MD", 
+           random = TRUE,
+           fixed = FALSE, 
+           method.tau = "REML",
+           hakn = TRUE,   
+           title = "")
+
+summary(meta)
+```
+
+## Produce your Forest Plot
+
+The following coding template can be used for your forest plot figure. You will need to add customization options as per the assignment instructions. See the @sec-meta for more details.
+
+```{webr-r}
+meta |> forest(sortvar = TE,
+               prediction = TRUE,  
+               leftcols = c("author", "year"),
+               leftlabs = c("Author", "Year"))
+```
+
+## Conduct Sensitivity Analysis
+
+Reproduce the meta-analysis using a different method of calculating $\tau^2$ and compare the results.  
+
+```{webr-r}
+meta2 <- update(meta, method.tau = "DL") 
+
+# Compare pooled estimates and tau^2 values
+data.frame(Method = c("REML", "DL"),
+       Pooled_MD = c(meta$TE.random, meta2$TE.random),
+       Pooled_SE = c(meta$seTE.random, meta2$seTE.random),
+       Tau2 = c(meta$tau2, meta2$tau2))
+```
+
+

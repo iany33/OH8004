@@ -1,3 +1,7 @@
+---
+webr:
+  packages: ['irr', 'tibble']
+---
 
 # Selecting Studies {#sec-selecting}
 
@@ -31,38 +35,59 @@ The relevance screening form should be pilot tested before use to ensure the eli
 
 We will simulate reviewer inclusion/exclusion (i.e., yes/no) ratings for a sample of 30 abstracts. Assume that Reviewer 1 included 50% of the abstracts, including two that Reviewer 2 did not include. Assume Reviewer 2 included 16 abstracts, including three of the abstracts that Reviewer 1 did not include.
 
-```{r}
-# Create simulated rating data
-reviewer1 <- rep(0:1, each = 15)
-reviewer2 <- c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2))
+```{webr-r}
+#| read-only: true
+#| # Create simulated rating data
+rs_test <- tibble(abstract_id = seq(1:30),
+                  reviewer1 = rep(0:1, each = 15),
+                  reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))
 
-# Bind the two dataframes together
-rs_test <- cbind(reviewer1, reviewer2)
-rs_test
+print(rs_test, n = Inf)
 ```
 
 Now we can evaluate the kappa agreement between the two reviewer's ratings.
 
-```{r}
-pacman::p_load(irr)
+```{webr-r}
+#| read-only: true
+library(irr)
 
-kappa2(rs_test)
+kappa2(rs_test[,2:3])
 ```
 
 The agreement is moderate, and below an ideal level of 0.8 or higher.
 
-What happens if we re-run the simulation but this time each reviewer only differs by one abstract each (i.e., there are only two conflicts)?
+What happens if we edit the simulated data so that this time each reviewer only differs by one abstract each (i.e., there are only two conflicts)?
 
-```{r}
-# Create the new simulated rating data
-reviewer1 <- c(rep(0, times = 15), rep(1, times = 15))
-reviewer2 <- c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1))
-rs_test <- cbind(reviewer1, reviewer2)
+::: panel-tabset
+### Code Editor
 
-kappa2(rs_test)
+```{webr-r}
+rs_test2 <- tibble(abstract_id = seq(1:30),
+                   reviewer1 = rep(0:1, each = 15),
+                   reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))
+
+print(rs_test2, n = Inf)
+
+kappa2(rs_test2[,2:3])
 ```
 
-This is now an acceptable level of reviewer disagreement.
+### Answer
+
+```{webr-r}
+#| read-only: true
+# Create the updated simulated rating data
+rs_test2 <- tibble(abstract_id = seq(1:30),
+                   reviewer1 = c(rep(0, times = 15), rep(1, times = 15)),
+                   reviewer2 = c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1)))
+
+print(rs_test2, n = Inf)
+
+kappa2(rs_test2[,2:3])
+```
+:::
+
+You can further modify the simulated dataset using the code above to explore how differ patterns of conflicts affect the Kappa measure of agreement.
+
 :::
 
 ### Systematic Review Management Software
@@ -73,9 +98,9 @@ Systematic management programs, such as **Covidence**, automatically calculate a
 
 ### Machine Learning for Relevance Screening
 
-Many systematic management programs have implemented or are developing **machine learning tools** to semi-automate the relevance screening process. The tools work by prioritizing the abstracts that are most likely to be included (*screening prioritization*), and suggesting a percentage that can be "safely" excluded (*screening truncation*), which can both enhance review efficiency. The screening truncation process usually uses a stopping rule or threshold, such as 95% estimated recall, after which point the review team can decide not to review the remaining references or to use a modified process (e.g., only one reviewer). 
+Many systematic management programs have implemented or are developing **machine learning tools** to semi-automate the relevance screening process. The tools work by prioritizing the abstracts that are most likely to be included (*screening prioritization*), and suggesting a percentage that can be "safely" excluded (*screening truncation*), which can both enhance review efficiency. The screening truncation process usually uses a stopping rule or threshold, such as 95% estimated recall, after which point the review team can decide not to review the remaining references or to use a modified process (e.g., only one reviewer).
 
-These tools requires careful training and pilot testing on a subset of abstracts (e.g., 2% of total abstracts) to ensure the algorithm can make more accurate predictions. Research has shown that such machine learning tools can perform with high accuracy and reliability, and can result in substantial time savings for review teams [@hamelEvaluationDistillerSRMachine2020; @tsouMachineLearningScreening2020]. [Recent guidance is available](https://doi.org/10.1186/s12874-021-01451-2) for reviewers who are interested to adopt these tools in their review [@hamelGuidanceUsingArtificial2021]. 
+These tools requires careful training and pilot testing on a subset of abstracts (e.g., 2% of total abstracts) to ensure the algorithm can make more accurate predictions. Research has shown that such machine learning tools can perform with high accuracy and reliability, and can result in substantial time savings for review teams [@hamelEvaluationDistillerSRMachine2020; @tsouMachineLearningScreening2020]. [Recent guidance is available](https://doi.org/10.1186/s12874-021-01451-2) for reviewers who are interested to adopt these tools in their review [@hamelGuidanceUsingArtificial2021].
 
 ::: callout-tip
 ### Relevance Screening Exercise
@@ -127,9 +152,7 @@ It is also important to pilot test the article characterization form. Usually th
 ::: callout-tip
 ## Article Characterization Exercise
 
-Use the [example article characterization form](assets/Example_Article_Characterization_Form.docx) from Young et al. [-@youngEffectivenessFoodHandler2019] to extract data from the three full-text articles captured and screened as potentially relevant in that review]. Then record your answers for discussion.
+Use the [example article characterization form](assets/Example_Article_Characterization_Form.docx) from Young et al. [-@youngEffectivenessFoodHandler2019] to extract data from the three full-text articles captured and screened as potentially relevant in that review\]. Then record your answers for discussion.
 
 The three articles are available at the following shared folder: <https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing>.
 :::
-
-

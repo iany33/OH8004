@@ -1,3 +1,8 @@
+---
+webr:
+  packages: ['dplyr', 'meta']
+---
+
 # Subgroup Analysis, Meta-Regression, and Complex Data {#sec-meta2}
 
 When conducting meta-analysis, frequently we will encounter heterogeneity in the pooled measures of effect, and it is valuable to explore *possible factors that could explain this identified heterogeneity*. This can be accomplished through **subgroup analysis and meta-regression**. Additionally, we should explore possible indicators of **publication bias** or other **small-study biases and effects** in our meta-analysis datasets. Finally, often we will encounter complex data structures and issues when conducting meta-analysis, and we will explore different approaches that can be used to account for or address these complexities in our analysis.
@@ -19,14 +24,20 @@ To conduct subgroup analysis in **R**, we can specify the `subgroup` option with
 
 We will re-load the same dataset from the last session that contained 136 studies used in a meta-analysis of the effectiveness of nicotine replacement therapy vs. control for smoking cessation [@hartmann-boyceNicotineReplacementTherapy2018], as prepared by [White et al. in the metadat repository](https://wviechtb.github.io/metadat/index.html).
 
+```{webr-r}
+#| context: setup
+# Load and import dataset
+url <- "https://iany33.github.io/data-repository/Hartmann_2018.csv"
+download.file(url, "Hartmann_2018.csv")
+Hartmann_2018 <- read.csv("Hartmann_2018.csv")
+```
+
 ```{r}
-pacman::p_load(
-  rio,        # load in an Excel file
-  here,       # loading data using relative path
-  tidyverse,  # data management
-  meta,       # meta-analysis
-  DT          # to visualize the dataset 
-)
+#| echo: false
+#| warning: false
+library(DT)
+library(rio)
+library(here)
 
 Hartmann_2018 <- import(here("assets", "Hartmann_2018.xlsx"))
 
@@ -39,7 +50,10 @@ Hartmann_2018 |> datatable(
 
 We can see that there is a variable called *treatment* reflecting the type of nicotine replacement therapy assessed. We will conduct a subgroup analysis to compare differences between the types of treatments.
 
-```{r}
+```{webr-r}
+library(meta)
+library(dplyr)
+
 Hartmann_meta <- Hartmann_2018 |> 
   metabin(event.e = x.nrt,
           n.e = n.nrt, 
@@ -63,7 +77,7 @@ Hartmann_meta
 
 We can see that there are some differences in the pooled RR estimates across subgroups, but most groups contain very few studies. We could re-run our analysis and include only the four sub-groups which have more than 5 studies for a more reliable comparison.
 
-```{r}
+```{webr-r}
 Hartmann_meta <- Hartmann_2018 |> 
   filter(treatment == "gum" | treatment == "patch" | 
            treatment == "tablets/lozenges" | treatment == "choice of product") |> 
@@ -109,7 +123,18 @@ In the **R meta package**, we can conduct meta-regression on our meta-analysis o
 
 To illustrate how to conduct a meta-regression, we will reload data on the effect of music interventions + standard care vs. standard care alone to reduce anxiety levels, from a systematic review of music interventions to improve various health outcomes in people with cancer [@bradtMusicInterventionsImproving2021]. 
 
+```{webr-r}
+#| context: setup
+# Load and import dataset
+url <- "https://iany33.github.io/data-repository/Bradt_2021.csv"
+download.file(url, "Bradt_2021.csv")
+Bradt_2021 <- read.csv("Bradt_2021.csv")
+```
+
 ```{r}
+#| echo: false
+#| warning: false
+
 Bradt_2021 <- import(here("assets", "Bradt_2021.xlsx"))
 
 Bradt_2021 |> datatable(
@@ -121,7 +146,7 @@ Bradt_2021 |> datatable(
 
 We will examine whether **study publication year** as a continuous variable might explain any of the heterogeneity in the measure of effect across studies.
 
-```{r}
+```{webr-r}
 Bradt_meta <- Bradt_2021 |> 
   metacont(n.e = int_n,
            mean.e = int_mean,
@@ -147,7 +172,7 @@ The $R^2$ value is also only 1.7%, indicating the the publication year variable 
 
 We can also visualize the results of meta-regression analyses using a **bubble plot**.
 
-```{r}
+```{webr-r}
 bubble(Bradt_reg, studlab = TRUE)
 ```
 :::
@@ -158,15 +183,18 @@ bubble(Bradt_reg, studlab = TRUE)
 
 We will load data from the Young et al. [-@youngEffectivenessFoodHandler2019] systematic review and meta-analysis of the effectiveness of food handler training and education interventions. 
 
+```{webr-r}
+#| context: setup
+# Load and import dataset
+url <- "https://iany33.github.io/data-repository/Young_2019_ma.csv"
+download.file(url, "Young_2019_ma.csv")
+Young_2019_ma <- read.csv("Young_2019_ma.csv")
+```
+
 ```{r}
+#| echo: false
+#| warning: false
 # First load necessary packages
-pacman::p_load(
-  rio,        # load in an Excel file
-  here,       # loading data using relative path
-  tidyverse,  # data management
-  meta,       # meta-analysis
-  DT          # to visualize the dataset 
-)
 
 Young_2019 <- import(here("assets", "Young_2019_ma.xlsx"))
 
@@ -178,15 +206,114 @@ Young_2019 |> datatable(
   formatStyle(columns = colnames(Young_2019), fontSize = '70%')
 ```
 
+
 Using these data, first conduct a **subgroup analysis** to examine the difference between RCTs and non-randomized studies for the **behaviour outcome**. Given a small number of RCTs, use a common estimate of $\tau^2$.
 
 - What is the $I^2$ in each subgroup?
 - What is the evidence that the overall SMD in each group is different?
 - Can you create a forest plot for this analysis that includes these two subgroups?
 
-Now conduct a meta-regression to examine whether publication year of the study is associated with any of the variability in the behaviour outcome. How would you interpret the results? 
+::: panel-tabset
+### Code Editor
 
-Now conduct another meta-regression, but instead of publication year, examine document type (journal or thesis/dissertation) as a predictor. How would you interpret those results?
+```{webr-r}
+Young_2019_meta <- Young_2019_ma |> 
+  filter(outcome == "___") |> 
+  metabin(TE = g,
+          seTE = g_se,
+          studlab = author_year,
+          sm = "SMD", 
+          random = TRUE,
+          fixed = FALSE,
+          method.tau = "REML",
+          hakn = TRUE,
+          subgroup = ____,  # specify our subgroup variable
+          tau.common = ____)
+
+Young_2019_meta
+```
+
+### Answer
+
+```{webr-r}
+#| read-only: true
+Young_2019_meta <- Young_2019_ma |> 
+  filter(outcome == "Behaviour") |> 
+  metagen(TE = g,
+          seTE = g_se,
+          studlab = author_year,
+          sm = "SMD", 
+          random = TRUE,
+          fixed = FALSE,
+          method.tau = "REML",
+          hakn = TRUE,
+          subgroup = study_design,  # specify our subgroup variable
+          tau.common = TRUE,    # calculate tau separately for each subgroup
+          title = "Food Handler Training and Behaviour - by Study Design")
+
+Young_2019_meta
+  
+Young_2019_meta|> 
+  forest(prediction = TRUE,
+         print.pval.Q = FALSE, 
+         leftcols = "author_year",
+         leftlabs = "Study", 
+         smlab = "SMD",
+         print.subgroup.name = FALSE,
+         col.diamond = "steelblue",
+         col.predict = "darkblue",
+         fontsize = 9,
+         spacing = 0.5)
+```
+:::
+
+
+Now conduct a meta-regression to examine whether publication year of the study is associated with any of the variability in the behaviour outcome. How would you interpret the results? Now change the predictor variable to document type (journal or thesis/disseration) instead. How would you interpret these results?
+
+::: panel-tabset
+### Code Editor
+
+```{webr-r}
+Young_2019_meta2 <- Young_2019_ma |> 
+  filter(outcome == "Behaviour") |> 
+  metagen(TE = g,
+          seTE = g_se,
+          studlab = author_year,
+          sm = "SMD", 
+          random = TRUE,
+          fixed = FALSE,
+          method.tau = "REML",
+          hakn = TRUE,
+          title = "Food Handler Training and Behaviour")
+  
+Young_2019_metreg <- metareg(Young_2019_meta2, ~____)
+Young_2019_metreg 
+```
+
+### Answer
+
+```{webr-r}
+#| read-only: true
+Young_2019_meta2 <- Young_2019_ma |> 
+  filter(outcome == "Behaviour") |> 
+  metagen(TE = g,
+          seTE = g_se,
+          studlab = author_year,
+          sm = "SMD", 
+          random = TRUE,
+          fixed = FALSE,
+          method.tau = "REML",
+          hakn = TRUE,
+          title = "Food Handler Training and Behaviour")
+  
+Young_2019_metreg <- metareg(Young_2019_meta2, ~year)
+Young_2019_metreg 
+
+Young_2019_metreg2 <- metareg(Young_2019_meta2, ~doc_type)
+Young_2019_metreg2
+```
+:::
+
 :::
 
 ## Publication Bias
@@ -207,7 +334,7 @@ If publication bias or other small-study effects are suspected, there are variou
 
 We will re-examine the meta-analysis of the effectiveness of nicotine replacement therapy vs. control for smoking cessation [@hartmann-boyceNicotineReplacementTherapy2018]. We will conduct an overall pooled meta-analysis combining all therapies together, then assess for possible small-study effects using a *contour-enhanced funnel plot*.
 
-```{r}
+```{webr-r}
 Hartmann_meta <- Hartmann_2018 |> 
   metabin(event.e = x.nrt,
           n.e = n.nrt, 
@@ -226,7 +353,7 @@ Hartmann_meta <- Hartmann_2018 |>
 Hartmann_meta
 ```
 
-```{r}
+```{webr-r}
 col.contour = c("gray50", "gray70", "gray90")  # set custom contour colours
 
 funnel(Hartmann_meta, 
@@ -241,20 +368,20 @@ legend(x = 7, y = 0.01,
 
 We can see most of the studies with greater precision have clustered at the top, with many in the statistically significant regions. At the bottom, there are a handful of smaller studies, with only one being in the very significant region. Based on this plot, there does not appear to be a strong indication of small-study biases, though if anything, we could be missing some medium-sized studies in the non-significant region. We will now conduct a **Peters test** for asymmetry. 
 
-```{r}
+```{webr-r}
 metabias(Hartmann_meta, method.bias = "Peters")
 ```
 
 We can see that the test P value is 0.186, which does not suggest that small-study effects are present, but we cannot rule them out with only this test. For illustration purposes, we will conduct a **trim and fill anlaysis** to examine the possible magnitude of possible missing studies.
 
-```{r}
+```{webr-r}
 Hartmann_meta_trim <- trimfill(Hartmann_meta)
 Hartmann_meta_trim
 ```
 
 We can see that data from 23 missing studies were imputed. As expected, the updated RR is slightly more conservative compared to the original RR estimate. We can also produce a new funnel plot with the imputed missing studies.
 
-```{r}
+```{webr-r}
 funnel(Hartmann_meta_trim, 
             contour = c(0.9, 0.95, 0.99),  
             col.contour = col.contour)
@@ -275,7 +402,68 @@ For this exercise, examine possible publication bias in the meta-analysis of the
 - Produce a contour-enhanced funnel plot. Is there evidence of asymmetry? 
 - Based on the contour regions and meta-analysis results, could this be due to publication bias or other small-study effects?
 - Conduct Egger's regression test. How would you interpret the result?
-- Conduct a trim-and-fill analysis. How many "missing studies" were added, and what impact does the missing study imputation have on the overall MD?
+
+::: panel-tabset
+### Code Editor
+
+```{webr-r}
+funnel(_____)
+
+legend(x = ____, y = 0.01, 
+       legend = c("P < 0.1", "P < 0.05", "P < 0.01"),
+       fill = col.contour)
+
+metabias(____), method.bias = "___")
+```
+
+### Answer
+
+```{webr-r}
+#| read-only: true
+col.contour = c("gray50", "gray70", "gray90")  # set custom contour colours
+
+funnel(Bradt_meta, 
+            contour = c(0.9, 0.95, 0.99),      # set contour P value regions
+            col.contour = col.contour)         # apply custom contour colour
+
+# Add legend in top right position based on x and y coordinates
+legend(x = -20, y = 0.01, 
+       legend = c("P < 0.1", "P < 0.05", "P < 0.01"),
+       fill = col.contour)
+
+metabias(Bradt_meta, method.bias = "linreg")
+```
+:::
+
+
+Now conduct a trim-and-fill analysis. How many "missing studies" were added, and what impact does the missing study imputation have on the overall MD?
+
+::: panel-tabset
+### Code Editor
+
+```{webr-r}
+meta_trim <- trimfill(______)
+
+funnel(________)
+```
+
+### Answer
+
+```{webr-r}
+#| read-only: true
+Bradt_meta_trim <- trimfill(Bradt_meta)
+Bradt_meta_trim
+
+funnel(Bradt_meta_trim, 
+            contour = c(0.9, 0.95, 0.99),  
+            col.contour = col.contour)
+
+legend(x = -20, y = 0.01, 
+       legend = c("P < 0.1", "P < 0.05", "P < 0.01"),
+       fill = col.contour)
+```
+:::
+
 :::
 
 ## Complex Data Issues
@@ -299,7 +487,7 @@ In the Young et al. [-@youngEffectivenessFoodHandler2019] systematic review and 
 
 For example, one of the studies reported an analysis of school food handler knowledge outcomes, with randomization conducted at the school level. There were 33 food handlers in the intervention group and 46 in the control group, with 8 schools in each group. Given these data, the design effect (DEFF) was calculated as:
 
-```{r}
+```{webr-r}
 M <- (33+46)/(8+8)
 ICC <- 0.1
 DEFF <- 1 + (M-1)*(ICC)
@@ -390,7 +578,7 @@ pool.groups = function(n1, n2, m1, m2, sd1, sd2) {
 
 Using our new `pool.groups` function, we can now combined two groups. Suppose we had two similar interventions in one study with the following parameters: sample size of 50 in each group, mean 1 = 2.0, SD 1 = 1.5, mean 2 = 2.5, SD 2 = 2.3):
 
-```{r}
+```{webr-r}
 pool.groups(n1 = 50, n2 = 50,
             m1 = 2.0, sd1 = 1.5,
             m2 = 2.5, sd2 = 2.3)
@@ -403,22 +591,21 @@ If combining more than two groups, we would first combine two groups together, t
 
 In practice, if we will be combining interventions groups like this, we will want to create a **new dataframe** to analyze with the combined groups. The saved combined values can then be inserted into the new dataframe. For example:
 
-```{r}
-data <- tibble(study_ID = as.factor(c(1,2,3,3)),
+```{webr-r}
+data <- data.frame(study_ID = as.factor(c(1,2,3,3)),
                intervention = c("Training", "Training", "Training-Group 1", "Training-Group 2"),
                treat_mean = c(1.5, 2.1, 2.2, 2.7),
                treat_SD = c(1.0, 1.7, 2.0, 2.1),
                treat_n = c(100, 50, 70, 60),
                control_mean = c(1.2, 1.5, 2.0, 1.9),
                control_SD = c(1.0, 1.3, 1.75, 1.8),
-               control_n = c(100, 50, 75, 75),
-                )
+               control_n = c(100, 50, 75, 75))
 data
 ```
 
 In this example, we want to combine the two training interventions in Study 3. We use the `pool.groups` function.
 
-```{r}
+```{webr-r}
 # Reference the required values below using the respective row numbers
 combined <- pool.groups(n1 = data$treat_n[3], 
                         n2 = data$treat_n[4],
@@ -426,11 +613,12 @@ combined <- pool.groups(n1 = data$treat_n[3],
                         sd1 = data$treat_SD[3],
                         m2 = data$treat_mean[4], 
                         sd2 = data$treat_SD[4])
+combined
 ```
 
 We can now create a new version of the dataframe, remove one of the treatment rows, and enter the new combined values in place of the previous intervention values.
 
-```{r}
+```{webr-r}
 # First create the new dataframe with 1 row per study
 data_combined <- data |> 
   group_by(study_ID) |> 

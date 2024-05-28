@@ -1,3 +1,4 @@
+
 # Data Analysis {#sec-analysis}
 
 This section provides an overview of **data analysis** methods in systematic reviews. The first step is to descriptively summarize and report article characteristics, and report a systematic review **flow chart**. Then, measures of effect can be analyzed, through **meta-analysis** if possible, or otherwise using other synthesis approaches.
@@ -30,45 +31,36 @@ In addition to showing a table with a the summary characteristics and PICO/PECO 
 As an illustrative example of calculating a summary tabulation table, we will load some *selected* article characterization data from the relevant articles in Young et al. [-@youngEffectivenessFoodHandler2019].
 
 ```{r}
-# Load necessary packages
-pacman::p_load(
-  rio,  # package required for importing Excel files
-  here, # package to allow us to import using the location of our R project
-  DT    # package for displaying the dataset as a table
-  )
-
-# Load dataset
-Young_2019 <- import(here("assets", "Young_2019_charting.xlsx"))
-
+#| echo: false
+#| warning: false
 # Display dataset as an interactive table
-Young_2019 |> datatable(
+library(DT)
+library(rio)
+library(here)
+
+Young_2019_chart <- import(here("assets", "Young_2019_charting.xlsx"))
+
+Young_2019_chart |> datatable(
   rownames = FALSE,
   options = list(
     columnDefs = list(list(className = 'dt-center', 
                            targets = 0:4)))) |> 
-  formatStyle(columns = colnames(Young_2019), fontSize = '70%')
+  formatStyle(columns = colnames(Young_2019_chart), fontSize = '70%')
 ```
+
 
 Now we can produce some summary statistics and tabulations of the variables and organize them into a table to present in our results.
 
 ```{r}
-#| output: false
-pacman::p_load(
-  tidyverse,  # package for data management and visualization
-  gtsummary   # package to calculate summary tables
-  )
+library(gtsummary)
+library(dplyr)
 
-# Change display of large numbers (no commas)
-theme_gtsummary_language("en", big.mark = "")
-```
-
-```{r}
 # First convert Year variable to numeric
-Young_2019 <- Young_2019 |> 
+Young_2019_chart <- Young_2019_chart |> 
   mutate(Year = as.numeric(Year))
 
-# Create summary table
-Young_2019_summary <- Young_2019 |> 
+# Create and display summary table
+Young_2019_summary <- Young_2019_chart |> 
   select(-Refid, -"Author (year)") |>  # Remove Refid and author (year) columns from summary
   tbl_summary(digits = list(all_categorical() ~ c(0, 1)),
               type = all_categorical() ~ "categorical", 
