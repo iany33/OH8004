@@ -22,7 +22,7 @@ In defining a question, different approaches are used depending on the type of q
 -   "Umbrella" reviews (reviews of reviews)
 -   Others (e.g., economic evaluations, policy reviews)
 
-For the purposes of this course, we will mainly focus on **intervention** reviews, which are the most common, but will address aspects of **etiology/risk factor** and **incidence/prevalence** reviews, which are common in occupational and public health research. These scenarios are further defined below. For more details on the other types of reviews, see Munn et al. [-@munnWhatKindSystematic2018] and the [JBI Manual for Evidence Synthesis](https://jbi-global-wiki.refined.site/space/MANUAL).
+For the purposes of this course, we will mainly focus on **intervention** reviews, which are the most common, but will address aspects of other reviews, which are common in occupational and public health research. These scenarios are further defined below. For more details on the other types of reviews, see Munn et al. [-@munnWhatKindSystematic2018] and the [JBI Manual for Evidence Synthesis](https://jbi-global-wiki.refined.site/space/MANUAL).
 
 ### Intervention Reviews
 
@@ -62,6 +62,14 @@ These reviews assess the health or disease burden in a specific population, and 
 
 **Context** refers to the specific setting (e.g., seasons, communities) or geographical areas of interest to the review.
 
+### Qualitative Reviews
+
+These reviews aim to investigate the human experiences or meaningfulness of an issue or phenomenon. Qualitative review questions can be expressed using the **PICo** framework: Population, Phenomena of Interest, and Context [@munnMethodologicalGuidanceSystematic2015]. The **population** consideration is similar to other question frameworks above. Note that there is no *outcome* explicitly considered in these types of reviews.
+
+**Phenomenon of interest** refers to the experience or issue of investigation (e.g., participants' views about an intervention, or determinants of their health-related behaviours).
+
+**Context**, similar to prevalence reviews, depends on the review objectives, but may include geographical, cultural, or other sociodemographic areas of focus for the review. 
+
 ::: callout-tip
 ## Other Questions Exercise
 
@@ -72,6 +80,8 @@ Consider the following review questions. Identify the elements of each one, and 
 > What is the global prevalence and incidence of tinnitus? [@jarachGlobalPrevalenceIncidence2022]
 
 > What is the global prevalence of occupational morbidity in migrant workers, and what are the occupational health risks and outcomes associated with specific industries? [@hargreavesOccupationalHealthOutcomes2019]
+
+> How are paramedics’, ambulance officers’, ambulance volunteers’, and call-takers’ mental health and well-being effected by workflow, the nature of work, and their changing roles? [@lawnEffectsEmergencyMedical2020]
 
 > What is the evidence for the association between (1) silicosis and pulmonary tuberculosis and (2) silica exposure and pulmonary tuberculosis, excluding or controlling for radiological silicosis [@ehrlichAssociationSilicaExposure2021]
 :::
