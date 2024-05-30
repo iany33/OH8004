@@ -152,7 +152,13 @@ It is also important to pilot test the article characterization form. Usually th
 ::: callout-tip
 ## Article Characterization Exercise
 
-Use the [example article characterization form](assets/Example_Article_Characterization_Form.docx) from Young et al. [-@youngEffectivenessFoodHandler2019] to extract data from the three full-text articles captured and screened as potentially relevant in that review\]. Then record your answers for discussion.
+Examine the [example article characterization form](assets/Example_Article_Characterization_Form.docx) from Young et al. [-@youngEffectivenessFoodHandler2019]. Use this form to extract data on a few different characteristics from the three full-text articles captured and screened as potentially relevant in that review\]. Then record your answers for discussion.
 
 The three articles are available at the following shared folder: <https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing>.
 :::
+
+## Homework
+
+One to two students each will be assigned one risk-of-bias "criterion" from @sec-bias to review and discuss in class next week.
+
+

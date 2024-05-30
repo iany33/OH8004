@@ -159,3 +159,30 @@ Using the systematic review article you identified earlier in the course, review
 -   Did they conduct a fixed-effect or random-effects model, and what rationale (if any) was given for the choice?
 -   If a random-effects model was used, which method was used to estimate $\tau^2$?
 :::
+
+## Qualitative Syntheses
+
+Many of the systematic review methods discussed in the course can similarly be applied to **qualitative syntheses**, with some adaptations. The analysis, or synthesis, stage in particular is very different [@barnett-pageMethodsSynthesisQualitative2009]. The data that is synthesized in such reviews can vary depending on the review objectives and types of evidence included, but is typically themes, participant quotes, and other data reported in qualitative research studies (e.g., focus groups, grounded theory studies, etc.) or mixed-method studies. Sometimes, such reviews might also include data from review articles or policy documents to be synthesized into a **narrative synthesis**, which is common for reviews that incorporate multiple types and sources of evidence. 
+
+One of the more common syntheses approaches for qualitative reviews is called **thematic synthesis** [@thomasMethodsThematicSynthesis2008]. Thomas and Harden [-@thomasMethodsThematicSynthesis2008] describe a three-step process of conducting this analysis, which consists of:
+
+-    Line-by-line coding of the findings (e.g., participant quotes and themes) of primary studies
+-    Organization and grouping of the codes into related areas, which is used to develop *descriptive themes*
+- Development of *analytical themes*, which aim to go beyond the findings of the original studies and produce overarching themes. 
+
+The latter step requires some judgement of reviewers and involves making inferences about the mechanisms behind the descriptive themes. 
+
+::: callout-tip
+### Qualitative Synthesis Exercise
+
+Examine the following qualitative systematic review by Rawlings et al. [-@rawlingsExploringAdultsExperiences2019] that investigated the [perceptions and experiences of sedentary behaviour in adults](https://link.springer.com/article/10.1186/s12889-019-7365-1). 
+
+-   Did their search differ from that of a standard systematic review? 
+-   What was their quality assessment process?
+-   How did they conduct their synthesis?
+-   How did they report their synthesis results?
+:::
+
+
+
+
