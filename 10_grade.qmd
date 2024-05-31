@@ -74,8 +74,26 @@ The footnotes in this table indicated that most studies were "judged to be at un
 
 In a systematic review that assessed the association between long-term exposure to residential green spaces and mortality in adults [@rojas-ruedaGreenSpacesMortality2019], the authors found that the pooled hazard ratio (HR) for green space exposure on all-cause mortality was 0.96 (95% CI: 0.94 to 0.97). Green space exposure was defined as a 0.1 increment in NDVI (normalized difference vegetation index) in a residential buffer zone of 500 m or less.
 
--   Assuming a proportion of event-free participants of 0.9 (90%) over 10 years, what is the absolute risk of event-free survival within this time period? Calculate for the HR and its 95% CI.
+-   Assuming a proportion of event-free participants of 0.9 (90%) over 10 years, what is the absolute risk of event-free survival within this time period? Calculate for the HR effect estimate.
 -   Examine the details of the studies contributing to the meta-analysis in this review [see Table 1 and Figure 2 here](https://doi.org/10.1016/S2542-5196(19)30215-3). Draft a mock summary of findings table for this outcome. What other details would you include in the table? (Disregard the GRADE rating column for now).
+
+::: panel-tabset
+### Code Editor
+
+```{webr-r}
+1000*exp(log(__)*0.96)
+```
+
+### Answer
+
+```{webr-r}
+#| read-only: true
+risk <- 1000*exp(log(0.9)*0.96)
+
+print(paste("The absolute risk of event-free survival within the 10 year time period among those exposed to green space is", round(risk), "per 1000 people."))
+```
+:::
+
 :::
 
 ## Certainty of Evidence Assessment
@@ -149,3 +167,5 @@ The **risk of bias** tools discussed in @sec-bias are designed for individual st
 -   [JBI Systematic Review Checklist](https://jbi.global/critical-appraisal-tools): contains 10 key questions to assess risk of bias in systematic reviews [@aromatarisSummarizingSystematicReviews2015].
 
 Recent studies have compared the AMSTAR 2 and ROBIS tools, finding that they are both valid, moderately reliable, and comparable [@lorenzPsychometricStudyFound2019; @perryComparisonTwoAssessment2021]. However, AMSTAR 2 is more straightforward and easier to use.
+
+
