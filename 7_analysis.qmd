@@ -83,7 +83,7 @@ Using the systematic reviews you identified in previous weeks related to your th
 
 ## Methods of Analyzing Measures of Effect
 
-The recommended approach to analyze outcome data (i.e., measures of effect), if possible and reasonable to do so, is **meta-analysis**. Meta-analysis is defined as statistical method for combining the results of two or more studies.
+The recommended approach to analyze quantitative outcome data (i.e., measures of effect), if possible and reasonable to do so, is **meta-analysis**. Meta-analysis is defined as statistical method for combining the results of two or more studies.
 
 There are some situations where it may not be possible to use meta-analysis, for example:
 
@@ -162,7 +162,7 @@ Using the systematic review article you identified earlier in the course, review
 
 ## Qualitative Syntheses
 
-Many of the systematic review methods discussed in the course can similarly be applied to **qualitative syntheses**, with some adaptations. The analysis, or synthesis, stage in particular is very different [@barnett-pageMethodsSynthesisQualitative2009]. The data that is synthesized in such reviews can vary depending on the review objectives and types of evidence included, but is typically themes, participant quotes, and other data reported in qualitative research studies (e.g., focus groups, grounded theory studies, etc.) or mixed-method studies. Sometimes, such reviews might also include data from review articles or policy documents to be synthesized into a **narrative synthesis**, which is common for reviews that incorporate multiple types and sources of evidence. 
+Many of the systematic review methods discussed in the course can similarly be applied to **qualitative syntheses**, with some adaptations. The analysis, or synthesis, stage in particular is very different [@barnett-pageMethodsSynthesisQualitative2009]. The data that is synthesized in such reviews can vary depending on the review objectives and types of evidence included, but is typically themes supported by participant quotes from qualitative research studies (e.g., focus groups, grounded theory studies, etc.) or mixed-method studies. Sometimes, such reviews might also include data from review articles or policy documents to be synthesized into a **narrative synthesis**, which is common for reviews that incorporate multiple types and sources of evidence. 
 
 One of the more common syntheses approaches for qualitative reviews is called **thematic synthesis** [@thomasMethodsThematicSynthesis2008]. Thomas and Harden [-@thomasMethodsThematicSynthesis2008] describe a three-step process of conducting this analysis, which consists of:
 
@@ -171,6 +171,8 @@ One of the more common syntheses approaches for qualitative reviews is called **
 - Development of *analytical themes*, which aim to go beyond the findings of the original studies and produce overarching themes. 
 
 The latter step requires some judgement of reviewers and involves making inferences about the mechanisms behind the descriptive themes. 
+
+There are other approaches to qualitative synthesis as well, such as **meta-aggregation** as described by JBI, which follow a similar process [@lockwoodQualitativeResearchSynthesis2015]. 
 
 ::: callout-tip
 ### Qualitative Synthesis Exercise

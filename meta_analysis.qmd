@@ -1,0 +1,119 @@
+---
+webr:
+  packages: ['dplyr', 'meta']
+---
+
+# Meta-Analysis Practice {#sec-practice}
+
+This section provides an interactive template to practice conducting meta-analysis. For this exercise, we will use study data from a systematic review of the association between gardening and health outcomes [@sogaGardeningBeneficialHealth2017]. 
+
+## Import the Dataset
+
+As a first step, we will import the dataset and examine it.
+
+```{r}
+#| echo: false
+#| warning: false
+library(DT)
+library(rio)
+library(here)
+
+data <- import(here("assets", "Soga_2017.xlsx"))
+
+data |> datatable(
+  rownames = FALSE,
+  options = list(
+    columnDefs = list(list(className = 'dt-center', 
+                           targets = 0:4)))) |> 
+  formatStyle(columns = colnames(data), fontSize = '70%')
+```
+
+
+```{webr-r}
+#| context: setup
+# Load and import dataset
+url <- "https://iany33.github.io/data-repository/Soga_2017.csv"
+download.file(url, "Soga_2017.csv")
+data <- read.csv("Soga_2017.csv")
+```
+
+## Conduct the Meta-analysis
+
+Now we will conduct a meta-analysis on a selected outcome. For this example, we can examine the *depression* outcome
+
+```{webr-r}
+library(meta)
+
+meta <- data |> 
+  filter(outcome == "Depression") |> 
+  metacont(n.e = treat_n,  
+           mean.e = treat_mean,
+           sd.e = treat_SD,   
+           n.c = control_n, 
+           mean.c = control_mean,  
+           sd.c = control_SD, 
+           studlab = author_year,   
+           sm = "SMD", 
+           random = TRUE,
+           fixed = FALSE, 
+           method.tau = "REML",
+           hakn = TRUE,   
+           title = "Association between Gardening and Depression")
+
+summary(meta)
+```
+
+## Produce a Forest Plot
+
+The following coding template can be used for a forest plot figure. Add some customization options to make it look unique and appealing. See the @sec-meta for more details.
+
+```{webr-r}
+meta |> forest(sortvar = TE,
+               prediction = TRUE,  
+               leftcols = "author_year",
+               leftlabs = "Study, Year")
+```
+
+## Conduct Sensitivity Analysis
+
+Reproduce the meta-analysis using a different method of calculating $\tau^2$ and compare the results.  
+
+```{webr-r}
+meta2 <- update(meta, method.tau = "__") 
+
+# Compare pooled estimates and tau^2 values
+data.frame(Method = c("REML", "__"),
+       Pooled_MD = c(meta$TE.random, meta2$TE.random),
+       Pooled_SE = c(meta$seTE.random, meta2$seTE.random),
+       Tau2 = c(meta$tau2, meta2$tau2))
+```
+
+## Conduct a Subgroup Analysis
+
+Now try filtering the analysis to two or three different health/wellbeing outcomes and conduct a subgroup analysis on the outcome type. How does this change the results?
+
+
+```{webr-r}
+meta3 <- data |> 
+  filter(outcome == "Depression" | outcome == "_____") |> 
+  metacont(n.e = treat_n,  
+           mean.e = treat_mean,
+           sd.e = treat_SD,   
+           n.c = control_n, 
+           mean.c = control_mean,  
+           sd.c = control_SD, 
+           studlab = author_year,   
+           sm = "SMD", 
+           random = TRUE,
+           fixed = FALSE, 
+           method.tau = "REML",
+           hakn = TRUE,  
+           subgroup = outcome,
+           tau.common = TRUE,
+           title = "____")
+
+summary(meta3)
+```
+
+
+

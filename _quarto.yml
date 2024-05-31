@@ -5,7 +5,7 @@ project:
 book:
   title: "OH8004 Knowledge Synthesis in Occupational and Public Health"
   author: "Ian Young"
-  date: "Winter 2024"
+  date: "Winter 2025"
   
   chapters:
     - index.qmd
@@ -19,9 +19,9 @@ book:
     - 8_meta.qmd
     - 9_meta2.qmd
     - 10_grade.qmd
+    - meta_analysis.qmd
     - references.qmd
-    - assignment.qmd
-
+    
   page-footer:
     left: |
       OH8004 Knowledge Synthesis: Course Website.
