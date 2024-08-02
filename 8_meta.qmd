@@ -197,6 +197,7 @@ We can see that some article and study characteristics are also included in this
 
 ```{r}
 #| code-fold: false
+# Note that this model does not work in webr, and must be run in R/RStudio. 
 Young_2018_meta <- 
   metaprop(event = n.positive, 
            n = n.total,

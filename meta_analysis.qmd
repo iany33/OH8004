@@ -39,7 +39,7 @@ data <- read.csv("Soga_2017.csv")
 
 ## Conduct the Meta-analysis
 
-Now we will conduct a meta-analysis on a selected outcome. For this example, we can examine the *depression* outcome
+Now we will conduct a meta-analysis on a selected outcome. For this example, we can examine the *depression* outcome.
 
 ```{webr-r}
 library(meta)

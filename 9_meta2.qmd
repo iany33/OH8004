@@ -529,8 +529,9 @@ $$
 
 Thankfully, we can use an [*R* function](https://raw.githubusercontent.com/MathiasHarrer/dmetar/master/R/pool.groups.R) to automate this calculation.
 
-```{r}
-pool.groups = function(n1, n2, m1, m2, sd1, sd2) {
+```{webr-r}
+#| read-only: true
+pool.groups <- function(n1, n2, m1, m2, sd1, sd2) {
 
     n1 = n1
     n2 = n2
