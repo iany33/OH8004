@@ -52,12 +52,16 @@ Young_2019_chart |> datatable(
 Now we can produce some summary statistics and tabulations of the variables and organize them into a table to present in our results.
 
 ```{r}
-library(gtsummary)
+#| warning: false
 library(dplyr)
+library(gtsummary)
 
 # First convert Year variable to numeric
 Young_2019_chart <- Young_2019_chart |> 
   mutate(Year = as.numeric(Year))
+
+# Display preferences
+theme_gtsummary_language("en", big.mark = "")
 
 # Create and display summary table
 Young_2019_summary <- Young_2019_chart |> 
