@@ -120,5 +120,5 @@ An example of a **Covidence** project and interface is shown below. TMU currentl
 
 ## Homework
 
-For next week, and to help with preparing your second assignment, identify a few different *seed articles* related to your proposed systematic review topic. Use these seed articles, along with your review question, to identify some keywords and keyword categories required to start building your search algorithm. We will discuss your findings at the start of next week's class. 
+For next week, and to help with preparing your second assignment, identify 2-3 different *seed articles* related to your proposed systematic review topic. Use these seed articles, along with your review question, to identify some keywords and keyword categories required to start building your search algorithm. We will discuss your findings at the start of next week's class. 
 

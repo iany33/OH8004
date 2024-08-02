@@ -159,6 +159,16 @@ The three articles are available at the following shared folder: <https://drive.
 
 ## Homework
 
-One to two students each will be assigned one risk-of-bias "criterion" from @sec-bias to review and discuss in class next week.
+One to two students each will be assigned one risk-of-bias *domain* from @sec-bias to review and present in class next week. The bias domains to be assigned include:
+
+-   Bias arising from the randomization process
+-   Bias due to deviations from intended interventions
+-   Bias due to missing outcome data
+-   Bias in measurement of the outcome
+-   Bias in selection of the reported result
+-   Risk of bias due to confounding
+-   Risk of bias arising from measurement of the exposure
+-   Risk of bias in selection of participants into the study
+-   Risk of bias due to post-exposure interventions
 
 

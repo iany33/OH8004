@@ -1,6 +1,6 @@
 # Quality of Evidence and Reporting {#sec-grade}
 
-It is important to present the results of a systematic review and meta-analysis in a user-friendly and transparent way for knowledge users and decision-makers. **Summary of findings tables** have been developed by the Cochrane Collaboration as a standard format for summarize knowledge synthesis results. Such tables should incorporate a rating of the **certainty in evidence** for each specific outcome assessed in the review. The Cochrane Collaboration has developed an approach called **GRADE** (Grading of Recommendations Assessment, Development and Evaluation) to assess the certainty (or quality) of evidence for outcomes in a systematic review. Finally, we will introduce different tools that can be used to critically appraise published systematic reviews.
+It is important to present the results of a systematic review and meta-analysis in a user-friendly and transparent way for knowledge users and decision-makers. **Summary of findings tables** have been developed by the Cochrane Collaboration as a standard format for summarize knowledge synthesis results. Such tables should incorporate a rating of the **certainty in evidence** for each specific outcome assessed in the review. The Cochrane Collaboration has developed an approach called **GRADE** (Grading of Recommendations Assessment, Development and Evaluation) to assess the certainty (or quality) of evidence for outcomes in a systematic review. Finally, we will introduce different tools that can be used to **critically appraise** published systematic reviews.
 
 ![](images/meme_grade.jpg)
 
@@ -17,41 +17,9 @@ The general template for a summary of findings table is as follows:
 
 The Cochrane Collaboration has created an online software called [GRADEpor GDT](https://www.gradepro.org/) to create summary of findings tables. The software is currently free for groups of up to three researchers.
 
-### Statistical Considerations
-
-Meta-analysis is typically conducted using **relative** measures of effect (e.g., risk ratio, odds ratio) because these are more consistent across studies than **absolute** measures (e.g., risk difference). However, for the summary of findings table, the effect for each outcome should be presented as both a relative and absolute effect. To determine an absolute effect from a meta-analysis estimate, we require an estimate of the **assumed comparator risk (ACR)**. The ACR refers to the risk of the outcome in the comparison (or control) group (that does not receive the intervention).
-
-There are different methods to calculate an ACR for each outcome. One option is to take the median value of the risk of the outcome among participants in the control groups of studies included in the review. However, if there is significant variation in the control group risk among studies in the review, then another option is to select two representative values for *high* and *low* risk groups. This could be the second highest and second lowest risks among the included studies for that particular outcome. A **corresponding intervention risk** can then be calculated using the relative measure of effect from meta-analysis and the ACR. For *dichotomous outcomes*, such risks are generally presented as a risk per 1000 (or 100) people. The formulas to calculate this risk for risk ratio (RR) and odds ratio (OR) outcomes are shown below. In both cases, the lower and upper 95% confidence limits can be calculated by replacing the RR or OR value with its lower and upper confidence limits, respectively.
-
-$$
-\text{Corresponding intervention risk per 1000} = 1000\times ACR\times RR
-$$
-
-$$
-\text{Corresponding intervention risk per 1000} = 1000\times \left(\frac{OR\times ACR}{1-ACR+ \left( OR\times ACR \right)} \right)
-$$
-
-For *time-to-event outcomes*, measured using a hazard ratio (HR), there are three methods of calculating the corresponding intervention risk. The first calculates the absolute risk of event-free survival within a particular time period, the second calculates the absolute risk of an event within a particular time period, and the third calculates the median time to the event (in months or years). The formulas for calculating these risks are as follows:
-
-$$
-\text{Corresponding intervention risk per 1000} = 1000\times e^\left[\ln(\text{proportion of event-free participants})\times HR \right]
-$$
-
-$$
-\text{Corresponding intervention risk per 1000} = 1000\times e^\left[\ln(1-\text{proportion of event-free participants})\times HR \right]
-$$
-
-$$
-\text{Corresponding median survival time} = \frac{\text{comparator group median survival time}}{HR}
-$$
-
-For *continuous outcomes* (e.g., SMD), the corresponding intervention risk is usually the mean difference or SMD and CI of the meta-analysis estimate.
-
-### Summary of Findings Table Contents
-
 Each **row** in a summary of findings table reflects one of the pre-selected, most important outcomes (up to seven). For each outcome, you should provide the measurement scale (if applicable) and the measurement time frame (e.g., length of follow-up). Outcomes that were pre-selected but that had no data available from the studies in the review should still be included in this table.
 
-The first **column** in the table will be the list of outcomes. The second column is the ACR and the third is the corresponding intervention risk. The relative effect and CI (e.g., RR, OR) is presented in the fourth column (this column is not required for continuous outcomes). The final three columns include data on the number of participants and studies included for each outcome, the GRADE rating, and any comments.
+The first **column** in the table will be the list of outcomes. The second column is the comparative risk in each group. Then additional columns are provided for the relative effect and CI (e.g., RR, OR), the number of participants and studies included for each outcome, the GRADE rating, and any comments.
 
 ::: callout-note
 ### Summary of Findings Table Examples
@@ -67,33 +35,6 @@ Another example of a summary of findings table showing illustrative comparative 
 ![](images/sof_table_example2.png)
 
 The footnotes in this table indicated that most studies were "judged to be at unclear or high risk of bias, but restricting to only studies at low risk of bias did not significantly alter the effect". Additionally, while some publication bias was expected, results were not likely to change significantly due to this.
-:::
-
-::: callout-tip
-## Summary of Findings Table Exercise
-
-In a systematic review that assessed the association between long-term exposure to residential green spaces and mortality in adults [@rojas-ruedaGreenSpacesMortality2019], the authors found that the pooled hazard ratio (HR) for green space exposure on all-cause mortality was 0.96 (95% CI: 0.94 to 0.97). Green space exposure was defined as a 0.1 increment in NDVI (normalized difference vegetation index) in a residential buffer zone of 500 m or less.
-
--   Assuming a proportion of event-free participants of 0.9 (90%) over 10 years, what is the absolute risk of event-free survival within this time period? Calculate for the HR effect estimate.
--   Examine the details of the studies contributing to the meta-analysis in this review [see Table 1 and Figure 2 here](https://doi.org/10.1016/S2542-5196(19)30215-3). Draft a mock summary of findings table for this outcome. What other details would you include in the table? (Disregard the GRADE rating column for now).
-
-::: panel-tabset
-### Code Editor
-
-```{webr-r}
-1000*exp(log(__)*0.96)
-```
-
-### Answer
-
-```{webr-r}
-#| read-only: true
-risk <- 1000*exp(log(0.9)*0.96)
-
-print(paste("The absolute risk of event-free survival within the 10 year time period among those exposed to green space is", round(risk), "per 1000 people."))
-```
-:::
-
 :::
 
 ## Certainty of Evidence Assessment
@@ -149,7 +90,7 @@ In this GRADE assessment, footnote 1 indicates the evidence was downgraded two l
 :::
 
 ::: callout-tip
-## Summary of Findings Table Exercise
+## GRADE Exercise
 
 Using the systematic review of the association between long-term exposure to residential green spaces and mortality in adults [@rojas-ruedaGreenSpacesMortality2019], as investigated in the earlier exercise, we will now attempt to conduct a GRADE evaluation of the evidence contributing to the main all-cause mortality outcome.
 
@@ -167,5 +108,7 @@ The **risk of bias** tools discussed in @sec-bias are designed for individual st
 -   [JBI Systematic Review Checklist](https://jbi.global/critical-appraisal-tools): contains 10 key questions to assess risk of bias in systematic reviews [@aromatarisSummarizingSystematicReviews2015].
 
 Recent studies have compared the AMSTAR 2 and ROBIS tools, finding that they are both valid, moderately reliable, and comparable [@lorenzPsychometricStudyFound2019; @perryComparisonTwoAssessment2021]. However, AMSTAR 2 is more straightforward and easier to use.
+
+
 
 
