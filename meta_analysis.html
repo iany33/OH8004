@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OH8004 Knowledge Synthesis in Occupational and Public Health - 4&nbsp; Selecting Studies</title>
+<title>OH8004 Knowledge Synthesis in Occupational and Public Health - 11&nbsp; Meta-Analysis Practice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./5_bias.html" rel="next">
-<link href="./3_searching.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./10_grade.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -88,6 +88,26 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+<script src="site_libs/datatables-binding-0.33/datatables.js"></script>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/editor/editor.main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   
@@ -271,7 +291,7 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['irr', 'tibble'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'meta'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -293,7 +313,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"fig-height":5,"editor-quick-suggestions":"false","comment":"","output":"true","message":"true","out-width":"700px","out-height":"","editor-font-scale":1,"label":"unnamed-chunk-1","editor-max-height":"","results":"markup","autorun":"false","warning":"true","classes":"","read-only":"true","dpi":72,"fig-cap":"","context":"interactive","fig-width":7},"code":"#| # Create simulated rating data\nrs_test <- tibble(abstract_id = seq(1:30),\n                  reviewer1 = rep(0:1, each = 15),\n                  reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test, n = Inf)"},{"id":2,"options":{"fig-height":5,"editor-quick-suggestions":"false","comment":"","output":"true","message":"true","out-width":"700px","out-height":"","editor-font-scale":1,"label":"unnamed-chunk-2","editor-max-height":"","results":"markup","autorun":"false","warning":"true","classes":"","read-only":"true","dpi":72,"fig-cap":"","context":"interactive","fig-width":7},"code":"library(irr)\n\nkappa2(rs_test[,2:3])"},{"id":3,"options":{"fig-height":5,"editor-quick-suggestions":"false","comment":"","output":"true","message":"true","out-width":"700px","out-height":"","editor-font-scale":1,"label":"unnamed-chunk-3","editor-max-height":"","results":"markup","autorun":"false","warning":"true","classes":"","read-only":"false","dpi":72,"fig-cap":"","context":"interactive","fig-width":7},"code":"rs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = rep(0:1, each = 15),\n                   reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])"},{"id":4,"options":{"fig-height":5,"editor-quick-suggestions":"false","comment":"","output":"true","message":"true","out-width":"700px","out-height":"","editor-font-scale":1,"label":"unnamed-chunk-4","editor-max-height":"","results":"markup","autorun":"false","warning":"true","classes":"","read-only":"true","dpi":72,"fig-cap":"","context":"interactive","fig-width":7},"code":"# Create the updated simulated rating data\nrs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = c(rep(0, times = 15), rep(1, times = 15)),\n                   reviewer2 = c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])"}];
+globalThis.qwebrCellDetails = [{"options":{"classes":"","warning":"true","out-width":"700px","autorun":"true","fig-width":7,"fig-height":5,"message":"true","comment":"","results":"markup","dpi":72,"read-only":"false","label":"unnamed-chunk-1","fig-cap":"","editor-quick-suggestions":"false","context":"setup","output":"true","editor-font-scale":1,"out-height":"","editor-max-height":""},"id":1,"code":"# Load and import dataset\nurl <- \"https://iany33.github.io/data-repository/Soga_2017.csv\"\ndownload.file(url, \"Soga_2017.csv\")\ndata <- read.csv(\"Soga_2017.csv\")"},{"options":{"classes":"","warning":"true","out-width":"700px","autorun":"false","fig-width":7,"fig-height":5,"message":"true","comment":"","results":"markup","dpi":72,"read-only":"false","label":"unnamed-chunk-2","fig-cap":"","editor-quick-suggestions":"false","context":"interactive","output":"true","editor-font-scale":1,"out-height":"","editor-max-height":""},"id":2,"code":"library(meta)\n\nmeta <- data |> \n  filter(outcome == \"Depression\") |> \n  metacont(n.e = treat_n,  \n           mean.e = treat_mean,\n           sd.e = treat_SD,   \n           n.c = control_n, \n           mean.c = control_mean,  \n           sd.c = control_SD, \n           studlab = author_year,   \n           sm = \"SMD\", \n           random = TRUE,\n           fixed = FALSE, \n           method.tau = \"REML\",\n           hakn = TRUE,   \n           title = \"Association between Gardening and Depression\")\n\nsummary(meta)"},{"options":{"classes":"","warning":"true","out-width":"700px","autorun":"false","fig-width":7,"fig-height":5,"message":"true","comment":"","results":"markup","dpi":72,"read-only":"false","label":"unnamed-chunk-3","fig-cap":"","editor-quick-suggestions":"false","context":"interactive","output":"true","editor-font-scale":1,"out-height":"","editor-max-height":""},"id":3,"code":"meta |> forest(sortvar = TE,\n               prediction = TRUE,  \n               leftcols = \"author_year\",\n               leftlabs = \"Study, Year\")"},{"options":{"classes":"","warning":"true","out-width":"700px","autorun":"false","fig-width":7,"fig-height":5,"message":"true","comment":"","results":"markup","dpi":72,"read-only":"false","label":"unnamed-chunk-4","fig-cap":"","editor-quick-suggestions":"false","context":"interactive","output":"true","editor-font-scale":1,"out-height":"","editor-max-height":""},"id":4,"code":"meta2 <- update(meta, method.tau = \"__\") \n\n# Compare pooled estimates and tau^2 values\ndata.frame(Method = c(\"REML\", \"__\"),\n       Pooled_MD = c(meta$TE.random, meta2$TE.random),\n       Pooled_SE = c(meta$seTE.random, meta2$seTE.random),\n       Tau2 = c(meta$tau2, meta2$tau2))"},{"options":{"classes":"","warning":"true","out-width":"700px","autorun":"false","fig-width":7,"fig-height":5,"message":"true","comment":"","results":"markup","dpi":72,"read-only":"false","label":"unnamed-chunk-5","fig-cap":"","editor-quick-suggestions":"false","context":"interactive","output":"true","editor-font-scale":1,"out-height":"","editor-max-height":""},"id":5,"code":"meta3 <- data |> \n  filter(outcome == \"Depression\" | outcome == \"_____\") |> \n  metacont(n.e = treat_n,  \n           mean.e = treat_mean,\n           sd.e = treat_SD,   \n           n.c = control_n, \n           mean.c = control_mean,  \n           sd.c = control_SD, \n           studlab = author_year,   \n           sm = \"SMD\", \n           random = TRUE,\n           fixed = FALSE, \n           method.tau = \"REML\",\n           hakn = TRUE,  \n           subgroup = outcome,\n           tau.common = TRUE,\n           title = \"____\")\n\nsummary(meta3)"}];
 
 </script>
 <script type="module">
@@ -1130,6 +1150,35 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -1142,7 +1191,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4_selecting.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./meta_analysis.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Meta-Analysis Practice</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -1199,7 +1248,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4_selecting.html" class="sidebar-item-text sidebar-link active">
+  <a href="./4_selecting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></span></a>
   </div>
 </li>
@@ -1241,7 +1290,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./meta_analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="./meta_analysis.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Meta-Analysis Practice</span></span></a>
   </div>
 </li>
@@ -1261,18 +1310,11 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#relevance-screening" id="toc-relevance-screening" class="nav-link active" data-scroll-target="#relevance-screening"><span class="header-section-number">4.1</span> Relevance Screening</a>
-  <ul class="collapse">
-  <li><a href="#pilot-testing" id="toc-pilot-testing" class="nav-link" data-scroll-target="#pilot-testing"><span class="header-section-number">4.1.1</span> Pilot Testing</a></li>
-  <li><a href="#systematic-review-management-software" id="toc-systematic-review-management-software" class="nav-link" data-scroll-target="#systematic-review-management-software"><span class="header-section-number">4.1.2</span> Systematic Review Management Software</a></li>
-  <li><a href="#machine-learning-for-relevance-screening" id="toc-machine-learning-for-relevance-screening" class="nav-link" data-scroll-target="#machine-learning-for-relevance-screening"><span class="header-section-number">4.1.3</span> Machine Learning for Relevance Screening</a></li>
-  </ul></li>
-  <li><a href="#article-procurement" id="toc-article-procurement" class="nav-link" data-scroll-target="#article-procurement"><span class="header-section-number">4.2</span> Article Procurement</a></li>
-  <li><a href="#article-characterization" id="toc-article-characterization" class="nav-link" data-scroll-target="#article-characterization"><span class="header-section-number">4.3</span> Article Characterization</a>
-  <ul class="collapse">
-  <li><a href="#pilot-testing-1" id="toc-pilot-testing-1" class="nav-link" data-scroll-target="#pilot-testing-1"><span class="header-section-number">4.3.1</span> Pilot Testing</a></li>
-  </ul></li>
-  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework"><span class="header-section-number">4.4</span> Homework</a></li>
+  <li><a href="#import-the-dataset" id="toc-import-the-dataset" class="nav-link active" data-scroll-target="#import-the-dataset"><span class="header-section-number">11.1</span> Import the Dataset</a></li>
+  <li><a href="#conduct-the-meta-analysis" id="toc-conduct-the-meta-analysis" class="nav-link" data-scroll-target="#conduct-the-meta-analysis"><span class="header-section-number">11.2</span> Conduct the Meta-analysis</a></li>
+  <li><a href="#produce-a-forest-plot" id="toc-produce-a-forest-plot" class="nav-link" data-scroll-target="#produce-a-forest-plot"><span class="header-section-number">11.3</span> Produce a Forest Plot</a></li>
+  <li><a href="#conduct-sensitivity-analysis" id="toc-conduct-sensitivity-analysis" class="nav-link" data-scroll-target="#conduct-sensitivity-analysis"><span class="header-section-number">11.4</span> Conduct Sensitivity Analysis</a></li>
+  <li><a href="#conduct-a-subgroup-analysis" id="toc-conduct-a-subgroup-analysis" class="nav-link" data-scroll-target="#conduct-a-subgroup-analysis"><span class="header-section-number">11.5</span> Conduct a Subgroup Analysis</a></li>
   </ul>
 </nav>
     </div>
@@ -1508,7 +1550,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-selecting" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></span></h1>
+<h1 class="title"><span id="sec-practice" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Meta-Analysis Practice</span></span></h1>
 </div>
 
 
@@ -1525,195 +1567,47 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<p>A structured, reliable, and transparent approach is needed to select articles for inclusion in a systematic review. The first step is selecting from the references identified in the search is to conduct a formal <strong>relevance screening</strong> of the titles and abstracts. A second level of screening can be conducted if needed following this on the full-text articles, or an <strong>article characterization</strong> stage that confirms relevance and extracts study details.</p>
-<p><img src="images/meme_rs.jpg" class="img-fluid"></p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Multiple reviewers
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The relevance screening, article characterization, data extraction, and risk-of-bias assessment steps should be conducted by <strong>two independent reviewers</strong> to reduce bias and the chance of human errors.</p>
+<p>This section provides an interactive template to practice conducting meta-analysis. For this exercise, we will use study data from a systematic review of the association between gardening and health outcomes <span class="citation" data-cites="sogaGardeningBeneficialHealth2017">(<a href="references.html#ref-sogaGardeningBeneficialHealth2017" role="doc-biblioref">Soga, Gaston, and Yamaura 2017</a>)</span>.</p>
+<section id="import-the-dataset" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="import-the-dataset"><span class="header-section-number">11.1</span> Import the Dataset</h2>
+<p>As a first step, we will import the dataset and examine it.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-fa6446e1d73308fef68d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fa6446e1d73308fef68d">{"x":{"filter":"none","vertical":false,"data":[["Ghanbari et al. 2015","Gonzalez et al. 2011","Hayashi et al. 2008","Kam and Siu 2010","Kotozaki 2014","Wichrowski et al. 2005","Wilson and Christensen 2011","Wood et al. (in press)","Gonzalez et al. 2011","Gonzalez et al. 2011","Hayashi et al. 2008","Wichrowski et al. 2005","Wood et al. (in press)","Kotozaki 2014","Sommerfeld et al. 2010","van den Berg et al. 2010","Wood et al. (in press)","van den Berg et al. 2010","van den Berg et al. 2010","Wichrowski et al. 2005","Min et al. 2014","Sommerfeld et al. 2010","van den Berg et al. 2010","Waliczek et al. 2005","van den Berg et al. 2010","Hayashi et al. 2008","Rodiek 2002","Rodiek 2002","van den Berg and Custers 2011","van den Berg and Custers 2011","Wichrowski et al. 2005","Wood et al. (in press)","Sommerfeld et al. 2010","van den Berg et al. 2010","van den Berg et al. 2010","Gigliotti and Jarrott 2005","Gigliotti et al. 2004","Gonzalez et al. 2011","Min et al. 2014","Kam and Siu 2010","Gonzalez et al. 2010","Gonzalez et al. 2010","Gonzalez et al. 2010","Rodiek 2002","van den Berg and Custers 2011","Kotozaki 2014","Wood et al. (in press)","Kotozaki 2014","Kim et al. 2012","van den Berg et al. 2010","Gonzalez et al. 2011","Kam and Siu 2010","van den Berg et al. 2010","Hayashi et al. 2008","Wichrowski et al. 2005","Wood et al. (in press)","Hayashi et al. 2008","Wichrowski et al. 2005","Wood et al. (in press)"],[25,46,11,10,22,59,172,136,18,28,11,59,136,22,156,121,136,121,121,59,21,158,121,220,121,11,6,6,14,14,59,136,158,121,121,48,13,46,21,10,28,28,28,6,14,22,136,22,12,121,46,10,121,11,59,136,11,59,136],[10.6,18.8,10.9,-9.199999999999999,4.41,2.71,5.49,38.1,50.2,44.6,11.8,6,38.8,2.14,4.09,3.32,9,0.61,2.63,74.09999999999999,3.61,36.06,2.26,45.88,0.45,15.4,1.67,0,1.22,3.7,1.6,143.7,2.34,5.8,1.26,2.43,2.43,2.51,3.56,0.6,7.3,7.1,11.8,0.59,5.24,32.36,32.8,56.95,36,7.23,13,-6,2.53,7.3,4.86,33.4,25.4,18,41.6],[9.800000000000001,7.8,3.35,9.15,4.34,5.66,5.43,1.9,7.5,7.5,4.02,6.14,5.1,3.52,0.84,0.79,3.7,0.91,2.32,13.6,0.33,4.7,0.43,6.77,0.72,10.7,2.73,0.89,0.41,0.48,24.8,16.9,0.5600000000000001,1.53,0.32,0.74,0.55,0.79,0.61,14.21,1.6,1.9,3.3,0.46,2.26,3.92,3.9,9.41,9.699999999999999,3.04,2.3,5.33,1.15,2.16,5.81,3.2,3.36,6.11,5.9],[25,46,11,12,22,59,31,133,18,28,11,59,133,22,103,63,133,63,63,59,21,103,63,223,63,11,10,10,16,16,59,133,102,63,63,48,13,46,21,12,28,28,28,8,16,22,133,22,12,63,46,12,63,11,59,133,11,59,133],[21.85,25.4,12.4,-1.17,7.59,5.8,7.97,39.1,48.8,43.6,11.6,9.470000000000001,41.1,4.82,3.77,3.24,11.1,0.92,3.19,79.2,3.45,34.4,2.12,43.69,0.65,35.8,0.4,-0.3,1.35,3.21,19.3,152.4,2.05,4.9,1.27,1.9,2.06,2.25,3.07,1.5,4.5,3.4,13.4,0.22,6.37,30.95,31.4,49.09,18.5,6.89,14.1,-0.5,2.77,10.2,9.02,34.1,26.4,15.1,38.1],[8.359999999999999,7.9,4.02,8.33,4.62,6.89,6.29,3,6.8,6.6,3.86,5.79,6.2,4.6,0.99,0.78,4.9,1.34,2.35,14.7,0.34,5.57,0.48,7.65,0.85,11.9,3.37,4.14,0.42,0.7,24.5,19.7,0.59,2.15,0.38,0.65,0.49,0.82,0.71,6.07,2.1,2.3,3.2,0.22,2.22,3.3,4.2,12.84,9.699999999999999,2.99,2.3,6.79,1.13,2.92,6.51,4.1,2.23,5.65,6.7],["Depression","Depression","Depression","Depression","Depression","Depression","Depression","Depression","Existential issues","Existential issues","Fatigue","Fatigue","Fatigue","General health","General health","General health","General health","GP consults","Health complaints","Heart rate","Hope","Life satisfaction","Life satisfaction","Life satisfaction","Loneliness","Mood","Mood","Mood","Mood","Mood","Mood","Mood","Physical activity","Physical activity","Physical constraints","Positive affect","Positive affect","Positive affect","Psychological wellbeing","Quality of life","Restorativeness (being away)","Restorativeness (fascination)","Rumination","Salivary cortisol","Salivary cortisol","Self-esteem","Self-esteem","Sense of community","Sociability","Social contacts","Stress","Stress","Stress","Tension","Tension","Tension","Vigor","Vigor","Vigor"],["Therapy","Therapy","Non-therapy","Therapy","Therapy","Therapy","Non-therapy","Non-therapy","Therapy","Therapy","Non-therapy","Therapy","Non-therapy","Therapy","Non-therapy","Non-therapy","Non-therapy","Non-therapy","Non-therapy","Therapy","Therapy","Non-therapy","Non-therapy","Non-therapy","Non-therapy","Non-therapy","Non-therapy","Non-therapy","Non-therapy","Non-therapy","Therapy","Non-therapy","Non-therapy","Non-therapy","Non-therapy","Therapy","Therapy","Therapy","Therapy","Therapy","Therapy","Therapy","Therapy","Non-therapy","Non-therapy","Therapy","Non-therapy","Therapy","Therapy","Non-therapy","Therapy","Therapy","Non-therapy","Non-therapy","Therapy","Non-therapy","Non-therapy","Therapy","Non-therapy"],["Before/ after gardening","Before/ after gardening","Before/ after gardening","Gardeners/ non-gardeners","Before/ after gardening","Before/ after gardening","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Before/ after gardening","Before/ after gardening","Before/ after gardening","Before/ after gardening","Gardeners/ non-gardeners","Before/ after gardening","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Before/ after gardening","Before/ after gardening","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Before/ after gardening","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Before/ after gardening","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Before/ after gardening","Before/ after gardening","Gardeners/ non-gardeners","Before/ after gardening","Before/ after gardening","Before/ after gardening","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Before/ after gardening","Gardeners/ non-gardeners","Before/ after gardening","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Before/ after gardening","Gardeners/ non-gardeners","Gardeners/ non-gardeners","Before/ after gardening","Before/ after gardening","Gardeners/ non-gardeners","Before/ after gardening","Before/ after gardening","Gardeners/ non-gardeners"],["Patients","Patients","Non-patients","Patients","Non-patients","Patients","Patients","Non-patients","Patients","Patients","Non-patients","Patients","Non-patients","Non-patients","Non-patients","Non-patients","Non-patients","Non-patients","Non-patients","Patients","Non-patients","Non-patients","Non-patients","Non-patients","Non-patients","Non-patients","Non-patients","Non-patients","Non-patients","Non-patients","Patients","Non-patients","Non-patients","Non-patients","Non-patients","Patients","Patients","Patients","Non-patients","Patients","Patients","Patients","Patients","Non-patients","Non-patients","Non-patients","Non-patients","Non-patients","Patients","Non-patients","Patients","Patients","Non-patients","Non-patients","Patients","Non-patients","Non-patients","Patients","Non-patients"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>author_year<\/th>\n      <th>treat_n<\/th>\n      <th>treat_mean<\/th>\n      <th>treat_SD<\/th>\n      <th>control_n<\/th>\n      <th>control_mean<\/th>\n      <th>control_SD<\/th>\n      <th>outcome<\/th>\n      <th>intervention_type<\/th>\n      <th>comparison_type<\/th>\n      <th>participant_type<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":[0,1,2,3,4]},{"className":"dt-right","targets":[5,6]},{"name":"author_year","targets":0},{"name":"treat_n","targets":1},{"name":"treat_mean","targets":2},{"name":"treat_SD","targets":3},{"name":"control_n","targets":4},{"name":"control_mean","targets":5},{"name":"control_SD","targets":6},{"name":"outcome","targets":7},{"name":"intervention_type","targets":8},{"name":"comparison_type","targets":9},{"name":"participant_type","targets":10}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'70%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'70%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'70%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'70%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'70%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'70%'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 </div>
-<section id="relevance-screening" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="relevance-screening"><span class="header-section-number">4.1</span> Relevance Screening</h2>
-<p>A relevance screening form should be developed, pilot tested, and included in the review protocol. It is easiest and most straightforward for this to contain only <strong>one key question</strong> if possible to streamline the process. The form should explicitly identify the eligibility criteria and any key definitions. An example from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> is shown below:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rs_form_example.png" class="img-fluid figure-img"></p>
-<figcaption>Relevance Screening Form Example</figcaption>
-</figure>
-</div>
-<section id="pilot-testing" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="pilot-testing"><span class="header-section-number">4.1.1</span> Pilot Testing</h3>
-<p>The relevance screening form should be pilot tested before use to ensure the eligibility and inclusion decisions are valid and reliable. The recommended process is as follows:</p>
-<ul>
-<li><strong>Purposively select</strong> a small number of abstracts for pre-testing (e.g, 30-50) to ensure the sample includes those known to be relevant, not relevant, and potentially relevant</li>
-<li>Each reviewer assesses each abstract using the form and records their results</li>
-<li>Assess agreement in the pilot test using the <strong>kappa statistic</strong></li>
-<li>A kappa of &gt;0.8 is often recommended for “almost perfect agreement” <span class="citation" data-cites="simKappaStatisticReliability2005">(e.g, <a href="references.html#ref-simKappaStatisticReliability2005" role="doc-biblioref">Sim and Wright 2005</a>)</span></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Kappa Agreement Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We will simulate reviewer inclusion/exclusion (i.e., yes/no) ratings for a sample of 30 abstracts. Assume that Reviewer 1 included 50% of the abstracts, including two that Reviewer 2 did not include. Assume Reviewer 2 included 16 abstracts, including three of the abstracts that Reviewer 1 did not include.</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Now we can evaluate the kappa agreement between the two reviewer’s ratings.</p>
+</section>
+<section id="conduct-the-meta-analysis" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="conduct-the-meta-analysis"><span class="header-section-number">11.2</span> Conduct the Meta-analysis</h2>
+<p>Now we will conduct a meta-analysis on a selected outcome. For this example, we can examine the <em>depression</em> outcome</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The agreement is moderate, and below an ideal level of 0.8 or higher.</p>
-<p>What happens if we edit the simulated data so that this time each reviewer only differs by one abstract each (i.e., there are only two conflicts)?</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code Editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Answer</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+</section>
+<section id="produce-a-forest-plot" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="produce-a-forest-plot"><span class="header-section-number">11.3</span> Produce a Forest Plot</h2>
+<p>The following coding template can be used for a forest plot figure. Add some customization options to make it look unique and appealing. See the <a href="8_meta.html" class="quarto-xref"><span>Chapter 8</span></a> for more details.</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+</section>
+<section id="conduct-sensitivity-analysis" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="conduct-sensitivity-analysis"><span class="header-section-number">11.4</span> Conduct Sensitivity Analysis</h2>
+<p>Reproduce the meta-analysis using a different method of calculating <span class="math inline">\(\tau^2\)</span> and compare the results.</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-<p>You can further modify the simulated dataset using the code above to explore how differ patterns of conflicts affect the Kappa measure of agreement.</p>
-</div>
-</div>
 </section>
-<section id="systematic-review-management-software" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="systematic-review-management-software"><span class="header-section-number">4.1.2</span> Systematic Review Management Software</h3>
-<p>Systematic management programs, such as <strong>Covidence</strong>, automatically calculate a kappa agreement statistic, along with other inter-rater reliability measures. The relevance screening form in Covidence defaults to having three options: yes, no, or maybe. Answers of <em>maybe</em> are considered the same as <em>yes</em> for screening and inter-rated reliability calculation purposes. For Covidence, a CSV file can be downloaded to show the screening reliability statistics for each pair of reviewers. An example of this output is shown in the figure below.</p>
-<p><img src="images/covidence_kappa.png" class="img-fluid"></p>
-</section>
-<section id="machine-learning-for-relevance-screening" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="machine-learning-for-relevance-screening"><span class="header-section-number">4.1.3</span> Machine Learning for Relevance Screening</h3>
-<p>Many systematic management programs have implemented or are developing <strong>machine learning tools</strong> to semi-automate the relevance screening process. The tools work by prioritizing the abstracts that are most likely to be included (<em>screening prioritization</em>), and suggesting a percentage that can be “safely” excluded (<em>screening truncation</em>), which can both enhance review efficiency. The screening truncation process usually uses a stopping rule or threshold, such as 95% estimated recall, after which point the review team can decide not to review the remaining references or to use a modified process (e.g., only one reviewer).</p>
-<p>These tools requires careful training and pilot testing on a subset of abstracts (e.g., 2% of total abstracts) to ensure the algorithm can make more accurate predictions. Research has shown that such machine learning tools can perform with high accuracy and reliability, and can result in substantial time savings for review teams <span class="citation" data-cites="hamelEvaluationDistillerSRMachine2020 tsouMachineLearningScreening2020">(<a href="references.html#ref-hamelEvaluationDistillerSRMachine2020" role="doc-biblioref">Hamel et al. 2020</a>; <a href="references.html#ref-tsouMachineLearningScreening2020" role="doc-biblioref">Tsou et al. 2020</a>)</span>. <a href="https://doi.org/10.1186/s12874-021-01451-2">Recent guidance is available</a> for reviewers who are interested to adopt these tools in their review <span class="citation" data-cites="hamelGuidanceUsingArtificial2021">(<a href="references.html#ref-hamelGuidanceUsingArtificial2021" role="doc-biblioref">Hamel et al. 2021</a>)</span>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Relevance Screening Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Using the example relevance screening form above, from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span>, assess the relevance of the <a href="assets/Example_RS_Form.docx">following five abstracts captured in the search from that review</a> and record your answers for discussion.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="article-procurement" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="article-procurement"><span class="header-section-number">4.2</span> Article Procurement</h2>
-<p>Following relevance screening, full-text PDFs should be obtained for all references considered relevant. These can be saved to a folder and uploaded/linked to the applicable reference IDs in the systematic review management program used.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Finding Articles
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You should be able to identify most PDFs using a combination of simple Google Searching (for open-access papers) and the <a href="https://library.torontomu.ca/">TMU scholarly paper search feature</a>.</p>
-<p>Occasionally, you may need to search for TMU access to the specific journal of interest, then search for the paper in specific databases if the global search does not find the paper(s) you need.</p>
-<p>In cases where you cannot find the paper via these methods, you can ask the librarian for assistance, or make a special request for the paper through the <a href="https://library.torontomu.ca/services/ill/">Interlibrary Loan Service</a>.</p>
-</div>
-</div>
-</section>
-<section id="article-characterization" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="article-characterization"><span class="header-section-number">4.3</span> Article Characterization</h2>
-<p>It is often useful to include a separate screening confirmation (sometimes referred to as second-level screening) step and an article characterization step (i.e., data charting). The relevance confirmation step can be used to exclude irrelevant papers, which can be combined with article characterization to subsequently extract key characteristics of the relevant articles. This step is sometimes combined with data extraction, where study outcomes are also extracted. The confirmation of relevance should include a checkbox to indicate the primary reason for exclusion for articles that are not relevant.</p>
-<p>The data captured in this form should be summarized in a characteristics of included studies table in the review results. Additionally, some of the variables captured in this form may also be used in the analysis (e.g., subgroup analysis or meta-regression). Some frequently important variables to capture include:</p>
-<ul>
-<li>Document type, year of publication, language</li>
-<li>Study design</li>
-<li>Study dates and location(s)</li>
-<li>Recruitment and sampling methods</li>
-<li>Characteristics of participants (e.g., age, gender)</li>
-<li>Characteristics of the intervention or exposure (e.g., dose, length, how they were measured)</li>
-<li>Characteristics of the control or comparison group (if applicable)</li>
-<li>Types of outcomes measured and how they were measured</li>
-</ul>
-<p>It is often useful to develop outlines of the anticipated figures and tables that you plan to include in the results section of your systematic review. This will help you to decide on which important characteristics to extract.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Multiple reports of the same study
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It is sometimes the case that the same study is reported in multiple publications. In the case of authors splitting results of a study across multiple journal papers, it might be easiest to treat these as separate studies at this stage and note that they are from the same larger study. In cases where preliminary data are published in a thesis or abstract, usually you will want to keep only the published journal article as the main source for that study.</p>
-</div>
-</div>
-<section id="pilot-testing-1" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="pilot-testing-1"><span class="header-section-number">4.3.1</span> Pilot Testing</h3>
-<p>It is also important to pilot test the article characterization form. Usually this can be done on a small selection of articles (e.g., 5-10). Instead of checking kappa agreement, you should compare reviewer answers, look for discrepancies in interpretation of questions, discuss, and modify the form to enhance its clarify and ensure consistent interpretation.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Article Characterization Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Examine the <a href="assets/Example_Article_Characterization_Form.docx">example article characterization form</a> from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span>. Use this form to extract data on a few different characteristics from the three full-text articles captured and screened as potentially relevant in that review]. Then record your answers for discussion.</p>
-<p>The three articles are available at the following shared folder: <a href="https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing" class="uri">https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing</a>.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="homework" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="homework"><span class="header-section-number">4.4</span> Homework</h2>
-<p>One to two students each will be assigned one risk-of-bias <em>domain</em> from <a href="5_bias.html" class="quarto-xref"><span>Chapter 5</span></a> to review and present in class next week. The bias domains to be assigned include:</p>
-<ul>
-<li>Bias arising from the randomization process</li>
-<li>Bias due to deviations from intended interventions</li>
-<li>Bias due to missing outcome data</li>
-<li>Bias in measurement of the outcome</li>
-<li>Bias in selection of the reported result</li>
-<li>Risk of bias due to confounding</li>
-<li>Risk of bias arising from measurement of the exposure</li>
-<li>Risk of bias in selection of participants into the study</li>
-<li>Risk of bias due to post-exposure interventions</li>
-</ul>
+<section id="conduct-a-subgroup-analysis" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="conduct-a-subgroup-analysis"><span class="header-section-number">11.5</span> Conduct a Subgroup Analysis</h2>
+<p>Now try filtering the analysis to two or three different health/wellbeing outcomes and conduct a subgroup analysis on the outcome type. How does this change the results?</p>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-hamelGuidanceUsingArtificial2021" class="csl-entry" role="listitem">
-Hamel, C., M. Hersi, S. E. Kelly, A. C. Tricco, Sharon Straus, G. Wells, B. Pham, and B. Hutton. 2021. <span>“Guidance for Using Artificial Intelligence for Title and Abstract Screening While Conducting Knowledge Syntheses.”</span> <em>BMC Medical Research Methodology</em> 21 (1): 285. <a href="https://doi.org/10.1186/s12874-021-01451-2">https://doi.org/10.1186/s12874-021-01451-2</a>.
-</div>
-<div id="ref-hamelEvaluationDistillerSRMachine2020" class="csl-entry" role="listitem">
-Hamel, C., S. E. Kelly, K. Thavorn, D. B. Rice, G. A. Wells, and B. Hutton. 2020. <span>“An Evaluation of <span>DistillerSR</span>’s Machine Learning-Based Prioritization Tool for Title/Abstract Screening – Impact on Reviewer-Relevant Outcomes.”</span> <em>BMC Medical Research Methodology</em> 20 (1): 256. <a href="https://doi.org/10.1186/s12874-020-01129-1">https://doi.org/10.1186/s12874-020-01129-1</a>.
-</div>
-<div id="ref-simKappaStatisticReliability2005" class="csl-entry" role="listitem">
-Sim, Julius, and Chris C Wright. 2005. <span>“The <span>Kappa</span> Statistic in Reliability Studies: Use, Interpretation, and Sample Size Requirements.”</span> <em>Physical Therapy</em> 85 (3): 257–68. <a href="https://doi.org/10.1093/ptj/85.3.257">https://doi.org/10.1093/ptj/85.3.257</a>.
-</div>
-<div id="ref-tsouMachineLearningScreening2020" class="csl-entry" role="listitem">
-Tsou, Amy Y., Jonathan R. Treadwell, Eileen Erinoff, and Karen Schoelles. 2020. <span>“Machine Learning for Screening Prioritization in Systematic Reviews: Comparative Performance of <span>Abstrackr</span> and <span>EPPI-Reviewer</span>.”</span> <em>Systematic Reviews</em> 9 (1): 73. <a href="https://doi.org/10.1186/s13643-020-01324-7">https://doi.org/10.1186/s13643-020-01324-7</a>.
-</div>
-<div id="ref-youngEffectivenessFoodHandler2019" class="csl-entry" role="listitem">
-Young, Ian, Judy Greig, Barbara J. Wilhelm, and Lisa A. Waddell. 2019. <span>“Effectiveness of Food Handler Training and Education Interventions: A Systematic Review and Meta-Analysis.”</span> <em>Journal of Food Protection</em> 82 (10): 1714–28. <a href="https://doi.org/10.4315/0362-028X.JFP-19-108">https://doi.org/10.4315/0362-028X.JFP-19-108</a>.
+<div id="ref-sogaGardeningBeneficialHealth2017" class="csl-entry" role="listitem">
+Soga, Masashi, Kevin J. Gaston, and Yuichi Yamaura. 2017. <span>“Gardening Is Beneficial for Health: <span>A</span> Meta-Analysis.”</span> <em>Preventive Medicine Reports</em> 5 (March): 92–99. <a href="https://doi.org/10.1016/j.pmedr.2016.11.007">https://doi.org/10.1016/j.pmedr.2016.11.007</a>.
 </div>
 </div>
 </section>
@@ -2130,13 +2024,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./3_searching.html" class="pagination-link" aria-label="Search Strategy">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Search Strategy</span></span>
+      <a href="./10_grade.html" class="pagination-link" aria-label="Quality of Evidence and Reporting">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Quality of Evidence and Reporting</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./5_bias.html" class="pagination-link" aria-label="Risk-of-Bias Assessment">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk-of-Bias Assessment</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">References</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

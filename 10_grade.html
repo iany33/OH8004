@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -49,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./meta_analysis.html" rel="next">
 <link href="./9_meta2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -66,7 +67,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -75,6 +82,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -84,6 +92,33 @@ div.csl-indent {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar floating">
@@ -92,12 +127,12 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_grade.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Quality of Evidence and Reporting</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10_grade.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Quality of Evidence and Reporting</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -107,7 +142,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./OH8004.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -115,7 +150,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">OH8004 Knowledge Synthesis in Occupational and Public Health</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/iany33/OH8004" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/iany33/OH8004" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -194,25 +229,27 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./meta_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Meta-Analysis Practice</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary-of-findings-tables-and-review-reporting" id="toc-summary-of-findings-tables-and-review-reporting" class="nav-link active" data-scroll-target="#summary-of-findings-tables-and-review-reporting"><span class="header-section-number">10.1</span> Summary of Findings Tables and Review Reporting</a>
-  <ul class="collapse">
-  <li><a href="#statistical-considerations" id="toc-statistical-considerations" class="nav-link" data-scroll-target="#statistical-considerations"><span class="header-section-number">10.1.1</span> Statistical Considerations</a></li>
-  <li><a href="#summary-of-findings-table-contents" id="toc-summary-of-findings-table-contents" class="nav-link" data-scroll-target="#summary-of-findings-table-contents"><span class="header-section-number">10.1.2</span> Summary of Findings Table Contents</a></li>
-  </ul></li>
+  <li><a href="#summary-of-findings-tables-and-review-reporting" id="toc-summary-of-findings-tables-and-review-reporting" class="nav-link active" data-scroll-target="#summary-of-findings-tables-and-review-reporting"><span class="header-section-number">10.1</span> Summary of Findings Tables and Review Reporting</a></li>
   <li><a href="#certainty-of-evidence-assessment" id="toc-certainty-of-evidence-assessment" class="nav-link" data-scroll-target="#certainty-of-evidence-assessment"><span class="header-section-number">10.2</span> Certainty of Evidence Assessment</a>
   <ul class="collapse">
   <li><a href="#risk-of-bias" id="toc-risk-of-bias" class="nav-link" data-scroll-target="#risk-of-bias"><span class="header-section-number">10.2.1</span> Risk of bias</a></li>
@@ -244,9 +281,11 @@ div.csl-indent {
   </div>
   
 
+
 </header>
 
-<p>It is important to present the results of a systematic review and meta-analysis in a user-friendly and transparent way for knowledge users and decision-makers. <strong>Summary of findings tables</strong> have been developed by the Cochrane Collaboration as a standard format for summarize knowledge synthesis results. Such tables should incorporate a rating of the <strong>certainty in evidence</strong> for each specific outcome assessed in the review. The Cochrane Collaboration has developed an approach called <strong>GRADE</strong> (Grading of Recommendations Assessment, Development and Evaluation) to assess the certainty (or quality) of evidence for outcomes in a systematic review. Finally, we will introduce different tools that can be used to critically appraise published systematic reviews.</p>
+
+<p>It is important to present the results of a systematic review and meta-analysis in a user-friendly and transparent way for knowledge users and decision-makers. <strong>Summary of findings tables</strong> have been developed by the Cochrane Collaboration as a standard format for summarize knowledge synthesis results. Such tables should incorporate a rating of the <strong>certainty in evidence</strong> for each specific outcome assessed in the review. The Cochrane Collaboration has developed an approach called <strong>GRADE</strong> (Grading of Recommendations Assessment, Development and Evaluation) to assess the certainty (or quality) of evidence for outcomes in a systematic review. Finally, we will introduce different tools that can be used to <strong>critically appraise</strong> published systematic reviews.</p>
 <p><img src="images/meme_grade.jpg" class="img-fluid"></p>
 <section id="summary-of-findings-tables-and-review-reporting" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="summary-of-findings-tables-and-review-reporting"><span class="header-section-number">10.1</span> Summary of Findings Tables and Review Reporting</h2>
@@ -259,32 +298,8 @@ div.csl-indent {
 <li>The final column includes overall comments, and explanations (footnotes) should be added as needed at the bottom of the table.</li>
 </ul>
 <p>The Cochrane Collaboration has created an online software called <a href="https://www.gradepro.org/">GRADEpor GDT</a> to create summary of findings tables. The software is currently free for groups of up to three researchers.</p>
-<section id="statistical-considerations" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="statistical-considerations"><span class="header-section-number">10.1.1</span> Statistical Considerations</h3>
-<p>Meta-analysis is typically conducted using <strong>relative</strong> measures of effect (e.g., risk ratio, odds ratio) because these are more consistent across studies than <strong>absolute</strong> measures (e.g., risk difference). However, for the summary of findings table, the effect for each outcome should be presented as both a relative and absolute effect. To determine an absolute effect from a meta-analysis estimate, we require an estimate of the <strong>assumed comparator risk (ACR)</strong>. The ACR refers to the risk of the outcome in the comparison (or control) group (that does not receive the intervention).</p>
-<p>There are different methods to calculate an ACR for each outcome. One option is to take the median value of the risk of the outcome among participants in the control groups of studies included in the review. However, if there is significant variation in the control group risk among studies in the review, then another option is to select two representative values for <em>high</em> and <em>low</em> risk groups. This could be the second highest and second lowest risks among the included studies for that particular outcome. A <strong>corresponding intervention risk</strong> can then be calculated using the relative measure of effect from meta-analysis and the ACR. For <em>dichotomous outcomes</em>, such risks are generally presented as a risk per 1000 (or 100) people. The formulas to calculate this risk for risk ratio (RR) and odds ratio (OR) outcomes are shown below. In both cases, the lower and upper 95% confidence limits can be calculated by replacing the RR or OR value with its lower and upper confidence limits, respectively.</p>
-<p><span class="math display">\[
-\text{Corresponding intervention risk per 1000} = 1000\times ACR\times RR
-\]</span></p>
-<p><span class="math display">\[
-\text{Corresponding intervention risk per 1000} = 1000\times \left(\frac{OR\times ACR}{1-ACR+ \left( OR\times ACR \right)} \right)
-\]</span></p>
-<p>For <em>time-to-event outcomes</em>, measured using a hazard ratio (HR), there are three methods of calculating the corresponding intervention risk. The first calculates the absolute risk of event-free survival within a particular time period, the second calculates the absolute risk of an event within a particular time period, and the third calculates the median time to the event (in months or years). The formulas for calculating these risks are as follows:</p>
-<p><span class="math display">\[
-\text{Corresponding intervention risk per 1000} = 1000\times e^\left[\ln(\text{proportion of event-free participants})\times HR \right]
-\]</span></p>
-<p><span class="math display">\[
-\text{Corresponding intervention risk per 1000} = 1000\times e^\left[\ln(1-\text{proportion of event-free participants})\times HR \right]
-\]</span></p>
-<p><span class="math display">\[
-\text{Corresponding median survival time} = \frac{\text{comparator group median survival time}}{HR}
-\]</span></p>
-<p>For <em>continuous outcomes</em> (e.g., SMD), the corresponding intervention risk is usually the mean difference or SMD and CI of the meta-analysis estimate.</p>
-</section>
-<section id="summary-of-findings-table-contents" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="summary-of-findings-table-contents"><span class="header-section-number">10.1.2</span> Summary of Findings Table Contents</h3>
 <p>Each <strong>row</strong> in a summary of findings table reflects one of the pre-selected, most important outcomes (up to seven). For each outcome, you should provide the measurement scale (if applicable) and the measurement time frame (e.g., length of follow-up). Outcomes that were pre-selected but that had no data available from the studies in the review should still be included in this table.</p>
-<p>The first <strong>column</strong> in the table will be the list of outcomes. The second column is the ACR and the third is the corresponding intervention risk. The relative effect and CI (e.g., RR, OR) is presented in the fourth column (this column is not required for continuous outcomes). The final three columns include data on the number of participants and studies included for each outcome, the GRADE rating, and any comments.</p>
+<p>The first <strong>column</strong> in the table will be the list of outcomes. The second column is the comparative risk in each group. Then additional columns are provided for the relative effect and CI (e.g., RR, OR), the number of participants and studies included for each outcome, the GRADE rating, and any comments.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -303,24 +318,6 @@ Summary of Findings Table Examples
 <p>The footnotes in this table indicated that most studies were “judged to be at unclear or high risk of bias, but restricting to only studies at low risk of bias did not significantly alter the effect”. Additionally, while some publication bias was expected, results were not likely to change significantly due to this.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Summary of Findings Table Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In a systematic review that assessed the association between long-term exposure to residential green spaces and mortality in adults <span class="citation" data-cites="rojas-ruedaGreenSpacesMortality2019">(<a href="references.html#ref-rojas-ruedaGreenSpacesMortality2019" role="doc-biblioref">Rojas-Rueda et al. 2019</a>)</span>, the authors found that the pooled hazard ratio (HR) for green space exposure on all-cause mortality was 0.96 (95% CI: 0.94 to 0.97). Green space exposure was defined as a 0.1 increment in NDVI (normalized difference vegetation index) in a residential buffer zone of 500 m or less.</p>
-<ul>
-<li>Assuming a proportion of event-free participants of 0.9 (90%) over 10 years, what is the absolute risk of event-free survival within this time period? Calculate for the HR and its 95% CI.</li>
-<li>Examine the details of the studies contributing to the meta-analysis in this review <a href="https://doi.org/10.1016/S2542-5196(19)30215-3">see Table 1 and Figure 2 here</a>. Draft a mock summary of findings table for this outcome. What other details would you include in the table? (Disregard the GRADE rating column for now).</li>
-</ul>
-</div>
-</div>
-</section>
 </section>
 <section id="certainty-of-evidence-assessment" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="certainty-of-evidence-assessment"><span class="header-section-number">10.2</span> Certainty of Evidence Assessment</h2>
@@ -332,7 +329,7 @@ Summary of Findings Table Exercise
 </section>
 <section id="inconsistency" class="level3" data-number="10.2.2">
 <h3 data-number="10.2.2" class="anchored" data-anchor-id="inconsistency"><span class="header-section-number">10.2.2</span> Inconsistency</h3>
-<p>This criterion aims to assess the extent of <strong>inconsistency</strong> or heterogeneity in the estimate of effect that is unexplained after investigating subgroup and meta-regression analyses. Inconsistency can be measured using <span class="math inline">\(I^2\)</span>, <span class="math inline">\(\tau\)</span>, and/or prediction intervals, as previously covered in the <a href="8_meta.html"><span>Chapter&nbsp;8</span></a> session. If heterogeneity in the estimate is considered substantial or important, and there are no identified explanations for the heterogeneity, then consider downgrading by one level.</p>
+<p>This criterion aims to assess the extent of <strong>inconsistency</strong> or heterogeneity in the estimate of effect that is unexplained after investigating subgroup and meta-regression analyses. Inconsistency can be measured using <span class="math inline">\(I^2\)</span>, <span class="math inline">\(\tau\)</span>, and/or prediction intervals, as previously covered in the <a href="8_meta.html" class="quarto-xref"><span>Chapter 8</span></a> session. If heterogeneity in the estimate is considered substantial or important, and there are no identified explanations for the heterogeneity, then consider downgrading by one level.</p>
 </section>
 <section id="indirectness" class="level3" data-number="10.2.3">
 <h3 data-number="10.2.3" class="anchored" data-anchor-id="indirectness"><span class="header-section-number">10.2.3</span> Indirectness</h3>
@@ -347,7 +344,7 @@ Summary of Findings Table Exercise
 </section>
 <section id="publication-bias" class="level3" data-number="10.2.5">
 <h3 data-number="10.2.5" class="anchored" data-anchor-id="publication-bias"><span class="header-section-number">10.2.5</span> Publication bias</h3>
-<p>The final downgrading criterion relates to possible <strong>publication bias</strong>. This criterion can be informed by a separate risk-of-bias assessment for missing data, as described in <a href="5_bias.html"><span>Chapter&nbsp;5</span></a>, to determine the extent that additional studies might have been excluded from the meta-analysis because they were not published. Evaluation of meta-analysis funnel plots and publication bias tests (if appropriate) can also inform this criterion.</p>
+<p>The final downgrading criterion relates to possible <strong>publication bias</strong>. This criterion can be informed by a separate risk-of-bias assessment for missing data, as described in <a href="5_bias.html" class="quarto-xref"><span>Chapter 5</span></a>, to determine the extent that additional studies might have been excluded from the meta-analysis because they were not published. Evaluation of meta-analysis funnel plots and publication bias tests (if appropriate) can also inform this criterion.</p>
 </section>
 <section id="upgrading-criteria" class="level3" data-number="10.2.6">
 <h3 data-number="10.2.6" class="anchored" data-anchor-id="upgrading-criteria"><span class="header-section-number">10.2.6</span> Upgrading criteria</h3>
@@ -376,7 +373,7 @@ GRADE Example
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Summary of Findings Table Exercise
+GRADE Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -392,7 +389,7 @@ Summary of Findings Table Exercise
 </section>
 <section id="critical-appraisal-of-systematic-reviews" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="critical-appraisal-of-systematic-reviews"><span class="header-section-number">10.3</span> Critical Appraisal of Systematic Reviews</h2>
-<p>The <strong>risk of bias</strong> tools discussed in <a href="5_bias.html"><span>Chapter&nbsp;5</span></a> are designed for individual studies within a systematic review, while the <strong>PRISMA</strong> reporting guideline is primarily meant to assess the completeness and transparency of reporting of a systematic review to allow reproducibility. To <strong>critically appraise</strong> published systematic reviews, there are a few different tools that can be used:</p>
+<p>The <strong>risk of bias</strong> tools discussed in <a href="5_bias.html" class="quarto-xref"><span>Chapter 5</span></a> are designed for individual studies within a systematic review, while the <strong>PRISMA</strong> reporting guideline is primarily meant to assess the completeness and transparency of reporting of a systematic review to allow reproducibility. To <strong>critically appraise</strong> published systematic reviews, there are a few different tools that can be used:</p>
 <ul>
 <li><a href="https://amstar.ca/Amstar-2.php">AMSTAR 2</a>: contains 16 individual assessment items, which contribute to an overall rating of confidence in the results of the review (critically low, low, moderate, or high) <span class="citation" data-cites="sheaAMSTARCriticalAppraisal2017">(<a href="references.html#ref-sheaAMSTARCriticalAppraisal2017" role="doc-biblioref">Shea et al. 2017</a>)</span>.</li>
 <li><a href="https://www.bristol.ac.uk/population-health-sciences/projects/robis/robis-tool/">ROBIS</a>: designed to assess risk of bias in systematic reviews through three phases (identifying relevance, identifying concerns with the review process, and judging risk of bias). The second phase covers numerous questions across four domains: study eligibility criteria, identification and selection of studies, data collection and study appraisal, and synthesis and findings <span class="citation" data-cites="whitingROBISNewTool2016">(<a href="references.html#ref-whitingROBISNewTool2016" role="doc-biblioref">Whiting et al. 2016</a>)</span>. The overall risk of bias is then determined as low, high, or unclear.</li>
@@ -401,7 +398,7 @@ Summary of Findings Table Exercise
 <p>Recent studies have compared the AMSTAR 2 and ROBIS tools, finding that they are both valid, moderately reliable, and comparable <span class="citation" data-cites="lorenzPsychometricStudyFound2019 perryComparisonTwoAssessment2021">(<a href="references.html#ref-lorenzPsychometricStudyFound2019" role="doc-biblioref">Lorenz et al. 2019</a>; <a href="references.html#ref-perryComparisonTwoAssessment2021" role="doc-biblioref">Perry et al. 2021</a>)</span>. However, AMSTAR 2 is more straightforward and easier to use.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-aromatarisSummarizingSystematicReviews2015" class="csl-entry" role="listitem">
 Aromataris, Edoardo, Ritin Fernandez, Christina M. Godfrey, Cheryl Holly, Hanan Khalil, and Patraporn Tungpunkom. 2015. <span>“Summarizing Systematic Reviews: Methodological Development, Conduct and Reporting of an Umbrella Review Approach.”</span> <em>International Journal of Evidence-Based Healthcare</em> 13 (3): 132–40. <a href="https://doi.org/10.1097/XEB.0000000000000055">https://doi.org/10.1097/XEB.0000000000000055</a>.
 </div>
@@ -515,10 +512,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -528,8 +542,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -541,7 +564,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -585,6 +731,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -610,6 +757,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -671,26 +844,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./9_meta2.html" class="pagination-link">
+      <a href="./9_meta2.html" class="pagination-link" aria-label="Subgroup Analysis, Meta-Regression, and Complex Data">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Subgroup Analysis, Meta-Regression, and Complex Data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">References</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./meta_analysis.html" class="pagination-link" aria-label="Meta-Analysis Practice">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Meta-Analysis Practice</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">OH8004 Knowledge Synthesis: Course Website.</div>   
+    <div class="nav-footer-left">
+<p>OH8004 Knowledge Synthesis: Course Website.</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">This book was built with <a href="https://quarto.org/">Quarto</a>.</div>
+    <div class="nav-footer-right">
+<p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
   </div>
 </footer>
+
 
 
 
