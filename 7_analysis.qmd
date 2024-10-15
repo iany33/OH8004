@@ -66,9 +66,10 @@ theme_gtsummary_language("en", big.mark = "")
 # Create and display summary table
 Young_2019_summary <- Young_2019_chart |> 
   select(-Refid, -"Author (year)") |>  # Remove Refid and author (year) columns from summary
-  tbl_summary(digits = list(all_categorical() ~ c(0, 1)),
-              type = all_categorical() ~ "categorical", 
-              sort = list(everything() ~ "frequency"))
+  tbl_summary(type = Year ~ "continuous",
+              statistic = Year ~ "{median} ({min}-{max})",
+              sort = list(all_categorical() ~ "frequency"),
+              digits = list(all_categorical() ~ c(0, 1)))
 Young_2019_summary
 ```
 
