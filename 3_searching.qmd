@@ -92,9 +92,9 @@ Using [Scopus via the TMU Library](https://ezproxy.lib.torontomu.ca/login?url=ht
 
 It may be useful to search for *grey literature* as part of your search strategy. This may help to identify studies that are not published in peer-reviewed journal articles, or those not indexed in major bibliographic databases. Some grey literature search options are noted below:
 
--   **Google search**: a series of simple Google searches may help to identify unpublished studies. The search algorithm will need to be simplified for these searches. Limits will need to be placed on the number of hits reviewed (e.g., top 50-100) to be this manageable and balance diminishing returns.
--   **Google Scholar**: this will specifically search for scholarly publications, most of which should be captured by your bibliographic database search, but could uncover additional studies.
--   **OpenGrey**: this is a [grey literature database](https://opengrey.eu/) in Europe that contains reports, dissertations, and other types of research documents.
+-   **Google Scholar**: will specifically search for scholarly publications, most of which should be captured by your bibliographic database search, but could uncover additional studies.
+-   **Policy Commons**: is a [grey literature database](https://ezproxy.lib.torontomu.ca/login?url=https://policycommons.net) that contains reports, working papers, policy briefs, and other resources from organizations worldwide across many disciplines. 
+-   **OpenGrey**: is another [online database](https://opengrey.eu/) based in Europe that contains reports, dissertations, and other types of research documents.
 -   **Targeted websites of organizations**: you can search through the websites of specific organizations (e.g., governments, non-profit groups) that are known to publish research reports or other documents that might be relevant. This can also include targeted searching of the conference proceedings from prior relevant conferences (if not already indexed elsewhere).
 
 ## Search Verification and Peer Review
