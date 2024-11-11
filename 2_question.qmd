@@ -64,7 +64,7 @@ These reviews assess the health or disease burden in a specific population, and 
 
 ### Qualitative Reviews
 
-These reviews aim to investigate the human experiences or meaningfulness of an issue or phenomenon. Qualitative review questions can be expressed using the **PICo** framework: Population, Phenomena of Interest, and Context [@munnMethodologicalGuidanceSystematic2015]. The **population** consideration is similar to other question frameworks above. Note that there is no *outcome* explicitly considered in these types of reviews.
+These reviews aim to investigate the human experiences or meaningfulness of an issue or phenomenon. Qualitative review questions can be expressed using the **PICo** framework: Population, Phenomena of Interest, and Context [@munnWhatKindSystematic2018]. The **population** consideration is similar to other question frameworks above. Note that there is no *outcome* explicitly considered in these types of reviews.
 
 **Phenomenon of interest** refers to the experience or issue of investigation (e.g., participants' views about an intervention, or determinants of their health-related behaviours).
 
@@ -93,7 +93,7 @@ Consider the following review questions. Identify the elements of each one, and 
 One of the first considerations in deciding which types of studies will be eligible for inclusion in the review is the document source. Most of your relevant articles will be **peer-reviewed journal articles**. Other documents to consider include:
 
 -   **Conference papers or abstracts**: care must be taken to avoid double-counting studies that are subsequently published as journal articles. Also, information in an abstract is often very limited.
--   **Dissertations and theses**: may be useful if the research was not published. [Research has shown that disserations are often not published](https://doi.org/10.1371/journal.pone.0192219). But the research may not have been peer-reviewed (especially master's theses) beyond the advisory committee, and the documents can be very long and onerous to review.
+-   **Dissertations and theses**: may be useful if the research was not published. [Research has shown that disserations are often not published](https://doi.org/10.1371/journal.pone.0192219). But the research may not have been peer-reviewed (especially master's theses) beyond the advisory committee.
 -   **Research reports**: unpublished reports, such as those published by government and non-profit agencies, could be relevant depending on the review topic.
 
 ::: callout-important
