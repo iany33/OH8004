@@ -37,7 +37,7 @@ We will simulate reviewer inclusion/exclusion (i.e., yes/no) ratings for a sampl
 
 ```{webr-r}
 #| read-only: true
-#| # Create simulated rating data
+# Create simulated rating data
 rs_test <- tibble(abstract_id = seq(1:30),
                   reviewer1 = rep(0:1, each = 15),
                   reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))
