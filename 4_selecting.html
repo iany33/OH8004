@@ -293,7 +293,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"code":"# Create simulated rating data\nrs_test <- tibble(abstract_id = seq(1:30),\n                  reviewer1 = rep(0:1, each = 15),\n                  reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test, n = Inf)","options":{"fig-width":7,"autorun":"false","context":"interactive","read-only":"true","editor-font-scale":1,"comment":"","message":"true","fig-height":5,"classes":"","dpi":72,"editor-max-height":"","label":"unnamed-chunk-1","results":"markup","fig-cap":"","warning":"true","out-width":"700px","editor-quick-suggestions":"false","output":"true","out-height":""}},{"id":2,"code":"library(irr)\n\nkappa2(rs_test[,2:3])","options":{"fig-width":7,"autorun":"false","context":"interactive","read-only":"true","editor-font-scale":1,"comment":"","message":"true","fig-height":5,"classes":"","dpi":72,"editor-max-height":"","label":"unnamed-chunk-2","results":"markup","fig-cap":"","warning":"true","out-width":"700px","editor-quick-suggestions":"false","output":"true","out-height":""}},{"id":3,"code":"rs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = rep(0:1, each = 15),\n                   reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","options":{"fig-width":7,"autorun":"false","context":"interactive","read-only":"false","editor-font-scale":1,"comment":"","message":"true","fig-height":5,"classes":"","dpi":72,"editor-max-height":"","label":"unnamed-chunk-3","results":"markup","fig-cap":"","warning":"true","out-width":"700px","editor-quick-suggestions":"false","output":"true","out-height":""}},{"id":4,"code":"# Create the updated simulated rating data\nrs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = c(rep(0, times = 15), rep(1, times = 15)),\n                   reviewer2 = c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","options":{"fig-width":7,"autorun":"false","context":"interactive","read-only":"true","editor-font-scale":1,"comment":"","message":"true","fig-height":5,"classes":"","dpi":72,"editor-max-height":"","label":"unnamed-chunk-4","results":"markup","fig-cap":"","warning":"true","out-width":"700px","editor-quick-suggestions":"false","output":"true","out-height":""}}];
+globalThis.qwebrCellDetails = [{"options":{"read-only":"true","out-height":"","label":"unnamed-chunk-1","fig-height":5,"out-width":"700px","comment":"","warning":"true","context":"interactive","autorun":"false","fig-width":7,"message":"true","dpi":72,"editor-font-scale":1,"classes":"","results":"markup","editor-max-height":"","output":"true","fig-cap":"","editor-quick-suggestions":"false"},"code":"# Create simulated rating data\nrs_test <- tibble(abstract_id = seq(1:30),\n                  reviewer1 = rep(0:1, each = 15),\n                  reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test, n = Inf)","id":1},{"options":{"read-only":"true","out-height":"","label":"unnamed-chunk-2","fig-height":5,"out-width":"700px","comment":"","warning":"true","context":"interactive","autorun":"false","fig-width":7,"message":"true","dpi":72,"editor-font-scale":1,"classes":"","results":"markup","editor-max-height":"","output":"true","fig-cap":"","editor-quick-suggestions":"false"},"code":"library(irr)\n\nkappa2(rs_test[,2:3])","id":2},{"options":{"read-only":"false","out-height":"","label":"unnamed-chunk-3","fig-height":5,"out-width":"700px","comment":"","warning":"true","context":"interactive","autorun":"false","fig-width":7,"message":"true","dpi":72,"editor-font-scale":1,"classes":"","results":"markup","editor-max-height":"","output":"true","fig-cap":"","editor-quick-suggestions":"false"},"code":"rs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = rep(0:1, each = 15),\n                   reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","id":3},{"options":{"read-only":"true","out-height":"","label":"unnamed-chunk-4","fig-height":5,"out-width":"700px","comment":"","warning":"true","context":"interactive","autorun":"false","fig-width":7,"message":"true","dpi":72,"editor-font-scale":1,"classes":"","results":"markup","editor-max-height":"","output":"true","fig-cap":"","editor-quick-suggestions":"false"},"code":"# Create the updated simulated rating data\nrs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = c(rep(0, times = 15), rep(1, times = 15)),\n                   reviewer2 = c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","id":4}];
 
 </script>
 <script type="module">
@@ -1589,7 +1589,7 @@ Kappa Agreement Example
 </div>
 </div>
 </div>
-<p>You can further modify the simulated dataset using the code above to explore how differ patterns of conflicts affect the Kappa measure of agreement.</p>
+<p>You can further modify the simulated dataset using the code above to explore how different patterns of conflicts affect the Kappa measure of agreement.</p>
 </div>
 </div>
 </section>
@@ -1619,7 +1619,7 @@ Relevance Screening Exercise
 </section>
 <section id="article-procurement" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="article-procurement"><span class="header-section-number">4.2</span> Article Procurement</h2>
-<p>Following relevance screening, full-text PDFs should be obtained for all references considered relevant. These can be saved to a folder and uploaded/linked to the applicable reference IDs in the systematic review management program used.</p>
+<p>Following relevance screening, full-text articles (e.g., PDF files) should be obtained for all references considered relevant. These can be saved to a folder and uploaded/linked to the applicable reference IDs in the systematic review management program used.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1630,7 +1630,7 @@ Finding Articles
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You should be able to identify most PDFs using a combination of simple Google Searching (for open-access papers) and the <a href="https://library.torontomu.ca/">TMU scholarly paper search feature</a>.</p>
+<p>You should be able to identify and access most articles using a combination of simple Google Searching (for open-access papers) and the <a href="https://library.torontomu.ca/">TMU scholarly paper search feature</a>.</p>
 <p>Occasionally, you may need to search for TMU access to the specific journal of interest, then search for the paper in specific databases if the global search does not find the paper(s) you need.</p>
 <p>In cases where you cannot find the paper via these methods, you can ask the librarian for assistance, or make a special request for the paper through the <a href="https://library.torontomu.ca/services/ill/">Interlibrary Loan Service</a>.</p>
 </div>
@@ -1677,7 +1677,7 @@ Article Characterization Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Examine the <a href="assets/Example_Article_Characterization_Form.docx">example article characterization form</a> from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span>. Use this form to extract data on a few different characteristics from the three full-text articles captured and screened as potentially relevant in that review]. Then record your answers for discussion.</p>
+<p>Examine the <a href="assets/Example_Article_Characterization_Form.docx">example article characterization form</a> from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span>. Use this form to extract data on a few different characteristics from the three full-text articles captured and screened as potentially relevant in that review. Then record your answers for discussion.</p>
 <p>The three articles are available at the following shared folder: <a href="https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing" class="uri">https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing</a>.</p>
 </div>
 </div>
