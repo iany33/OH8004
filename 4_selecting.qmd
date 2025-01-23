@@ -86,7 +86,7 @@ kappa2(rs_test2[,2:3])
 ```
 :::
 
-You can further modify the simulated dataset using the code above to explore how differ patterns of conflicts affect the Kappa measure of agreement.
+You can further modify the simulated dataset using the code above to explore how different patterns of conflicts affect the Kappa measure of agreement.
 
 :::
 
@@ -110,12 +110,12 @@ Using the example relevance screening form above, from Young et al. [-@youngEffe
 
 ## Article Procurement
 
-Following relevance screening, full-text PDFs should be obtained for all references considered relevant. These can be saved to a folder and uploaded/linked to the applicable reference IDs in the systematic review management program used.
+Following relevance screening, full-text articles (e.g., PDF files) should be obtained for all references considered relevant. These can be saved to a folder and uploaded/linked to the applicable reference IDs in the systematic review management program used.
 
 ::: callout-important
 ## Finding Articles
 
-You should be able to identify most PDFs using a combination of simple Google Searching (for open-access papers) and the [TMU scholarly paper search feature](https://library.torontomu.ca/).
+You should be able to identify and access most articles using a combination of simple Google Searching (for open-access papers) and the [TMU scholarly paper search feature](https://library.torontomu.ca/).
 
 Occasionally, you may need to search for TMU access to the specific journal of interest, then search for the paper in specific databases if the global search does not find the paper(s) you need.
 
@@ -152,7 +152,7 @@ It is also important to pilot test the article characterization form. Usually th
 ::: callout-tip
 ## Article Characterization Exercise
 
-Examine the [example article characterization form](assets/Example_Article_Characterization_Form.docx) from Young et al. [-@youngEffectivenessFoodHandler2019]. Use this form to extract data on a few different characteristics from the three full-text articles captured and screened as potentially relevant in that review\]. Then record your answers for discussion.
+Examine the [example article characterization form](assets/Example_Article_Characterization_Form.docx) from Young et al. [-@youngEffectivenessFoodHandler2019]. Use this form to extract data on a few different characteristics from the three full-text articles captured and screened as potentially relevant in that review. Then record your answers for discussion.
 
 The three articles are available at the following shared folder: <https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing>.
 :::

@@ -114,7 +114,7 @@ To facilitate the management of the relevance screening and data extraction step
 
 Most of these programs require a subscription to use, though some may offer free trials or discounts for students (e.g., Covidence). Other non-subscription based options could include spreadsheets or online forms (e.g., Google Forms), but these would be challenging to use for larger projects and could be prone to errors.
 
-An example of a **Covidence** project and interface is shown below. TMU currently does not offer an institutional subscription to Covidence, though this may be provided in future years. Covidence does provide a free trial for students, which allows screening of up to 500 references and up to two reviewers per project. As such, it can be used for your course assignment 2.
+An example of a **Covidence** project and interface is shown below. TMU currently does not offer an institutional subscription to Covidence, though this may be provided in future years. Covidence does provide a free trial for students, which allows screening of up to 500 references and up to two reviewers per project. As such, it will be used for your course assignment.
 
 ![](images/covidence.png)
 
