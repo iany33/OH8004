@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -229,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A <strong>knowledge synthesis</strong> refers to a structured, transparent, and reproducible method of synthesizing available evidence on a specific topic to guide decision-making and future research needs. There are many different types of knowledge syntheses, the most common of which is a <strong>systematic review</strong>, which will be the primary focus of this course. Other types of syntheses and variations of systematic reviews are outlined by Tricco et al. <span class="citation" data-cites="triccoArtScienceKnowledge2011">(<a href="references.html#ref-triccoArtScienceKnowledge2011" role="doc-biblioref"><strong>triccoArtScienceKnowledge2011?</strong></a>)</span>.</p>
+<p>A <strong>knowledge synthesis</strong> refers to a structured, transparent, and reproducible method of synthesizing available evidence on a specific topic to guide decision-making and future research needs. There are many different types of knowledge syntheses, the most common of which is a <strong>systematic review</strong>, which will be the primary focus of this course. Other types of syntheses and variations of systematic reviews are outlined by Tricco et al. <span class="citation" data-cites="triccoArtScienceKnowledge2011">(<a href="references.html#ref-triccoArtScienceKnowledge2011" role="doc-biblioref">2011</a>)</span>.</p>
 <p>The <strong>Canadian Institutes of Health Research (CIHR)</strong> defines a knowledge synthesis as:</p>
 <blockquote class="blockquote">
 <p>The contextualization and integration of research findings of individual research studies within the larger body of knowledge on the topic. A synthesis must be reproducible and transparent in its methods, using quantitative and/or qualitative methods. It could take the form of a systematic review, follow the methods developed by the Cochrane Collaboration, result from a consensus conference or expert panel or synthesize qualitative or quantitative results. Realist syntheses, narrative syntheses, meta-analyses, meta-syntheses and practice guidelines are all forms of synthesis. <a href="https://cihr-irsc.gc.ca/e/29418.html" class="uri">https://cihr-irsc.gc.ca/e/29418.html</a></p>
@@ -253,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Help reduce duplication of efforts and (potentially) enhance collaboration</li>
 <li>Improve transparency and allow replication of the methods</li>
 </ul>
-<p>There is a <strong>reporting standard</strong> for systematic review protocols, called <a href="http://prisma-statement.org/Extensions/Protocols">PRIMSA-P</a>. The reporting checklist is available form the PRISMA-P website as a <a href="http://prisma-statement.org/documents/PRISMA-P-checklist.pdf">PDF</a> or <a href="http://prisma-statement.org/documents/PRISMA-P-checklist.doc">Word</a> file. See the published paper and the elaboration document for more information <span class="citation" data-cites="moherPreferredReportingItems2015 shamseerPreferredReportingItems2015">(<a href="references.html#ref-moherPreferredReportingItems2015" role="doc-biblioref"><strong>moherPreferredReportingItems2015?</strong></a>; <a href="references.html#ref-shamseerPreferredReportingItems2015" role="doc-biblioref"><strong>shamseerPreferredReportingItems2015?</strong></a>)</span>.</p>
+<p>There is a <strong>reporting standard</strong> for systematic review protocols, called <a href="http://prisma-statement.org/Extensions/Protocols">PRIMSA-P</a>. The reporting checklist is available form the PRISMA-P website as a <a href="http://prisma-statement.org/documents/PRISMA-P-checklist.pdf">PDF</a> or <a href="http://prisma-statement.org/documents/PRISMA-P-checklist.doc">Word</a> file. See the published paper and the elaboration document for more information <span class="citation" data-cites="moherPreferredReportingItems2015 shamseerPreferredReportingItems2015">(<a href="references.html#ref-moherPreferredReportingItems2015" role="doc-biblioref">Moher et al. 2015</a>; <a href="references.html#ref-shamseerPreferredReportingItems2015" role="doc-biblioref">Shamseer et al. 2015</a>)</span>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -315,6 +335,17 @@ Systematic Review Protocol Example
 <p>For next week, identify and obtain the PDF of <strong>one systematic review article</strong> published on an occupational or public health topic related to your thesis. Place the article in the shared folder on D2L. We will discuss each article next week in class, and in the following weeks.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-moherPreferredReportingItems2015" class="csl-entry" role="listitem">
+Moher, David, Larissa Shamseer, Mike Clarke, Davina Ghersi, Alessandro Liberati, Mark Petticrew, Paul Shekelle, and Lesley A Stewart. 2015. <span>“Preferred Reporting Items for Systematic Review and Meta-Analysis Protocols (<span>PRISMA-P</span>) 2015 Statement.”</span> <em>Systematic Reviews</em> 4 (1): 1. <a href="https://doi.org/10.1186/2046-4053-4-1">https://doi.org/10.1186/2046-4053-4-1</a>.
+</div>
+<div id="ref-shamseerPreferredReportingItems2015" class="csl-entry" role="listitem">
+Shamseer, Larissa, David Moher, Mike Clarke, Davina Ghersi, Alessandro Liberati, Mark Petticrew, Paul Shekelle, et al. 2015. <span>“Preferred Reporting Items for Systematic Review and Meta-Analysis Protocols (Prisma-p) 2015: <span>Elaboration</span> and Explanation.”</span> <em>BMJ (Online)</em> 349 (January): 1–25. <a href="https://doi.org/10.1136/bmj.g7647">https://doi.org/10.1136/bmj.g7647</a>.
+</div>
+<div id="ref-triccoArtScienceKnowledge2011" class="csl-entry" role="listitem">
+Tricco, A C, J Tetzlaff, and D Moher. 2011. <span>“The Art and Science of Knowledge Synthesis.”</span> <em>Journal of Clinical Epidemiology</em> 64 (1): 11–20. <a href="http://www.scopus.com/inward/record.url?eid=2-s2.0-78149388685&amp;partnerID=40&amp;md5=cff0dc293630269631887e1b25835cd7">http://www.scopus.com/inward/record.url?eid=2-s2.0-78149388685&amp;partnerID=40&amp;md5=cff0dc293630269631887e1b25835cd7</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
