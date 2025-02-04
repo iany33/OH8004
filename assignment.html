@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OH8004 Knowledge Synthesis in Occupational and Public Health - 4&nbsp; Selecting Studies</title>
+<title>OH8004 Knowledge Synthesis in Occupational and Public Health - 12&nbsp; Meta-Analysis Assignment</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./5_bias.html" rel="next">
-<link href="./3_searching.html" rel="prev">
+<link href="./references.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -251,7 +250,7 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['irr', 'tibble'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'meta'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -273,7 +272,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"warning":"true","label":"unnamed-chunk-1","editor-max-height":"","dpi":72,"out-height":"","classes":"","results":"markup","message":"true","fig-cap":"","fig-width":7,"context":"interactive","output":"true","fig-height":5,"autorun":"false","read-only":"true","out-width":"700px","editor-font-scale":1,"comment":"","editor-quick-suggestions":"false"},"code":"# Create simulated rating data\nrs_test <- tibble(abstract_id = seq(1:30),\n                  reviewer1 = rep(0:1, each = 15),\n                  reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test, n = Inf)","id":1},{"options":{"warning":"true","label":"unnamed-chunk-2","editor-max-height":"","dpi":72,"out-height":"","classes":"","results":"markup","message":"true","fig-cap":"","fig-width":7,"context":"interactive","output":"true","fig-height":5,"autorun":"false","read-only":"true","out-width":"700px","editor-font-scale":1,"comment":"","editor-quick-suggestions":"false"},"code":"library(irr)\n\nkappa2(rs_test[,2:3])","id":2},{"options":{"warning":"true","label":"unnamed-chunk-3","editor-max-height":"","dpi":72,"out-height":"","classes":"","results":"markup","message":"true","fig-cap":"","fig-width":7,"context":"interactive","output":"true","fig-height":5,"autorun":"false","read-only":"false","out-width":"700px","editor-font-scale":1,"comment":"","editor-quick-suggestions":"false"},"code":"rs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = rep(0:1, each = 15),\n                   reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","id":3},{"options":{"warning":"true","label":"unnamed-chunk-4","editor-max-height":"","dpi":72,"out-height":"","classes":"","results":"markup","message":"true","fig-cap":"","fig-width":7,"context":"interactive","output":"true","fig-height":5,"autorun":"false","read-only":"true","out-width":"700px","editor-font-scale":1,"comment":"","editor-quick-suggestions":"false"},"code":"# Create the updated simulated rating data\nrs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = c(rep(0, times = 15), rep(1, times = 15)),\n                   reviewer2 = c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","id":4}];
+globalThis.qwebrCellDetails = [{"options":{"classes":"","editor-max-height":"","autorun":"false","editor-font-scale":1,"fig-height":5,"read-only":"false","comment":"","editor-quick-suggestions":"false","dpi":72,"warning":"true","label":"unnamed-chunk-1","results":"markup","out-height":"","message":"true","out-width":"700px","context":"interactive","fig-cap":"","fig-width":7,"output":"true"},"id":1,"code":"data <- data.frame(study_ID = c(rep(1:3, times = 1)),\n                   author = c(\"A\", \"B\", \"C\"),\n                   year = c(\"2020\", \"2021\", \"2022\"),\n                   intervention = c(\"1\", \"2\", \"2\"),\n                   int_mean  = c(1, 1, 1),\n                   int_sd = c(1, 1, 1),\n                   int_n = c(10, 10, 10),\n                   con_mean = c(0, 0, 0),\n                   con_sd = c(1, 1, 1),\n                   con_n = c(10, 10, 10))\ndata"},{"options":{"classes":"","editor-max-height":"","autorun":"false","editor-font-scale":1,"fig-height":5,"read-only":"false","comment":"","editor-quick-suggestions":"false","dpi":72,"warning":"true","label":"unnamed-chunk-2","results":"markup","out-height":"","message":"true","out-width":"700px","context":"interactive","fig-cap":"","fig-width":7,"output":"true"},"id":2,"code":"library(meta)\n\nmeta <- data |> \n  metacont(n.e = int_n,  \n           mean.e = int_mean,\n           sd.e = int_sd,   \n           n.c = con_n, \n           mean.c = con_mean,  \n           sd.c = con_sd, \n           studlab = paste(author, year),   \n           sm = \"MD\", \n           random = TRUE,\n           fixed = FALSE, \n           method.tau = \"REML\",\n           hakn = TRUE,   \n           title = \"\")\n\nsummary(meta)"},{"options":{"classes":"","editor-max-height":"","autorun":"false","editor-font-scale":1,"fig-height":5,"read-only":"false","comment":"","editor-quick-suggestions":"false","dpi":72,"warning":"true","label":"unnamed-chunk-3","results":"markup","out-height":"","message":"true","out-width":"700px","context":"interactive","fig-cap":"","fig-width":7,"output":"true"},"id":3,"code":"meta |> forest(sortvar = TE,\n               prediction = TRUE,  \n               leftcols = c(\"author\", \"year\"),\n               leftlabs = c(\"Author\", \"Year\"))"},{"options":{"classes":"","editor-max-height":"","autorun":"false","editor-font-scale":1,"fig-height":5,"read-only":"false","comment":"","editor-quick-suggestions":"false","dpi":72,"warning":"true","label":"unnamed-chunk-4","results":"markup","out-height":"","message":"true","out-width":"700px","context":"interactive","fig-cap":"","fig-width":7,"output":"true"},"id":4,"code":"meta2 <- update(meta, method.tau = \"DL\") \n\n# Compare pooled estimates and tau^2 values\ndata.frame(Method = c(\"REML\", \"DL\"),\n       Pooled_MD = c(meta$TE.random, meta2$TE.random),\n       Pooled_SE = c(meta$seTE.random, meta2$seTE.random),\n       Tau2 = c(meta$tau2, meta2$tau2))"}];
 
 </script>
 <script type="module">
@@ -1110,6 +1109,35 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -1122,7 +1150,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4_selecting.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./assignment.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Meta-Analysis Assignment</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -1179,7 +1207,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4_selecting.html" class="sidebar-item-text sidebar-link active">
+  <a href="./4_selecting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></span></a>
   </div>
 </li>
@@ -1221,14 +1249,14 @@ globalThis.qwebrExecuteCode = async function (
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./meta_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Meta-Analysis Practice</span></span></a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  <a href="./assignment.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Meta-Analysis Assignment</span></span></a>
   </div>
 </li>
     </ul>
@@ -1241,18 +1269,10 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#relevance-screening" id="toc-relevance-screening" class="nav-link active" data-scroll-target="#relevance-screening"><span class="header-section-number">4.1</span> Relevance Screening</a>
-  <ul class="collapse">
-  <li><a href="#pilot-testing" id="toc-pilot-testing" class="nav-link" data-scroll-target="#pilot-testing"><span class="header-section-number">4.1.1</span> Pilot Testing</a></li>
-  <li><a href="#systematic-review-management-software" id="toc-systematic-review-management-software" class="nav-link" data-scroll-target="#systematic-review-management-software"><span class="header-section-number">4.1.2</span> Systematic Review Management Software</a></li>
-  <li><a href="#machine-learning-for-relevance-screening" id="toc-machine-learning-for-relevance-screening" class="nav-link" data-scroll-target="#machine-learning-for-relevance-screening"><span class="header-section-number">4.1.3</span> Machine Learning for Relevance Screening</a></li>
-  </ul></li>
-  <li><a href="#article-procurement" id="toc-article-procurement" class="nav-link" data-scroll-target="#article-procurement"><span class="header-section-number">4.2</span> Article Procurement</a></li>
-  <li><a href="#article-characterization" id="toc-article-characterization" class="nav-link" data-scroll-target="#article-characterization"><span class="header-section-number">4.3</span> Article Characterization</a>
-  <ul class="collapse">
-  <li><a href="#pilot-testing-1" id="toc-pilot-testing-1" class="nav-link" data-scroll-target="#pilot-testing-1"><span class="header-section-number">4.3.1</span> Pilot Testing</a></li>
-  </ul></li>
-  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework"><span class="header-section-number">4.4</span> Homework</a></li>
+  <li><a href="#enter-your-dataset" id="toc-enter-your-dataset" class="nav-link active" data-scroll-target="#enter-your-dataset"><span class="header-section-number">12.1</span> Enter your Dataset</a></li>
+  <li><a href="#conduct-your-meta-analysis" id="toc-conduct-your-meta-analysis" class="nav-link" data-scroll-target="#conduct-your-meta-analysis"><span class="header-section-number">12.2</span> Conduct your Meta-analysis</a></li>
+  <li><a href="#produce-your-forest-plot" id="toc-produce-your-forest-plot" class="nav-link" data-scroll-target="#produce-your-forest-plot"><span class="header-section-number">12.3</span> Produce your Forest Plot</a></li>
+  <li><a href="#conduct-sensitivity-analysis" id="toc-conduct-sensitivity-analysis" class="nav-link" data-scroll-target="#conduct-sensitivity-analysis"><span class="header-section-number">12.4</span> Conduct Sensitivity Analysis</a></li>
   </ul>
 </nav>
     </div>
@@ -1488,7 +1508,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-selecting" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></span></h1>
+<h1 class="title"><span id="sec-assignment" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Meta-Analysis Assignment</span></span></h1>
 </div>
 
 
@@ -1505,179 +1525,30 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<p>A structured, reliable, and transparent approach is needed to select articles for inclusion in a systematic review. The first step is selecting from the references identified in the search is to conduct a formal <strong>relevance screening</strong> of the titles and abstracts. A second level of screening can be conducted if needed following this on the full-text articles, or an <strong>article characterization</strong> stage that confirms relevance and extracts study details.</p>
-<p><img src="images/meme_rs.jpg" class="img-fluid"></p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Multiple reviewers
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The relevance screening, article characterization, data extraction, and risk-of-bias assessment steps should be conducted by <strong>two independent reviewers</strong> to reduce bias and the chance of human errors.</p>
-</div>
-</div>
-<section id="relevance-screening" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="relevance-screening"><span class="header-section-number">4.1</span> Relevance Screening</h2>
-<p>A relevance screening form should be developed, pilot tested, and included in the review protocol. It is easiest and most straightforward for this to contain only <strong>one key question</strong> if possible to streamline the process. The form should explicitly identify the eligibility criteria and any key definitions. An example from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref"><strong>youngEffectivenessFoodHandler2019?</strong></a>)</span> is shown below:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rs_form_example.png" class="img-fluid figure-img"></p>
-<figcaption>Relevance Screening Form Example</figcaption>
-</figure>
-</div>
-<section id="pilot-testing" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="pilot-testing"><span class="header-section-number">4.1.1</span> Pilot Testing</h3>
-<p>The relevance screening form should be pilot tested before use to ensure the eligibility and inclusion decisions are valid and reliable. The recommended process is as follows:</p>
-<ul>
-<li><strong>Purposively select</strong> a small number of abstracts for pre-testing (e.g, 30-50) to ensure the sample includes those known to be relevant, not relevant, and potentially relevant</li>
-<li>Each reviewer assesses each abstract using the form and records their results</li>
-<li>Assess agreement in the pilot test using the <strong>kappa statistic</strong></li>
-<li>A kappa of &gt;0.8 is often recommended for “almost perfect agreement” <span class="citation" data-cites="simKappaStatisticReliability2005">(e.g, <a href="references.html#ref-simKappaStatisticReliability2005" role="doc-biblioref"><strong>simKappaStatisticReliability2005?</strong></a>)</span></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Kappa Agreement Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We will simulate reviewer inclusion/exclusion (i.e., yes/no) ratings for a sample of 30 abstracts. Assume that Reviewer 1 included 50% of the abstracts, including two that Reviewer 2 did not include. Assume Reviewer 2 included 16 abstracts, including three of the abstracts that Reviewer 1 did not include.</p>
+<p>This section provides a coding template to conduct your meta-analysis assignment fully within <code>webr</code>.</p>
+<section id="enter-your-dataset" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="enter-your-dataset"><span class="header-section-number">12.1</span> Enter your Dataset</h2>
+<p>As a first step, you will directly enter the outcome data from your studies into a data frame using the following coding template. This template is for continuous outcomes with a mean, SD, and sample size in each group/comparison. You will need to modify the code accordingly for other data types (e.g., pre-calculated measures of effect, binary data).</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Now we can evaluate the kappa agreement between the two reviewer’s ratings.</p>
+</section>
+<section id="conduct-your-meta-analysis" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="conduct-your-meta-analysis"><span class="header-section-number">12.2</span> Conduct your Meta-analysis</h2>
+<p>The following coding template can be modified to conduct your meta-analysis. As above, this is set up for continuous data inputs and will need to be modified as needed based on your data.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The agreement is moderate, and below an ideal level of 0.8 or higher.</p>
-<p>What happens if we edit the simulated data so that this time each reviewer only differs by one abstract each (i.e., there are only two conflicts)?</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code Editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Answer</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+</section>
+<section id="produce-your-forest-plot" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="produce-your-forest-plot"><span class="header-section-number">12.3</span> Produce your Forest Plot</h2>
+<p>The following coding template can be used for your forest plot figure. You will need to add customization options as per the assignment instructions. See the <a href="8_meta.html" class="quarto-xref"><span>Chapter 8</span></a> for more details.</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+</section>
+<section id="conduct-sensitivity-analysis" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="conduct-sensitivity-analysis"><span class="header-section-number">12.4</span> Conduct Sensitivity Analysis</h2>
+<p>Reproduce the meta-analysis using a different method of calculating <span class="math inline">\(\tau^2\)</span> and compare the results.</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</div>
-</div>
-</div>
-<p>You can further modify the simulated dataset using the code above to explore how different patterns of conflicts affect the Kappa measure of agreement.</p>
-</div>
-</div>
-</section>
-<section id="systematic-review-management-software" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="systematic-review-management-software"><span class="header-section-number">4.1.2</span> Systematic Review Management Software</h3>
-<p>Systematic management programs, such as <strong>Covidence</strong>, automatically calculate a kappa agreement statistic, along with other inter-rater reliability measures. The relevance screening form in Covidence defaults to having three options: yes, no, or maybe. Answers of <em>maybe</em> are considered the same as <em>yes</em> for screening and inter-rated reliability calculation purposes. For Covidence, a CSV file can be downloaded to show the screening reliability statistics for each pair of reviewers. An example of this output is shown in the figure below.</p>
-<p><img src="images/covidence_kappa.png" class="img-fluid"></p>
-</section>
-<section id="machine-learning-for-relevance-screening" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="machine-learning-for-relevance-screening"><span class="header-section-number">4.1.3</span> Machine Learning for Relevance Screening</h3>
-<p>Many systematic management programs have implemented or are developing <strong>machine learning tools</strong> to semi-automate the relevance screening process. The tools work by prioritizing the abstracts that are most likely to be included (<em>screening prioritization</em>), and suggesting a percentage that can be “safely” excluded (<em>screening truncation</em>), which can both enhance review efficiency. The screening truncation process usually uses a stopping rule or threshold, such as 95% estimated recall, after which point the review team can decide not to review the remaining references or to use a modified process (e.g., only one reviewer).</p>
-<p>These tools requires careful training and pilot testing on a subset of abstracts (e.g., 2% of total abstracts) to ensure the algorithm can make more accurate predictions. Research has shown that such machine learning tools can perform with high accuracy and reliability, and can result in substantial time savings for review teams <span class="citation" data-cites="hamelEvaluationDistillerSRMachine2020 tsouMachineLearningScreening2020">(<a href="references.html#ref-hamelEvaluationDistillerSRMachine2020" role="doc-biblioref"><strong>hamelEvaluationDistillerSRMachine2020?</strong></a>; <a href="references.html#ref-tsouMachineLearningScreening2020" role="doc-biblioref"><strong>tsouMachineLearningScreening2020?</strong></a>)</span>. <a href="https://doi.org/10.1186/s12874-021-01451-2">Recent guidance is available</a> for reviewers who are interested to adopt these tools in their review <span class="citation" data-cites="hamelGuidanceUsingArtificial2021">(<a href="references.html#ref-hamelGuidanceUsingArtificial2021" role="doc-biblioref"><strong>hamelGuidanceUsingArtificial2021?</strong></a>)</span>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Relevance Screening Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Using the example relevance screening form above, from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref"><strong>youngEffectivenessFoodHandler2019?</strong></a>)</span>, assess the relevance of the <a href="assets/Example_RS_Form.docx">following five abstracts captured in the search from that review</a> and record your answers for discussion.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="article-procurement" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="article-procurement"><span class="header-section-number">4.2</span> Article Procurement</h2>
-<p>Following relevance screening, full-text articles (e.g., PDF files) should be obtained for all references considered relevant. These can be saved to a folder and uploaded/linked to the applicable reference IDs in the systematic review management program used.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Finding Articles
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You should be able to identify and access most articles using a combination of simple Google Searching (for open-access papers) and the <a href="https://library.torontomu.ca/">TMU scholarly paper search feature</a>.</p>
-<p>Occasionally, you may need to search for TMU access to the specific journal of interest, then search for the paper in specific databases if the global search does not find the paper(s) you need.</p>
-<p>In cases where you cannot find the paper via these methods, you can ask the librarian for assistance, or make a special request for the paper through the <a href="https://library.torontomu.ca/services/ill/">Interlibrary Loan Service</a>.</p>
-</div>
-</div>
-</section>
-<section id="article-characterization" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="article-characterization"><span class="header-section-number">4.3</span> Article Characterization</h2>
-<p>It is often useful to include a separate screening confirmation (sometimes referred to as second-level screening) step and an article characterization step (i.e., data charting). The relevance confirmation step can be used to exclude irrelevant papers, which can be combined with article characterization to subsequently extract key characteristics of the relevant articles. This step is sometimes combined with data extraction, where study outcomes are also extracted. The confirmation of relevance should include a checkbox to indicate the primary reason for exclusion for articles that are not relevant.</p>
-<p>The data captured in this form should be summarized in a characteristics of included studies table in the review results. Additionally, some of the variables captured in this form may also be used in the analysis (e.g., subgroup analysis or meta-regression). Some frequently important variables to capture include:</p>
-<ul>
-<li>Document type, year of publication, language</li>
-<li>Study design</li>
-<li>Study dates and location(s)</li>
-<li>Recruitment and sampling methods</li>
-<li>Characteristics of participants (e.g., age, gender)</li>
-<li>Characteristics of the intervention or exposure (e.g., dose, length, how they were measured)</li>
-<li>Characteristics of the control or comparison group (if applicable)</li>
-<li>Types of outcomes measured and how they were measured</li>
-</ul>
-<p>It is often useful to develop outlines of the anticipated figures and tables that you plan to include in the results section of your systematic review. This will help you to decide on which important characteristics to extract.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Multiple reports of the same study
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It is sometimes the case that the same study is reported in multiple publications. In the case of authors splitting results of a study across multiple journal papers, it might be easiest to treat these as separate studies at this stage and note that they are from the same larger study. In cases where preliminary data are published in a thesis or abstract, usually you will want to keep only the published journal article as the main source for that study.</p>
-</div>
-</div>
-<section id="pilot-testing-1" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="pilot-testing-1"><span class="header-section-number">4.3.1</span> Pilot Testing</h3>
-<p>It is also important to pilot test the article characterization form. Usually this can be done on a small selection of articles (e.g., 5-10). Instead of checking kappa agreement, you should compare reviewer answers, look for discrepancies in interpretation of questions, discuss, and modify the form to enhance its clarify and ensure consistent interpretation.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Article Characterization Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Examine the <a href="assets/Example_Article_Characterization_Form.docx">example article characterization form</a> from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref"><strong>youngEffectivenessFoodHandler2019?</strong></a>)</span>. Use this form to extract data on a few different characteristics from the three full-text articles captured and screened as potentially relevant in that review. Then record your answers for discussion.</p>
-<p>The three articles are available at the following shared folder: <a href="https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing" class="uri">https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing</a>.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="homework" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="homework"><span class="header-section-number">4.4</span> Homework</h2>
-<p>One to two students each will be assigned one risk-of-bias <em>domain</em> from <a href="5_bias.html" class="quarto-xref"><span>Chapter 5</span></a> to review and present in class next week. The bias domains to be assigned include:</p>
-<ul>
-<li>Bias arising from the randomization process</li>
-<li>Bias due to deviations from intended interventions</li>
-<li>Bias due to missing outcome data</li>
-<li>Bias in measurement of the outcome</li>
-<li>Bias in selection of the reported result</li>
-<li>Risk of bias due to confounding</li>
-<li>Risk of bias arising from measurement of the exposure</li>
-<li>Risk of bias in selection of participants into the study</li>
-<li>Risk of bias due to post-exposure interventions</li>
-</ul>
-<p>You can read in detail about the first five domains in the <a href="https://drive.google.com/file/d/19R9savfPdCHC8XLz2iiMvL_71lPJERWK/view?usp=sharing">Cochrane RCT risk-of-bias tool guidance document</a>. Information on the other four domains can be found in the <a href="https://drive.google.com/file/d/1bcOVMna3CJJXpsIm5vobFJMP0-13CW8Q/view?usp=sharing">ROBINS-E tool for cohort studies</a>.</p>
 
 
 </section>
@@ -2094,14 +1965,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./3_searching.html" class="pagination-link" aria-label="Search Strategy">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Search Strategy</span></span>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">References</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./5_bias.html" class="pagination-link" aria-label="Risk-of-Bias Assessment">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Risk-of-Bias Assessment</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

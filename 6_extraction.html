@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -293,7 +273,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"library(dplyr)\n\n# Simulate some study data for meta-analysis\ndata <- data.frame(study_ID = as.factor(rep(1:4, times = 1)),\n                   treat_mean = c(1.5, 2.1, 2.2, 2.7),\n                   treat_SE = c(0.03, 0.06, 0.07, 0.08),\n                   treat_n = c(100, 50, 70, 60),\n                   control_mean = c(1.3, 1.8, 2.0, 2.2),\n                   control_SE = c(0.03, 0.07, 0.07, 0.09),\n                   control_n = c(100, 50, 70, 50)\n                   )\ndata","options":{"warning":"true","context":"interactive","output":"true","read-only":"false","message":"true","editor-max-height":"","out-width":"700px","fig-width":7,"autorun":"false","comment":"","classes":"","editor-quick-suggestions":"false","out-height":"","results":"markup","label":"unnamed-chunk-1","fig-height":5,"editor-font-scale":1,"fig-cap":"","dpi":72},"id":1},{"code":"data <- data |> mutate(\n  treat_SD = treat_SE*sqrt(treat_n),\n  control_SD = control_SE*sqrt(control_n)\n)\ndata |> select(-treat_SE, -control_SE)","options":{"warning":"true","context":"interactive","output":"true","read-only":"false","message":"true","editor-max-height":"","out-width":"700px","fig-width":7,"autorun":"false","comment":"","classes":"","editor-quick-suggestions":"false","out-height":"","results":"markup","label":"unnamed-chunk-2","fig-height":5,"editor-font-scale":1,"fig-cap":"","dpi":72},"id":2},{"code":"qt(p=0.03/2, df=40-2, lower.tail=FALSE)","options":{"warning":"true","context":"interactive","output":"true","read-only":"false","message":"true","editor-max-height":"","out-width":"700px","fig-width":7,"autorun":"false","comment":"","classes":"","editor-quick-suggestions":"false","out-height":"","results":"markup","label":"unnamed-chunk-3","fig-height":5,"editor-font-scale":1,"fig-cap":"","dpi":72},"id":3},{"code":"qt(p=___/2, df=___-2, lower.tail=FALSE)","options":{"warning":"true","context":"interactive","output":"true","read-only":"false","message":"true","editor-max-height":"","out-width":"700px","fig-width":7,"autorun":"false","comment":"","classes":"","editor-quick-suggestions":"false","out-height":"","results":"markup","label":"unnamed-chunk-4","fig-height":5,"editor-font-scale":1,"fig-cap":"","dpi":72},"id":4},{"code":"qt(p=0.001/2, df=300-2, lower.tail=FALSE)","options":{"warning":"true","context":"interactive","output":"true","read-only":"true","message":"true","editor-max-height":"","out-width":"700px","fig-width":7,"autorun":"false","comment":"","classes":"","editor-quick-suggestions":"false","out-height":"","results":"markup","label":"unnamed-chunk-5","fig-height":5,"editor-font-scale":1,"fig-cap":"","dpi":72},"id":5},{"code":"library(esc)\n\nesc_f(f = 6.23, grp1n = 190, grp2n = 80, es.type = \"g\")","options":{"warning":"true","context":"interactive","output":"true","read-only":"false","message":"true","editor-max-height":"","out-width":"700px","fig-width":7,"autorun":"false","comment":"","classes":"","editor-quick-suggestions":"false","out-height":"","results":"markup","label":"unnamed-chunk-6","fig-height":5,"editor-font-scale":1,"fig-cap":"","dpi":72},"id":6},{"code":"esc <- esc_chisq(chisq = 2.5, totaln = 120, es.type = \"logit\")\nesc","options":{"warning":"true","context":"interactive","output":"true","read-only":"false","message":"true","editor-max-height":"","out-width":"700px","fig-width":7,"autorun":"false","comment":"","classes":"","editor-quick-suggestions":"false","out-height":"","results":"markup","label":"unnamed-chunk-7","fig-height":5,"editor-font-scale":1,"fig-cap":"","dpi":72},"id":7},{"code":"data2 <- data.frame(study_ID = as.factor(rep(1:3, times = 1)),\n                    log_or = c(1.1, 0.8, NA),\n                    log_se = c(0.5, 0.4, NA),\n                    n = c(100, 150, 120)\n                    )\ndata2","options":{"warning":"true","context":"interactive","output":"true","read-only":"false","message":"true","editor-max-height":"","out-width":"700px","fig-width":7,"autorun":"false","comment":"","classes":"","editor-quick-suggestions":"false","out-height":"","results":"markup","label":"unnamed-chunk-8","fig-height":5,"editor-font-scale":1,"fig-cap":"","dpi":72},"id":8},{"code":"data2$log_or[\"Study ID\" = 3] <- esc$es\ndata2$log_se[\"Study ID\" = 3] <- esc$se\ndata2","options":{"warning":"true","context":"interactive","output":"true","read-only":"false","message":"true","editor-max-height":"","out-width":"700px","fig-width":7,"autorun":"false","comment":"","classes":"","editor-quick-suggestions":"false","out-height":"","results":"markup","label":"unnamed-chunk-9","fig-height":5,"editor-font-scale":1,"fig-cap":"","dpi":72},"id":9}];
+globalThis.qwebrCellDetails = [{"id":1,"code":"library(dplyr)\n\n# Simulate some study data for meta-analysis\ndata <- data.frame(study_ID = as.factor(rep(1:4, times = 1)),\n                   treat_mean = c(1.5, 2.1, 2.2, 2.7),\n                   treat_SE = c(0.03, 0.06, 0.07, 0.08),\n                   treat_n = c(100, 50, 70, 60),\n                   control_mean = c(1.3, 1.8, 2.0, 2.2),\n                   control_SE = c(0.03, 0.07, 0.07, 0.09),\n                   control_n = c(100, 50, 70, 50)\n                   )\ndata","options":{"out-width":"700px","context":"interactive","fig-height":5,"results":"markup","autorun":"false","fig-width":7,"message":"true","output":"true","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","out-height":"","read-only":"false","fig-cap":"","classes":"","dpi":72,"warning":"true","label":"unnamed-chunk-1","editor-max-height":""}},{"id":2,"code":"data <- data |> mutate(\n  treat_SD = treat_SE*sqrt(treat_n),\n  control_SD = control_SE*sqrt(control_n)\n)\ndata |> select(-treat_SE, -control_SE)","options":{"out-width":"700px","context":"interactive","fig-height":5,"results":"markup","autorun":"false","fig-width":7,"message":"true","output":"true","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","out-height":"","read-only":"false","fig-cap":"","classes":"","dpi":72,"warning":"true","label":"unnamed-chunk-2","editor-max-height":""}},{"id":3,"code":"qt(p=0.03/2, df=40-2, lower.tail=FALSE)","options":{"out-width":"700px","context":"interactive","fig-height":5,"results":"markup","autorun":"false","fig-width":7,"message":"true","output":"true","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","out-height":"","read-only":"false","fig-cap":"","classes":"","dpi":72,"warning":"true","label":"unnamed-chunk-3","editor-max-height":""}},{"id":4,"code":"qt(p=___/2, df=___-2, lower.tail=FALSE)","options":{"out-width":"700px","context":"interactive","fig-height":5,"results":"markup","autorun":"false","fig-width":7,"message":"true","output":"true","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","out-height":"","read-only":"false","fig-cap":"","classes":"","dpi":72,"warning":"true","label":"unnamed-chunk-4","editor-max-height":""}},{"id":5,"code":"qt(p=0.001/2, df=300-2, lower.tail=FALSE)","options":{"out-width":"700px","context":"interactive","fig-height":5,"results":"markup","autorun":"false","fig-width":7,"message":"true","output":"true","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","out-height":"","read-only":"true","fig-cap":"","classes":"","dpi":72,"warning":"true","label":"unnamed-chunk-5","editor-max-height":""}},{"id":6,"code":"library(esc)\n\nesc_f(f = 6.23, grp1n = 190, grp2n = 80, es.type = \"g\")","options":{"out-width":"700px","context":"interactive","fig-height":5,"results":"markup","autorun":"false","fig-width":7,"message":"true","output":"true","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","out-height":"","read-only":"false","fig-cap":"","classes":"","dpi":72,"warning":"true","label":"unnamed-chunk-6","editor-max-height":""}},{"id":7,"code":"esc <- esc_chisq(chisq = 2.5, totaln = 120, es.type = \"logit\")\nesc","options":{"out-width":"700px","context":"interactive","fig-height":5,"results":"markup","autorun":"false","fig-width":7,"message":"true","output":"true","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","out-height":"","read-only":"false","fig-cap":"","classes":"","dpi":72,"warning":"true","label":"unnamed-chunk-7","editor-max-height":""}},{"id":8,"code":"data2 <- data.frame(study_ID = as.factor(rep(1:3, times = 1)),\n                    log_or = c(1.1, 0.8, NA),\n                    log_se = c(0.5, 0.4, NA),\n                    n = c(100, 150, 120)\n                    )\ndata2","options":{"out-width":"700px","context":"interactive","fig-height":5,"results":"markup","autorun":"false","fig-width":7,"message":"true","output":"true","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","out-height":"","read-only":"false","fig-cap":"","classes":"","dpi":72,"warning":"true","label":"unnamed-chunk-8","editor-max-height":""}},{"id":9,"code":"data2$log_or[\"Study ID\" = 3] <- esc$es\ndata2$log_se[\"Study ID\" = 3] <- esc$se\ndata2","options":{"out-width":"700px","context":"interactive","fig-height":5,"results":"markup","autorun":"false","fig-width":7,"message":"true","output":"true","comment":"","editor-font-scale":1,"editor-quick-suggestions":"false","out-height":"","read-only":"false","fig-cap":"","classes":"","dpi":72,"warning":"true","label":"unnamed-chunk-9","editor-max-height":""}}];
 
 </script>
 <script type="module">
@@ -1598,12 +1578,12 @@ Ratio Measures of Effect
 <section id="data-extraction-form" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="data-extraction-form"><span class="header-section-number">6.3</span> Data Extraction Form</h2>
 <p>The <strong>data extraction form</strong> should be designed so that multiple outcomes can be extracted for each study. The suggested approach is to pre-determine <strong>outcome categories</strong> for analysis based on your review question. These should represent specific groups of similar outcomes that will combined together in the same analysis. You can also include additional questions on the form that might have <em>different responses for different outcome categories</em> (e.g., how the outcome was measured). You may also have different categories for intervention or exposure groups of interest.</p>
-<p>An example of a data extraction form from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> is <a href="assets/Example_DE_Form.docx">available for download here</a>.</p>
+<p>An example of a data extraction form from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref"><strong>youngEffectivenessFoodHandler2019?</strong></a>)</span> is <a href="assets/Example_DE_Form.docx">available for download here</a>.</p>
 </section>
 <section id="dichotomous-measures" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="dichotomous-measures"><span class="header-section-number">6.4</span> Dichotomous Measures</h2>
 <p><strong>Dichotomous outcomes</strong> are those with only two possibilities (e.g., disease positive or negative). Two common measures of effect for these outcomes are <strong>odds ratios</strong> (OR) and <strong>risk ratios</strong> (RR). An RR is a ratio of the risk of the event in each group, while the OR is ratio of the odds of event (compared to a non-event) in each group. The table below shows how these two measures are calculated:</p>
-<table class="caption-top table">
+<table class="table">
 <caption>2 X 2 table for an intervention study</caption>
 <thead>
 <tr class="header">
@@ -1681,7 +1661,7 @@ Data Extraction Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Consider again the Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> systematic review about the effectiveness of food handler training interventions. <a href="https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing">Using three example articles</a>, identify the outcomes of interest in each study and which data should be extracted.</p>
+<p>Consider again the Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref"><strong>youngEffectivenessFoodHandler2019?</strong></a>)</span> systematic review about the effectiveness of food handler training interventions. <a href="https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing">Using three example articles</a>, identify the outcomes of interest in each study and which data should be extracted.</p>
 <ul>
 <li>How many relevant outcomes are reported in each study?</li>
 <li>Are any important outcomes or values (e.g., measures of variability) missing?</li>
@@ -1795,7 +1775,7 @@ Data Conversions Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Using the systematic review article you identified earlier in the course, review the article to examine whether meta-analysis was conducted. If it wasn’t, you can answer the following questions based on this systematic review and meta-analysis of the effectiveness of workplace mindfulness training interventions <span class="citation" data-cites="bartlettSystematicReviewMetaanalysis2019">(<a href="references.html#ref-bartlettSystematicReviewMetaanalysis2019" role="doc-biblioref">Bartlett et al. 2019</a>)</span>. Consider the following questions for the article analyzed:</p>
+<p>Using the systematic review article you identified earlier in the course, review the article to examine whether meta-analysis was conducted. If it wasn’t, you can answer the following questions based on this systematic review and meta-analysis of the effectiveness of workplace mindfulness training interventions <span class="citation" data-cites="bartlettSystematicReviewMetaanalysis2019">(<a href="references.html#ref-bartlettSystematicReviewMetaanalysis2019" role="doc-biblioref"><strong>bartlettSystematicReviewMetaanalysis2019?</strong></a>)</span>. Consider the following questions for the article analyzed:</p>
 <ul>
 <li>What was the main outcome measure extracted and analyzed?</li>
 <li>Did the authors report whether any data conversions were necessary? If so, which ones, how many, and how were they conducted?</li>
@@ -1806,14 +1786,6 @@ Data Conversions Exercise
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-bartlettSystematicReviewMetaanalysis2019" class="csl-entry" role="listitem">
-Bartlett, Larissa, Angela Martin, Amanda L. Neil, Kate Memish, Petr Otahal, Michelle Kilpatrick, and Kristy Sanderson. 2019. <span>“A Systematic Review and Meta-Analysis of Workplace Mindfulness Training Randomized Controlled Trials.”</span> <em>Journal of Occupational Health Psychology</em> 24: 108–26. <a href="https://doi.org/10.1037/ocp0000146">https://doi.org/10.1037/ocp0000146</a>.
-</div>
-<div id="ref-youngEffectivenessFoodHandler2019" class="csl-entry" role="listitem">
-Young, Ian, Judy Greig, Barbara J. Wilhelm, and Lisa A. Waddell. 2019. <span>“Effectiveness of Food Handler Training and Education Interventions: A Systematic Review and Meta-Analysis.”</span> <em>Journal of Food Protection</em> 82 (10): 1714–28. <a href="https://doi.org/10.4315/0362-028X.JFP-19-108">https://doi.org/10.4315/0362-028X.JFP-19-108</a>.
-</div>
-</div>
 </section>
 </section>
 

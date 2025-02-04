@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -54,27 +54,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -340,14 +320,14 @@ window.Quarto = {
 <h2 data-number="7.1" class="anchored" data-anchor-id="review-flow-chart"><span class="header-section-number">7.1</span> Review Flow Chart</h2>
 <p>Usually the first part of data analysis and reporting results includes <strong>summarizing details of the number of studies captured in the review and included/excluded at each step</strong>. These details should be shown through a flow chart diagram or figure. The <a href="http://prisma-statement.org/">Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) reporting guideline</a> has a <a href="http://www.prisma-statement.org/PRISMAStatement/FlowDiagram">template for flow charts</a>. A copy of the flow chart template is shown below:</p>
 <p><img src="images/flow_chart.png" class="img-fluid"></p>
-<p>The flow chart should capture exact numbers of references identified from each source (e.g., bibliographic databases, grey literature, etc.) It should clearly indicate the number of references excluded and included at each step of the review, along with reasons for excluding references or articles. There is also an <a href="https://estech.shinyapps.io/prisma_flowdiagram/">online Shiny app for creating flow charts using this template</a>. An example flow chart from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> is show below.</p>
+<p>The flow chart should capture exact numbers of references identified from each source (e.g., bibliographic databases, grey literature, etc.) It should clearly indicate the number of references excluded and included at each step of the review, along with reasons for excluding references or articles. There is also an <a href="https://estech.shinyapps.io/prisma_flowdiagram/">online Shiny app for creating flow charts using this template</a>. An example flow chart from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref"><strong>youngEffectivenessFoodHandler2019?</strong></a>)</span> is show below.</p>
 <p><img src="images/flow_chart_example.png" class="img-fluid"></p>
 </section>
 <section id="descriptive-analysis-of-article-characterization-results" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="descriptive-analysis-of-article-characterization-results"><span class="header-section-number">7.2</span> Descriptive Analysis of Article Characterization Results</h2>
-<p>The next step in analysis is usually to <strong>descriptively summarize the article characteristics</strong> (e.g., PICO/PECO elements, and other relevant article and study details). It can be helpful at this stage to start categorizing the PICO/PECO elements into groups that can facilitate summary displays (e.g., tables) and further analysis. For example, specific types of interventions and outcomes might be grouped together. A table can then be presented that has <em>each relevant study as a row</em> and specific <em>columns for each of the relevant PICO/PECO elements or groups</em>. An example of such a table from Bartlett et al. <span class="citation" data-cites="bartlettSystematicReviewMetaanalysis2019">(<a href="references.html#ref-bartlettSystematicReviewMetaanalysis2019" role="doc-biblioref">2019</a>)</span> is shown below (note this shows only the first several studies included in the table):</p>
+<p>The next step in analysis is usually to <strong>descriptively summarize the article characteristics</strong> (e.g., PICO/PECO elements, and other relevant article and study details). It can be helpful at this stage to start categorizing the PICO/PECO elements into groups that can facilitate summary displays (e.g., tables) and further analysis. For example, specific types of interventions and outcomes might be grouped together. A table can then be presented that has <em>each relevant study as a row</em> and specific <em>columns for each of the relevant PICO/PECO elements or groups</em>. An example of such a table from Bartlett et al. <span class="citation" data-cites="bartlettSystematicReviewMetaanalysis2019">(<a href="references.html#ref-bartlettSystematicReviewMetaanalysis2019" role="doc-biblioref"><strong>bartlettSystematicReviewMetaanalysis2019?</strong></a>)</span> is shown below (note this shows only the first several studies included in the table):</p>
 <p><img src="images/table1_example.png" class="img-fluid"></p>
-<p>In addition to showing a table with a the summary characteristics and PICO/PECO details for <em>each study</em>, in can also be useful, especially in cases where the number of relevant studies included in the review is very large, to create a <em>tabulation table</em> to show overall numbers and percentages of studies that investigated specific PICO/PECO elements and reported specific details. An example of such a table from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> is shown below (note that only the first several rows of the table are shown here). In the example below, we will examine how to reproduce such a table in <em>R</em>.</p>
+<p>In addition to showing a table with a the summary characteristics and PICO/PECO details for <em>each study</em>, in can also be useful, especially in cases where the number of relevant studies included in the review is very large, to create a <em>tabulation table</em> to show overall numbers and percentages of studies that investigated specific PICO/PECO elements and reported specific details. An example of such a table from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref"><strong>youngEffectivenessFoodHandler2019?</strong></a>)</span> is shown below (note that only the first several rows of the table are shown here). In the example below, we will examine how to reproduce such a table in <em>R</em>.</p>
 <p><img src="images/table1_example2.png" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -359,11 +339,11 @@ Summary Article Characterization Table Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As an illustrative example of calculating a summary tabulation table, we will load some <em>selected</em> article characterization data from the relevant articles in Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span>.</p>
+<p>As an illustrative example of calculating a summary tabulation table, we will load some <em>selected</em> article characterization data from the relevant articles in Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref"><strong>youngEffectivenessFoodHandler2019?</strong></a>)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-d3fc602a3fa96fccaad9" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-d3fc602a3fa96fccaad9">{"x":{"filter":"none","vertical":false,"data":[["122","195","438","441","557","655","684","730","733","745","801","815","887","931","1231","1416","1580","1668","1676","1681","1760","1761","1900","1955","1972","2066","2071","2241","2278","2295","2404","2433","2434","2772","2900","2917","2977","2979","2981","2983","2984","2986","2987","2990","2996","3006","3013"],["Abernathy and Hart (2004)","Al-Mohaithef (2014)","Brannon et al. (2009)","Bratton-Jeffery (1998)","Chaifetz (2015)","Cotterchio et al. (1998)","Da Cunha et al. (2014)","DeFee (1999)","DeLegge (2009)","DeSario (2013)","Dworkin et al. (2012)","Ehiri et al. (1997)","Farzianpour et al. (2012)","Fraser (1995)","Chang et al. (2003)","Kirby and Gardiner (1997)","Lillquist et al. (2005)","Makari (2014)","Mancini et al. (2012)","Manes et al. (2014)","McIntyre et al. (2014)","McIntyre et al. (2013)","Nabali et al. (1986)","Nik Husain et al. (2016)","Nummer et al. (2010)","Park et al. (2010)","Parwanda et al. (2015)","Richard et al. (2013)","Romano and D'Argenio (1998)","Rowell et al. (2013)","Serafim et al. (2015)","Sheth and Sukul (2007)","Sheth et al. (2007)","Walker et al. (2006)","Yeung (2014)","York et al. (2009)","Howes et al. (1996)","Strohbehn et al. (2013)","Craggs-Dino (2002)","Ituma et al. (2017)","Maung et al. (2017)","Nyamari (2013)","Rajagopal and Strohbehn (2013)","Kirshner (1990)","Soneff et al. (1994)","Cook and Casey (1979)","Kim and Lee (2014)"],["2004","2014","2009","1998","2015","1998","2014","1999","2009","2013","2012","1997","2012","1995","2003","1997","2005","2014","2012","2014","2014","2013","1986","2016","2010","2010","2015","2013","1998","2013","2015","2007","2007","2006","2014","2009","1996","2013","2002","2017","2017","2013","2013","1990","1994","1979","2014"],["Journal article","Thesis","Journal article","Thesis","Thesis","Journal article","Journal article","Thesis","Thesis","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Thesis","Journal article","Thesis","Journal article","Journal article","Journal article"],["English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","Italian","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","Korean"],["Canada","Saudi Arabia","US","US","US","US","Brazil","US","US","US","US","UK","Iran","US","South Korea","UK","US","US","Canada","US","Canada","Canada","Bahrain","Malaysia","US","South Korea","India","US","Italy","US","Brazil","India","India","US","US","US","Canada","US","US","Nigeria","Myanmar","Kenya","US","Canada","Canada","US","South Korea"],["Controlled before-and-after study","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Controlled before-and-after study","Randomized controlled trial (RCT)","Non-randomized controlled trial","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial"],["Yes","No","Yes","No","No","Yes","Yes","No","Yes","Yes","Yes","No","Yes","No","No","Yes","No","No","No","Yes","No","Yes","No","No","No","Yes","No","No","No","No","No","No","No","No","No","Yes","No","Yes","No","Yes","No","No","No","Yes","No","No","No"],["Multi-faceted","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Training course or session","Messaging materials","Training course or session","Training course or session","Messaging materials","Training course or session","Training course or session","Training course or session","Training course or session","Multi-faceted","Messaging materials","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Messaging materials","Training course or session","Consulting services","Multi-faceted","Multi-faceted","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Multi-faceted","Training course or session","Multi-faceted","Training course or session","Multi-faceted"],["No","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","No","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","No","Yes","No","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","No","Yes"],["No / not reported","No / not reported","No / not reported","Yes","Yes","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported"],["Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes"],["Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","Yes","Yes","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","Yes","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","Yes","Yes","Yes","No / not reported","No / not reported"],["Not reported","Less than 1 day","Not reported","Less than 1 day","Not reported","1 day or longer","1 day or longer","Less than 1 day","Not reported","1 day or longer","N/a","Not reported","Not reported","N/a","Less than 1 day","Less than 1 day","Less than 1 day","Not reported","Less than 1 day","N/a","1 day or longer","Not reported","1 day or longer","Less than 1 day","1 day or longer","Less than 1 day","Not reported","Not reported","N/a","1 day or longer","N/a","Not reported","Not reported","Not reported","Less than 1 day","Less than 1 day","N/a","Not reported","Less than 1 day","1 day or longer","1 day or longer","Not reported","Less than 1 day","Less than 1 day","1 day or longer","1 day or longer","1 day or longer"],["No intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","Standard/traditional intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention"],["Yes","Yes","No","Yes","No","No","Yes","Yes","No","No","Yes","Yes","Yes","No","Yes","No","Yes","Yes","No","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","No","No","No","No","Yes"],["No","Yes","Yes","No","No","No","Yes","No","No","No","No","No","No","Yes","No","No","Yes","Yes","No","No","No","Yes","No","No","No","No","No","Yes","No","No","No","No","No","Yes","No","No","No","Yes","Yes","No","Yes","No","No","No","No","No","No"],["No","Yes","No","No","No","No","Yes","No","No","No","No","No","No","No","Yes","No","No","No","No","No","No","Yes","No","Yes","No","Yes","Yes","Yes","No","Yes","No","Yes","Yes","Yes","No","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","No","No","No","No"],["Yes","No","No","No","Yes","Yes","No","No","Yes","Yes","No","No","No","No","No","Yes","No","No","Yes","No","No","No","Yes","No","No","Yes","No","Yes","No","Yes","Yes","No","No","No","No","No","No","No","Yes","No","Yes","No","No","Yes","Yes","Yes","No"],["No / not specified","Yes","No / not specified","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","No / not specified","No / not specified","Yes","Yes","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Refid<\/th>\n      <th>Author (year)<\/th>\n      <th>Year<\/th>\n      <th>Document type<\/th>\n      <th>Language<\/th>\n      <th>Country<\/th>\n      <th>Study design<\/th>\n      <th>Setting includes restaurants<\/th>\n      <th>Intervention type<\/th>\n      <th>Intervention content described<\/th>\n      <th>Intervention informed by theory<\/th>\n      <th>Intervention informed by research<\/th>\n      <th>Stakeholder engagement used<\/th>\n      <th>Intervention duration<\/th>\n      <th>Comparison group<\/th>\n      <th>Outcome - knowledge<\/th>\n      <th>Outcome - attitudes<\/th>\n      <th>Outcome - behaviour<\/th>\n      <th>Outcome - inspection scores<\/th>\n      <th>Collection tool pre-tested<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":[0,1,2,3,4]},{"name":"Refid","targets":0},{"name":"Author (year)","targets":1},{"name":"Year","targets":2},{"name":"Document type","targets":3},{"name":"Language","targets":4},{"name":"Country","targets":5},{"name":"Study design","targets":6},{"name":"Setting includes restaurants","targets":7},{"name":"Intervention type","targets":8},{"name":"Intervention content described","targets":9},{"name":"Intervention informed by theory","targets":10},{"name":"Intervention informed by research","targets":11},{"name":"Stakeholder engagement used","targets":12},{"name":"Intervention duration","targets":13},{"name":"Comparison group","targets":14},{"name":"Outcome - knowledge","targets":15},{"name":"Outcome - attitudes","targets":16},{"name":"Outcome - behaviour","targets":17},{"name":"Outcome - inspection scores","targets":18},{"name":"Collection tool pre-tested","targets":19}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'70%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'70%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'70%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'70%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'70%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'70%'});\nvar value=data[11]; $(this.api().cell(row, 11).node()).css({'font-size':'70%'});\nvar value=data[12]; $(this.api().cell(row, 12).node()).css({'font-size':'70%'});\nvar value=data[13]; $(this.api().cell(row, 13).node()).css({'font-size':'70%'});\nvar value=data[14]; $(this.api().cell(row, 14).node()).css({'font-size':'70%'});\nvar value=data[15]; $(this.api().cell(row, 15).node()).css({'font-size':'70%'});\nvar value=data[16]; $(this.api().cell(row, 16).node()).css({'font-size':'70%'});\nvar value=data[17]; $(this.api().cell(row, 17).node()).css({'font-size':'70%'});\nvar value=data[18]; $(this.api().cell(row, 18).node()).css({'font-size':'70%'});\nvar value=data[19]; $(this.api().cell(row, 19).node()).css({'font-size':'70%'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-3fdf21f866d6cfb537a4" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3fdf21f866d6cfb537a4">{"x":{"filter":"none","vertical":false,"data":[["122","195","438","441","557","655","684","730","733","745","801","815","887","931","1231","1416","1580","1668","1676","1681","1760","1761","1900","1955","1972","2066","2071","2241","2278","2295","2404","2433","2434","2772","2900","2917","2977","2979","2981","2983","2984","2986","2987","2990","2996","3006","3013"],["Abernathy and Hart (2004)","Al-Mohaithef (2014)","Brannon et al. (2009)","Bratton-Jeffery (1998)","Chaifetz (2015)","Cotterchio et al. (1998)","Da Cunha et al. (2014)","DeFee (1999)","DeLegge (2009)","DeSario (2013)","Dworkin et al. (2012)","Ehiri et al. (1997)","Farzianpour et al. (2012)","Fraser (1995)","Chang et al. (2003)","Kirby and Gardiner (1997)","Lillquist et al. (2005)","Makari (2014)","Mancini et al. (2012)","Manes et al. (2014)","McIntyre et al. (2014)","McIntyre et al. (2013)","Nabali et al. (1986)","Nik Husain et al. (2016)","Nummer et al. (2010)","Park et al. (2010)","Parwanda et al. (2015)","Richard et al. (2013)","Romano and D'Argenio (1998)","Rowell et al. (2013)","Serafim et al. (2015)","Sheth and Sukul (2007)","Sheth et al. (2007)","Walker et al. (2006)","Yeung (2014)","York et al. (2009)","Howes et al. (1996)","Strohbehn et al. (2013)","Craggs-Dino (2002)","Ituma et al. (2017)","Maung et al. (2017)","Nyamari (2013)","Rajagopal and Strohbehn (2013)","Kirshner (1990)","Soneff et al. (1994)","Cook and Casey (1979)","Kim and Lee (2014)"],["2004","2014","2009","1998","2015","1998","2014","1999","2009","2013","2012","1997","2012","1995","2003","1997","2005","2014","2012","2014","2014","2013","1986","2016","2010","2010","2015","2013","1998","2013","2015","2007","2007","2006","2014","2009","1996","2013","2002","2017","2017","2013","2013","1990","1994","1979","2014"],["Journal article","Thesis","Journal article","Thesis","Thesis","Journal article","Journal article","Thesis","Thesis","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Thesis","Journal article","Thesis","Journal article","Journal article","Journal article"],["English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","Italian","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","Korean"],["Canada","Saudi Arabia","US","US","US","US","Brazil","US","US","US","US","UK","Iran","US","South Korea","UK","US","US","Canada","US","Canada","Canada","Bahrain","Malaysia","US","South Korea","India","US","Italy","US","Brazil","India","India","US","US","US","Canada","US","US","Nigeria","Myanmar","Kenya","US","Canada","Canada","US","South Korea"],["Controlled before-and-after study","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Controlled before-and-after study","Randomized controlled trial (RCT)","Non-randomized controlled trial","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial"],["Yes","No","Yes","No","No","Yes","Yes","No","Yes","Yes","Yes","No","Yes","No","No","Yes","No","No","No","Yes","No","Yes","No","No","No","Yes","No","No","No","No","No","No","No","No","No","Yes","No","Yes","No","Yes","No","No","No","Yes","No","No","No"],["Multi-faceted","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Training course or session","Messaging materials","Training course or session","Training course or session","Messaging materials","Training course or session","Training course or session","Training course or session","Training course or session","Multi-faceted","Messaging materials","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Messaging materials","Training course or session","Consulting services","Multi-faceted","Multi-faceted","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Multi-faceted","Training course or session","Multi-faceted","Training course or session","Multi-faceted"],["No","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","No","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","No","Yes","No","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","No","Yes"],["No / not reported","No / not reported","No / not reported","Yes","Yes","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported"],["Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes"],["Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","Yes","Yes","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","Yes","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","Yes","Yes","Yes","No / not reported","No / not reported"],["Not reported","Less than 1 day","Not reported","Less than 1 day","Not reported","1 day or longer","1 day or longer","Less than 1 day","Not reported","1 day or longer","N/a","Not reported","Not reported","N/a","Less than 1 day","Less than 1 day","Less than 1 day","Not reported","Less than 1 day","N/a","1 day or longer","Not reported","1 day or longer","Less than 1 day","1 day or longer","Less than 1 day","Not reported","Not reported","N/a","1 day or longer","N/a","Not reported","Not reported","Not reported","Less than 1 day","Less than 1 day","N/a","Not reported","Less than 1 day","1 day or longer","1 day or longer","Not reported","Less than 1 day","Less than 1 day","1 day or longer","1 day or longer","1 day or longer"],["No intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","Standard/traditional intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention"],["Yes","Yes","No","Yes","No","No","Yes","Yes","No","No","Yes","Yes","Yes","No","Yes","No","Yes","Yes","No","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","No","No","No","No","Yes"],["No","Yes","Yes","No","No","No","Yes","No","No","No","No","No","No","Yes","No","No","Yes","Yes","No","No","No","Yes","No","No","No","No","No","Yes","No","No","No","No","No","Yes","No","No","No","Yes","Yes","No","Yes","No","No","No","No","No","No"],["No","Yes","No","No","No","No","Yes","No","No","No","No","No","No","No","Yes","No","No","No","No","No","No","Yes","No","Yes","No","Yes","Yes","Yes","No","Yes","No","Yes","Yes","Yes","No","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","No","No","No","No"],["Yes","No","No","No","Yes","Yes","No","No","Yes","Yes","No","No","No","No","No","Yes","No","No","Yes","No","No","No","Yes","No","No","Yes","No","Yes","No","Yes","Yes","No","No","No","No","No","No","No","Yes","No","Yes","No","No","Yes","Yes","Yes","No"],["No / not specified","Yes","No / not specified","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","No / not specified","No / not specified","Yes","Yes","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Refid<\/th>\n      <th>Author (year)<\/th>\n      <th>Year<\/th>\n      <th>Document type<\/th>\n      <th>Language<\/th>\n      <th>Country<\/th>\n      <th>Study design<\/th>\n      <th>Setting includes restaurants<\/th>\n      <th>Intervention type<\/th>\n      <th>Intervention content described<\/th>\n      <th>Intervention informed by theory<\/th>\n      <th>Intervention informed by research<\/th>\n      <th>Stakeholder engagement used<\/th>\n      <th>Intervention duration<\/th>\n      <th>Comparison group<\/th>\n      <th>Outcome - knowledge<\/th>\n      <th>Outcome - attitudes<\/th>\n      <th>Outcome - behaviour<\/th>\n      <th>Outcome - inspection scores<\/th>\n      <th>Collection tool pre-tested<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":[0,1,2,3,4]},{"name":"Refid","targets":0},{"name":"Author (year)","targets":1},{"name":"Year","targets":2},{"name":"Document type","targets":3},{"name":"Language","targets":4},{"name":"Country","targets":5},{"name":"Study design","targets":6},{"name":"Setting includes restaurants","targets":7},{"name":"Intervention type","targets":8},{"name":"Intervention content described","targets":9},{"name":"Intervention informed by theory","targets":10},{"name":"Intervention informed by research","targets":11},{"name":"Stakeholder engagement used","targets":12},{"name":"Intervention duration","targets":13},{"name":"Comparison group","targets":14},{"name":"Outcome - knowledge","targets":15},{"name":"Outcome - attitudes","targets":16},{"name":"Outcome - behaviour","targets":17},{"name":"Outcome - inspection scores","targets":18},{"name":"Collection tool pre-tested","targets":19}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'70%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'70%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'70%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'70%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'70%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'70%'});\nvar value=data[11]; $(this.api().cell(row, 11).node()).css({'font-size':'70%'});\nvar value=data[12]; $(this.api().cell(row, 12).node()).css({'font-size':'70%'});\nvar value=data[13]; $(this.api().cell(row, 13).node()).css({'font-size':'70%'});\nvar value=data[14]; $(this.api().cell(row, 14).node()).css({'font-size':'70%'});\nvar value=data[15]; $(this.api().cell(row, 15).node()).css({'font-size':'70%'});\nvar value=data[16]; $(this.api().cell(row, 16).node()).css({'font-size':'70%'});\nvar value=data[17]; $(this.api().cell(row, 17).node()).css({'font-size':'70%'});\nvar value=data[18]; $(this.api().cell(row, 18).node()).css({'font-size':'70%'});\nvar value=data[19]; $(this.api().cell(row, 19).node()).css({'font-size':'70%'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Now we can produce some summary statistics and tabulations of the variables and organize them into a table to present in our results.</p>
@@ -390,23 +370,24 @@ Summary Article Characterization Table Example
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Young_2019_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="jrkcyvzpos" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jrkcyvzpos table {
+<div>
+<div id="pmyjuynqve" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pmyjuynqve table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jrkcyvzpos thead, #jrkcyvzpos tbody, #jrkcyvzpos tfoot, #jrkcyvzpos tr, #jrkcyvzpos td, #jrkcyvzpos th {
+#pmyjuynqve thead, #pmyjuynqve tbody, #pmyjuynqve tfoot, #pmyjuynqve tr, #pmyjuynqve td, #pmyjuynqve th {
   border-style: none;
 }
 
-#jrkcyvzpos p {
+#pmyjuynqve p {
   margin: 0;
   padding: 0;
 }
 
-#jrkcyvzpos .gt_table {
+#pmyjuynqve .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -432,12 +413,12 @@ Summary Article Characterization Table Example
   border-left-color: #D3D3D3;
 }
 
-#jrkcyvzpos .gt_caption {
+#pmyjuynqve .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jrkcyvzpos .gt_title {
+#pmyjuynqve .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -449,7 +430,7 @@ Summary Article Characterization Table Example
   border-bottom-width: 0;
 }
 
-#jrkcyvzpos .gt_subtitle {
+#pmyjuynqve .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -461,7 +442,7 @@ Summary Article Characterization Table Example
   border-top-width: 0;
 }
 
-#jrkcyvzpos .gt_heading {
+#pmyjuynqve .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -473,13 +454,13 @@ Summary Article Characterization Table Example
   border-right-color: #D3D3D3;
 }
 
-#jrkcyvzpos .gt_bottom_border {
+#pmyjuynqve .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jrkcyvzpos .gt_col_headings {
+#pmyjuynqve .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -494,7 +475,7 @@ Summary Article Characterization Table Example
   border-right-color: #D3D3D3;
 }
 
-#jrkcyvzpos .gt_col_heading {
+#pmyjuynqve .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -514,7 +495,7 @@ Summary Article Characterization Table Example
   overflow-x: hidden;
 }
 
-#jrkcyvzpos .gt_column_spanner_outer {
+#pmyjuynqve .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -526,15 +507,15 @@ Summary Article Characterization Table Example
   padding-right: 4px;
 }
 
-#jrkcyvzpos .gt_column_spanner_outer:first-child {
+#pmyjuynqve .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jrkcyvzpos .gt_column_spanner_outer:last-child {
+#pmyjuynqve .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jrkcyvzpos .gt_column_spanner {
+#pmyjuynqve .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -546,11 +527,11 @@ Summary Article Characterization Table Example
   width: 100%;
 }
 
-#jrkcyvzpos .gt_spanner_row {
+#pmyjuynqve .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jrkcyvzpos .gt_group_heading {
+#pmyjuynqve .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -576,7 +557,7 @@ Summary Article Characterization Table Example
   text-align: left;
 }
 
-#jrkcyvzpos .gt_empty_group_heading {
+#pmyjuynqve .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -591,15 +572,15 @@ Summary Article Characterization Table Example
   vertical-align: middle;
 }
 
-#jrkcyvzpos .gt_from_md > :first-child {
+#pmyjuynqve .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jrkcyvzpos .gt_from_md > :last-child {
+#pmyjuynqve .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jrkcyvzpos .gt_row {
+#pmyjuynqve .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -618,7 +599,7 @@ Summary Article Characterization Table Example
   overflow-x: hidden;
 }
 
-#jrkcyvzpos .gt_stub {
+#pmyjuynqve .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -631,7 +612,7 @@ Summary Article Characterization Table Example
   padding-right: 5px;
 }
 
-#jrkcyvzpos .gt_stub_row_group {
+#pmyjuynqve .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -645,15 +626,15 @@ Summary Article Characterization Table Example
   vertical-align: top;
 }
 
-#jrkcyvzpos .gt_row_group_first td {
+#pmyjuynqve .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jrkcyvzpos .gt_row_group_first th {
+#pmyjuynqve .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jrkcyvzpos .gt_summary_row {
+#pmyjuynqve .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -663,16 +644,16 @@ Summary Article Characterization Table Example
   padding-right: 5px;
 }
 
-#jrkcyvzpos .gt_first_summary_row {
+#pmyjuynqve .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jrkcyvzpos .gt_first_summary_row.thick {
+#pmyjuynqve .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jrkcyvzpos .gt_last_summary_row {
+#pmyjuynqve .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -682,7 +663,7 @@ Summary Article Characterization Table Example
   border-bottom-color: #D3D3D3;
 }
 
-#jrkcyvzpos .gt_grand_summary_row {
+#pmyjuynqve .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -692,7 +673,7 @@ Summary Article Characterization Table Example
   padding-right: 5px;
 }
 
-#jrkcyvzpos .gt_first_grand_summary_row {
+#pmyjuynqve .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -702,7 +683,7 @@ Summary Article Characterization Table Example
   border-top-color: #D3D3D3;
 }
 
-#jrkcyvzpos .gt_last_grand_summary_row_top {
+#pmyjuynqve .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -712,11 +693,11 @@ Summary Article Characterization Table Example
   border-bottom-color: #D3D3D3;
 }
 
-#jrkcyvzpos .gt_striped {
+#pmyjuynqve .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jrkcyvzpos .gt_table_body {
+#pmyjuynqve .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -725,7 +706,7 @@ Summary Article Characterization Table Example
   border-bottom-color: #D3D3D3;
 }
 
-#jrkcyvzpos .gt_footnotes {
+#pmyjuynqve .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -739,7 +720,7 @@ Summary Article Characterization Table Example
   border-right-color: #D3D3D3;
 }
 
-#jrkcyvzpos .gt_footnote {
+#pmyjuynqve .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -748,7 +729,7 @@ Summary Article Characterization Table Example
   padding-right: 5px;
 }
 
-#jrkcyvzpos .gt_sourcenotes {
+#pmyjuynqve .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -762,7 +743,7 @@ Summary Article Characterization Table Example
   border-right-color: #D3D3D3;
 }
 
-#jrkcyvzpos .gt_sourcenote {
+#pmyjuynqve .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -770,85 +751,76 @@ Summary Article Characterization Table Example
   padding-right: 5px;
 }
 
-#jrkcyvzpos .gt_left {
+#pmyjuynqve .gt_left {
   text-align: left;
 }
 
-#jrkcyvzpos .gt_center {
+#pmyjuynqve .gt_center {
   text-align: center;
 }
 
-#jrkcyvzpos .gt_right {
+#pmyjuynqve .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jrkcyvzpos .gt_font_normal {
+#pmyjuynqve .gt_font_normal {
   font-weight: normal;
 }
 
-#jrkcyvzpos .gt_font_bold {
+#pmyjuynqve .gt_font_bold {
   font-weight: bold;
 }
 
-#jrkcyvzpos .gt_font_italic {
+#pmyjuynqve .gt_font_italic {
   font-style: italic;
 }
 
-#jrkcyvzpos .gt_super {
+#pmyjuynqve .gt_super {
   font-size: 65%;
 }
 
-#jrkcyvzpos .gt_footnote_marks {
+#pmyjuynqve .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jrkcyvzpos .gt_asterisk {
+#pmyjuynqve .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jrkcyvzpos .gt_indent_1 {
+#pmyjuynqve .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jrkcyvzpos .gt_indent_2 {
+#pmyjuynqve .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jrkcyvzpos .gt_indent_3 {
+#pmyjuynqve .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jrkcyvzpos .gt_indent_4 {
+#pmyjuynqve .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jrkcyvzpos .gt_indent_5 {
+#pmyjuynqve .gt_indent_5 {
   text-indent: 25px;
-}
-
-#jrkcyvzpos .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#jrkcyvzpos div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header gt_col_headings">
-<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="stat_0" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 47</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>N = 47</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 47</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -1097,12 +1069,13 @@ Summary Article Characterization Table Example
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
-<td colspan="2" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Median (Min-Max); n (%)</td>
+<td colspan="2" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Median (Minimum-Maximum); n (%)</td>
 </tr>
 </tfoot>
 
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -1150,7 +1123,7 @@ Example of when Meta-Analysis was Not Feasible
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In a systematic review about the prevalence of knowledge, practices, and training outcomes among restaurant and food service personnel toward food allergies and Celiac disease <span class="citation" data-cites="youngSystematicReviewMetaregression2018">(<a href="references.html#ref-youngSystematicReviewMetaregression2018" role="doc-biblioref">Young and Thaivalappil 2018</a>)</span>, the authors did not conduct meta-analysis on the outcome due to substantive differences in the populations assessed, their characteristics, and how outcomes were measured. Instead, they summarized the <strong>distribution</strong> of prevalence outcomes across studies within each outcome domain using box plots. The figure below shows the prevalence of food allergy and Celiac disease <strong>behaviour outcomes</strong> reported across studies:</p>
+<p>In a systematic review about the prevalence of knowledge, practices, and training outcomes among restaurant and food service personnel toward food allergies and Celiac disease <span class="citation" data-cites="youngSystematicReviewMetaregression2018">(<a href="references.html#ref-youngSystematicReviewMetaregression2018" role="doc-biblioref"><strong>youngSystematicReviewMetaregression2018?</strong></a>)</span>, the authors did not conduct meta-analysis on the outcome due to substantive differences in the populations assessed, their characteristics, and how outcomes were measured. Instead, they summarized the <strong>distribution</strong> of prevalence outcomes across studies within each outcome domain using box plots. The figure below shows the prevalence of food allergy and Celiac disease <strong>behaviour outcomes</strong> reported across studies:</p>
 <p><img src="images/non_MA_example.png" class="img-fluid"></p>
 </div>
 </div>
@@ -1179,7 +1152,7 @@ Example of when Meta-Analysis was Not Feasible
 {W_j} = \frac{1}{{SE_j^2}+{\tau^2}}
 \]</span></p>
 <p>The adjusted weight is then used to calculate the weighted average measure of effect. There are several methods to estimate <span class="math inline">\(\tau^2\)</span>. The most famous is called the <strong>DerSimonian-Laird (DL)</strong> method. This method has straightforward calculations, and is often the default method in various software packages. However, this method can be biased and results in confidence intervals that are too narrow when the number of studies is small and heterogeneity is high.</p>
-<p>Based on simulation studies, the <strong>restricted maximum likelihood estimator (REML)</strong> approach seems to be good choice for <em>continuous</em> outcome data <span class="citation" data-cites="langanComparisonHeterogeneityVariance2019 veronikiMethodsEstimateBetweenstudy2016">(<a href="references.html#ref-langanComparisonHeterogeneityVariance2019" role="doc-biblioref">Langan et al. 2019</a>; <a href="references.html#ref-veronikiMethodsEstimateBetweenstudy2016" role="doc-biblioref">Veroniki et al. 2016</a>)</span>. For <strong>dichotomous</strong> (binary) outcome data, the <strong>Paule-Mandel estimator</strong> or the <strong>Empirical Bayes</strong> method seem to be good choices. You can always conduct a sensitivity analysis to compare with other approaches or the standard DL method.</p>
+<p>Based on simulation studies, the <strong>restricted maximum likelihood estimator (REML)</strong> approach seems to be good choice for <em>continuous</em> outcome data <span class="citation" data-cites="langanComparisonHeterogeneityVariance2019 veronikiMethodsEstimateBetweenstudy2016">(<a href="references.html#ref-langanComparisonHeterogeneityVariance2019" role="doc-biblioref"><strong>langanComparisonHeterogeneityVariance2019?</strong></a>; <a href="references.html#ref-veronikiMethodsEstimateBetweenstudy2016" role="doc-biblioref"><strong>veronikiMethodsEstimateBetweenstudy2016?</strong></a>)</span>. For <strong>dichotomous</strong> (binary) outcome data, the <strong>Paule-Mandel estimator</strong> or the <strong>Empirical Bayes</strong> method seem to be good choices. You can always conduct a sensitivity analysis to compare with other approaches or the standard DL method.</p>
 <p>Additionally, it is generally recommended to apply <strong>Knapp-Hartung adjustments</strong> if the option is available, as this method widens the confidence interval of the weighted measure of effect to account for uncertainty in the estimation of <span class="math inline">\(\tau^2\)</span>.</p>
 </section>
 <section id="fixed-vs.-random-effects-models" class="level2" data-number="7.5">
@@ -1206,15 +1179,15 @@ Meta-Analysis Exercise
 </section>
 <section id="qualitative-syntheses" class="level2" data-number="7.6">
 <h2 data-number="7.6" class="anchored" data-anchor-id="qualitative-syntheses"><span class="header-section-number">7.6</span> Qualitative Syntheses</h2>
-<p>Many of the systematic review methods discussed in the course can similarly be applied to <strong>qualitative syntheses</strong>, with some adaptations. The analysis, or synthesis, stage in particular is very different <span class="citation" data-cites="barnett-pageMethodsSynthesisQualitative2009">(<a href="references.html#ref-barnett-pageMethodsSynthesisQualitative2009" role="doc-biblioref">Barnett-Page and Thomas 2009</a>)</span>. The data that is synthesized in such reviews can vary depending on the review objectives and types of evidence included, but is typically themes supported by participant quotes from qualitative research studies (e.g., focus groups, grounded theory studies, etc.) or mixed-method studies. Sometimes, such reviews might also include data from review articles or policy documents to be synthesized into a <strong>narrative synthesis</strong>, which is common for reviews that incorporate multiple types and sources of evidence.</p>
-<p>One of the more common syntheses approaches for qualitative reviews is called <strong>thematic synthesis</strong> <span class="citation" data-cites="thomasMethodsThematicSynthesis2008">(<a href="references.html#ref-thomasMethodsThematicSynthesis2008" role="doc-biblioref">Thomas and Harden 2008</a>)</span>. Thomas and Harden <span class="citation" data-cites="thomasMethodsThematicSynthesis2008">(<a href="references.html#ref-thomasMethodsThematicSynthesis2008" role="doc-biblioref">2008</a>)</span> describe a three-step process of conducting this analysis, which consists of:</p>
+<p>Many of the systematic review methods discussed in the course can similarly be applied to <strong>qualitative syntheses</strong>, with some adaptations. The analysis, or synthesis, stage in particular is very different <span class="citation" data-cites="barnett-pageMethodsSynthesisQualitative2009">(<a href="references.html#ref-barnett-pageMethodsSynthesisQualitative2009" role="doc-biblioref"><strong>barnett-pageMethodsSynthesisQualitative2009?</strong></a>)</span>. The data that is synthesized in such reviews can vary depending on the review objectives and types of evidence included, but is typically themes supported by participant quotes from qualitative research studies (e.g., focus groups, grounded theory studies, etc.) or mixed-method studies. Sometimes, such reviews might also include data from review articles or policy documents to be synthesized into a <strong>narrative synthesis</strong>, which is common for reviews that incorporate multiple types and sources of evidence.</p>
+<p>One of the more common syntheses approaches for qualitative reviews is called <strong>thematic synthesis</strong> <span class="citation" data-cites="thomasMethodsThematicSynthesis2008">(<a href="references.html#ref-thomasMethodsThematicSynthesis2008" role="doc-biblioref"><strong>thomasMethodsThematicSynthesis2008?</strong></a>)</span>. Thomas and Harden <span class="citation" data-cites="thomasMethodsThematicSynthesis2008">(<a href="references.html#ref-thomasMethodsThematicSynthesis2008" role="doc-biblioref"><strong>thomasMethodsThematicSynthesis2008?</strong></a>)</span> describe a three-step process of conducting this analysis, which consists of:</p>
 <ul>
 <li>Line-by-line coding of the findings (e.g., participant quotes and themes) of primary studies</li>
 <li>Organization and grouping of the codes into related areas, which is used to develop <em>descriptive themes</em></li>
 <li>Development of <em>analytical themes</em>, which aim to go beyond the findings of the original studies and produce overarching themes.</li>
 </ul>
 <p>The latter step requires some judgement of reviewers and involves making inferences about the mechanisms behind the descriptive themes.</p>
-<p>There are other approaches to qualitative synthesis as well, such as <strong>meta-aggregation</strong> as described by JBI, which follow a similar process <span class="citation" data-cites="lockwoodQualitativeResearchSynthesis2015">(<a href="references.html#ref-lockwoodQualitativeResearchSynthesis2015" role="doc-biblioref">Lockwood, Munn, and Porritt 2015</a>)</span>.</p>
+<p>There are other approaches to qualitative synthesis as well, such as <strong>meta-aggregation</strong> as described by JBI, which follow a similar process <span class="citation" data-cites="lockwoodQualitativeResearchSynthesis2015">(<a href="references.html#ref-lockwoodQualitativeResearchSynthesis2015" role="doc-biblioref"><strong>lockwoodQualitativeResearchSynthesis2015?</strong></a>)</span>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1225,7 +1198,7 @@ Qualitative Synthesis Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Examine the following qualitative systematic review by Rawlings et al. <span class="citation" data-cites="rawlingsExploringAdultsExperiences2019">(<a href="references.html#ref-rawlingsExploringAdultsExperiences2019" role="doc-biblioref">2019</a>)</span> that investigated the <a href="https://link.springer.com/article/10.1186/s12889-019-7365-1">perceptions and experiences of sedentary behaviour in adults</a>.</p>
+<p>Examine the following qualitative systematic review by Rawlings et al. <span class="citation" data-cites="rawlingsExploringAdultsExperiences2019">(<a href="references.html#ref-rawlingsExploringAdultsExperiences2019" role="doc-biblioref"><strong>rawlingsExploringAdultsExperiences2019?</strong></a>)</span> that investigated the <a href="https://link.springer.com/article/10.1186/s12889-019-7365-1">perceptions and experiences of sedentary behaviour in adults</a>.</p>
 <ul>
 <li>Did their search differ from that of a standard systematic review?</li>
 <li>What was their quality assessment process?</li>
@@ -1236,35 +1209,6 @@ Qualitative Synthesis Exercise
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-barnett-pageMethodsSynthesisQualitative2009" class="csl-entry" role="listitem">
-Barnett-Page, Elaine, and James Thomas. 2009. <span>“Methods for the Synthesis of Qualitative Research: A Critical Review.”</span> <em>BMC Medical Research Methodology</em> 9 (1): 59. <a href="http://www.biomedcentral.com/1471-2288/9/59">http://www.biomedcentral.com/1471-2288/9/59</a>.
-</div>
-<div id="ref-bartlettSystematicReviewMetaanalysis2019" class="csl-entry" role="listitem">
-Bartlett, Larissa, Angela Martin, Amanda L. Neil, Kate Memish, Petr Otahal, Michelle Kilpatrick, and Kristy Sanderson. 2019. <span>“A Systematic Review and Meta-Analysis of Workplace Mindfulness Training Randomized Controlled Trials.”</span> <em>Journal of Occupational Health Psychology</em> 24: 108–26. <a href="https://doi.org/10.1037/ocp0000146">https://doi.org/10.1037/ocp0000146</a>.
-</div>
-<div id="ref-langanComparisonHeterogeneityVariance2019" class="csl-entry" role="listitem">
-Langan, Dean, Julian P. T. Higgins, Dan Jackson, Jack Bowden, Areti Angeliki Veroniki, Evangelos Kontopantelis, Wolfgang Viechtbauer, and Mark Simmonds. 2019. <span>“A Comparison of Heterogeneity Variance Estimators in Simulated Random-Effects Meta-Analyses.”</span> <em>Research Synthesis Methods</em> 10 (1): 83–98. <a href="https://doi.org/10.1002/jrsm.1316">https://doi.org/10.1002/jrsm.1316</a>.
-</div>
-<div id="ref-lockwoodQualitativeResearchSynthesis2015" class="csl-entry" role="listitem">
-Lockwood, Craig, Zachary Munn, and Kylie Porritt. 2015. <span>“Qualitative Research Synthesis: Methodological Guidance for Systematic Reviewers Utilizing Meta-Aggregation.”</span> <em>JBI Evidence Implementation</em> 13 (3): 179. <a href="https://doi.org/10.1097/XEB.0000000000000062">https://doi.org/10.1097/XEB.0000000000000062</a>.
-</div>
-<div id="ref-rawlingsExploringAdultsExperiences2019" class="csl-entry" role="listitem">
-Rawlings, G. H., R. K. Williams, D. J. Clarke, C. English, C. Fitzsimons, I. Holloway, R. Lawton, G. Mead, A. Patel, and A. Forster. 2019. <span>“Exploring Adults’ Experiences of Sedentary Behaviour and Participation in Non-Workplace Interventions Designed to Reduce Sedentary Behaviour: A Thematic Synthesis of Qualitative Studies.”</span> <em>BMC Public Health</em> 19 (1): 1099. <a href="https://doi.org/10.1186/s12889-019-7365-1">https://doi.org/10.1186/s12889-019-7365-1</a>.
-</div>
-<div id="ref-thomasMethodsThematicSynthesis2008" class="csl-entry" role="listitem">
-Thomas, J, and A Harden. 2008. <span>“Methods for the Thematic Synthesis of Qualitative Research in Systematic Reviews.”</span> <em>BMC Medical Research Methodology</em> 8 (July): 45. <a href="https://doi.org/10.1186/1471-2288-8-45">https://doi.org/10.1186/1471-2288-8-45</a>.
-</div>
-<div id="ref-veronikiMethodsEstimateBetweenstudy2016" class="csl-entry" role="listitem">
-Veroniki, Areti Angeliki, Dan Jackson, Wolfgang Viechtbauer, Ralf Bender, Jack Bowden, Guido Knapp, Oliver Kuss, Julian P. T. Higgins, Dean Langan, and Georgia Salanti. 2016. <span>“Methods to Estimate the Between-Study Variance and Its Uncertainty in Meta-Analysis.”</span> <em>Research Synthesis Methods</em> 7 (1): 55–79. <a href="https://doi.org/10.1002/jrsm.1164">https://doi.org/10.1002/jrsm.1164</a>.
-</div>
-<div id="ref-youngEffectivenessFoodHandler2019" class="csl-entry" role="listitem">
-Young, Ian, Judy Greig, Barbara J. Wilhelm, and Lisa A. Waddell. 2019. <span>“Effectiveness of Food Handler Training and Education Interventions: A Systematic Review and Meta-Analysis.”</span> <em>Journal of Food Protection</em> 82 (10): 1714–28. <a href="https://doi.org/10.4315/0362-028X.JFP-19-108">https://doi.org/10.4315/0362-028X.JFP-19-108</a>.
-</div>
-<div id="ref-youngSystematicReviewMetaregression2018" class="csl-entry" role="listitem">
-Young, Ian, and Abhinand Thaivalappil. 2018. <span>“A Systematic Review and Meta-Regression of the Knowledge, Practices, and Training of Restaurant and Food Service Personnel Toward Food Allergies and <span>Celiac</span> Disease.”</span> Edited by Louise Emilsson. <em>PLOS ONE</em> 13 (9): e0203496. <a href="https://doi.org/10.1371/journal.pone.0203496">https://doi.org/10.1371/journal.pone.0203496</a>.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
