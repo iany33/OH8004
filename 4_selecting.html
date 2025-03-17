@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Selecting Studies – OH8004 Knowledge Synthesis in Occupational and Public Health</title>
+<title>OH8004 Knowledge Synthesis in Occupational and Public Health - 4&nbsp; Selecting Studies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -293,7 +293,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"# Create simulated rating data\nrs_test <- tibble(abstract_id = seq(1:30),\n                  reviewer1 = rep(0:1, each = 15),\n                  reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test, n = Inf)","options":{"fig-height":5,"warning":"true","dpi":72,"message":"true","editor-font-scale":1,"editor-max-height":"","read-only":"true","context":"interactive","comment":"","editor-quick-suggestions":"false","out-height":"","classes":"","results":"markup","output":"true","fig-width":7,"autorun":"false","fig-cap":"","label":"unnamed-chunk-1","out-width":"700px"},"id":1},{"code":"library(irr)\n\nkappa2(rs_test[,2:3])","options":{"fig-height":5,"warning":"true","dpi":72,"message":"true","editor-font-scale":1,"editor-max-height":"","read-only":"true","context":"interactive","comment":"","editor-quick-suggestions":"false","out-height":"","classes":"","results":"markup","output":"true","fig-width":7,"autorun":"false","fig-cap":"","label":"unnamed-chunk-2","out-width":"700px"},"id":2},{"code":"rs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = rep(0:1, each = 15),\n                   reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","options":{"fig-height":5,"warning":"true","dpi":72,"message":"true","editor-font-scale":1,"editor-max-height":"","read-only":"false","context":"interactive","comment":"","editor-quick-suggestions":"false","out-height":"","classes":"","results":"markup","output":"true","fig-width":7,"autorun":"false","fig-cap":"","label":"unnamed-chunk-3","out-width":"700px"},"id":3},{"code":"# Create the updated simulated rating data\nrs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = c(rep(0, times = 15), rep(1, times = 15)),\n                   reviewer2 = c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","options":{"fig-height":5,"warning":"true","dpi":72,"message":"true","editor-font-scale":1,"editor-max-height":"","read-only":"true","context":"interactive","comment":"","editor-quick-suggestions":"false","out-height":"","classes":"","results":"markup","output":"true","fig-width":7,"autorun":"false","fig-cap":"","label":"unnamed-chunk-4","out-width":"700px"},"id":4}];
+globalThis.qwebrCellDetails = [{"code":"# Create simulated rating data\nrs_test <- tibble(abstract_id = seq(1:30),\n                  reviewer1 = rep(0:1, each = 15),\n                  reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test, n = Inf)","id":1,"options":{"output":"true","comment":"","results":"markup","context":"interactive","label":"unnamed-chunk-1","out-width":"700px","warning":"true","editor-max-height":"","autorun":"false","out-height":"","fig-cap":"","editor-font-scale":1,"read-only":"true","message":"true","classes":"","fig-height":5,"editor-quick-suggestions":"false","fig-width":7,"dpi":72}},{"code":"library(irr)\n\nkappa2(rs_test[,2:3])","id":2,"options":{"output":"true","comment":"","results":"markup","context":"interactive","label":"unnamed-chunk-2","out-width":"700px","warning":"true","editor-max-height":"","autorun":"false","out-height":"","fig-cap":"","editor-font-scale":1,"read-only":"true","message":"true","classes":"","fig-height":5,"editor-quick-suggestions":"false","fig-width":7,"dpi":72}},{"code":"rs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = rep(0:1, each = 15),\n                   reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","id":3,"options":{"output":"true","comment":"","results":"markup","context":"interactive","label":"unnamed-chunk-3","out-width":"700px","warning":"true","editor-max-height":"","autorun":"false","out-height":"","fig-cap":"","editor-font-scale":1,"read-only":"false","message":"true","classes":"","fig-height":5,"editor-quick-suggestions":"false","fig-width":7,"dpi":72}},{"code":"# Create the updated simulated rating data\nrs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = c(rep(0, times = 15), rep(1, times = 15)),\n                   reviewer2 = c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","id":4,"options":{"output":"true","comment":"","results":"markup","context":"interactive","label":"unnamed-chunk-4","out-width":"700px","warning":"true","editor-max-height":"","autorun":"false","out-height":"","fig-cap":"","editor-font-scale":1,"read-only":"true","message":"true","classes":"","fig-height":5,"editor-quick-suggestions":"false","fig-width":7,"dpi":72}}];
 
 </script>
 <script type="module">
@@ -1139,13 +1139,13 @@ globalThis.qwebrExecuteCode = async function (
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4_selecting.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -1755,7 +1755,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1787,29 +1798,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1817,7 +1806,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
