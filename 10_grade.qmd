@@ -103,11 +103,12 @@ Using the systematic review of the association between long-term exposure to res
 
 A qualitative research subgroup of the [GRADE Working Group](http://www.gradeworkinggroup.org/) has developed a certainty of evidence assessment approach for systematic reviews of qualitative evidence called [GRADE-CERQual](https://www.cerqual.org/). CERQual stands for *Confidence in the Evidence from Reviews of Qualitative research*. The GRADE-CERQual approach and process mimics the GRADE approach described above, but tailored to qualitative research evidence, and has been described in a [series of publications in the *Implementation Science* journal](https://implementationscience.biomedcentral.com/articles/supplements/volume-13-supplement-1).
 
-**GRADE-CERQual** is based on consideration and assessment of four components for each main finding in a review [@lewinApplyingGRADECERQualQualitative2018a]: 
-1. *Methodological Limitations*: this is based on a critical appraisal of individual studies reporting on the review finding using a standard tool. A specific tool has been developed for this purpose called: CochrAne qualitative Methodological LimitatiOns Tool (CAMELOT) [@munthe-kaasDevelopingCAMELOTAssessing2024]. 
-2. *Coherence*: assesses how clear and coherent the fit is between the data reported in each study and the review finding. Reviewers will examine for possible contradictions or outlying findings in the study data. 
-3. *Adequacy of Data*: assesses the richness and quantity of data supporting a review finding. Richness refers to the amount of detail used to describe individual study results, while quantity of data refers to the number and size of studies contributing to a finding. 
-4. *Relevance*: refers to the extent of applicability of the primary studies supporting a review finding to the target context.
+**GRADE-CERQual** is based on consideration and assessment of four components for each main finding in a review [@lewinApplyingGRADECERQualQualitative2018a]:
+
+1.  *Methodological Limitations*: is based on a critical appraisal of individual studies reporting on the review finding using a standard tool. A specific tool has been developed for this purpose called: CochrAne qualitative Methodological LimitatiOns Tool (CAMELOT) [@munthe-kaasDevelopingCAMELOTAssessing2024].
+2.  *Coherence*: assesses how clear and coherent the fit is between the data reported in each study and the review finding. Reviewers will examine for possible contradictions or outlying findings in the study data.
+3.  *Adequacy of Data*: assesses the richness and quantity of data supporting a review finding. Richness refers to the amount of detail used to describe individual study results, while quantity of data refers to the number and size of studies contributing to a finding.
+4.  *Relevance*: refers to the extent of applicability of the primary studies supporting a review finding to the target context.
 
 A fifth component called *Dissemination/Publication Bias* may also be considered. Based these assessments, confidence in each review finding is then rated as: high, moderate, low, or very low. Results are then used to make a Summary of Qualitative Findings table.
 
