@@ -105,13 +105,13 @@ data.frame(Method = c("REML", "PM"),
        Tau2 = c(Bradt_meta$tau2, Bradt_meta_update$tau2))
 ```
 
-We obtain slightly different results when using the alternative method of calculating $\tau^2$.
+We obtain slightly different results when using the alternative method of calculating $\tau^2$. How do the results change if we instead compare to the **DerSimonian-Laird (DL)** method?
 :::
 
 ::: callout-note
 ### Dichotomous Data Meta-Analysis Example
 
-To illustrate how to conduct a meta-analysis using **continuous data**, we will examine a dataset of 136 studies used in a meta-analysis of the effectiveness of nicotine replacement therapy vs. control for smoking cessation [@hartmann-boyceNicotineReplacementTherapy2018], as prepared by [White et al. in the metadat repository](https://wviechtb.github.io/metadat/index.html).
+To illustrate how to conduct a meta-analysis using **dichotomous data**, we will examine a dataset of 136 studies used in a meta-analysis of the effectiveness of nicotine replacement therapy vs. control for smoking cessation [@hartmann-boyceNicotineReplacementTherapy2018], as prepared by [White et al. in the metadat repository](https://wviechtb.github.io/metadat/index.html).
 
 ```{webr-r}
 #| context: setup
@@ -133,7 +133,7 @@ Hartmann_2018 |> datatable(
                            targets = 0:4)))) 
 ```
 
-As can been seen above, the dataset contains information from each study on the number of participants in each group that continued to abstain from smoking at 6+ months of follow-up. Also included is a column that specifies the type of treatment received. Since the data are dichotomous and all include raw data, we can calculate an measure of effect using the **Mantel-Haenszel method**. We will use the `metabin` function, but first we will subset our data to only conduct the meta-analysis on studies that investigated the *patch* as an intervention.
+As can been seen above, the dataset contains information from each study on the number of participants in each group that continued to abstain from smoking at 6+ months of follow-up. Also included is a column that specifies the type of treatment received. Since the data are dichotomous and all include raw data, we can calculate an measure of effect using the **Mantel-Haenszel method**. We will use the `metabin` function, but first we will subset our data to only conduct the meta-analysis on studies that investigated the nicotine *patch* as an intervention.
 
 ```{webr-r}
 Hartmann_meta <- Hartmann_2018 |> 
@@ -157,6 +157,8 @@ summary(Hartmann_meta)
 ```
 
 In this analysis, we can see that participants in the intervention group were more likely to continue to abstain from smoking at follow-up compared to those in the control group.
+
+How do the results change, if at all, if we instead do not apply the Hartung-Knapp adjustment? 
 :::
 
 ### Prevalence and Incidence Data
