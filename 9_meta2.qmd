@@ -219,7 +219,7 @@ Using these data, first conduct a **subgroup analysis** to examine the differenc
 ```{webr-r}
 Young_2019_meta <- Young_2019_ma |> 
   filter(outcome == "___") |> 
-  metabin(TE = g,
+  metagen(TE = g,
           seTE = g_se,
           studlab = author_year,
           sm = "SMD", 

@@ -15,7 +15,7 @@ The general template for a summary of findings table is as follows:
 -   For each outcome the table, a measure of the **typical burden, relative magnitude of effect, number of participants and studies, and certainty of evidence** (as separate column for each outcome).
 -   The final column includes overall comments, and explanations (footnotes) should be added as needed at the bottom of the table.
 
-The Cochrane Collaboration has created an online software called [GRADEpor GDT](https://www.gradepro.org/) to create summary of findings tables. The software is currently free for groups of up to three researchers.
+The Cochrane Collaboration has created an online software called [GRADEpro GDT](https://www.gradepro.org/) to create summary of findings tables. The software is currently free for groups of up to three researchers.
 
 Each **row** in a summary of findings table reflects one of the pre-selected, most important outcomes (up to seven). For each outcome, you should provide the measurement scale (if applicable) and the measurement time frame (e.g., length of follow-up). Outcomes that were pre-selected but that had no data available from the studies in the review should still be included in this table.
 
@@ -28,7 +28,7 @@ An example of a summary of findings table from a systematic review of music inte
 
 ![](images/sof_table_example.png)
 
-In this table, footnote 1 indicates that all outcomes were downgraded two levels in the GRADE assessment for high risk of bias (because participants could not be blinded to the music intervention and the outcomes were measured using self‐report). The outcomes shown above were also downgraded 1-2 levels due to inconsistency because of high levels of heterogeneity in estimates.
+In this table, footnote 1 indicates that all outcomes were downgraded two levels in the GRADE assessment for high risk of bias (because participants could not be blinded to the music intervention and the outcomes were measured through self-reporting). The outcomes shown above were also downgraded 1-2 levels due to inconsistency because of high levels of heterogeneity in estimates.
 
 Another example of a summary of findings table showing illustrative comparative risks is provided below, from a systematic review about the effectiveness of nicotine replacement therapy vs. control for smoking cessation [@hartmann-boyceNicotineReplacementTherapy2018].
 
@@ -45,7 +45,7 @@ Studies begin at a high rating and can be rated down based on five criteria. In 
 
 ### Risk of bias
 
-The **risk of bias** of individual studies contributing to a specific outcome can affect our confidence in that outcome. This criterion uses the risk-of-bias judgement from the Cochrane RoB Tool for RCTs or from the ROBINS-I/ROBINS-E for observational studies (as applicable). When most of the evidence comes from studies that have a crucial limitation (high risk of bias) for one risk-of-bias item, or some concerns for multiple items, the certainty of evidence can be downgraded by one level. In severe cases, certainty can be downgraded by two levels.
+The **risk of bias** of individual studies contributing to a specific outcome can affect our confidence in that outcome. This criterion uses the risk-of-bias judgement from the Cochrane RoB tool for RCTs or from the ROBINS-I/ROBINS-E tool for observational studies (as applicable). When most of the evidence comes from studies that have a crucial limitation (high risk of bias) for one risk-of-bias item, or some concerns for multiple items, the certainty of evidence can be downgraded by one level. In severe cases, certainty can be downgraded by two levels.
 
 ### Inconsistency
 
@@ -57,9 +57,9 @@ This criterion assesses whether the studies contributing evidence to a particula
 
 ### Imprecision
 
-If there is sufficient uncertainty about the magnitude and direction of the meta-analysis estimate, one can rate downgrade for **imprecision**. In the most recent suggested approach to this criterion [@schunemannGRADEGuidance352022], it is recommended to pre-identify key *thresholds* for what is a considered a small, moderate, or large effect for the outcome of interest. This imprecision assessment and the threshold should be on the *absolute* scale, so should use the **corresponding intervention risk** approach as described above. Then determine if you expect the meta-analysis effect will lie between two thresholds or beyond a threshold (e.g., small or greater). This is the target rating of the uncertainty.
+If there is sufficient uncertainty about the magnitude and direction of the meta-analysis estimate, one can rate downgrade for **imprecision**. In the most recent suggested approach to this criterion [@schunemannGRADEGuidance352022], it is recommended to pre-identify key *thresholds* for what is a considered a small, moderate, or large effect for the outcome of interest. This imprecision assessment and the threshold should be on the *absolute* scale, so should use the **corresponding intervention risk**. Then determine if you expect the meta-analysis effect will lie between two thresholds or beyond a threshold (e.g., small or greater). This is the target rating of the uncertainty.
 
-The next step is to assess whether the CI for the *corresponding intervention risk* crosses one or more threshold boundaries, and downgrade a number of levels for each threshold crossed. For example, if we set our target at detecting a small or greater effect, and the effect was moderate but the CI also include the null (zero effect), evidence would be downgraded one level for crossing below the "small" threshold.
+The next step is to assess whether the CI for the *corresponding intervention risk* crosses one or more threshold boundaries, and downgrade a number of levels for each threshold crossed. For example, if we set our target at detecting a small or greater effect, and the effect was moderate but the CI also included the null (zero effect), evidence would be downgraded one level for crossing below the "small" threshold.
 
 For continuous outcomes, one can use the well-defined SMD thresholds of small = 0.2, moderate = 0.5, and large = 0.8 [@schunemannGRADEGuidance352022]. If analyzing a raw mean difference, one should use established thresholds for the outcome scale (if there are any), otherwise you can re-express the outcome as a SMD for the purposes of conducting the imprecision rating.
 
@@ -86,17 +86,39 @@ An example of GRADE rating from a summary-of-findings table in systematic review
 
 ![](images/grade_example.png)
 
-In this GRADE assessment, footnote 1 indicates the evidence was downgraded two levels for high risk of bias. The two trials were at high risk of bias because participants could not be blinded to the music intervention and outcome was measured using self-report. Footnote 2 indicates that evidence was downgraded one level for serious inconsistency across studies as evidenced by $I^2 = 76\%$. Footnote 3 indicates that evidence was downgraded two levels for imprecision due to a small number of participants (from only two trials).
+In this GRADE assessment, footnote 1 indicates the evidence was downgraded two levels for high risk of bias. The two trials were at high risk of bias because participants could not be blinded to the music intervention and the outcome was measured through self-reporting. Footnote 2 indicates that evidence was downgraded one level for serious inconsistency across studies as evidenced by $I^2 = 76\%$. Footnote 3 indicates that evidence was downgraded two levels for imprecision due to a small number of participants (from only two trials).
 :::
 
 ::: callout-tip
 ## GRADE Exercise
 
-Using the systematic review of the association between long-term exposure to residential green spaces and mortality in adults [@rojas-ruedaGreenSpacesMortality2019], as investigated in the earlier exercise, we will now attempt to conduct a GRADE evaluation of the evidence contributing to the main all-cause mortality outcome.
+Using the systematic review of the association between long-term exposure to residential green spaces and mortality in adults [@rojas-ruedaGreenSpacesMortality2019], as investigated in an earlier exercise, we will now attempt to conduct a GRADE evaluation of the evidence contributing to the main all-cause mortality outcome.
 
 -   [Review the article, including tables and figures](https://doi.org/10.1016/S2542-5196(19)30215-3), and come up with a proposed GRADE assessment for each of the five downgrading criteria. Note that you will need to [examine the supplementary material](https://www.thelancet.com/cms/10.1016/S2542-5196(19)30215-3/attachment/59042c24-c529-4f2a-833a-99ffcc7a4e2a/mmc1.pdf) for detailed results of the risk-of-bias and publication bias assessments.
 -   Based on the information available, would you consider upgrading any levels based on the upgrading criteria?
 -   What is your proposed overall GRADE rating for this outcome?
+:::
+
+## Certainty of Evidence Assessment: Qualitative Reviews
+
+A qualitative research subgroup of the [GRADE Working Group](http://www.gradeworkinggroup.org/) has developed a certainty of evidence assessment approach for systematic reviews of qualitative evidence called [GRADE-CERQual](https://www.cerqual.org/). CERQual stands for *Confidence in the Evidence from Reviews of Qualitative research*. The GRADE-CERQual approach and process mimics the GRADE approach described above, but tailored to qualitative research evidence, and has been described in a [series of publications in the *Implementation Science* journal](https://implementationscience.biomedcentral.com/articles/supplements/volume-13-supplement-1).
+
+**GRADE-CERQual** is based on consideration and assessment of four components for each main finding in a review [@lewinApplyingGRADECERQualQualitative2018a]: 
+1. *Methodological Limitations*: this is based on a critical appraisal of individual studies reporting on the review finding using a standard tool. A specific tool has been developed for this purpose called: CochrAne qualitative Methodological LimitatiOns Tool (CAMELOT) [@munthe-kaasDevelopingCAMELOTAssessing2024]. 
+2. *Coherence*: assesses how clear and coherent the fit is between the data reported in each study and the review finding. Reviewers will examine for possible contradictions or outlying findings in the study data. 
+3. *Adequacy of Data*: assesses the richness and quantity of data supporting a review finding. Richness refers to the amount of detail used to describe individual study results, while quantity of data refers to the number and size of studies contributing to a finding. 
+4. *Relevance*: refers to the extent of applicability of the primary studies supporting a review finding to the target context.
+
+A fifth component called *Dissemination/Publication Bias* may also be considered. Based these assessments, confidence in each review finding is then rated as: high, moderate, low, or very low. Results are then used to make a Summary of Qualitative Findings table.
+
+::: callout-note
+### GRADE-CERQual Example
+
+An example of GRADE-CERQual assessment and Summary of Qualitative Findings table is shown below from a qualitative systematic review of barriers and facilitators to implementing workplace interventions for promoting mental health [@patersonBarriersFacilitatorsImplementing2024]. An exert of the Summary of Qualitative Findings table from the review is shown below, highlighting the CERQual ratings and explanations for four of the review's key findings.
+
+![](images/CERQual_table.png)
+
+In this table, the authors have provided separate GRADE-CERQual assessments for specific review findings for each of their pre-determined research questions. The authors noted that one reviewer conducted the assessments, which were reviewed for consistency by a second reviewer. Each finding was classified as low, moderate, or high confidence. Detailed results of the assessment are shown in the article's [Additional file 11](https://static-content.springer.com/esm/art%3A10.1186%2Fs13643-024-02569-2/MediaObjects/13643_2024_2569_MOESM11_ESM.xlsx).
 :::
 
 ## Critical Appraisal of Systematic Reviews
@@ -109,6 +131,12 @@ The **risk of bias** tools discussed in @sec-bias are designed for individual st
 
 Recent studies have compared the AMSTAR 2 and ROBIS tools, finding that they are both valid, moderately reliable, and comparable [@lorenzPsychometricStudyFound2019; @perryComparisonTwoAssessment2021]. However, AMSTAR 2 is more straightforward and easier to use.
 
+::: callout-tip
+## Critical Appraisal Exercise
 
+Using the [AMSTAR 2 Checklist](https://amstar.ca/Amstar_Checklist.php), practice conducting a critical appraisal of the systematic review of the association between long-term exposure to residential green spaces and mortality in adults [@rojas-ruedaGreenSpacesMortality2019].
 
-
+-   [Review the article, including tables and figures](https://doi.org/10.1016/S2542-5196(19)30215-3), including the [supplementary material (as needed)](https://www.thelancet.com/cms/10.1016/S2542-5196(19)30215-3/attachment/59042c24-c529-4f2a-833a-99ffcc7a4e2a/mmc1.pdf).
+-   Based on the information available, how would you answer each of the 16 assessment items?
+-   Were any items not met, and if so, why not?
+:::
