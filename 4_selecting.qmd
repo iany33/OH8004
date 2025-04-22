@@ -159,7 +159,7 @@ The three articles are available at the following shared folder: <https://drive.
 
 ## Homework
 
-One to two students each will be assigned one risk-of-bias *domain* from @sec-bias to review and present in class next week. The bias domains to be assigned include:
+Students will be partnered and assigned a risk-of-bias *domain* from @sec-bias to review and present in class next week. The bias domains to be assigned include:
 
 -   Bias arising from the randomization process
 -   Bias due to deviations from intended interventions
@@ -170,7 +170,10 @@ One to two students each will be assigned one risk-of-bias *domain* from @sec-bi
 -   Risk of bias arising from measurement of the exposure
 -   Risk of bias in selection of participants into the study
 -   Risk of bias due to post-exposure interventions
+-   Assessing methodological limitations in reviews of qualitative evidence
 
-You can read in detail about the first five domains in the [Cochrane RCT risk-of-bias tool guidance document](https://drive.google.com/file/d/19R9savfPdCHC8XLz2iiMvL_71lPJERWK/view?usp=sharing). Information on the other four domains can be found in the [ROBINS-E tool for cohort studies](https://drive.google.com/file/d/1bcOVMna3CJJXpsIm5vobFJMP0-13CW8Q/view?usp=sharing).
+You can read in detail about the first five domains in the [Cochrane RCT risk-of-bias tool guidance document](https://drive.google.com/file/d/19R9savfPdCHC8XLz2iiMvL_71lPJERWK/view?usp=sharing). Information on the other four domains can be found in the [ROBINS-E tool for cohort studies](https://drive.google.com/file/d/1bcOVMna3CJJXpsIm5vobFJMP0-13CW8Q/view?usp=sharing). For the qualitative methodolical assessment, details can be found starting in [section 4.4 of this article describing the CAMELOT tool](https://doi.org/10.1002/cesm.12058).
+
+
 
 
