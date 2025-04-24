@@ -133,27 +133,30 @@ There are various other **risk-of-bias tools** that have been developed and appl
 -   Text and opinion articles
 -   Economic evaluations, and many others.
 
+## Assessing Methodological Limitations of Qualitative Research Studies
+
+Hundreds of different critical appraisal tools have been developed to assess the methodological limitations of qualitative research studies. However, many of these may not be evidence-based and appropriately tested for use in qualitative systematic reviews. The [Cochrane-Campbell Handbook for Qualitative Evidence Synthesis](https://methods.cochrane.org/methods-cochrane/cochrane-qualitative-methodological-limitations-tool-camelot) recommends a specific tool called **CochrAne qualitative Methodological LimitatiOns Tool (CAMELOT)** [@munthe-kaasDevelopingCAMELOTAssessing2024], for most situations.CAMELOT consists of 12 domains, four of which are *Meta domains* and the other eight are *Method domains*: 
+
+-   The meta domains include research aim and question, stakeholders, researchers, and context.
+-   The method domains include research strategy, theory, ethical considerations, equity diversity and inclusion considerations, participant recruitment and selection, data collection, analysis and interpretation, presentation of findings. 
+
+Reviewers then must assess whether there are any concerns with the method domains and the appropriateness of fit between the meta and method domains [@munthe-kaasDevelopingCAMELOTAssessing2024]. Individual studies would be assessed as no or minimal, minor, moderate, or serious concerns. An overall rating for the qualitative review finding would be made with the same rating scale based on the individual study assessments that contribute to that finding.
+
+However, authors may elect to use a different tool for specific purposes. For example, there are specific tools available for certain qualitative study types, such as focus groups [@vermeireCriticalAppraisalFocus2002]. Other commonly used generic tools for qualitative studies include:
+
+-   [JBI Qualitative Research Tool](https://jbi.global/critical-appraisal-tools)
+-   [Critical Appraisal Skills Programme Qualitative Studies Checklist](https://casp-uk.net/casp-tools-checklists/qualitative-studies-checklist/)
+
 ::: callout-tip
 ## Observational Study Risk-of-Bias Exercise
 
 We will practice using the ROBINS-E tool on two studies that were included in the systematic review of the association between green spaces and mortality [@rojas-ruedaGreenSpacesMortality2019]. The two articles and spreadsheet templates are [available in the following shared folder](https://drive.google.com/drive/folders/1iE-1OAijSX1dM2Xy3M-LupBFWMTgdSP2?usp=sharing).
 
-For the purposes of this exercise, consider confounders of interest to be any of the following *socio-economic factors*: age, sex, ethnicity, marital status, education, income, and employment .
+For the purposes of this exercise, consider confounders of interest to be any of the following *socio-economic factors*: age, sex, ethnicity, marital status, education, income, and employment.
 
 -   What is your risk-of-bias judgement for each domain?
 -   What is your overall risk-of-bias judgement for each study?
 :::
-
-## Risk-of-Bias for Missing Data
-
-The risk-of-bias tools covered above include an item to assess possible risks from *selective reporting of results when multiple measurements or analyses were made*. In cases where the result for an outcome is omitted entirely, the risk of bias should be assessed at the overall synthesis level. A new risk-of-bias tool called [**ROB-ME**](https://sites.google.com/site/riskofbiastool/welcome/rob-me-tool?authuser=0) has been developed to assess these factors at the synthesis level [@pageROBMEToolAssessing2023]. The tool uses the following process to **assess possible biases due to missing data** in a meta-analysis:
-
-1.  Select syntheses that will be assessed for risk of missing data.
-2.  Determine which studies that are eligible for the synthesis have missing results.
-3.  Consider the potential for missing studies across the systematic review.
-4.  Assess risk of bias due to missing evidence in each meta-analysis.
-
-This process aims to first determine if any studies might have measured relevant results for a synthesis, but did not report them at all or in a format usable for the synthesis (e.g., meta-analysis). This is especially important if the results were not reported because they were not statistically significant or did not support the authors' hypotheses (e.g., results with null findings not reported in a study). This process may involve checking a study's protocol (if published), methods, analysis plan, or other supporting documents. 
 
 ## Reporting Risk-of-Bias Results
 

@@ -105,7 +105,7 @@ A qualitative research subgroup of the [GRADE Working Group](http://www.gradewor
 
 **GRADE-CERQual** is based on consideration and assessment of four components for each main finding in a review [@lewinApplyingGRADECERQualQualitative2018a]:
 
-1.  *Methodological Limitations*: is based on a critical appraisal of individual studies reporting on the review finding using a standard tool. A specific tool has been developed for this purpose called: CochrAne qualitative Methodological LimitatiOns Tool (CAMELOT) [@munthe-kaasDevelopingCAMELOTAssessing2024].
+1.  *Methodological Limitations*: is based on a critical appraisal of individual studies reporting on the review finding using a standard tool. The CAMELOT tool introduced in (@sec-bias) is the recommended tool [@munthe-kaasDevelopingCAMELOTAssessing2024], though others could be used in specific situations.
 2.  *Coherence*: assesses how clear and coherent the fit is between the data reported in each study and the review finding. Reviewers will examine for possible contradictions or outlying findings in the study data.
 3.  *Adequacy of Data*: assesses the richness and quantity of data supporting a review finding. Richness refers to the amount of detail used to describe individual study results, while quantity of data refers to the number and size of studies contributing to a finding.
 4.  *Relevance*: refers to the extent of applicability of the primary studies supporting a review finding to the target context.
