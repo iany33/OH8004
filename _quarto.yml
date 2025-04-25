@@ -15,10 +15,9 @@ book:
     - 4_selecting.qmd
     - 5_bias.qmd
     - 6_extraction.qmd
-    - 7_analysis.qmd
-    - 8_meta.qmd
-    - 9_meta2.qmd
-    - 10_grade.qmd
+    - 7_meta.qmd
+    - 8_meta2.qmd
+    - 9_grade.qmd
     - meta_analysis.qmd
     - references.qmd
     

@@ -3,11 +3,11 @@ webr:
   packages: ['dplyr', 'esc']
 ---
 
-# Data Extraction and Outcome Measures {#sec-extraction}
+# Data Extraction, Outcome Measures, and Introduction to Meta-Analysis {#sec-extraction}
 
-This section will cover the important considerations involved in extracting **outcome data** from the relevant studies. At this stage, it is important to consider the different possible outcome **measures of effect** that could be reported in the studies and which are of primary interest and relevance to your review question.
+This section will cover the important considerations involved in extracting **outcome data** from the relevant studies. At this stage, it is important to consider the different possible outcome **measures of effect** that could be reported in the studies and which are of primary interest and relevance to your review question. Then we will introduce **meta-analysis** and describe differences between fixed-effect and random-effects models.
 
-![](images/meme_de.jpg)
+![](images/meme_ma.jpg)
 
 ## Types of Outcomes and Measures of Effect
 
@@ -107,7 +107,7 @@ Some studies will report baseline and post-intervention values (often with diffe
 ::: callout-tip
 ## Data Extraction Exercise
 
-Consider again the Young et al. [-@youngEffectivenessFoodHandler2019] systematic review about the effectiveness of food handler training interventions. [Using three example articles](https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing), identify the outcomes of interest in each study and which data should be extracted. 
+Consider again the Young et al. [-@youngEffectivenessFoodHandler2019] systematic review about the effectiveness of food handler training interventions. [Using three example articles](https://drive.google.com/open?id=1a6ozc5hmlMo7Ff1qG3O7oLjJIHVzMq9D&usp=drive_fs), identify the outcomes of interest in each study and which data should be extracted. 
 
 - How many relevant outcomes are reported in each study?
 - Are any important outcomes or values (e.g., measures of variability) missing? 
@@ -255,13 +255,88 @@ data2
 ```
 :::
 
+## Methods of Analyzing Measures of Effect
+
+The recommended approach to analyze quantitative outcome data (i.e., measures of effect), if possible and reasonable to do so, is **meta-analysis**. Meta-analysis is defined as statistical method for combining the results of two or more studies.
+
+There are some situations where it may not be possible to use meta-analysis, for example:
+
+-   There is **only one or no studies** containing the outcome of interest
+-   The **outcome data are not sufficiently reported** and cannot be estimated from available statistics
+-   The study designs, methods, or outcome measures are **too diverse and heterogeneous** that it doesn't make biological or reasonable sense to combine them
+-   There are **major concerns about bias** in the studies
+
+In these cases, one can consider conducting a **descriptive and narrative summary** of the evidence. This includes presenting *summary tables* of the results of each study and some discussion of the results of each study. Tables can be grouped by relevant criteria from the question (e.g., intervention groups, outcome domains), or by other factors such as strength of evidence or risk of bias.
+
+Another option that can be used when summary measures of effect are available from studies, but measures of variability needed to conduct meta-analysis are *not available*, is to summarize the effect estimates directly using **box (and/or violin) plots**. This type of summary provides information about the size and range of effects across studies, but does not account for the differences in sample size across studies. Combining **P values** is another method that can be used when only P values are available, and aims to determine is there is evidence of an effect in at least one study. For more information on these and other alternative analysis methods, [see the relevant chapter in the Cochrane Collaboration Handbook](https://training.cochrane.org/handbook/current/chapter-12).
+
+::: callout-note
+### Example of when Meta-Analysis was Not Feasible
+
+In a systematic review about the prevalence of knowledge, practices, and training outcomes among restaurant and food service personnel toward food allergies and Celiac disease [@youngSystematicReviewMetaregression2018], the authors did not conduct meta-analysis on the outcome due to substantive differences in the populations assessed, their characteristics, and how outcomes were measured. Instead, they summarized the **distribution** of prevalence outcomes across studies within each outcome domain using box plots. The figure below shows the prevalence of food allergy and Celiac disease **behaviour outcomes** reported across studies:
+
+![](images/non_MA_example.png)
+:::
+
+## Introduction to Meta-Analysis
+
+Meta-analysis is a **statistical technique** that involves combining the measure of effect for each study along with its weight to calculate a weighted average of the measure of effect. Each study receives a **weight** based on its standard error (SE), so studies with greater precision (i.e., less error) receive more weight. There are two main approaches to meta-analysis, which determine how weights are calculated: fixed-effect and random-effects.
+
+A **fixed-effect** meta-analysis assumes there is one *true effect size* among all of the included studies, and that any observed differences in the effects are due only to sampling error. In contrast, **random-effects** meta-analysis models assume that the study effects represent a random sample of possible effect sizes (that usually follows a normal distribution). The null hypothesis under a fixed-effect model is that *there is zero effect in every study*, while for a random-effects model the null hypothesis is that the *average effect is zero*. Both models will give identical results when there is no statistical heterogeneity among the studies.
+
+Assuming an overall true effect of $\theta$, under a **fixed-effect** model, the observed effect of study *j*, $\theta_j$, differs from the overall true effect only because of its sampling error ($\epsilon_j$):
+
+$$
+\hat{\theta_j} = \theta + \epsilon_j
+$$ 
+Studies are then **weighted** by the *inverse* of the variance (which is equal to the SE squared). For study *j*, the weight would be calculated as follows:
+
+$$
+{W_j} = \frac{1}{SE_j^2}
+$$
+
+The weighted average, or *pooled effect*, can then be calculated by multiplying each study's effect size by its weight, adding those together, and then dividing by the sum of all study weights. This is referred to as the **generic inverse-variance** weighting approach:
+
+$$
+\hat{\theta} = \frac{\sum_{j=1}^J \hat{\theta_j}{W_j}} {\sum_{j=1}^J {W_j}}
+$$
+
+In contrast, **random-effects** models incorporate an additional source of error, denoted $\zeta_j$, to indicate the true effect size of study *j* is part of a distribution of true effect sizes with a mean value of $\mu$:
+
+$$
+\hat{\theta_j} = \mu + \zeta_j + \epsilon_j
+$$
+
+In a **random-effects** model, study weights incorporate a measure of the *variance* of the distribution of true effect sizes, denoted $\tau^2$:
+
+$$
+{W_j} = \frac{1}{{SE_j^2}+{\tau^2}}
+$$
+
+The adjusted weight is then used to calculate the weighted average measure of effect. There are several methods to estimate $\tau^2$. The most famous is called the **DerSimonian-Laird (DL)** method. This method has straightforward calculations, and is often the default method in various software packages. However, this method can be biased and results in confidence intervals that are too narrow when the number of studies is small and heterogeneity is high.
+
+Based on simulation studies, the **restricted maximum likelihood estimator (REML)** approach seems to be good choice for *continuous* outcome data [@langanComparisonHeterogeneityVariance2019; @veronikiMethodsEstimateBetweenstudy2016]. For **dichotomous** (binary) outcome data, the **Paule-Mandel estimator** or the **Empirical Bayes** method seem to be good choices. You can always conduct a sensitivity analysis to compare with other approaches or the standard DL method.
+
+Additionally, it is generally recommended to apply **Knapp-Hartung adjustments** if the option is available, as this method widens the confidence interval of the weighted measure of effect to account for uncertainty in the estimation of $\tau^2$.
+
+## Fixed vs. Random-Effects Models
+
+Fixed-effect models are **usually not appropriate** for reviews in occupational and public health, as they assume that all studies are essentially identical, which is usually only the case under highly controlled and replicable conditions. The results from such an analysis are only applicable to the participants in each study, and cannot be generalized for other populations.
+
+In contrast, **random-effects** models are more appropriate when there are differences across studies beyond what we would expect from sampling error alone (e.g., differences in interventions, populations, how outcomes are measured). However, this approach gives more weight to smaller studies, which can exacerbate potential biases that may be present in smaller studies. Additionally, if the number of included studies is very small, the estimate of between-study variance $\tau^2$ will have poor precision and is less reliable. Unfortunately, there is no clear guidance about which approach should be used in this situation. **Bayesian methods** are probably the best option, but require more advanced expertise.
+
 ::: callout-tip
-## Data Conversions Exercise
+### Meta-Analysis Exercise
 
 Using the systematic review article you identified earlier in the course, review the article to examine whether meta-analysis was conducted. If it wasn't, you can answer the following questions based on this systematic review and meta-analysis of the effectiveness of workplace mindfulness training interventions [@bartlettSystematicReviewMetaanalysis2019]. Consider the following questions for the article analyzed:
 
-- What was the main outcome measure extracted and analyzed?
-- Did the authors report whether any data conversions were necessary? If so, which ones, how many, and how were they conducted?
-- Did the authors provide any references or rationale for any conversions conducted?
-- Were any sensitivity analyses conducted related to the data conversions or assumptions made?
+-   What was the main outcome measure extracted and analyzed?
+-   Did the authors report whether any data conversions were necessary? If so, which ones, how many, and how were they conducted?
+-   Did the authors provide any references or rationale for any conversions conducted?
+-   Did they conduct a fixed-effect or random-effects model, and what rationale (if any) was given for the choice?
+-   If a random-effects model was used, which method was used to estimate $\tau^2$?
+-   Were any sensitivity analyses conducted related to the data conversions or assumptions made?
 :::
+
+
+

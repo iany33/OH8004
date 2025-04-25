@@ -3,9 +3,9 @@ webr:
   packages: ['irr', 'tibble']
 ---
 
-# Selecting Studies {#sec-selecting}
+# Selecting and Summarizing Studies {#sec-selecting}
 
-A structured, reliable, and transparent approach is needed to select articles for inclusion in a systematic review. The first step is selecting from the references identified in the search is to conduct a formal **relevance screening** of the titles and abstracts. A second level of screening can be conducted if needed following this on the full-text articles, or an **article characterization** stage that confirms relevance and extracts study details.
+A structured, reliable, and transparent approach is needed to select articles for inclusion in a systematic review. The first step is selecting from the references identified in the search is to conduct a formal **relevance screening** of the titles and abstracts. A second level of screening can be conducted if needed following this on the full-text articles, or an **article characterization** stage that confirms relevance and extracts study details. Results of this process should be document in a **review flow chart** and descriptively summarized. 
 
 ![](images/meme_rs.jpg)
 
@@ -156,6 +156,88 @@ Examine the [example article characterization form](assets/Example_Article_Chara
 
 The three articles are available at the following shared folder: <https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing>.
 :::
+
+## Review Flow Chart
+
+Usually the first part of data analysis and reporting results includes **summarizing details of the number of studies captured in the review and included/excluded at each step**. These details should be shown through a flow chart diagram or figure. The [Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) reporting guideline](http://prisma-statement.org/) has a [template for flow charts](http://www.prisma-statement.org/PRISMAStatement/FlowDiagram). A copy of the flow chart template is shown below:
+
+![](images/flow_chart.png)
+
+The flow chart should capture exact numbers of references identified from each source (e.g., bibliographic databases, grey literature, etc.) It should clearly indicate the number of references excluded and included at each step of the review, along with reasons for excluding references or articles. There is also an [online Shiny app for creating flow charts using this template](https://estech.shinyapps.io/prisma_flowdiagram/). An example flow chart from Young et al. [-@youngEffectivenessFoodHandler2019] is show below.
+
+![](images/flow_chart_example.png)
+
+## Descriptive Analysis of Article Characterization Results
+
+The next step in analysis is usually to **descriptively summarize the article characteristics** (e.g., PICO/PECO elements, and other relevant article and study details). It can be helpful at this stage to start categorizing the PICO/PECO elements into groups that can facilitate summary displays (e.g., tables) and further analysis. For example, specific types of interventions and outcomes might be grouped together. A table can then be presented that has *each relevant study as a row* and specific *columns for each of the relevant PICO/PECO elements or groups*. An example of such a table from Bartlett et al. [-@bartlettSystematicReviewMetaanalysis2019] is shown below (note this shows only the first several studies included in the table):
+
+![](images/table1_example.png)
+
+In addition to showing a table with a the summary characteristics and PICO/PECO details for *each study*, in can also be useful, especially in cases where the number of relevant studies included in the review is very large, to create a *tabulation table* to show overall numbers and percentages of studies that investigated specific PICO/PECO elements and reported specific details. An example of such a table from Young et al. [-@youngEffectivenessFoodHandler2019] is shown below (note that only the first several rows of the table are shown here). In the example below, we will examine how to reproduce such a table in *R*.
+
+![](images/table1_example2.png)
+
+::: callout-note
+### Summary Article Characterization Table Example
+
+As an illustrative example of calculating a summary tabulation table, we will load some *selected* article characterization data from the relevant articles in Young et al. [-@youngEffectivenessFoodHandler2019].
+
+```{r}
+#| echo: false
+#| warning: false
+# Display dataset as an interactive table
+library(DT)
+library(rio)
+library(here)
+
+Young_2019_chart <- import(here("assets", "Young_2019_charting.xlsx"))
+
+Young_2019_chart |> datatable(
+  rownames = FALSE,
+  options = list(
+    columnDefs = list(list(className = 'dt-center', 
+                           targets = 0:4)))) |> 
+  formatStyle(columns = colnames(Young_2019_chart), fontSize = '70%')
+```
+
+
+Now we can produce some summary statistics and tabulations of the variables and organize them into a table to present in our results.
+
+```{r}
+#| warning: false
+library(dplyr)
+library(gtsummary)
+
+# First convert Year variable to numeric
+Young_2019_chart <- Young_2019_chart |> 
+  mutate(Year = as.numeric(Year))
+
+# Display preferences
+theme_gtsummary_language("en", big.mark = "")
+
+# Create and display summary table
+Young_2019_summary <- Young_2019_chart |> 
+  select(-Refid, -"Author (year)") |>  # Remove Refid and author (year) columns from summary
+  tbl_summary(type = Year ~ "continuous",
+              statistic = Year ~ "{median} ({min}-{max})",
+              sort = list(all_categorical() ~ "frequency"),
+              digits = list(all_categorical() ~ c(0, 1)))
+Young_2019_summary
+```
+
+We can further adjust the settings and presentation of the table as needed, see the [Epi R Handbook](https://epirhandbook.com/en/descriptive-tables.html#tbl_gt) section on the **gtsummary package** for more information. We can also copy and paste our table from the HTML viewer in RStudio into a Word document for easy editing and inclusion in our report.
+:::
+
+::: callout-tip
+## Flow Chart and Article Summary Exercise
+
+Using the systematic reviews you identified in previous weeks related to your thesis topic, review the article to examine how they displayed their **flow chart** and **article summary data**. Consider the following questions:
+
+-   How does the flow chart compare to the PRIMSA template shown above?
+-   What format is used for the article summary information?
+-   Are any important article characteristics missing?
+:::
+
 
 ## Homework
 
