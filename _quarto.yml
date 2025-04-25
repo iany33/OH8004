@@ -5,7 +5,7 @@ project:
 book:
   title: "OH8004 Knowledge Synthesis in Occupational and Public Health"
   author: "Ian Young"
-  date: "Winter 2025"
+  date: "Fall 2025"
   
   chapters:
     - index.qmd
