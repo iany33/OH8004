@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OH8004 Knowledge Synthesis in Occupational and Public Health - 6&nbsp; Data Extraction and Outcome Measures</title>
+<title>OH8004 Knowledge Synthesis in Occupational and Public Health - 6&nbsp; Data Extraction, Outcome Measures, and Introduction to Meta-Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./7_analysis.html" rel="next">
+<link href="./7_meta.html" rel="next">
 <link href="./5_bias.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -293,7 +293,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"code":"library(dplyr)\n\n# Simulate some study data for meta-analysis\ndata <- data.frame(study_ID = as.factor(rep(1:4, times = 1)),\n                   treat_mean = c(1.5, 2.1, 2.2, 2.7),\n                   treat_SE = c(0.03, 0.06, 0.07, 0.08),\n                   treat_n = c(100, 50, 70, 60),\n                   control_mean = c(1.3, 1.8, 2.0, 2.2),\n                   control_SE = c(0.03, 0.07, 0.07, 0.09),\n                   control_n = c(100, 50, 70, 50)\n                   )\ndata","options":{"results":"markup","out-height":"","classes":"","message":"true","warning":"true","fig-height":5,"editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-1","fig-width":7,"autorun":"false","context":"interactive","read-only":"false","output":"true","fig-cap":"","comment":"","editor-max-height":"","out-width":"700px"}},{"id":2,"code":"data <- data |> mutate(\n  treat_SD = treat_SE*sqrt(treat_n),\n  control_SD = control_SE*sqrt(control_n)\n)\ndata |> select(-treat_SE, -control_SE)","options":{"results":"markup","out-height":"","classes":"","message":"true","warning":"true","fig-height":5,"editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-2","fig-width":7,"autorun":"false","context":"interactive","read-only":"false","output":"true","fig-cap":"","comment":"","editor-max-height":"","out-width":"700px"}},{"id":3,"code":"qt(p=0.03/2, df=40-2, lower.tail=FALSE)","options":{"results":"markup","out-height":"","classes":"","message":"true","warning":"true","fig-height":5,"editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-3","fig-width":7,"autorun":"false","context":"interactive","read-only":"false","output":"true","fig-cap":"","comment":"","editor-max-height":"","out-width":"700px"}},{"id":4,"code":"qt(p=___/2, df=___-2, lower.tail=FALSE)","options":{"results":"markup","out-height":"","classes":"","message":"true","warning":"true","fig-height":5,"editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-4","fig-width":7,"autorun":"false","context":"interactive","read-only":"false","output":"true","fig-cap":"","comment":"","editor-max-height":"","out-width":"700px"}},{"id":5,"code":"qt(p=0.001/2, df=300-2, lower.tail=FALSE)","options":{"results":"markup","out-height":"","classes":"","message":"true","warning":"true","fig-height":5,"editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-5","fig-width":7,"autorun":"false","context":"interactive","read-only":"true","output":"true","fig-cap":"","comment":"","editor-max-height":"","out-width":"700px"}},{"id":6,"code":"library(esc)\n\nesc_f(f = 6.23, grp1n = 190, grp2n = 80, es.type = \"g\")","options":{"results":"markup","out-height":"","classes":"","message":"true","warning":"true","fig-height":5,"editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-6","fig-width":7,"autorun":"false","context":"interactive","read-only":"false","output":"true","fig-cap":"","comment":"","editor-max-height":"","out-width":"700px"}},{"id":7,"code":"esc <- esc_chisq(chisq = 2.5, totaln = 120, es.type = \"logit\")\nesc","options":{"results":"markup","out-height":"","classes":"","message":"true","warning":"true","fig-height":5,"editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-7","fig-width":7,"autorun":"false","context":"interactive","read-only":"false","output":"true","fig-cap":"","comment":"","editor-max-height":"","out-width":"700px"}},{"id":8,"code":"data2 <- data.frame(study_ID = as.factor(rep(1:3, times = 1)),\n                    log_or = c(1.1, 0.8, NA),\n                    log_se = c(0.5, 0.4, NA),\n                    n = c(100, 150, 120)\n                    )\ndata2","options":{"results":"markup","out-height":"","classes":"","message":"true","warning":"true","fig-height":5,"editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-8","fig-width":7,"autorun":"false","context":"interactive","read-only":"false","output":"true","fig-cap":"","comment":"","editor-max-height":"","out-width":"700px"}},{"id":9,"code":"data2$log_or[\"Study ID\" = 3] <- esc$es\ndata2$log_se[\"Study ID\" = 3] <- esc$se\ndata2","options":{"results":"markup","out-height":"","classes":"","message":"true","warning":"true","fig-height":5,"editor-quick-suggestions":"false","dpi":72,"editor-font-scale":1,"label":"unnamed-chunk-9","fig-width":7,"autorun":"false","context":"interactive","read-only":"false","output":"true","fig-cap":"","comment":"","editor-max-height":"","out-width":"700px"}}];
+globalThis.qwebrCellDetails = [{"id":1,"options":{"editor-max-height":"","label":"unnamed-chunk-1","fig-width":7,"editor-font-scale":1,"fig-cap":"","out-width":"700px","read-only":"false","classes":"","out-height":"","autorun":"false","context":"interactive","warning":"true","results":"markup","output":"true","dpi":72,"message":"true","comment":"","fig-height":5,"editor-quick-suggestions":"false"},"code":"library(dplyr)\n\n# Simulate some study data for meta-analysis\ndata <- data.frame(study_ID = as.factor(rep(1:4, times = 1)),\n                   treat_mean = c(1.5, 2.1, 2.2, 2.7),\n                   treat_SE = c(0.03, 0.06, 0.07, 0.08),\n                   treat_n = c(100, 50, 70, 60),\n                   control_mean = c(1.3, 1.8, 2.0, 2.2),\n                   control_SE = c(0.03, 0.07, 0.07, 0.09),\n                   control_n = c(100, 50, 70, 50)\n                   )\ndata"},{"id":2,"options":{"editor-max-height":"","label":"unnamed-chunk-2","fig-width":7,"editor-font-scale":1,"fig-cap":"","out-width":"700px","read-only":"false","classes":"","out-height":"","autorun":"false","context":"interactive","warning":"true","results":"markup","output":"true","dpi":72,"message":"true","comment":"","fig-height":5,"editor-quick-suggestions":"false"},"code":"data <- data |> mutate(\n  treat_SD = treat_SE*sqrt(treat_n),\n  control_SD = control_SE*sqrt(control_n)\n)\ndata |> select(-treat_SE, -control_SE)"},{"id":3,"options":{"editor-max-height":"","label":"unnamed-chunk-3","fig-width":7,"editor-font-scale":1,"fig-cap":"","out-width":"700px","read-only":"false","classes":"","out-height":"","autorun":"false","context":"interactive","warning":"true","results":"markup","output":"true","dpi":72,"message":"true","comment":"","fig-height":5,"editor-quick-suggestions":"false"},"code":"qt(p=0.03/2, df=40-2, lower.tail=FALSE)"},{"id":4,"options":{"editor-max-height":"","label":"unnamed-chunk-4","fig-width":7,"editor-font-scale":1,"fig-cap":"","out-width":"700px","read-only":"false","classes":"","out-height":"","autorun":"false","context":"interactive","warning":"true","results":"markup","output":"true","dpi":72,"message":"true","comment":"","fig-height":5,"editor-quick-suggestions":"false"},"code":"qt(p=___/2, df=___-2, lower.tail=FALSE)"},{"id":5,"options":{"editor-max-height":"","label":"unnamed-chunk-5","fig-width":7,"editor-font-scale":1,"fig-cap":"","out-width":"700px","read-only":"true","classes":"","out-height":"","autorun":"false","context":"interactive","warning":"true","results":"markup","output":"true","dpi":72,"message":"true","comment":"","fig-height":5,"editor-quick-suggestions":"false"},"code":"qt(p=0.001/2, df=300-2, lower.tail=FALSE)"},{"id":6,"options":{"editor-max-height":"","label":"unnamed-chunk-6","fig-width":7,"editor-font-scale":1,"fig-cap":"","out-width":"700px","read-only":"false","classes":"","out-height":"","autorun":"false","context":"interactive","warning":"true","results":"markup","output":"true","dpi":72,"message":"true","comment":"","fig-height":5,"editor-quick-suggestions":"false"},"code":"library(esc)\n\nesc_f(f = 6.23, grp1n = 190, grp2n = 80, es.type = \"g\")"},{"id":7,"options":{"editor-max-height":"","label":"unnamed-chunk-7","fig-width":7,"editor-font-scale":1,"fig-cap":"","out-width":"700px","read-only":"false","classes":"","out-height":"","autorun":"false","context":"interactive","warning":"true","results":"markup","output":"true","dpi":72,"message":"true","comment":"","fig-height":5,"editor-quick-suggestions":"false"},"code":"esc <- esc_chisq(chisq = 2.5, totaln = 120, es.type = \"logit\")\nesc"},{"id":8,"options":{"editor-max-height":"","label":"unnamed-chunk-8","fig-width":7,"editor-font-scale":1,"fig-cap":"","out-width":"700px","read-only":"false","classes":"","out-height":"","autorun":"false","context":"interactive","warning":"true","results":"markup","output":"true","dpi":72,"message":"true","comment":"","fig-height":5,"editor-quick-suggestions":"false"},"code":"data2 <- data.frame(study_ID = as.factor(rep(1:3, times = 1)),\n                    log_or = c(1.1, 0.8, NA),\n                    log_se = c(0.5, 0.4, NA),\n                    n = c(100, 150, 120)\n                    )\ndata2"},{"id":9,"options":{"editor-max-height":"","label":"unnamed-chunk-9","fig-width":7,"editor-font-scale":1,"fig-cap":"","out-width":"700px","read-only":"false","classes":"","out-height":"","autorun":"false","context":"interactive","warning":"true","results":"markup","output":"true","dpi":72,"message":"true","comment":"","fig-height":5,"editor-quick-suggestions":"false"},"code":"data2$log_or[\"Study ID\" = 3] <- esc$es\ndata2$log_se[\"Study ID\" = 3] <- esc$se\ndata2"}];
 
 </script>
 <script type="module">
@@ -1171,7 +1171,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./6_extraction.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction and Outcome Measures</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./6_extraction.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction, Outcome Measures, and Introduction to Meta-Analysis</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -1229,7 +1229,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./4_selecting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting and Summarizing Studies</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -1241,43 +1241,37 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./6_extraction.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction and Outcome Measures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction, Outcome Measures, and Introduction to Meta-Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./7_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Analysis</span></span></a>
+  <a href="./7_meta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Meta-Analysis and Qualitative Synthesis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./8_meta.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Meta-Analysis</span></span></a>
+  <a href="./8_meta2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Subgroup Analysis, Meta-Regression, and Complex Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./9_meta2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Subgroup Analysis, Meta-Regression, and Complex Data</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10_grade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Quality of Evidence and Reporting</span></span></a>
+  <a href="./9_grade.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Quality of Evidence and Reporting</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./meta_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Meta-Analysis Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Meta-Analysis Practice</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
     </ul>
@@ -1303,6 +1297,9 @@ window.Quarto = {
   <li><a href="#convert-from-se-ci-t-value-or-p-value-to-a-sd-for-mean-differences" id="toc-convert-from-se-ci-t-value-or-p-value-to-a-sd-for-mean-differences" class="nav-link" data-scroll-target="#convert-from-se-ci-t-value-or-p-value-to-a-sd-for-mean-differences"><span class="header-section-number">6.7.3</span> Convert from SE, CI, t value, or P value to a SD for Mean Differences</a></li>
   <li><a href="#conversions-to-a-standardized-mean-difference" id="toc-conversions-to-a-standardized-mean-difference" class="nav-link" data-scroll-target="#conversions-to-a-standardized-mean-difference"><span class="header-section-number">6.7.4</span> Conversions to a Standardized Mean Difference</a></li>
   </ul></li>
+  <li><a href="#methods-of-analyzing-measures-of-effect" id="toc-methods-of-analyzing-measures-of-effect" class="nav-link" data-scroll-target="#methods-of-analyzing-measures-of-effect"><span class="header-section-number">6.8</span> Methods of Analyzing Measures of Effect</a></li>
+  <li><a href="#introduction-to-meta-analysis" id="toc-introduction-to-meta-analysis" class="nav-link" data-scroll-target="#introduction-to-meta-analysis"><span class="header-section-number">6.9</span> Introduction to Meta-Analysis</a></li>
+  <li><a href="#fixed-vs.-random-effects-models" id="toc-fixed-vs.-random-effects-models" class="nav-link" data-scroll-target="#fixed-vs.-random-effects-models"><span class="header-section-number">6.10</span> Fixed vs.&nbsp;Random-Effects Models</a></li>
   </ul>
 </nav>
     </div>
@@ -1538,7 +1535,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-extraction" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction and Outcome Measures</span></span></h1>
+<h1 class="title"><span id="sec-extraction" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction, Outcome Measures, and Introduction to Meta-Analysis</span></span></h1>
 </div>
 
 
@@ -1555,8 +1552,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<p>This section will cover the important considerations involved in extracting <strong>outcome data</strong> from the relevant studies. At this stage, it is important to consider the different possible outcome <strong>measures of effect</strong> that could be reported in the studies and which are of primary interest and relevance to your review question.</p>
-<p><img src="images/meme_de.jpg" class="img-fluid"></p>
+<p>This section will cover the important considerations involved in extracting <strong>outcome data</strong> from the relevant studies. At this stage, it is important to consider the different possible outcome <strong>measures of effect</strong> that could be reported in the studies and which are of primary interest and relevance to your review question. Then we will introduce <strong>meta-analysis</strong> and describe differences between fixed-effect and random-effects models.</p>
+<p><img src="images/meme_ma.jpg" class="img-fluid"></p>
 <section id="types-of-outcomes-and-measures-of-effect" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="types-of-outcomes-and-measures-of-effect"><span class="header-section-number">6.1</span> Types of Outcomes and Measures of Effect</h2>
 <p>A key first step in designing the outcome data extraction form and planning for analysis is to determine the relevant types of <strong>outcome data measures</strong> for the review. The most common types are listed below:</p>
@@ -1681,7 +1678,7 @@ Data Extraction Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Consider again the Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> systematic review about the effectiveness of food handler training interventions. <a href="https://drive.google.com/drive/folders/1mvBj074odovMpWIQ-UQ9BJprNzRiB9cv?usp=sharing">Using three example articles</a>, identify the outcomes of interest in each study and which data should be extracted.</p>
+<p>Consider again the Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> systematic review about the effectiveness of food handler training interventions. <a href="https://drive.google.com/open?id=1a6ozc5hmlMo7Ff1qG3O7oLjJIHVzMq9D&amp;usp=drive_fs">Using three example articles</a>, identify the outcomes of interest in each study and which data should be extracted.</p>
 <ul>
 <li>How many relevant outcomes are reported in each study?</li>
 <li>Are any important outcomes or values (e.g., measures of variability) missing?</li>
@@ -1785,13 +1782,73 @@ Example F Test and <span class="math inline">\(chi^2\)</span> Test Converison
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </div>
 </div>
+</section>
+</section>
+<section id="methods-of-analyzing-measures-of-effect" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="methods-of-analyzing-measures-of-effect"><span class="header-section-number">6.8</span> Methods of Analyzing Measures of Effect</h2>
+<p>The recommended approach to analyze quantitative outcome data (i.e., measures of effect), if possible and reasonable to do so, is <strong>meta-analysis</strong>. Meta-analysis is defined as statistical method for combining the results of two or more studies.</p>
+<p>There are some situations where it may not be possible to use meta-analysis, for example:</p>
+<ul>
+<li>There is <strong>only one or no studies</strong> containing the outcome of interest</li>
+<li>The <strong>outcome data are not sufficiently reported</strong> and cannot be estimated from available statistics</li>
+<li>The study designs, methods, or outcome measures are <strong>too diverse and heterogeneous</strong> that it doesn’t make biological or reasonable sense to combine them</li>
+<li>There are <strong>major concerns about bias</strong> in the studies</li>
+</ul>
+<p>In these cases, one can consider conducting a <strong>descriptive and narrative summary</strong> of the evidence. This includes presenting <em>summary tables</em> of the results of each study and some discussion of the results of each study. Tables can be grouped by relevant criteria from the question (e.g., intervention groups, outcome domains), or by other factors such as strength of evidence or risk of bias.</p>
+<p>Another option that can be used when summary measures of effect are available from studies, but measures of variability needed to conduct meta-analysis are <em>not available</em>, is to summarize the effect estimates directly using <strong>box (and/or violin) plots</strong>. This type of summary provides information about the size and range of effects across studies, but does not account for the differences in sample size across studies. Combining <strong>P values</strong> is another method that can be used when only P values are available, and aims to determine is there is evidence of an effect in at least one study. For more information on these and other alternative analysis methods, <a href="https://training.cochrane.org/handbook/current/chapter-12">see the relevant chapter in the Cochrane Collaboration Handbook</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example of when Meta-Analysis was Not Feasible
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a systematic review about the prevalence of knowledge, practices, and training outcomes among restaurant and food service personnel toward food allergies and Celiac disease <span class="citation" data-cites="youngSystematicReviewMetaregression2018">(<a href="references.html#ref-youngSystematicReviewMetaregression2018" role="doc-biblioref">Young and Thaivalappil 2018</a>)</span>, the authors did not conduct meta-analysis on the outcome due to substantive differences in the populations assessed, their characteristics, and how outcomes were measured. Instead, they summarized the <strong>distribution</strong> of prevalence outcomes across studies within each outcome domain using box plots. The figure below shows the prevalence of food allergy and Celiac disease <strong>behaviour outcomes</strong> reported across studies:</p>
+<p><img src="images/non_MA_example.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="introduction-to-meta-analysis" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="introduction-to-meta-analysis"><span class="header-section-number">6.9</span> Introduction to Meta-Analysis</h2>
+<p>Meta-analysis is a <strong>statistical technique</strong> that involves combining the measure of effect for each study along with its weight to calculate a weighted average of the measure of effect. Each study receives a <strong>weight</strong> based on its standard error (SE), so studies with greater precision (i.e., less error) receive more weight. There are two main approaches to meta-analysis, which determine how weights are calculated: fixed-effect and random-effects.</p>
+<p>A <strong>fixed-effect</strong> meta-analysis assumes there is one <em>true effect size</em> among all of the included studies, and that any observed differences in the effects are due only to sampling error. In contrast, <strong>random-effects</strong> meta-analysis models assume that the study effects represent a random sample of possible effect sizes (that usually follows a normal distribution). The null hypothesis under a fixed-effect model is that <em>there is zero effect in every study</em>, while for a random-effects model the null hypothesis is that the <em>average effect is zero</em>. Both models will give identical results when there is no statistical heterogeneity among the studies.</p>
+<p>Assuming an overall true effect of <span class="math inline">\(\theta\)</span>, under a <strong>fixed-effect</strong> model, the observed effect of study <em>j</em>, <span class="math inline">\(\theta_j\)</span>, differs from the overall true effect only because of its sampling error (<span class="math inline">\(\epsilon_j\)</span>):</p>
+<p><span class="math display">\[
+\hat{\theta_j} = \theta + \epsilon_j
+\]</span> Studies are then <strong>weighted</strong> by the <em>inverse</em> of the variance (which is equal to the SE squared). For study <em>j</em>, the weight would be calculated as follows:</p>
+<p><span class="math display">\[
+{W_j} = \frac{1}{SE_j^2}
+\]</span></p>
+<p>The weighted average, or <em>pooled effect</em>, can then be calculated by multiplying each study’s effect size by its weight, adding those together, and then dividing by the sum of all study weights. This is referred to as the <strong>generic inverse-variance</strong> weighting approach:</p>
+<p><span class="math display">\[
+\hat{\theta} = \frac{\sum_{j=1}^J \hat{\theta_j}{W_j}} {\sum_{j=1}^J {W_j}}
+\]</span></p>
+<p>In contrast, <strong>random-effects</strong> models incorporate an additional source of error, denoted <span class="math inline">\(\zeta_j\)</span>, to indicate the true effect size of study <em>j</em> is part of a distribution of true effect sizes with a mean value of <span class="math inline">\(\mu\)</span>:</p>
+<p><span class="math display">\[
+\hat{\theta_j} = \mu + \zeta_j + \epsilon_j
+\]</span></p>
+<p>In a <strong>random-effects</strong> model, study weights incorporate a measure of the <em>variance</em> of the distribution of true effect sizes, denoted <span class="math inline">\(\tau^2\)</span>:</p>
+<p><span class="math display">\[
+{W_j} = \frac{1}{{SE_j^2}+{\tau^2}}
+\]</span></p>
+<p>The adjusted weight is then used to calculate the weighted average measure of effect. There are several methods to estimate <span class="math inline">\(\tau^2\)</span>. The most famous is called the <strong>DerSimonian-Laird (DL)</strong> method. This method has straightforward calculations, and is often the default method in various software packages. However, this method can be biased and results in confidence intervals that are too narrow when the number of studies is small and heterogeneity is high.</p>
+<p>Based on simulation studies, the <strong>restricted maximum likelihood estimator (REML)</strong> approach seems to be good choice for <em>continuous</em> outcome data <span class="citation" data-cites="langanComparisonHeterogeneityVariance2019 veronikiMethodsEstimateBetweenstudy2016">(<a href="references.html#ref-langanComparisonHeterogeneityVariance2019" role="doc-biblioref">Langan et al. 2019</a>; <a href="references.html#ref-veronikiMethodsEstimateBetweenstudy2016" role="doc-biblioref">Veroniki et al. 2016</a>)</span>. For <strong>dichotomous</strong> (binary) outcome data, the <strong>Paule-Mandel estimator</strong> or the <strong>Empirical Bayes</strong> method seem to be good choices. You can always conduct a sensitivity analysis to compare with other approaches or the standard DL method.</p>
+<p>Additionally, it is generally recommended to apply <strong>Knapp-Hartung adjustments</strong> if the option is available, as this method widens the confidence interval of the weighted measure of effect to account for uncertainty in the estimation of <span class="math inline">\(\tau^2\)</span>.</p>
+</section>
+<section id="fixed-vs.-random-effects-models" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="fixed-vs.-random-effects-models"><span class="header-section-number">6.10</span> Fixed vs.&nbsp;Random-Effects Models</h2>
+<p>Fixed-effect models are <strong>usually not appropriate</strong> for reviews in occupational and public health, as they assume that all studies are essentially identical, which is usually only the case under highly controlled and replicable conditions. The results from such an analysis are only applicable to the participants in each study, and cannot be generalized for other populations.</p>
+<p>In contrast, <strong>random-effects</strong> models are more appropriate when there are differences across studies beyond what we would expect from sampling error alone (e.g., differences in interventions, populations, how outcomes are measured). However, this approach gives more weight to smaller studies, which can exacerbate potential biases that may be present in smaller studies. Additionally, if the number of included studies is very small, the estimate of between-study variance <span class="math inline">\(\tau^2\)</span> will have poor precision and is less reliable. Unfortunately, there is no clear guidance about which approach should be used in this situation. <strong>Bayesian methods</strong> are probably the best option, but require more advanced expertise.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Data Conversions Exercise
+Meta-Analysis Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1800,6 +1857,8 @@ Data Conversions Exercise
 <li>What was the main outcome measure extracted and analyzed?</li>
 <li>Did the authors report whether any data conversions were necessary? If so, which ones, how many, and how were they conducted?</li>
 <li>Did the authors provide any references or rationale for any conversions conducted?</li>
+<li>Did they conduct a fixed-effect or random-effects model, and what rationale (if any) was given for the choice?</li>
+<li>If a random-effects model was used, which method was used to estimate <span class="math inline">\(\tau^2\)</span>?</li>
 <li>Were any sensitivity analyses conducted related to the data conversions or assumptions made?</li>
 </ul>
 </div>
@@ -1810,11 +1869,19 @@ Data Conversions Exercise
 <div id="ref-bartlettSystematicReviewMetaanalysis2019" class="csl-entry" role="listitem">
 Bartlett, Larissa, Angela Martin, Amanda L. Neil, Kate Memish, Petr Otahal, Michelle Kilpatrick, and Kristy Sanderson. 2019. <span>“A Systematic Review and Meta-Analysis of Workplace Mindfulness Training Randomized Controlled Trials.”</span> <em>Journal of Occupational Health Psychology</em> 24: 108–26. <a href="https://doi.org/10.1037/ocp0000146">https://doi.org/10.1037/ocp0000146</a>.
 </div>
+<div id="ref-langanComparisonHeterogeneityVariance2019" class="csl-entry" role="listitem">
+Langan, Dean, Julian P. T. Higgins, Dan Jackson, Jack Bowden, Areti Angeliki Veroniki, Evangelos Kontopantelis, Wolfgang Viechtbauer, and Mark Simmonds. 2019. <span>“A Comparison of Heterogeneity Variance Estimators in Simulated Random-Effects Meta-Analyses.”</span> <em>Research Synthesis Methods</em> 10 (1): 83–98. <a href="https://doi.org/10.1002/jrsm.1316">https://doi.org/10.1002/jrsm.1316</a>.
+</div>
+<div id="ref-veronikiMethodsEstimateBetweenstudy2016" class="csl-entry" role="listitem">
+Veroniki, Areti Angeliki, Dan Jackson, Wolfgang Viechtbauer, Ralf Bender, Jack Bowden, Guido Knapp, Oliver Kuss, Julian P. T. Higgins, Dean Langan, and Georgia Salanti. 2016. <span>“Methods to Estimate the Between-Study Variance and Its Uncertainty in Meta-Analysis.”</span> <em>Research Synthesis Methods</em> 7 (1): 55–79. <a href="https://doi.org/10.1002/jrsm.1164">https://doi.org/10.1002/jrsm.1164</a>.
+</div>
 <div id="ref-youngEffectivenessFoodHandler2019" class="csl-entry" role="listitem">
 Young, Ian, Judy Greig, Barbara J. Wilhelm, and Lisa A. Waddell. 2019. <span>“Effectiveness of Food Handler Training and Education Interventions: A Systematic Review and Meta-Analysis.”</span> <em>Journal of Food Protection</em> 82 (10): 1714–28. <a href="https://doi.org/10.4315/0362-028X.JFP-19-108">https://doi.org/10.4315/0362-028X.JFP-19-108</a>.
 </div>
+<div id="ref-youngSystematicReviewMetaregression2018" class="csl-entry" role="listitem">
+Young, Ian, and Abhinand Thaivalappil. 2018. <span>“A Systematic Review and Meta-Regression of the Knowledge, Practices, and Training of Restaurant and Food Service Personnel Toward Food Allergies and <span>Celiac</span> Disease.”</span> Edited by Louise Emilsson. <em>PLOS ONE</em> 13 (9): e0203496. <a href="https://doi.org/10.1371/journal.pone.0203496">https://doi.org/10.1371/journal.pone.0203496</a>.
 </div>
-</section>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -2234,8 +2301,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./7_analysis.html" class="pagination-link" aria-label="Data Analysis">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./7_meta.html" class="pagination-link" aria-label="Meta-Analysis and Qualitative Synthesis">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Meta-Analysis and Qualitative Synthesis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

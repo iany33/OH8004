@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OH8004 Knowledge Synthesis in Occupational and Public Health - 4&nbsp; Selecting Studies</title>
+<title>OH8004 Knowledge Synthesis in Occupational and Public Health - 4&nbsp; Selecting and Summarizing Studies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -88,6 +122,26 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+<script src="site_libs/datatables-binding-0.33/datatables.js"></script>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/editor/editor.main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   
@@ -293,7 +347,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"options":{"classes":"","comment":"","editor-max-height":"","context":"interactive","fig-width":7,"message":"true","label":"unnamed-chunk-1","dpi":72,"fig-height":5,"results":"markup","autorun":"false","out-height":"","editor-font-scale":1,"fig-cap":"","warning":"true","out-width":"700px","output":"true","read-only":"true","editor-quick-suggestions":"false"},"code":"# Create simulated rating data\nrs_test <- tibble(abstract_id = seq(1:30),\n                  reviewer1 = rep(0:1, each = 15),\n                  reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test, n = Inf)","id":1},{"options":{"classes":"","comment":"","editor-max-height":"","context":"interactive","fig-width":7,"message":"true","label":"unnamed-chunk-2","dpi":72,"fig-height":5,"results":"markup","autorun":"false","out-height":"","editor-font-scale":1,"fig-cap":"","warning":"true","out-width":"700px","output":"true","read-only":"true","editor-quick-suggestions":"false"},"code":"library(irr)\n\nkappa2(rs_test[,2:3])","id":2},{"options":{"classes":"","comment":"","editor-max-height":"","context":"interactive","fig-width":7,"message":"true","label":"unnamed-chunk-3","dpi":72,"fig-height":5,"results":"markup","autorun":"false","out-height":"","editor-font-scale":1,"fig-cap":"","warning":"true","out-width":"700px","output":"true","read-only":"false","editor-quick-suggestions":"false"},"code":"rs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = rep(0:1, each = 15),\n                   reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","id":3},{"options":{"classes":"","comment":"","editor-max-height":"","context":"interactive","fig-width":7,"message":"true","label":"unnamed-chunk-4","dpi":72,"fig-height":5,"results":"markup","autorun":"false","out-height":"","editor-font-scale":1,"fig-cap":"","warning":"true","out-width":"700px","output":"true","read-only":"true","editor-quick-suggestions":"false"},"code":"# Create the updated simulated rating data\nrs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = c(rep(0, times = 15), rep(1, times = 15)),\n                   reviewer2 = c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","id":4}];
+globalThis.qwebrCellDetails = [{"code":"# Create simulated rating data\nrs_test <- tibble(abstract_id = seq(1:30),\n                  reviewer1 = rep(0:1, each = 15),\n                  reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test, n = Inf)","id":1,"options":{"out-width":"700px","autorun":"false","editor-quick-suggestions":"false","fig-cap":"","editor-font-scale":1,"fig-width":7,"context":"interactive","output":"true","read-only":"true","results":"markup","label":"unnamed-chunk-1","comment":"","editor-max-height":"","fig-height":5,"message":"true","out-height":"","classes":"","warning":"true","dpi":72}},{"code":"library(irr)\n\nkappa2(rs_test[,2:3])","id":2,"options":{"out-width":"700px","autorun":"false","editor-quick-suggestions":"false","fig-cap":"","editor-font-scale":1,"fig-width":7,"context":"interactive","output":"true","read-only":"true","results":"markup","label":"unnamed-chunk-2","comment":"","editor-max-height":"","fig-height":5,"message":"true","out-height":"","classes":"","warning":"true","dpi":72}},{"code":"rs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = rep(0:1, each = 15),\n                   reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","id":3,"options":{"out-width":"700px","autorun":"false","editor-quick-suggestions":"false","fig-cap":"","editor-font-scale":1,"fig-width":7,"context":"interactive","output":"true","read-only":"false","results":"markup","label":"unnamed-chunk-3","comment":"","editor-max-height":"","fig-height":5,"message":"true","out-height":"","classes":"","warning":"true","dpi":72}},{"code":"# Create the updated simulated rating data\nrs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = c(rep(0, times = 15), rep(1, times = 15)),\n                   reviewer2 = c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","id":4,"options":{"out-width":"700px","autorun":"false","editor-quick-suggestions":"false","fig-cap":"","editor-font-scale":1,"fig-width":7,"context":"interactive","output":"true","read-only":"true","results":"markup","label":"unnamed-chunk-4","comment":"","editor-max-height":"","fig-height":5,"message":"true","out-height":"","classes":"","warning":"true","dpi":72}}];
 
 </script>
 <script type="module">
@@ -1142,7 +1196,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4_selecting.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4_selecting.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting and Summarizing Studies</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -1200,7 +1254,7 @@ globalThis.qwebrExecuteCode = async function (
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./4_selecting.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting and Summarizing Studies</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -1212,43 +1266,37 @@ globalThis.qwebrExecuteCode = async function (
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./6_extraction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction and Outcome Measures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Extraction, Outcome Measures, and Introduction to Meta-Analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./7_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Analysis</span></span></a>
+  <a href="./7_meta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Meta-Analysis and Qualitative Synthesis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./8_meta.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Meta-Analysis</span></span></a>
+  <a href="./8_meta2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Subgroup Analysis, Meta-Regression, and Complex Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./9_meta2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Subgroup Analysis, Meta-Regression, and Complex Data</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10_grade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Quality of Evidence and Reporting</span></span></a>
+  <a href="./9_grade.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Quality of Evidence and Reporting</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./meta_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Meta-Analysis Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Meta-Analysis Practice</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">References</span></span></a>
   </div>
 </li>
     </ul>
@@ -1272,7 +1320,9 @@ globalThis.qwebrExecuteCode = async function (
   <ul class="collapse">
   <li><a href="#pilot-testing-1" id="toc-pilot-testing-1" class="nav-link" data-scroll-target="#pilot-testing-1"><span class="header-section-number">4.3.1</span> Pilot Testing</a></li>
   </ul></li>
-  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework"><span class="header-section-number">4.4</span> Homework</a></li>
+  <li><a href="#review-flow-chart" id="toc-review-flow-chart" class="nav-link" data-scroll-target="#review-flow-chart"><span class="header-section-number">4.4</span> Review Flow Chart</a></li>
+  <li><a href="#descriptive-analysis-of-article-characterization-results" id="toc-descriptive-analysis-of-article-characterization-results" class="nav-link" data-scroll-target="#descriptive-analysis-of-article-characterization-results"><span class="header-section-number">4.5</span> Descriptive Analysis of Article Characterization Results</a></li>
+  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework"><span class="header-section-number">4.6</span> Homework</a></li>
   </ul>
 </nav>
     </div>
@@ -1508,7 +1558,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-selecting" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting Studies</span></span></h1>
+<h1 class="title"><span id="sec-selecting" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting and Summarizing Studies</span></span></h1>
 </div>
 
 
@@ -1525,7 +1575,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<p>A structured, reliable, and transparent approach is needed to select articles for inclusion in a systematic review. The first step is selecting from the references identified in the search is to conduct a formal <strong>relevance screening</strong> of the titles and abstracts. A second level of screening can be conducted if needed following this on the full-text articles, or an <strong>article characterization</strong> stage that confirms relevance and extracts study details.</p>
+<p>A structured, reliable, and transparent approach is needed to select articles for inclusion in a systematic review. The first step is selecting from the references identified in the search is to conduct a formal <strong>relevance screening</strong> of the titles and abstracts. A second level of screening can be conducted if needed following this on the full-text articles, or an <strong>article characterization</strong> stage that confirms relevance and extracts study details. Results of this process should be document in a <strong>review flow chart</strong> and descriptively summarized.</p>
 <p><img src="images/meme_rs.jpg" class="img-fluid"></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1683,9 +1733,794 @@ Article Characterization Exercise
 </div>
 </section>
 </section>
-<section id="homework" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="homework"><span class="header-section-number">4.4</span> Homework</h2>
-<p>One to two students each will be assigned one risk-of-bias <em>domain</em> from <a href="5_bias.html" class="quarto-xref"><span>Chapter 5</span></a> to review and present in class next week. The bias domains to be assigned include:</p>
+<section id="review-flow-chart" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="review-flow-chart"><span class="header-section-number">4.4</span> Review Flow Chart</h2>
+<p>Usually the first part of data analysis and reporting results includes <strong>summarizing details of the number of studies captured in the review and included/excluded at each step</strong>. These details should be shown through a flow chart diagram or figure. The <a href="http://prisma-statement.org/">Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) reporting guideline</a> has a <a href="http://www.prisma-statement.org/PRISMAStatement/FlowDiagram">template for flow charts</a>. A copy of the flow chart template is shown below:</p>
+<p><img src="images/flow_chart.png" class="img-fluid"></p>
+<p>The flow chart should capture exact numbers of references identified from each source (e.g., bibliographic databases, grey literature, etc.) It should clearly indicate the number of references excluded and included at each step of the review, along with reasons for excluding references or articles. There is also an <a href="https://estech.shinyapps.io/prisma_flowdiagram/">online Shiny app for creating flow charts using this template</a>. An example flow chart from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> is show below.</p>
+<p><img src="images/flow_chart_example.png" class="img-fluid"></p>
+</section>
+<section id="descriptive-analysis-of-article-characterization-results" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="descriptive-analysis-of-article-characterization-results"><span class="header-section-number">4.5</span> Descriptive Analysis of Article Characterization Results</h2>
+<p>The next step in analysis is usually to <strong>descriptively summarize the article characteristics</strong> (e.g., PICO/PECO elements, and other relevant article and study details). It can be helpful at this stage to start categorizing the PICO/PECO elements into groups that can facilitate summary displays (e.g., tables) and further analysis. For example, specific types of interventions and outcomes might be grouped together. A table can then be presented that has <em>each relevant study as a row</em> and specific <em>columns for each of the relevant PICO/PECO elements or groups</em>. An example of such a table from Bartlett et al. <span class="citation" data-cites="bartlettSystematicReviewMetaanalysis2019">(<a href="references.html#ref-bartlettSystematicReviewMetaanalysis2019" role="doc-biblioref">2019</a>)</span> is shown below (note this shows only the first several studies included in the table):</p>
+<p><img src="images/table1_example.png" class="img-fluid"></p>
+<p>In addition to showing a table with a the summary characteristics and PICO/PECO details for <em>each study</em>, in can also be useful, especially in cases where the number of relevant studies included in the review is very large, to create a <em>tabulation table</em> to show overall numbers and percentages of studies that investigated specific PICO/PECO elements and reported specific details. An example of such a table from Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span> is shown below (note that only the first several rows of the table are shown here). In the example below, we will examine how to reproduce such a table in <em>R</em>.</p>
+<p><img src="images/table1_example2.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Summary Article Characterization Table Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As an illustrative example of calculating a summary tabulation table, we will load some <em>selected</em> article characterization data from the relevant articles in Young et al. <span class="citation" data-cites="youngEffectivenessFoodHandler2019">(<a href="references.html#ref-youngEffectivenessFoodHandler2019" role="doc-biblioref">2019</a>)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-e4d668c6c61034af0141" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e4d668c6c61034af0141">{"x":{"filter":"none","vertical":false,"data":[["122","195","438","441","557","655","684","730","733","745","801","815","887","931","1231","1416","1580","1668","1676","1681","1760","1761","1900","1955","1972","2066","2071","2241","2278","2295","2404","2433","2434","2772","2900","2917","2977","2979","2981","2983","2984","2986","2987","2990","2996","3006","3013"],["Abernathy and Hart (2004)","Al-Mohaithef (2014)","Brannon et al. (2009)","Bratton-Jeffery (1998)","Chaifetz (2015)","Cotterchio et al. (1998)","Da Cunha et al. (2014)","DeFee (1999)","DeLegge (2009)","DeSario (2013)","Dworkin et al. (2012)","Ehiri et al. (1997)","Farzianpour et al. (2012)","Fraser (1995)","Chang et al. (2003)","Kirby and Gardiner (1997)","Lillquist et al. (2005)","Makari (2014)","Mancini et al. (2012)","Manes et al. (2014)","McIntyre et al. (2014)","McIntyre et al. (2013)","Nabali et al. (1986)","Nik Husain et al. (2016)","Nummer et al. (2010)","Park et al. (2010)","Parwanda et al. (2015)","Richard et al. (2013)","Romano and D'Argenio (1998)","Rowell et al. (2013)","Serafim et al. (2015)","Sheth and Sukul (2007)","Sheth et al. (2007)","Walker et al. (2006)","Yeung (2014)","York et al. (2009)","Howes et al. (1996)","Strohbehn et al. (2013)","Craggs-Dino (2002)","Ituma et al. (2017)","Maung et al. (2017)","Nyamari (2013)","Rajagopal and Strohbehn (2013)","Kirshner (1990)","Soneff et al. (1994)","Cook and Casey (1979)","Kim and Lee (2014)"],["2004","2014","2009","1998","2015","1998","2014","1999","2009","2013","2012","1997","2012","1995","2003","1997","2005","2014","2012","2014","2014","2013","1986","2016","2010","2010","2015","2013","1998","2013","2015","2007","2007","2006","2014","2009","1996","2013","2002","2017","2017","2013","2013","1990","1994","1979","2014"],["Journal article","Thesis","Journal article","Thesis","Thesis","Journal article","Journal article","Thesis","Thesis","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Thesis","Journal article","Thesis","Journal article","Journal article","Journal article"],["English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","Italian","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","Korean"],["Canada","Saudi Arabia","US","US","US","US","Brazil","US","US","US","US","UK","Iran","US","South Korea","UK","US","US","Canada","US","Canada","Canada","Bahrain","Malaysia","US","South Korea","India","US","Italy","US","Brazil","India","India","US","US","US","Canada","US","US","Nigeria","Myanmar","Kenya","US","Canada","Canada","US","South Korea"],["Controlled before-and-after study","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Controlled before-and-after study","Randomized controlled trial (RCT)","Non-randomized controlled trial","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial"],["Yes","No","Yes","No","No","Yes","Yes","No","Yes","Yes","Yes","No","Yes","No","No","Yes","No","No","No","Yes","No","Yes","No","No","No","Yes","No","No","No","No","No","No","No","No","No","Yes","No","Yes","No","Yes","No","No","No","Yes","No","No","No"],["Multi-faceted","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Training course or session","Messaging materials","Training course or session","Training course or session","Messaging materials","Training course or session","Training course or session","Training course or session","Training course or session","Multi-faceted","Messaging materials","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Messaging materials","Training course or session","Consulting services","Multi-faceted","Multi-faceted","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Multi-faceted","Training course or session","Multi-faceted","Training course or session","Multi-faceted"],["No","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","No","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","No","Yes","No","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","No","Yes"],["No / not reported","No / not reported","No / not reported","Yes","Yes","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported"],["Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes"],["Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","Yes","Yes","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","Yes","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","Yes","Yes","Yes","No / not reported","No / not reported"],["Not reported","Less than 1 day","Not reported","Less than 1 day","Not reported","1 day or longer","1 day or longer","Less than 1 day","Not reported","1 day or longer","N/a","Not reported","Not reported","N/a","Less than 1 day","Less than 1 day","Less than 1 day","Not reported","Less than 1 day","N/a","1 day or longer","Not reported","1 day or longer","Less than 1 day","1 day or longer","Less than 1 day","Not reported","Not reported","N/a","1 day or longer","N/a","Not reported","Not reported","Not reported","Less than 1 day","Less than 1 day","N/a","Not reported","Less than 1 day","1 day or longer","1 day or longer","Not reported","Less than 1 day","Less than 1 day","1 day or longer","1 day or longer","1 day or longer"],["No intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","Standard/traditional intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention"],["Yes","Yes","No","Yes","No","No","Yes","Yes","No","No","Yes","Yes","Yes","No","Yes","No","Yes","Yes","No","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","No","No","No","No","Yes"],["No","Yes","Yes","No","No","No","Yes","No","No","No","No","No","No","Yes","No","No","Yes","Yes","No","No","No","Yes","No","No","No","No","No","Yes","No","No","No","No","No","Yes","No","No","No","Yes","Yes","No","Yes","No","No","No","No","No","No"],["No","Yes","No","No","No","No","Yes","No","No","No","No","No","No","No","Yes","No","No","No","No","No","No","Yes","No","Yes","No","Yes","Yes","Yes","No","Yes","No","Yes","Yes","Yes","No","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","No","No","No","No"],["Yes","No","No","No","Yes","Yes","No","No","Yes","Yes","No","No","No","No","No","Yes","No","No","Yes","No","No","No","Yes","No","No","Yes","No","Yes","No","Yes","Yes","No","No","No","No","No","No","No","Yes","No","Yes","No","No","Yes","Yes","Yes","No"],["No / not specified","Yes","No / not specified","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","No / not specified","No / not specified","Yes","Yes","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Refid<\/th>\n      <th>Author (year)<\/th>\n      <th>Year<\/th>\n      <th>Document type<\/th>\n      <th>Language<\/th>\n      <th>Country<\/th>\n      <th>Study design<\/th>\n      <th>Setting includes restaurants<\/th>\n      <th>Intervention type<\/th>\n      <th>Intervention content described<\/th>\n      <th>Intervention informed by theory<\/th>\n      <th>Intervention informed by research<\/th>\n      <th>Stakeholder engagement used<\/th>\n      <th>Intervention duration<\/th>\n      <th>Comparison group<\/th>\n      <th>Outcome - knowledge<\/th>\n      <th>Outcome - attitudes<\/th>\n      <th>Outcome - behaviour<\/th>\n      <th>Outcome - inspection scores<\/th>\n      <th>Collection tool pre-tested<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":[0,1,2,3,4]},{"name":"Refid","targets":0},{"name":"Author (year)","targets":1},{"name":"Year","targets":2},{"name":"Document type","targets":3},{"name":"Language","targets":4},{"name":"Country","targets":5},{"name":"Study design","targets":6},{"name":"Setting includes restaurants","targets":7},{"name":"Intervention type","targets":8},{"name":"Intervention content described","targets":9},{"name":"Intervention informed by theory","targets":10},{"name":"Intervention informed by research","targets":11},{"name":"Stakeholder engagement used","targets":12},{"name":"Intervention duration","targets":13},{"name":"Comparison group","targets":14},{"name":"Outcome - knowledge","targets":15},{"name":"Outcome - attitudes","targets":16},{"name":"Outcome - behaviour","targets":17},{"name":"Outcome - inspection scores","targets":18},{"name":"Collection tool pre-tested","targets":19}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'70%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'70%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'70%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'70%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'70%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'70%'});\nvar value=data[11]; $(this.api().cell(row, 11).node()).css({'font-size':'70%'});\nvar value=data[12]; $(this.api().cell(row, 12).node()).css({'font-size':'70%'});\nvar value=data[13]; $(this.api().cell(row, 13).node()).css({'font-size':'70%'});\nvar value=data[14]; $(this.api().cell(row, 14).node()).css({'font-size':'70%'});\nvar value=data[15]; $(this.api().cell(row, 15).node()).css({'font-size':'70%'});\nvar value=data[16]; $(this.api().cell(row, 16).node()).css({'font-size':'70%'});\nvar value=data[17]; $(this.api().cell(row, 17).node()).css({'font-size':'70%'});\nvar value=data[18]; $(this.api().cell(row, 18).node()).css({'font-size':'70%'});\nvar value=data[19]; $(this.api().cell(row, 19).node()).css({'font-size':'70%'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Now we can produce some summary statistics and tabulations of the variables and organize them into a table to present in our results.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># First convert Year variable to numeric</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Young_2019_chart <span class="ot">&lt;-</span> Young_2019_chart <span class="sc">|&gt;</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Year =</span> <span class="fu">as.numeric</span>(Year))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Display preferences</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_gtsummary_language</span>(<span class="st">"en"</span>, <span class="at">big.mark =</span> <span class="st">""</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create and display summary table</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Young_2019_summary <span class="ot">&lt;-</span> Young_2019_chart <span class="sc">|&gt;</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Refid, <span class="sc">-</span><span class="st">"Author (year)"</span>) <span class="sc">|&gt;</span>  <span class="co"># Remove Refid and author (year) columns from summary</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(<span class="at">type =</span> Year <span class="sc">~</span> <span class="st">"continuous"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">statistic =</span> Year <span class="sc">~</span> <span class="st">"{median} ({min}-{max})"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">sort =</span> <span class="fu">list</span>(<span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="st">"frequency"</span>),</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">digits =</span> <span class="fu">list</span>(<span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Young_2019_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<div id="shteasphyi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#shteasphyi table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#shteasphyi thead, #shteasphyi tbody, #shteasphyi tfoot, #shteasphyi tr, #shteasphyi td, #shteasphyi th {
+  border-style: none;
+}
+
+#shteasphyi p {
+  margin: 0;
+  padding: 0;
+}
+
+#shteasphyi .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#shteasphyi .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#shteasphyi .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#shteasphyi .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#shteasphyi .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#shteasphyi .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shteasphyi .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#shteasphyi .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#shteasphyi .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#shteasphyi .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#shteasphyi .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#shteasphyi .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#shteasphyi .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#shteasphyi .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#shteasphyi .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#shteasphyi .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#shteasphyi .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#shteasphyi .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#shteasphyi .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shteasphyi .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#shteasphyi .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#shteasphyi .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#shteasphyi .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shteasphyi .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#shteasphyi .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#shteasphyi .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shteasphyi .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shteasphyi .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#shteasphyi .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shteasphyi .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#shteasphyi .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shteasphyi .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#shteasphyi .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shteasphyi .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#shteasphyi .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shteasphyi .gt_left {
+  text-align: left;
+}
+
+#shteasphyi .gt_center {
+  text-align: center;
+}
+
+#shteasphyi .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#shteasphyi .gt_font_normal {
+  font-weight: normal;
+}
+
+#shteasphyi .gt_font_bold {
+  font-weight: bold;
+}
+
+#shteasphyi .gt_font_italic {
+  font-style: italic;
+}
+
+#shteasphyi .gt_super {
+  font-size: 65%;
+}
+
+#shteasphyi .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#shteasphyi .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#shteasphyi .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#shteasphyi .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#shteasphyi .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#shteasphyi .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#shteasphyi .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header gt_col_headings">
+<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="<strong>N = 47</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 47</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Year</td>
+<td class="gt_row gt_center" headers="stat_0">2010 (1979-2017)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Document type</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Journal article</td>
+<td class="gt_row gt_center" headers="stat_0">35 (74.5%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Thesis</td>
+<td class="gt_row gt_center" headers="stat_0">12 (25.5%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Language</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;English</td>
+<td class="gt_row gt_center" headers="stat_0">45 (95.7%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Italian</td>
+<td class="gt_row gt_center" headers="stat_0">1 (2.1%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Korean</td>
+<td class="gt_row gt_center" headers="stat_0">1 (2.1%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Country</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;US</td>
+<td class="gt_row gt_center" headers="stat_0">22 (46.8%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Canada</td>
+<td class="gt_row gt_center" headers="stat_0">7 (14.9%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;India</td>
+<td class="gt_row gt_center" headers="stat_0">3 (6.4%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;South Korea</td>
+<td class="gt_row gt_center" headers="stat_0">3 (6.4%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Brazil</td>
+<td class="gt_row gt_center" headers="stat_0">2 (4.3%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;UK</td>
+<td class="gt_row gt_center" headers="stat_0">2 (4.3%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Bahrain</td>
+<td class="gt_row gt_center" headers="stat_0">1 (2.1%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Iran</td>
+<td class="gt_row gt_center" headers="stat_0">1 (2.1%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Italy</td>
+<td class="gt_row gt_center" headers="stat_0">1 (2.1%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Kenya</td>
+<td class="gt_row gt_center" headers="stat_0">1 (2.1%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Malaysia</td>
+<td class="gt_row gt_center" headers="stat_0">1 (2.1%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Myanmar</td>
+<td class="gt_row gt_center" headers="stat_0">1 (2.1%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Nigeria</td>
+<td class="gt_row gt_center" headers="stat_0">1 (2.1%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Saudi Arabia</td>
+<td class="gt_row gt_center" headers="stat_0">1 (2.1%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Study design</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Controlled before-and-after study</td>
+<td class="gt_row gt_center" headers="stat_0">19 (40.4%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Randomized controlled trial (RCT)</td>
+<td class="gt_row gt_center" headers="stat_0">18 (38.3%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Non-randomized controlled trial</td>
+<td class="gt_row gt_center" headers="stat_0">10 (21.3%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Setting includes restaurants</td>
+<td class="gt_row gt_center" headers="stat_0">16 (34.0%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Intervention type</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Training course or session</td>
+<td class="gt_row gt_center" headers="stat_0">31 (66.0%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Multi-faceted</td>
+<td class="gt_row gt_center" headers="stat_0">11 (23.4%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Messaging materials</td>
+<td class="gt_row gt_center" headers="stat_0">4 (8.5%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Consulting services</td>
+<td class="gt_row gt_center" headers="stat_0">1 (2.1%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Intervention content described</td>
+<td class="gt_row gt_center" headers="stat_0">36 (76.6%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Intervention informed by theory</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;No / not reported</td>
+<td class="gt_row gt_center" headers="stat_0">40 (85.1%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Yes</td>
+<td class="gt_row gt_center" headers="stat_0">7 (14.9%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Intervention informed by research</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Yes</td>
+<td class="gt_row gt_center" headers="stat_0">35 (74.5%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;No / not specified</td>
+<td class="gt_row gt_center" headers="stat_0">12 (25.5%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Stakeholder engagement used</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;No / not reported</td>
+<td class="gt_row gt_center" headers="stat_0">30 (63.8%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Yes</td>
+<td class="gt_row gt_center" headers="stat_0">17 (36.2%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Intervention duration</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Not reported</td>
+<td class="gt_row gt_center" headers="stat_0">15 (31.9%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Less than 1 day</td>
+<td class="gt_row gt_center" headers="stat_0">14 (29.8%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1 day or longer</td>
+<td class="gt_row gt_center" headers="stat_0">12 (25.5%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;N/a</td>
+<td class="gt_row gt_center" headers="stat_0">6 (12.8%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Comparison group</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;No intervention</td>
+<td class="gt_row gt_center" headers="stat_0">39 (83.0%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Standard/traditional intervention</td>
+<td class="gt_row gt_center" headers="stat_0">8 (17.0%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Outcome - knowledge</td>
+<td class="gt_row gt_center" headers="stat_0">32 (68.1%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Outcome - attitudes</td>
+<td class="gt_row gt_center" headers="stat_0">12 (25.5%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Outcome - behaviour</td>
+<td class="gt_row gt_center" headers="stat_0">19 (40.4%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Outcome - inspection scores</td>
+<td class="gt_row gt_center" headers="stat_0">17 (36.2%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Collection tool pre-tested</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Yes</td>
+<td class="gt_row gt_center" headers="stat_0">29 (61.7%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;No / not specified</td>
+<td class="gt_row gt_center" headers="stat_0">18 (38.3%)</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="2" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Median (Minimum-Maximum); n (%)</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<p>We can further adjust the settings and presentation of the table as needed, see the <a href="https://epirhandbook.com/en/descriptive-tables.html#tbl_gt">Epi R Handbook</a> section on the <strong>gtsummary package</strong> for more information. We can also copy and paste our table from the HTML viewer in RStudio into a Word document for easy editing and inclusion in our report.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Flow Chart and Article Summary Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using the systematic reviews you identified in previous weeks related to your thesis topic, review the article to examine how they displayed their <strong>flow chart</strong> and <strong>article summary data</strong>. Consider the following questions:</p>
+<ul>
+<li>How does the flow chart compare to the PRIMSA template shown above?</li>
+<li>What format is used for the article summary information?</li>
+<li>Are any important article characteristics missing?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="homework" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="homework"><span class="header-section-number">4.6</span> Homework</h2>
+<p>Students will be assigned a risk-of-bias <em>domain</em> from <a href="5_bias.html" class="quarto-xref"><span>Chapter 5</span></a> to review and present in class next week. The bias domains to be assigned include:</p>
 <ul>
 <li>Bias arising from the randomization process</li>
 <li>Bias due to deviations from intended interventions</li>
@@ -1696,11 +2531,15 @@ Article Characterization Exercise
 <li>Risk of bias arising from measurement of the exposure</li>
 <li>Risk of bias in selection of participants into the study</li>
 <li>Risk of bias due to post-exposure interventions</li>
+<li>Assessing methodological limitations of qualitative evidence</li>
 </ul>
-<p>You can read in detail about the first five domains in the <a href="https://drive.google.com/file/d/19R9savfPdCHC8XLz2iiMvL_71lPJERWK/view?usp=sharing">Cochrane RCT risk-of-bias tool guidance document</a>. Information on the other four domains can be found in the <a href="https://drive.google.com/file/d/1bcOVMna3CJJXpsIm5vobFJMP0-13CW8Q/view?usp=sharing">ROBINS-E tool for cohort studies</a>.</p>
+<p>You can read in detail about the first five domains in the <a href="https://drive.google.com/file/d/19R9savfPdCHC8XLz2iiMvL_71lPJERWK/view?usp=sharing">Cochrane RCT risk-of-bias tool guidance document</a>. Information on the other four domains can be found in the <a href="https://drive.google.com/file/d/1bcOVMna3CJJXpsIm5vobFJMP0-13CW8Q/view?usp=sharing">ROBINS-E tool for cohort studies</a>. For the qualitative methodological assessment, details can be found starting in <a href="https://doi.org/10.1002/cesm.12058">section 4.4 of this article describing the CAMELOT tool</a>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-bartlettSystematicReviewMetaanalysis2019" class="csl-entry" role="listitem">
+Bartlett, Larissa, Angela Martin, Amanda L. Neil, Kate Memish, Petr Otahal, Michelle Kilpatrick, and Kristy Sanderson. 2019. <span>“A Systematic Review and Meta-Analysis of Workplace Mindfulness Training Randomized Controlled Trials.”</span> <em>Journal of Occupational Health Psychology</em> 24: 108–26. <a href="https://doi.org/10.1037/ocp0000146">https://doi.org/10.1037/ocp0000146</a>.
+</div>
 <div id="ref-hamelGuidanceUsingArtificial2021" class="csl-entry" role="listitem">
 Hamel, C., M. Hersi, S. E. Kelly, A. C. Tricco, Sharon Straus, G. Wells, B. Pham, and B. Hutton. 2021. <span>“Guidance for Using Artificial Intelligence for Title and Abstract Screening While Conducting Knowledge Syntheses.”</span> <em>BMC Medical Research Methodology</em> 21 (1): 285. <a href="https://doi.org/10.1186/s12874-021-01451-2">https://doi.org/10.1186/s12874-021-01451-2</a>.
 </div>
