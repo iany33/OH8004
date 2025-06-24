@@ -5,14 +5,13 @@ webr:
 
 # Meta-Analysis Practice {#sec-practice}
 
-This section provides an interactive template to practice conducting meta-analysis. For this exercise, we will use study data from a systematic review of the association between gardening and health outcomes [@sogaGardeningBeneficialHealth2017]. 
+This section provides an interactive template to practice conducting meta-analysis. For this exercise, we will use study data from a systematic review of the association between gardening and health outcomes [@sogaGardeningBeneficialHealth2017].
 
 ## Import the Dataset
 
 As a first step, we will import the dataset and examine it.
 
 ```{r}
-#| echo: false
 #| warning: false
 library(DT)
 library(rio)
@@ -27,7 +26,6 @@ data |> datatable(
                            targets = 0:4)))) |> 
   formatStyle(columns = colnames(data), fontSize = '70%')
 ```
-
 
 ```{webr-r}
 #| context: setup
@@ -76,7 +74,7 @@ meta |> forest(sortvar = TE,
 
 ## Conduct Sensitivity Analysis
 
-Reproduce the meta-analysis using a different method of calculating $\tau^2$ and compare the results.  
+Reproduce the meta-analysis using a different method of calculating $\tau^2$ and compare the results.
 
 ```{webr-r}
 meta2 <- update(meta, method.tau = "__") 
@@ -91,7 +89,6 @@ data.frame(Method = c("REML", "__"),
 ## Conduct a Subgroup Analysis
 
 Now try filtering the analysis to two or three different health/wellbeing outcomes and conduct a subgroup analysis on the outcome type. How does this change the results?
-
 
 ```{webr-r}
 meta3 <- data |> 
@@ -115,11 +112,9 @@ meta3 <- data |>
 summary(meta3)
 ```
 
-
 ## Conduct a Meta-Regression
 
 Now try conducting a meta-regression on two specific outcomes, depression and stress, to see how the intervention type variable (therapy or non-therapy) affected the results across studies. Try again using the comparison type variable instead.
-
 
 ```{webr-r}
 meta4 <- data |> 
@@ -143,7 +138,6 @@ summary(meta4)
 metareg(meta4, ~intervention_type)
 ```
 
-
 ## Conduct a Publication Bias Assessment
 
 Now, using the same meta-analysis of the depression and stress outcomes combined, try producing a funnel plot. Additionally, conduct a publication bias test using the Pustejovsky option (given the SMD measure being used). Is there evidence of possible publication bias?
@@ -166,7 +160,6 @@ metabias(meta4, method.bias = "Pustejovsky")
 
 Now conduct a trim-and-fill analysis to see the impact of possible publication bias.
 
-
 ```{webr-r}
 meta4_trim <- trimfill(meta4)
 meta4_trim
@@ -178,7 +171,3 @@ legend(x = 0, y = 0.01,
        legend = c("P < 0.1", "P < 0.05", "P < 0.01"),
        fill = col.contour)
 ```
-
-
-
-
