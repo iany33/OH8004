@@ -62,9 +62,9 @@ Hartmann_meta <- Hartmann_2018 |>
           sm = "RR",
           method = "MH", 
           random = TRUE,
-          fixed = FALSE, 
+          common = FALSE, 
           method.tau = "PM",
-          hakn = TRUE,
+          method.random.ci = "HK",
           MH.exact = TRUE,
           subgroup = treatment,  # specify our subgroup variable
           tau.common = FALSE,    # calculate tau separately for each subgroup
@@ -88,9 +88,9 @@ Hartmann_meta <- Hartmann_2018 |>
           sm = "RR",
           method = "MH", 
           random = TRUE,
-          fixed = FALSE, 
+          common = FALSE, 
           method.tau = "PM",
-          hakn = TRUE,
+          method.random.ci = "HK",
           MH.exact = TRUE,
           subgroup = treatment,  # specify our subgroup variable
           tau.common = FALSE,    # calculate tau separately for each subgroup
@@ -155,9 +155,9 @@ Bradt_meta <- Bradt_2021 |>
            studlab = study,
            sm = "MD", 
            random = TRUE,
-           fixed = FALSE,
+           common = FALSE,
            method.tau = "REML",
-           hakn = TRUE, 
+           method.random.ci = "HK",
            title = "Music Intervention and Anxiety")
 
 Bradt_reg <- metareg(Bradt_meta, ~year)
@@ -219,9 +219,9 @@ Young_2019_meta <- Young_2019 |>
           studlab = author_year,
           sm = "SMD", 
           random = TRUE,
-          fixed = FALSE,
+          common = FALSE,
           method.tau = "REML",
-          hakn = TRUE,
+          method.random.ci = "HK",
           subgroup = ____,  # specify our subgroup variable
           tau.common = ____)
 
@@ -239,9 +239,9 @@ Young_2019_meta <- Young_2019 |>
           studlab = author_year,
           sm = "SMD", 
           random = TRUE,
-          fixed = FALSE,
+          common = FALSE,
           method.tau = "REML",
-          hakn = TRUE,
+          method.random.ci = "HK",
           subgroup = study_design,  # specify our subgroup variable
           tau.common = TRUE,    # calculate tau separately for each subgroup
           title = "Food Handler Training and Behaviour - by Study Design")
@@ -275,9 +275,9 @@ Young_2019_meta2 <- Young_2019 |>
           studlab = author_year,
           sm = "SMD", 
           random = TRUE,
-          fixed = FALSE,
+          common = FALSE,
           method.tau = "REML",
-          hakn = TRUE,
+          method.random.ci = "HK",
           title = "Food Handler Training and Behaviour")
   
 Young_2019_metreg <- metareg(Young_2019_meta2, ~____)
@@ -295,9 +295,9 @@ Young_2019_meta2 <- Young_2019 |>
           studlab = author_year,
           sm = "SMD", 
           random = TRUE,
-          fixed = FALSE,
+          common = FALSE,
           method.tau = "REML",
-          hakn = TRUE,
+          method.random.ci = "HK",
           title = "Food Handler Training and Behaviour")
   
 Young_2019_metreg <- metareg(Young_2019_meta2, ~year)
@@ -336,9 +336,9 @@ Hartmann_meta <- Hartmann_2018 |>
           sm = "RR",
           method = "MH", 
           random = TRUE,
-          fixed = FALSE, 
+          common = FALSE, 
           method.tau = "PM",
-          hakn = TRUE,
+          method.random.ci = "HK",
           MH.exact = TRUE,
           title = "Nicotine Replacement Therapy and Smoking Cessation"
 )

@@ -53,9 +53,9 @@ meta <- data |>
            studlab = author_year,   
            sm = "SMD", 
            random = TRUE,
-           fixed = FALSE, 
+           common = FALSE, 
            method.tau = "REML",
-           hakn = TRUE,   
+           method.random.ci = "HK",
            title = "Association between Gardening and Depression")
 
 summary(meta)
@@ -102,9 +102,9 @@ meta3 <- data |>
            studlab = author_year,   
            sm = "SMD", 
            random = TRUE,
-           fixed = FALSE, 
+           common = FALSE, 
            method.tau = "REML",
-           hakn = TRUE,  
+           method.random.ci = "HK",
            subgroup = outcome,
            tau.common = TRUE,
            title = "____")
@@ -128,9 +128,9 @@ meta4 <- data |>
            studlab = author_year,   
            sm = "SMD", 
            random = TRUE,
-           fixed = FALSE, 
+           common = FALSE, 
            method.tau = "REML",
-           hakn = TRUE,  
+           method.random.ci = "HK",  
            title = "Association between Gardening and Depression and Stress")
 
 summary(meta4)

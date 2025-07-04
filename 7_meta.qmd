@@ -71,18 +71,18 @@ We can see that each study reported the mean anxiety score, SD, and sample size 
 library(meta)
 
 Bradt_meta <- Bradt_2021 |> 
-  metacont(n.e = int_n,         # number in intervention group
-           mean.e = int_mean,   # intervention group mean
-           sd.e = int_sd,       # intervention group SD
-           n.c = con_n,         # number in control group
-           mean.c = con_mean,   # control group mean
-           sd.c = con_sd,       # control group SD
-           studlab = study,     # study ID column
-           sm = "MD",           # summary measure (MD or SMD)
-           random = TRUE,       # conduct random-effects analysis
-           fixed = FALSE,       # do not conduct a fixed-effect analysis
-           method.tau = "REML", # method of calculating tau
-           hakn = TRUE,         # apply the Hartung-Knapp adjustment
+  metacont(n.e = int_n,             # number in intervention group
+           mean.e = int_mean,       # intervention group mean
+           sd.e = int_sd,           # intervention group SD
+           n.c = con_n,             # number in control group
+           mean.c = con_mean,       # control group mean
+           sd.c = con_sd,           # control group SD
+           studlab = study,         # study ID column
+           sm = "MD",               # summary measure (MD or SMD)
+           random = TRUE,           # conduct random-effects analysis
+           common = FALSE,          # do not conduct a fixed-effect analysis
+           method.tau = "REML",     # method of calculating tau
+           method.random.ci = "HK", # apply the Hartung-Knapp adjustment
            title = "Music Intervention and Anxiety"
 )
 
@@ -144,9 +144,9 @@ Hartmann_meta <- Hartmann_2018 |>
           sm = "RR",                # summary measure (OR or RR)
           method = "MH",            # use the Mantel-Haenszel method
           random = TRUE,            # conduct random-effects analysis
-          fixed = FALSE,            # do not conduct a fixed-effect analysis
+          common = FALSE,           # do not conduct a fixed-effect analysis
           method.tau = "PM",        # method of calculating tau
-          hakn = TRUE,              # apply the Hartung-Knapp adjustment
+          method.random.ci = "HK",  # apply the Hartung-Knapp adjustment
           MH.exact = TRUE,          # do not apply a continuity correction
           title = "Nicotine Patch and Smoking Cessation"
 )
@@ -205,8 +205,8 @@ Young_2018_meta <-
            method = "GLMM",
            sm = "PLOGIT",
            random = TRUE,
-           fixed = FALSE,
-           hakn = TRUE, 
+           common = FALSE,
+           method.random.ci = "HK", 
            title = "Food Allergy Training Prevalence"
 )
 
@@ -313,9 +313,9 @@ Young_2019_meta <- Young_2019 |>
           studlab = author_year,
           sm = "SMD", 
           random = TRUE,
-          fixed = FALSE,
+          common = FALSE,
           method.tau = "REML",
-          hakn = TRUE,
+          method.random.ci = "HK",
           title = "Food Handler Training and Behaviour - RCTs"
 )
 
@@ -366,9 +366,9 @@ Young_2019_meta <- Young_2019 |>
           studlab = author_year,
           sm = "SMD", 
           random = TRUE,
-          fixed = FALSE,
+          common = FALSE,
           method.tau = "REML",
-          hakn = TRUE,
+          method.random.ci = "HK",
           title = "Food Handler Training and Behaviour - RCTs"
 )
 
@@ -386,9 +386,9 @@ Young_2019_meta2 <- Young_2019 |>
           studlab = author_year,
           sm = "SMD", 
           random = TRUE,
-          fixed = FALSE,
+          common = FALSE,
           method.tau = "REML",
-          hakn = TRUE,
+          method.random.ci = "HK",
           title = "Food Handler Training and Inspection Scores - NRTs"
 )
 
