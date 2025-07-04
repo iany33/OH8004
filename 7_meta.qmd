@@ -68,7 +68,7 @@ Bradt_2021 |> datatable(
 We can see that each study reported the mean anxiety score, SD, and sample size in each comparison group. Because all studies measured the outcome on the same scale, we can calculate a raw mean difference (MD). For continuous data, we will use the `metacont` function.
 
 ```{webr-r}
-library(meta)
+webr::install(meta)
 
 Bradt_meta <- Bradt_2021 |> 
   metacont(n.e = int_n,             # number in intervention group
