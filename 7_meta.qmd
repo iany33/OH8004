@@ -1,6 +1,10 @@
 ---
 webr:
   packages: ['dplyr', 'meta']
+  repos:
+    - https://astamm.r-universe.dev
+    - https://cloud.r-project.org
+    - https://repo.r-wasm.org
 ---
 
 # Meta-Analysis and Qualitative Synthesis {#sec-meta}
