@@ -5,7 +5,7 @@ webr:
 
 # Meta-Analysis and Qualitative Synthesis {#sec-meta}
 
-This section will cover methods of **combining measures of effect** together to calculate an overall average or pooled meta-analysis estimate. When conducting a random-effects meta-analysis, it is important to quantify and explore the **between-study heterogeneity**, or differences in the effect sizes across studies that are due to study differences compared to sampling error. We display the results of a meta-analysis using a **forest plot** figure to facilitate interpretation and visualization of effects, variation, and study weights. We will also briefly consider methods for synthesis of **qualitative research**. 
+This section will cover methods of **combining measures of effect** together to calculate an overall average or pooled meta-analysis estimate. When conducting a random-effects meta-analysis, it is important to quantify and explore the **between-study heterogeneity**, or differences in the effect sizes across studies that are due to study differences compared to sampling error. We display the results of a meta-analysis using a **forest plot** figure to facilitate interpretation and visualization of effects, variation, and study weights. We will also briefly consider methods for synthesis of **qualitative research**.
 
 ![](images/meme_heterogeneity.jpg)
 
@@ -156,7 +156,7 @@ summary(Hartmann_meta)
 
 In this analysis, we can see that participants in the intervention group were more likely to continue to abstain from smoking at follow-up compared to those in the control group.
 
-How do the results change, if at all, if we instead do not apply the Hartung-Knapp adjustment? 
+How do the results change, if at all, if we instead do not apply the Hartung-Knapp adjustment?
 :::
 
 ### Prevalence and Incidence Data
@@ -276,7 +276,7 @@ Bradt_meta |> forest(sortvar = TE,        # sort studies by effect size
                     spacing = 0.85)
 ```
 
-::: callout-tip
+::::: callout-tip
 ## Meta-Analysis Exercise
 
 We will load data from the Young et al. [-@youngEffectivenessFoodHandler2019] systematic review and meta-analysis of the effectiveness of food handler training and education interventions. The dataset can be loaded and visualized as per below:
@@ -353,7 +353,6 @@ Young_2019_meta |> forest(sortvar = TE,        # sort studies by effect size
 ```
 :::
 
-
 Now conduct a meta-analysis for the subset of **non-randomized studies and the inspection scores outcome**. Answer the same questions above for this analysis.
 
 ::: panel-tabset
@@ -396,38 +395,35 @@ Young_2019_meta2 <- Young_2019 |>
 summary(Young_2019_meta2)
 ```
 :::
-
-:::
+:::::
 
 ## Qualitative Syntheses
 
-Many of the systematic review methods discussed in the course can similarly be applied to **qualitative syntheses**, with some adaptations. The analysis, or synthesis, stage in particular is very different [@barnett-pageMethodsSynthesisQualitative2009]. The data that is synthesized in such reviews can vary depending on the review objectives and types of evidence included, but is typically themes supported by participant quotes from qualitative research studies (e.g., focus groups, grounded theory studies, etc.) or mixed-method studies. Sometimes, such reviews might also include data from review articles or policy documents to be synthesized into a **narrative synthesis**, which is common for reviews that incorporate multiple types and sources of evidence. 
+Many of the systematic review methods discussed in the course can similarly be applied to **qualitative syntheses**, with some adaptations. The analysis, or synthesis, stage in particular is very different [@barnett-pageMethodsSynthesisQualitative2009]. The data that is synthesized in such reviews can vary depending on the review objectives and types of evidence included, but is typically themes supported by participant quotes from qualitative research studies (e.g., focus groups, grounded theory studies, etc.) or mixed-method studies. Sometimes, such reviews might also include data from review articles or policy documents to be synthesized into a **narrative synthesis**, which is common for reviews that incorporate multiple types and sources of evidence.
 
 One of the more common syntheses approaches for qualitative reviews is called **thematic synthesis** [@thomasMethodsThematicSynthesis2008]. Thomas and Harden [-@thomasMethodsThematicSynthesis2008] describe a three-step process of conducting this analysis, which consists of:
 
--    Line-by-line coding of the findings (e.g., participant quotes and themes) of primary studies
--    Organization and grouping of the codes into related areas, which is used to develop *descriptive themes*
-- Development of *analytical themes*, which aim to go beyond the findings of the original studies and produce overarching themes. 
+-   Line-by-line coding of the findings (e.g., participant quotes and themes) of primary studies
+-   Organization and grouping of the codes into related areas, which is used to develop *descriptive themes*
+-   Development of *analytical themes*, which aim to go beyond the findings of the original studies and produce overarching themes.
 
-The latter step requires some judgement of reviewers and involves making inferences about the mechanisms behind the descriptive themes. 
+The latter step requires some judgement of reviewers and involves making inferences about the mechanisms behind the descriptive themes.
 
 There are other approaches to qualitative synthesis as well, including:
--  **Meta-aggregation**: uses an approach similar to thematic synthesis that aims to generate recommendation statements for policy-makers and practitioners. 
--  **Framework synthesis**: uses a theory or model to guide analysis and interpretation of findings
--  **Meta-ethnography**: a theory-building approach to synthesis
+
+-   **Meta-aggregation**: uses an approach similar to thematic synthesis that aims to generate recommendation statements for policy-makers and practitioners.
+-   **Framework synthesis**: uses a theory or model to guide analysis and interpretation of findings
+-   **Meta-ethnography**: a theory-building approach to synthesis
 
 Meta-aggregation is described by JBI [@lockwoodQualitativeResearchSynthesis2015], while the latter two methods are covered by separate chapters in the [Cochrane-Campbell Handbook for Qualitative Evidence Synthesis](https://training.cochrane.org/cochrane-campbell-handbook-qualitative-evidence-synthesis).
 
 ::: callout-tip
 ### Qualitative Synthesis Exercise
 
-Examine the following qualitative systematic review by Rawlings et al. [-@rawlingsExploringAdultsExperiences2019] that investigated the [perceptions and experiences of sedentary behaviour in adults](https://link.springer.com/article/10.1186/s12889-019-7365-1). 
+Examine the following qualitative systematic review by Rawlings et al. [-@rawlingsExploringAdultsExperiences2019] that investigated the [perceptions and experiences of sedentary behaviour in adults](https://link.springer.com/article/10.1186/s12889-019-7365-1).
 
--   To what extent did their search differ from that of a standard systematic review? 
+-   To what extent did their search differ from that of a standard systematic review?
 -   What was their process for assessing methodological limitations of the studies?
 -   How did they conduct their synthesis?
 -   How did they report their synthesis results?
 :::
-
-
-
