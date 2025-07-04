@@ -33,7 +33,6 @@ Hartmann_2018 <- read.csv("Hartmann_2018.csv")
 ```
 
 ```{r}
-#| echo: false
 #| warning: false
 library(DT)
 library(rio)
@@ -132,7 +131,6 @@ Bradt_2021 <- read.csv("Bradt_2021.csv")
 ```
 
 ```{r}
-#| echo: false
 #| warning: false
 
 Bradt_2021 <- import(here("assets", "Bradt_2021.xlsx"))
@@ -187,11 +185,10 @@ We will load data from the Young et al. [-@youngEffectivenessFoodHandler2019] sy
 # Load and import dataset
 url <- "https://iany33.github.io/data-repository/Young_2019_ma.csv"
 download.file(url, "Young_2019_ma.csv")
-Young_2019_ma <- read.csv("Young_2019_ma.csv")
+Young_2019 <- read.csv("Young_2019_ma.csv")
 ```
 
 ```{r}
-#| echo: false
 #| warning: false
 # First load necessary packages
 
@@ -215,7 +212,7 @@ Using these data, first conduct a **subgroup analysis** to examine the differenc
 ### Code Editor
 
 ```{webr-r}
-Young_2019_meta <- Young_2019_ma |> 
+Young_2019_meta <- Young_2019 |> 
   filter(outcome == "___") |> 
   metagen(TE = g,
           seTE = g_se,
@@ -235,7 +232,7 @@ Young_2019_meta
 
 ```{webr-r}
 #| read-only: true
-Young_2019_meta <- Young_2019_ma |> 
+Young_2019_meta <- Young_2019 |> 
   filter(outcome == "Behaviour") |> 
   metagen(TE = g,
           seTE = g_se,
@@ -251,7 +248,7 @@ Young_2019_meta <- Young_2019_ma |>
 
 Young_2019_meta
   
-Young_2019_meta|> 
+Young_2019_meta |> 
   forest(prediction = TRUE,
          print.pval.Q = FALSE, 
          leftcols = "author_year",
@@ -271,7 +268,7 @@ Now conduct a meta-regression to examine whether publication year of the study i
 ### Code Editor
 
 ```{webr-r}
-Young_2019_meta2 <- Young_2019_ma |> 
+Young_2019_meta2 <- Young_2019 |> 
   filter(outcome == "Behaviour") |> 
   metagen(TE = g,
           seTE = g_se,
@@ -291,7 +288,7 @@ Young_2019_metreg
 
 ```{webr-r}
 #| read-only: true
-Young_2019_meta2 <- Young_2019_ma |> 
+Young_2019_meta2 <- Young_2019 |> 
   filter(outcome == "Behaviour") |> 
   metagen(TE = g,
           seTE = g_se,

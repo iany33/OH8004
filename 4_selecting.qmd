@@ -183,7 +183,6 @@ In addition to showing a table with a the summary characteristics and PICO/PECO 
 As an illustrative example of calculating a summary tabulation table, we will load some *selected* article characterization data from the relevant articles in Young et al. [-@youngEffectivenessFoodHandler2019].
 
 ```{r}
-#| echo: false
 #| warning: false
 # Display dataset as an interactive table
 library(DT)
