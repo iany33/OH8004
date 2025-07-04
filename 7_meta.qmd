@@ -13,7 +13,7 @@ This section will cover methods of **combining measures of effect** together to 
 
 In the previous chapter, we reviewed the basics of meta-analysis, including differences between fixed-effect and random-effects models. We will now cover procedures for **conducting meta-analysis** for different types of outcome data. All examples will use the [**meta package**](https://cran.r-project.org/web/packages/meta/index.html) in *R*.
 
-The most common method of pooling measures of effect is called the **generic inverse-variance** method, the formula for which was provided in @sec-analysis. In this method, studies are weighted by the inverse of their precision. This method is used for **continuous data** (e.g., mean difference, SMD), and can also be used for **dichotomous data**. It is also the method used when conducting meta-analysis on **pre-calculated measures of effect** (e.g., odds ratios, risk ratios).
+The most common method of pooling measures of effect is called the **generic inverse-variance** method, the formula for which was provided in @sec-extraction. In this method, studies are weighted by the inverse of their precision. This method is used for **continuous data** (e.g., mean difference, SMD), and can also be used for **dichotomous data**. It is also the method used when conducting meta-analysis on **pre-calculated measures of effect** (e.g., odds ratios, risk ratios).
 
 ::: callout-warning
 ### Change-From-Baseline Data
