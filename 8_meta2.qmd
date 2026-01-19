@@ -513,7 +513,8 @@ download.file(url, "Soga_2017.csv")
 data <- read.csv("Soga_2017.csv")
 ```
 
-Now, working in teams, identify one **outcome** from this review and conduct and interpret the following analyses:
+
+Working in teams, identify one **outcome** from this review and conduct and interpret the following analyses:
 
 -  Meta-analysis (using an appropriate summary measure)
 -  Produce a customized forest plot
