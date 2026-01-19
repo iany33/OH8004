@@ -517,9 +517,9 @@ data <- read.csv("Soga_2017.csv")
 Working in teams, identify one **outcome** from this review and conduct and interpret the following analyses:
 
 -  Meta-analysis (using an appropriate summary measure)
--  Produce a customized forest plot
--  Conduct a sub-group anlaysis (by intervention type, comparison type, or participant type)
--  Conduct a publication bias assessment using an appropriate test and visualize using a funnel plot
+-  Customized forest plot
+-  Sub-group analysis (by intervention type, comparison type, or participant type)
+-  Publication bias assessment using a funnel plot and (if appropriate) an appropriate statistical test
 :::
 
 
