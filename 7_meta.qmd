@@ -282,7 +282,7 @@ Bradt_meta |> forest(sortvar = TE,        # sort studies by effect size
                     spacing = 0.85)
 ```
 
-::::: callout-tip
+::: callout-tip
 ## Meta-Analysis Exercise
 
 We will load data from the Young et al. [-@youngEffectivenessFoodHandler2019] systematic review and meta-analysis of the effectiveness of food handler training and education interventions. The dataset can be loaded and visualized as per below:
@@ -348,14 +348,13 @@ Young_2019_meta |> forest(sortvar = TE,         # sort studies by effect size
                     spacing = 0.85)
 ```
 
-
 Now conduct and interpret meta-analyses, including forest plots, for the subsets of:
 
 -   RCTs and the knowledge outcome
 -   RCTs and the inspection scores outcome
 -   Non-randomized studies and the inspection scores outcome
 -   Non-randomized studies and the attitudes outcome
-
+:::
 
 ## Qualitative Syntheses
 
