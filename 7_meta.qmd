@@ -348,7 +348,7 @@ Young_2019_meta |> forest(sortvar = TE,         # sort studies by effect size
                     spacing = 0.85)
 ```
 
-Now conduct and interpret meta-analyses, including forest plots, for the subsets of:
+Now conduct and interpret meta-analyses, including forest plots, for the following subsets:
 
 -   RCTs and the knowledge outcome
 -   RCTs and the inspection scores outcome
