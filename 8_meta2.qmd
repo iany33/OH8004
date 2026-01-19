@@ -206,6 +206,7 @@ Young_2019 |> datatable(
   formatStyle(columns = colnames(Young_2019), fontSize = '70%')
 ```
 
+
 Using these data, first conduct a **subgroup analysis** to examine the difference between RCTs and non-randomized studies for the **behaviour** and **inspcetion scores** outcomes. Given a small number of RCTs, use a common estimate of $\tau^2$.
 
 -   What is the $I^2$ in each subgroup?
