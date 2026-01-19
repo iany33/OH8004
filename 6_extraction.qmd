@@ -68,7 +68,7 @@ $$
 
 The RR and the OR are only similar when the event is rare.
 
-Another possible measure for dichotomous outcomes is the **risk difference** (RD). This measure reflects the difference between the two observed groups risks. The practical significance of the RD depends greatly on the baseline risk of the event in the population. 
+Another possible measure for dichotomous outcomes is the **risk difference** (RD). This measure reflects the difference between the two observed groups risks. The practical significance of the RD depends greatly on the baseline risk of the event in the population.
 
 $$
 \text{RD} = \left(\frac{\text{A}}{N_1}\right)-\left(\frac{\text{C}}{N_2}\right)
@@ -82,11 +82,11 @@ To conduct a meta-analysis of dichotomous data, we typically need one of the fol
 
 ## Continuous Measures
 
-**Continuous outcomes** can theoretically take any value within a specified range. The two most common measures of effect for continuous data are the **mean difference** (MD) and the **standardization mean difference** (SMD). 
+**Continuous outcomes** can theoretically take any value within a specified range. The two most common measures of effect for continuous data are the **mean difference** (MD) and the **standardized mean difference** (SMD).
 
-The **MD** can be used when the outcome is reported on a meaningful scale (e.g., weight in kg, blood pressure in mmHg), and the *same scale is used in all studies*. This measure is easy and intuitive to interpret if possible to calculate. 
+The **MD** can be used when the outcome is reported on a meaningful scale (e.g., weight in kg, blood pressure in mmHg), and the *same scale is used in all studies*. This measure is easy and intuitive to interpret if possible to calculate.
 
-The **SMD** can be used when the studies in a SR measure the same outcome, but in different ways (e.g., different scales). The SMD is calculated by dividing a study's mean difference by its standard deviation (SD) to create an index. There are different SMD metrics, the most common of which is called **Hedges' g**, which uses a pooled SD in the denominator based on outcome data in both groups being compared, and assuming that the SDs of the two groups are similar.  
+The **SMD** can be used when the studies in a SR measure the same outcome, but in different ways (e.g., different scales). The SMD is calculated by dividing a study's mean difference by its standard deviation (SD) to create an index. There are different SMD metrics, the most common of which is called **Hedges' g**, which uses a pooled SD in the denominator based on outcome data in both groups being compared, and assuming that the SDs of the two groups are similar. This [video from the NCCMT](https://www.youtube.com/watch?v=X-UlZ1XE1JI) explains the SMD and how to interpret it.
 
 For continuous data outcomes, we typically require the mean, sample size, and SD in each group to calculate either the MD or SMD. Alternatively, a pre-calculated measure of effect (e.g., MD) and its measure of variability (e.g., standard error) can also be used directly in a meta-analysis.
 
@@ -100,17 +100,17 @@ Some studies will report baseline and post-intervention values (often with diffe
 
 **Ordinal outcomes** occur when there are multiple, ordered categories of an outcome (e.g., low, moderate, and high knowledge levels). As the number of ordinal categories increases, they start to resemble continuous outcomes, and could potentially be analyzed using those methods. If there is an obvious cut-point, the categories could be combined and used in a dichotomous analysis. Otherwise, if the same categories are used across all studies, this outcome can be analyzed using a proportional odds model.
 
-**Count outcomes** occur when the outcome can happen multiple times for each participant. These are usually expressed as **rates** (e.g., number of events per person-year), with the comparison of two rates being expressed as a rate ratio. The most common situation involving rate data is that studies directly report rate ratios and a measure of variability (e.g., standard error) from regression models, which can be extracted and combined in a meta-analysis. 
+**Count outcomes** occur when the outcome can happen multiple times for each participant. These are usually expressed as **rates** (e.g., number of events per person-year), with the comparison of two rates being expressed as a rate ratio. The most common situation involving rate data is that studies directly report rate ratios and a measure of variability (e.g., standard error) from regression models, which can be extracted and combined in a meta-analysis.
 
 **Time-to-event outcomes** refer to the measurement of the time elapsed until some event (e.g., death) is experienced (e.g., survival data). These data are usually analyzed in studies using survival analysis and expressed as a **hazard ratio** (HR). Hazard measures instantaneous risk and can change continuously over time. As above, studies usually report the HR and a measure of variability which can be extracted directly and included in a meta-analysis.
 
 ::: callout-tip
 ## Data Extraction Exercise
 
-Consider again the Young et al. [-@youngEffectivenessFoodHandler2019] systematic review about the effectiveness of food handler training interventions. [Using three example articles](https://drive.google.com/open?id=1a6ozc5hmlMo7Ff1qG3O7oLjJIHVzMq9D&usp=drive_fs), identify the outcomes of interest in each study and which data should be extracted. 
+Consider again the Young et al. [-@youngEffectivenessFoodHandler2019] systematic review about the effectiveness of food handler training interventions. [Using three example articles](https://drive.google.com/open?id=1a6ozc5hmlMo7Ff1qG3O7oLjJIHVzMq9D&usp=drive_fs), identify the outcomes of interest in each study and which data should be extracted.
 
-- How many relevant outcomes are reported in each study?
-- Are any important outcomes or values (e.g., measures of variability) missing? 
+-   How many relevant outcomes are reported in each study?
+-   Are any important outcomes or values (e.g., measures of variability) missing?
 :::
 
 ## Data Required for Meta-Analysis
@@ -178,22 +178,7 @@ To calculate the t value from a P value (from a t-test), we can use the `qt` fun
 qt(p=0.03/2, df=40-2, lower.tail=FALSE)
 ```
 
-Now try calculating the t value from a study with a P value of 0.001 and a sample size of 150 participants in each group.
-
-::: panel-tabset
-### Code Editor
-
-```{webr-r}
-qt(p=___/2, df=___-2, lower.tail=FALSE)
-```
-
-### Answer
-
-```{webr-r}
-#| read-only: true
-qt(p=0.001/2, df=300-2, lower.tail=FALSE)
-```
-:::
+Now try calculating the t value from a study with a P value of 0.001 and a sample size of 150 participants in each group. What t value corresponds with this information?
 
 To convert from a t value to a SE, we can use the following formula:
 
@@ -288,8 +273,7 @@ Assuming an overall true effect of $\theta$, under a **fixed-effect** model, the
 
 $$
 \hat{\theta_j} = \theta + \epsilon_j
-$$ 
-Studies are then **weighted** by the *inverse* of the variance (which is equal to the SE squared). For study *j*, the weight would be calculated as follows:
+$$ Studies are then **weighted** by the *inverse* of the variance (which is equal to the SE squared). For study *j*, the weight would be calculated as follows:
 
 $$
 {W_j} = \frac{1}{SE_j^2}
@@ -337,6 +321,3 @@ Using the systematic review article you identified earlier in the course, review
 -   If a random-effects model was used, which method was used to estimate $\tau^2$?
 -   Were any sensitivity analyses conducted related to the data conversions or assumptions made?
 :::
-
-
-

@@ -335,73 +335,27 @@ Examine and interpret the results.
 -   How much heterogeneity is present? Is it significantly different than zero?
 -   How does the result change if you use a different method of calculating $\tau^2$?
 
-Now create a customized forest plot to visualize the results and include the prediction interval. How would you interpret the interval?
-
-::: panel-tabset
-### Code Editor
+We can now create a customized forest plot to visualize the results and include the prediction interval. How would you interpret the interval?
 
 ```{webr-r}
-Young_2019_meta |> forest()
-```
-
-### Answer
-
-```{webr-r}
-#| read-only: true
-Young_2019_meta |> forest(sortvar = TE,        # sort studies by effect size
-                    prediction = TRUE,         # add prediction interval
-                    print.tau2 = FALSE,        # do not show tau2 at the bottom
-                    leftcols = "author_year",        # show only the study ID on the left
-                    leftlabs = "Author (Year)",        # relabel study column
-                    col.diamond = "steelblue", # colour customization
+Young_2019_meta |> forest(sortvar = TE,         # sort studies by effect size
+                    prediction = TRUE,          # add prediction interval
+                    print.tau2 = FALSE,         # do not show tau2 at the bottom
+                    leftcols = "author_year",   # show only the study ID on the left
+                    leftlabs = "Author (Year)", # relabel study column
+                    col.diamond = "steelblue",  # colour customization
                     col.predict = "darkblue",
                     spacing = 0.85)
 ```
-:::
 
-Now conduct a meta-analysis for the subset of **non-randomized studies and the inspection scores outcome**. Answer the same questions above for this analysis.
 
-::: panel-tabset
-### Code Editor
+Now conduct and interpret meta-analyses, including forest plots, for the subsets of:
 
-```{webr-r}
-Young_2019_meta <- Young_2019 |> 
-  filter(study_design == "RCT" & outcome == "Behaviour") |>
-  metagen(TE = g,
-          seTE = g_se,
-          studlab = author_year,
-          sm = "SMD", 
-          random = TRUE,
-          common = FALSE,
-          method.tau = "REML",
-          method.random.ci = "HK",
-          title = "Food Handler Training and Behaviour - RCTs"
-)
+-   RCTs and the knowledge outcome
+-   RCTs and the inspection scores outcome
+-   Non-randomized studies and the inspection scores outcome
+-   Non-randomized studies and the attitudes outcome
 
-summary(Young_2019_meta)
-```
-
-### Answer
-
-```{webr-r}
-#| read-only: true
-Young_2019_meta2 <- Young_2019 |> 
-  filter(study_design == "Non-randomized study" & outcome == "Inspection") |>
-  metagen(TE = g,
-          seTE = g_se,
-          studlab = author_year,
-          sm = "SMD", 
-          random = TRUE,
-          common = FALSE,
-          method.tau = "REML",
-          method.random.ci = "HK",
-          title = "Food Handler Training and Inspection Scores - NRTs"
-)
-
-summary(Young_2019_meta2)
-```
-:::
-:::::
 
 ## Qualitative Syntheses
 
