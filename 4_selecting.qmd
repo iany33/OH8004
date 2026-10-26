@@ -96,11 +96,13 @@ Systematic management programs, such as **Covidence**, automatically calculate a
 
 ![](images/covidence_kappa.png)
 
-### Machine Learning for Relevance Screening
+### Machine Learning and AI Tools for Relevance Screening
 
 Many systematic management programs have implemented or are developing **machine learning tools** to semi-automate the relevance screening process. The tools work by prioritizing the abstracts that are most likely to be included (*screening prioritization*), and suggesting a percentage that can be "safely" excluded (*screening truncation*), which can both enhance review efficiency. The screening truncation process usually uses a stopping rule or threshold, such as 95% estimated recall, after which point the review team can decide not to review the remaining references or to use a modified process (e.g., only one reviewer).
 
-These tools requires careful training and pilot testing on a subset of abstracts (e.g., 2% of total abstracts) to ensure the algorithm can make more accurate predictions. Research has shown that such machine learning tools can perform with high accuracy and reliability, and can result in substantial time savings for review teams [@hamelEvaluationDistillerSRMachine2020; @tsouMachineLearningScreening2020]. [Recent guidance is available](https://doi.org/10.1186/s12874-021-01451-2) for reviewers who are interested to adopt these tools in their review [@hamelGuidanceUsingArtificial2021].
+These tools requires careful training and pilot testing on a subset of abstracts (e.g., 2% of total abstracts) to ensure the algorithm can make more accurate predictions. Research has shown that such machine learning tools can perform with high accuracy and reliability, and can result in substantial time savings for review teams [@hamelEvaluationDistillerSRMachine2020; @tsouMachineLearningScreening2020]. 
+
+Recent guidance is available on the [Responsible Use of AI in Evidence SynthEsis (RAISE)](https://osf.io/fwaud/overview). The **RAISE** recommendations are supported by multiple international organizations involved in knowledge synthesis [@flemyngPositionStatementArtificial2025]. Additionally, the Cochrane Collaboration is currently conducting a study called the **Cochrane Evaluation of (Semi-)Automated Review Methods (CESAR)**[@gartlehnerCochraneEvaluationSemiautomated2026]. The study is evaluating the performance of multiple AI tools against human-only process for relevance screening, full-text screening, and data extraction using and adaptive approach. 
 
 ::: callout-tip
 ### Relevance Screening Exercise
@@ -224,7 +226,7 @@ Young_2019_summary <- Young_2019_chart |>
 Young_2019_summary
 ```
 
-We can further adjust the settings and presentation of the table as needed, see the [Epi R Handbook](https://epirhandbook.com/en/descriptive-tables.html#tbl_gt) section on the **gtsummary package** for more information. We can also copy and paste our table from the HTML viewer in RStudio into a Word document for easy editing and inclusion in our report.
+We can further adjust the settings and presentation of the table as needed, see the [Epi R Handbook](https://epirhandbook.com/en/new_pages/tables_descriptive.html) section on the **gtsummary package** for more information. We can also copy and paste our table from the HTML viewer in RStudio into a Word document for easy editing and inclusion in our report.
 :::
 
 ::: callout-tip
@@ -240,7 +242,7 @@ Using the systematic reviews you identified in previous weeks related to your th
 
 ## Homework
 
-Students will be assigned a risk-of-bias *domain* from @sec-bias to review and present in class next week. The bias domains to be assigned include:
+Students will be assigned a risk-of-bias *domain* from @sec-bias to review and present in class as per the course outline schedule. The bias domains to be assigned include:
 
 -   Bias arising from the randomization process
 -   Bias due to deviations from intended interventions

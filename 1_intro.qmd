@@ -28,12 +28,6 @@ Systematic review **protocols** are critically important to ensure all review st
 
 There is a **reporting standard** for systematic review protocols, called [PRIMSA-P](http://prisma-statement.org/Extensions/Protocols). The reporting checklist is available form the PRISMA-P website as a [PDF](http://prisma-statement.org/documents/PRISMA-P-checklist.pdf) or [Word](http://prisma-statement.org/documents/PRISMA-P-checklist.doc) file. See the published paper and the elaboration document for more information [@moherPreferredReportingItems2015; @shamseerPreferredReportingItems2015].
 
-::: callout-important
-## Important
-
-Your systematic review protocol final assignment must include all relevant PRISMA-P items. The checklist will be used as evaluation criteria.
-:::
-
 It is recommended that protocols of reviews you intend to publish be registered at [PROSPERO](https://www.crd.york.ac.uk/PROSPERO/), an international database of protocols of systematic reviews. This is important reduce the duplication of synthesis efforts. PROSPERO is:
 
 > "An international database of prospectively registered systematic reviews in health and social care, welfare, public health, education, crime, justice, and international development, where there is a health related outcome". 
@@ -60,7 +54,7 @@ The following organizations are important resources for knowledge synthesis rese
 
 - [The Cochrane Collaboration](https://www.cochrane.org/) publishes the [Handbook of Systematic Reviews of Interventions](https://training.cochrane.org/handbook), as well as systematic reviews of various healthcare and related topics in the [Cochrane Library](https://www.cochranelibrary.com/).\
 - [JBI](https://jbi.global/) has published a [Manual for Evidence Synthesis](https://jbi-global-wiki.refined.site/space/MANUAL) of different types of reviews and questions. Of particular note are [critical appraisal tools](https://jbi.global/critical-appraisal-tools) for various types of study designs. 
-- [The McGill Library](https://libraryguides.mcgill.ca/knowledge-syntheses/home) has compiled numerous resources and suggested articles related to the process of conducting a knowledge synthesis.
+- [The McGill Library](https://libraryguides.mcgill.ca/knowledge-syntheses) has compiled numerous resources and suggested articles related to the process of conducting a knowledge synthesis.
 
 ## Homework
 

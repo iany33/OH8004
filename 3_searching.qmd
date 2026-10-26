@@ -6,12 +6,12 @@ The search strategy in a systematic review is critical to ensure that all potent
 
 ## Peer-Reviewed Literature
 
-The most important place to search for potentially relevant studies for a systematic review is **bibliographic databases**. The list of databases accessible through the TMU library [is avialable here](https://learn.library.torontomu.ca/az.php). The selection of which and how many databases to search should be conducted in consultation with a librarian. Some common options include:
+The most important place to search for potentially relevant studies for a systematic review is **bibliographic databases**. The list of databases accessible through the TMU library [is avialable here](https://learn.library.torontomu.ca/az/databases). The selection of which and how many databases to search should be conducted in consultation with a librarian. Some common options include:
 
 -   **MEDLINE**: is publicly accessible through the *PubMed* interface, or the *OVID* interface via the TMU library. It contains \>35 million references for biomedical (including occupational and public health) literature.
 -   **Embase**: is a biomedical database with \>30 million references, hosted by Elsevier.
--   **Scopus**: is a multi-disciplinary database that covers multiple research fields, including all journals indexed in MEDLINE. It covers \>14,000 scholarly sources.
--   **Web of Science**: is another multi-disciplinary database containing references from \>8500 international research journals.
+-   **Scopus**: is a multidisciplinary database that covers multiple research fields, including all journals indexed in MEDLINE. It covers \>14,000 scholarly sources.
+-   **OpenAlex**: is another multidisciplinary database that is free and open source. 
 
 In addition to the above, subject-specific and specialized databases may be useful to search depending on the topic. Examples of these include: **PsycINFO** for psychological literature, **CINAHL** for nursing and allied health literature, **OSH References Collection** for occupational health and safety literature, and **Food Science and Technology Abstracts** for food safety and nutrition literature. There are no specific rules for the number of databases to include, as this will depend on the review question, topic, and other factors, but typically reviews might search 3-7 different databases.
 
@@ -39,7 +39,7 @@ Another example is shown below for an occupational health risk factor review [@e
 
 In addition to the Boolean operators above, you can also consider **proximity** operators, which will search for a word within a certain number of places of another word (e.g., *food adj3 safety* in the OVID platform will search for those terms within three places of other).
 
-Many databases have **controlled vocabulary** (i.e., standardized subject terms) that should also be searched as part of the search strategy in addition to text words (i.e., keywords). In MEDLINE, these are called [**MeSH** terms](https://www.ncbi.nlm.nih.gov/mesh/). Finally, specific limits can be placed on certain search fields, such as publication dates or languages, if desired. The approach to implement such limits varies by database. An [example of implementing a complex search in MEDLINE accessed through OVID is available here](https://hslmcmaster.libguides.com/c.php?g=716883&p=5113578).
+Many databases have **controlled vocabulary** (i.e., standardized subject terms) that should also be searched as part of the search strategy in addition to text words (i.e., keywords). In MEDLINE, these are called [**MeSH** terms](https://www.ncbi.nlm.nih.gov/mesh/). Finally, specific limits can be placed on certain search fields, such as publication dates or languages, if desired. The approach to implement such limits varies by database. An [example of implementing a complex search in MEDLINE accessed through OVID is available here](https://hslmcmaster.libguides.com/srm/databases).
 
 ::: {callout-note}
 ## MeHS Headings Examples
@@ -51,7 +51,13 @@ If using the PubMed interface, you can include a MeSH term in your search by add
 
 For text word searches, you should account for spelling variations and plural forms of words. For example, an asterisk symbol `*` is often used at the end of a word to capture all variant endings of the word (e.g., practice\* will capture variations such as practices, practicing, practiced). Other *wildcard* terms can also be used to capture variant spellings. For example, in OVID, `#` in place of a letter will search for any letter in that spot (e.g., *wom#n* will search for woman and women).
 
-For additional guidance on these different search approaches, see the [McGill Library Knowledge Synthesis Search Guide](https://libraryguides.mcgill.ca/knowledge-syntheses/search-tips).
+
+::: callout-warning
+## Generative AI and Search Terms
+
+Generative AI tools such as ChatGPT and Google Gemini should *not* be used to generate search algorithms for systematic reviews, as they can [fabricate information (e.g., make up fake subject headings and MeSH terms) and can make errors with Boolean logic](https://libraryguides.mcgill.ca/knowledge-syntheses/searching). 
+:::
+
 
 ::: callout-note
 ## Search Algorithm Translation
@@ -73,12 +79,12 @@ Using the article you identified for your homework exercise from the last two we
 
 Once the searches are implemented, the records can be saved as RIS (or other) files and imported into a reference management program, systematic review management program, or de-duplication tool for de-duplication. Some databases have restrictions on how many references can be exported at once, in which case the results will need to be exported in batches. All results should be **documented**, including saving the exact algorithm used in each database, search dates, and number of hits in each database.
 
-Some systematic review management programs (see below) will automatically de-duplicate references (e.g., Covidence). Reference management programs (e.g., Zotero, Mendeley) can also be used for de-duplication, with the de-duplicated file exported and imported into the systematic review management program of choice. Finally, there is an online [**Systematic Review De-duplicator Tool**](https://sr-accelerator.com/#/deduplicator) that can be used for this purpose.
+Some systematic review management programs (see below) will automatically de-duplicate references (e.g., Covidence). Reference management programs (e.g., Zotero, Mendeley) can also be used for de-duplication, with the de-duplicated file exported and imported into the systematic review management program of choice. 
 
 ::: callout-tip
 ## Search Exercise
 
-Using [Scopus via the TMU Library](https://ezproxy.lib.torontomu.ca/login?url=http://www.scopus.com/), conduct an "Advanced document search" by reproducing the following algorithm from Young et al. [-@youngEffectivenessFoodHandler2019].
+Using [Scopus via the TMU Library](https://ezproxy.lib.torontomu.ca/login?url=https://www.scopus.com/), conduct an "Advanced document search" by reproducing the following algorithm from Young et al. [-@youngEffectivenessFoodHandler2019].
 
 `TITLE-ABS-KEY(("food safety" OR "food-borne" OR foodborne OR "food poisoning" OR “food hygiene” OR “safe food” OR HACCP) AND (handler* OR worker* OR employee* OR manager* OR chef* OR cater* OR vendor* OR staff OR service OR business* OR restaurant* OR premise* OR retail) AND (behaviour* OR behavior* OR practice* OR attitude* OR knowledge OR belief* OR perceive* OR perception OR understanding OR violation*) AND (intervention OR train* OR educat* OR course))`
 
@@ -104,21 +110,29 @@ It is increasingly recommended to consider having your search strategy **peer re
 
 ## Review Management
 
-To facilitate the management of the relevance screening and data extraction steps, it is highly recommended to use a systematic review management program. Some commonly used programs include:
+To facilitate the management of the relevance screening and data extraction steps, it is highly recommended to use a systematic review management program. TMU has an institutional subscription to [Covidence](https://learn.library.torontomu.ca/covidence). 
 
--   [Covidence](https://www.covidence.org/)
+Some other commonly used programs include:
+
 -   [DistillerSR](https://www.distillersr.com/products/distillersr-systematic-review-software)
 -   [Rayyan](https://www.rayyan.ai/)
 -   [HubMeta](https://hubmeta.com/)
 -   [CADIMA](https://www.cadima.info/)
 
-Most of these programs require a subscription to use, though some may offer free trials or discounts for students (e.g., Covidence). *HubMeta* and *CADIMA* are currently free to use. Other non-subscription based options could include spreadsheets or online forms (e.g., Google Forms), but these would be challenging to use for larger projects and could be prone to errors.
+*HubMeta* and *CADIMA* are currently free to use. Other non-subscription based options could include spreadsheets or online forms (e.g., Google Forms), but these would be challenging to use for larger projects and could be prone to errors.
 
-An example of a **Covidence** project and interface is shown below. TMU currently does not offer an institutional subscription to Covidence, though this may be provided in future years. Covidence does provide a free trial for students, which allows screening of up to 500 references and up to two reviewers per project. As such, it will be used for your course assignment.
+An example of a **Covidence** project and interface is shown below.
 
 ![](images/covidence.png)
 
+::: callout-tip
+## Covidence Exercise
+
+Set up your your TMU Covidence account by following the [instructions here](https://learn.library.torontomu.ca/covidence). Once you create your account and log-in, click on *Start Demo Review* in the "Your Reviews" area to explore the features available. 
+:::
+
+
 ## Homework
 
-For next week, and to help with preparing your second assignment, identify 1-2 different *seed articles* related to your proposed systematic review topic. Use these seed articles, along with your review question, to identify some keywords and keyword categories required to start building your search algorithm. We will discuss your findings at the start of next week's class. 
+For next week, and to help with preparing your second assignment, identify 1-2 different *seed articles* related to your proposed systematic review topic. Use these seed articles, along with your review question, to identify some keywords and keyword categories required to start building your search algorithm. If desired, you can use this [worksheet](https://libraryguides.mcgill.ca/ld.php?content_id=36775106) to help with this process. We will discuss your findings at the start of next week's class. 
 
