@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OH8004 Knowledge Synthesis in Occupational and Public Health - 4&nbsp; Selecting and Summarizing Studies</title>
+<title>4&nbsp; Selecting and Summarizing Studies – OH8004 Knowledge Synthesis in Occupational and Public Health</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -21,8 +27,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -58,7 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -86,15 +92,16 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./5_bias.html" rel="next">
 <link href="./3_searching.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f07248834697d125d844cdaf4174b45d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -122,13 +129,13 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
 
 <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 
 <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 
-<script src="site_libs/datatables-binding-0.33/datatables.js"></script>
+<script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
 
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 
@@ -138,9 +145,9 @@ div.csl-indent {
 
 <script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
 
-<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
 
-<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.47.0/min/vs/editor/editor.main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -264,6 +271,91 @@ body.quarto-dark .qwebr-button:hover {
   color: #696969;
 }
 
+/* Style the code highlight lines */
+body.quarto-light .qwebr-editor-highlight-line {
+  background-color: lightblue;
+}
+
+body.quarto-dark .qwebr-editor-highlight-line {
+  background-color: darkblue;
+}
+
+/* Style the modal pop-up */
+
+/* The Modal (background) */
+.qwebr-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content */
+.qwebr-modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.qwebr-modal-content-code {
+  max-height: 50vh;
+  min-height: 5vh;
+  overflow: scroll;
+  border: 1px solid #888;
+}
+
+/* The Close Button */
+.qwebr-modal-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.qwebr-modal-close:hover,
+.qwebr-modal-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.qwebr-download-btn {
+  margin-top: 10px;
+  text-decoration: none !important;
+}
+
+/* Styling to download image that is created */
+
+.qwebr-canvas-image {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+
+.qwebr-canvas-image-download-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+figure:hover .qwebr-canvas-image-download-btn {
+  display: block;
+}
 
 /* Custom styling for RevealJS Presentations*/
 
@@ -275,7 +367,7 @@ body.quarto-dark .qwebr-button:hover {
   max-height: 100%;
   margin: 0;
   padding: 0;
-} 
+}
 
 /* Provide space to entries */
 .reveal div.qwebr-output-code-area pre div {
@@ -320,6 +412,16 @@ body.reveal.quarto-dark div.qwebr-console-area {
   overflow: scroll;
 }
 
+iframe.qwebr-output-code-browse {
+  width: 100%;
+
+  /*
+    TODO: How to make the height automatic according to the widget size,
+    or respect the quarto code block options?
+  */
+  min-height: 500px;
+}
+
 </style>
 <script type="module">
 // Document level settings ----
@@ -340,14 +442,14 @@ globalThis.qwebrShowHeaderMessage = false;
 
 // Describe the webR settings that should be used
 globalThis.qwebrCustomizedWebROptions = {
-  "baseURL": "https://webr.r-wasm.org/v0.3.3/",
+  "baseURL": "https://webr.r-wasm.org/v0.6.0/",
   "serviceWorkerUrl": "",
   "homedir": "/home/web_user", 
   "channelType": "ChannelType.Automatic"
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"# Create simulated rating data\nrs_test <- tibble(abstract_id = seq(1:30),\n                  reviewer1 = rep(0:1, each = 15),\n                  reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test, n = Inf)","options":{"context":"interactive","warning":"true","output":"true","out-width":"700px","fig-height":5,"fig-width":7,"comment":"","out-height":"","results":"markup","read-only":"true","message":"true","editor-max-height":"","fig-cap":"","autorun":"false","editor-font-scale":1,"dpi":72,"label":"unnamed-chunk-1","editor-quick-suggestions":"false","classes":""},"id":1},{"code":"library(irr)\n\nkappa2(rs_test[,2:3])","options":{"context":"interactive","warning":"true","output":"true","out-width":"700px","fig-height":5,"fig-width":7,"comment":"","out-height":"","results":"markup","read-only":"true","message":"true","editor-max-height":"","fig-cap":"","autorun":"false","editor-font-scale":1,"dpi":72,"label":"unnamed-chunk-2","editor-quick-suggestions":"false","classes":""},"id":2},{"code":"rs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = rep(0:1, each = 15),\n                   reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","options":{"context":"interactive","warning":"true","output":"true","out-width":"700px","fig-height":5,"fig-width":7,"comment":"","out-height":"","results":"markup","read-only":"false","message":"true","editor-max-height":"","fig-cap":"","autorun":"false","editor-font-scale":1,"dpi":72,"label":"unnamed-chunk-3","editor-quick-suggestions":"false","classes":""},"id":3},{"code":"# Create the updated simulated rating data\nrs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = c(rep(0, times = 15), rep(1, times = 15)),\n                   reviewer2 = c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","options":{"context":"interactive","warning":"true","output":"true","out-width":"700px","fig-height":5,"fig-width":7,"comment":"","out-height":"","results":"markup","read-only":"true","message":"true","editor-max-height":"","fig-cap":"","autorun":"false","editor-font-scale":1,"dpi":72,"label":"unnamed-chunk-4","editor-quick-suggestions":"false","classes":""},"id":4}];
+globalThis.qwebrCellDetails = [{"code":"# Create simulated rating data\nrs_test <- tibble(abstract_id = seq(1:30),\n                  reviewer1 = rep(0:1, each = 15),\n                  reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test, n = Inf)","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"true","results":"markup","warning":"true"}},{"code":"library(irr)\n\nkappa2(rs_test[,2:3])","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"true","results":"markup","warning":"true"}},{"code":"rs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = rep(0:1, each = 15),\n                   reviewer2 = c(rep(0, times = 12), rep(1, times = 16), rep(0, times = 2)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# Create the updated simulated rating data\nrs_test2 <- tibble(abstract_id = seq(1:30),\n                   reviewer1 = c(rep(0, times = 15), rep(1, times = 15)),\n                   reviewer2 = c(rep(0, times = 14), rep(1, times = 15), rep(0, times = 1)))\n\nprint(rs_test2, n = Inf)\n\nkappa2(rs_test2[,2:3])","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"true","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -381,6 +483,41 @@ globalThis.qwebrUpdateStatusHeader = function(message) {
     <span>${message}</span>`;
 }
 
+// Function to return true if element is found, false if not
+globalThis.qwebrCheckHTMLElementExists = function(selector) {
+  const element = document.querySelector(selector);
+  return !!element;
+}
+
+// Function that detects whether reveal.js slides are present
+globalThis.qwebrIsRevealJS = function() {
+  // If the '.reveal .slides' selector exists, RevealJS is likely present
+  return qwebrCheckHTMLElementExists('.reveal .slides');
+}
+
+// Initialize the Quarto sidebar element
+function qwebrSetupQuartoSidebar() {
+  var newSideBarDiv = document.createElement('div');
+  newSideBarDiv.id = 'quarto-margin-sidebar';
+  newSideBarDiv.className = 'sidebar margin-sidebar';
+  newSideBarDiv.style.top = '0px';
+  newSideBarDiv.style.maxHeight = 'calc(0px + 100vh)';
+
+  return newSideBarDiv;
+}
+
+// Position the sidebar in the document
+function qwebrPlaceQuartoSidebar() {
+  // Get the reference to the element with id 'quarto-document-content'
+  var referenceNode = document.getElementById('quarto-document-content');
+
+  // Create the new div element
+  var newSideBarDiv = qwebrSetupQuartoSidebar();
+
+  // Insert the new div before the 'quarto-document-content' element
+  referenceNode.parentNode.insertBefore(newSideBarDiv, referenceNode);
+}
+
 function qwebrPlaceMessageContents(content, html_location = "title-block-header", revealjs_location = "title-slide") {
 
   // Get references to header elements
@@ -400,6 +537,7 @@ function qwebrPlaceMessageContents(content, html_location = "title-block-header"
     monacoScript.after(header);
   }
 }
+
 
 
 function qwebrOffScreenCanvasSupportWarningMessage() {
@@ -507,8 +645,294 @@ function displayStartupMessage(showStartupMessage, showHeaderMessage) {
   qwebrPlaceMessageContents(quartoTitleMeta); 
 }
 
+function qwebrAddCommandHistoryModal() {
+  // Create the modal div
+  var modalDiv = document.createElement('div');
+  modalDiv.id = 'qwebr-history-modal';
+  modalDiv.className = 'qwebr-modal';
+
+  // Create the modal content div
+  var modalContentDiv = document.createElement('div');
+  modalContentDiv.className = 'qwebr-modal-content';
+
+  // Create the span for closing the modal
+  var closeSpan = document.createElement('span');
+  closeSpan.id = 'qwebr-command-history-close-btn';
+  closeSpan.className = 'qwebr-modal-close';
+  closeSpan.innerHTML = '&times;';
+
+  // Create the h1 element for the modal
+  var modalH1 = document.createElement('h1');
+  modalH1.textContent = 'R History Command Contents';
+
+  // Create an anchor element for downloading the Rhistory file 
+  var downloadLink = document.createElement('a');
+  downloadLink.href = '#';
+  downloadLink.id = 'qwebr-download-history-btn';
+  downloadLink.className = 'qwebr-download-btn';
+
+  // Create an 'i' element for the icon
+  var icon = document.createElement('i');
+  icon.className = 'bi bi-file-code';
+
+  // Append the icon to the anchor element
+  downloadLink.appendChild(icon);
+
+  // Add the text 'Download R History' to the anchor element
+  downloadLink.appendChild(document.createTextNode(' Download R History File'));
+
+  // Create the pre for command history contents
+  var commandContentsPre = document.createElement('pre');
+  commandContentsPre.id = 'qwebr-command-history-contents';
+  commandContentsPre.className = 'qwebr-modal-content-code';
+
+  // Append the close span, h1, and history contents pre to the modal content div
+  modalContentDiv.appendChild(closeSpan);
+  modalContentDiv.appendChild(modalH1);
+  modalContentDiv.appendChild(downloadLink);
+  modalContentDiv.appendChild(commandContentsPre);
+
+  // Append the modal content div to the modal div
+  modalDiv.appendChild(modalContentDiv);
+
+  // Append the modal div to the body
+  document.body.appendChild(modalDiv);
+}
+
+function qwebrRegisterRevealJSCommandHistoryModal() {
+  // Select the <ul> element inside the <div> with data-panel="Custom0"
+  let ulElement = document.querySelector('div[data-panel="Custom0"] > ul.slide-menu-items');
+
+  // Find the last <li> element with class slide-tool-item
+  let lastItem = ulElement.querySelector('li.slide-tool-item:last-child');
+
+  // Calculate the next data-item value
+  let nextItemValue = 0;
+  if (lastItem) {
+      nextItemValue = parseInt(lastItem.dataset.item) + 1;
+  }
+
+  // Create a new <li> element
+  let newListItem = document.createElement('li');
+  newListItem.className = 'slide-tool-item';
+  newListItem.dataset.item = nextItemValue.toString(); // Set the next available data-item value
+
+  // Create the <a> element inside the <li>
+  let newLink = document.createElement('a');
+  newLink.href = '#';
+  newLink.id = 'qwebrRHistoryButton'; // Set the ID for the new link
+  
+  // Create the <kbd> element inside the <a>
+  let newKbd = document.createElement('kbd');
+  newKbd.textContent = ' '; // Set to empty as we are not registering a keyboard shortcut
+
+  // Create text node for the link text
+  let newText = document.createTextNode(' View R History');
+
+  // Append <kbd> and text node to <a>
+  newLink.appendChild(newKbd);
+  newLink.appendChild(newText);
+
+  // Append <a> to <li>
+  newListItem.appendChild(newLink);
+
+  // Append <li> to <ul>
+  ulElement.appendChild(newListItem);
+}
+
+// Handle setting up the R history modal
+function qwebrCodeLinks() {
+
+  if (qwebrIsRevealJS()) {
+    qwebrRegisterRevealJSCommandHistoryModal();
+    return;
+  }
+
+  // Create the container div
+  var containerDiv = document.createElement('div');
+  containerDiv.className = 'quarto-code-links';
+
+  // Create the h2 element
+  var h2 = document.createElement('h2');
+  h2.textContent = 'webR Code Links';
+
+  // Create the ul element
+  var ul = document.createElement('ul');
+
+  // Create the li element
+  var li = document.createElement('li');
+
+  // Create the a_history_btn element
+  var a_history_btn = document.createElement('a');
+  a_history_btn.href = 'javascript:void(0)';
+  a_history_btn.setAttribute('id', 'qwebrRHistoryButton');
+
+  // Create the i_history_btn element
+  var i_history_btn = document.createElement('i');
+  i_history_btn.className = 'bi bi-file-code';
+
+  // Create the text node for the link text
+  var text_history_btn = document.createTextNode('View R History');
+
+  // Append the icon element and link text to the a element
+  a_history_btn.appendChild(i_history_btn);
+  a_history_btn.appendChild(text_history_btn);
+
+  // Append the a element to the li element
+  li.appendChild(a_history_btn);
+
+  // Append the li element to the ul element
+  ul.appendChild(li);
+
+  // Append the h2 and ul elements to the container div
+  containerDiv.appendChild(h2);
+  containerDiv.appendChild(ul);
+
+  // Append the container div to the element with the ID 'quarto-margin-sidebar'
+  var sidebar = document.getElementById('quarto-margin-sidebar');
+    
+  // If the sidebar element is not found, create it
+  if(!sidebar) {
+    qwebrPlaceQuartoSidebar();
+  }
+  
+  // Re-select the sidebar element (if it was just created)
+  sidebar = document.getElementById('quarto-margin-sidebar');   
+
+
+  // If the sidebar element exists, append the container div to it
+  if(sidebar) {
+    // Append the container div to the sidebar
+    sidebar.appendChild(containerDiv);
+    // Force the sidebar to be clickable by removing the 'zindex-bottom' class
+    // added in pre-release: https://github.com/quarto-dev/quarto-cli/commit/f0c53a1ffcaa1de4eccbf07803b096898248adcc
+    sidebar.className = 'sidebar margin-sidebar';
+  } else {
+    // Get a debugger ...
+    console.warn('Element with ID "quarto-margin-sidebar" not found.');
+  }
+}
+
+// Call the function to append the code links for qwebR into the right sidebar
+qwebrCodeLinks();
+
+// Add the command history modal
+qwebrAddCommandHistoryModal();
+
 displayStartupMessage(qwebrShowStartupMessage, qwebrShowHeaderMessage);
 qwebrOffScreenCanvasSupportWarningMessage();
+</script>
+<script type="module">
+// Define a global storage and retrieval solution ----
+
+// Store commands executed in R
+globalThis.qwebrRCommandHistory = [];
+
+// Function to retrieve the command history
+globalThis.qwebrFormatRHistory = function() {
+   return qwebrRCommandHistory.join("\n\n");
+}
+
+// Retrieve HTML Elements ----
+
+// Get the command modal
+const command_history_modal = document.getElementById("qwebr-history-modal");
+
+// Get the button that opens the command modal
+const command_history_btn = document.getElementById("qwebrRHistoryButton");
+
+// Get the <span> element that closes the command modal
+const command_history_close_span = document.getElementById("qwebr-command-history-close-btn");
+
+// Get the download button for r history information
+const command_history_download_btn = document.getElementById("qwebr-download-history-btn");
+
+// Plug in command history into modal/download button ----
+
+// Function to populate the modal with command history
+function populateCommandHistoryModal() {
+    document.getElementById("qwebr-command-history-contents").innerHTML = qwebrFormatRHistory() || "No commands have been executed yet.";
+}
+
+// Function to format the current date and time to
+// a string with the format YYYY-MM-DD-HH-MM-SS
+function formatDateTime() {
+    const now = new Date();
+
+    const year = now.getFullYear();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    return `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
+}
+
+
+// Function to convert document title with datetime to a safe filename
+function safeFileName() {
+    // Get the current page title
+    let pageTitle = document.title;
+
+    // Combine the current page title with the current date and time
+    let pageNameWithDateTime = `Rhistory-${pageTitle}-${formatDateTime()}`;
+
+    // Replace unsafe characters with safe alternatives
+    let safeFilename = pageNameWithDateTime.replace(/[\\/:\*\?! "<>\|]/g, '-');
+
+    return safeFilename;
+}
+
+
+// Function to download list contents as text file
+function downloadRHistory() {
+    // Get the current page title + datetime and use it as the filename
+    const filename = `${safeFileName()}.R`;
+
+    // Get the text contents of the R History list
+    const text = qwebrFormatRHistory();
+
+    // Create a new Blob object with the text contents
+    const blob = new Blob([text], { type: 'text/plain' });
+  
+    // Create a new anchor element for the download
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+
+    // Append the anchor to the body, click it, and remove it
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+
+// Register event handlers ----
+
+// When the user clicks the View R History button, open the command modal
+command_history_btn.onclick = function() {
+    populateCommandHistoryModal();
+    command_history_modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the command modal
+command_history_close_span.onclick = function() {
+    command_history_modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the command modal, close it
+window.onclick = function(event) {
+    if (event.target == command_history_modal) {
+        command_history_modal.style.display = "none";
+    }
+}
+
+// Add an onclick event listener to the download button so that
+// the user can download the R history as a text file
+command_history_download_btn.onclick = function() {
+    downloadRHistory();
+};
 </script>
 <script type="module">
 // Supported Evaluation Types for Context
@@ -847,11 +1271,15 @@ globalThis.qwebrInstance = import(qwebrCustomizedWebROptions.baseURL + "webr.mjs
     // Setup a shelter
     globalThis.mainWebRCodeShelter = await new mainWebR.Shelter();
 
-    // Setup a pager to allow processing help documentation 
-    await mainWebR.evalRVoid('webr::pager_install()'); 
+    // Setup a pager to allow processing help documentation
+    await mainWebR.evalRVoid('webr::pager_install()');
+
+    // Setup a viewer to allow processing htmlwidgets.
+    // This might not be available in old webr version
+    await mainWebR.evalRVoid('try({ webr::viewer_install() })');
 
     // Override the existing install.packages() to use webr::install()
-    await mainWebR.evalRVoid('webr::shim_install()'); 
+    await mainWebR.evalRVoid('webr::shim_install()');
 
     // Specify the repositories to pull from
     // Note: webR does not use the `repos` option, but instead uses `webr_pkg_repos`
@@ -889,7 +1317,7 @@ globalThis.qwebrIsObjectEmpty = function (arr) {
     return Object.keys(arr).length === 0;
 }
 
-// Global version of the Escape HTML function that converts HTML 
+// Global version of the Escape HTML function that converts HTML
 // characters to their HTML entities.
 globalThis.qwebrEscapeHTMLCharacters = function(unsafe) {
     return unsafe
@@ -898,7 +1326,7 @@ globalThis.qwebrEscapeHTMLCharacters = function(unsafe) {
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
-  };
+};
 
 // Passthrough results
 globalThis.qwebrIdentity = function(x) {
@@ -910,11 +1338,39 @@ globalThis.qwebrPrefixComment = function(x, comment) {
     return `${comment}${x}`;
 };
 
+// Function to store the code in the history
+globalThis.qwebrLogCodeToHistory = function(codeToRun, options) {
+    qwebrRCommandHistory.push(
+        `# Ran code in ${options.label} at ${new Date().toLocaleString()} ----\n${codeToRun}`
+    );
+};
+
+// Function to attach a download button onto the canvas
+// allowing the user to download the image.
+function qwebrImageCanvasDownloadButton(canvas, canvasContainer) {
+
+    // Create the download button
+    const downloadButton = document.createElement('button');
+    downloadButton.className = 'qwebr-canvas-image-download-btn';
+    downloadButton.textContent = 'Download Image';
+    canvasContainer.appendChild(downloadButton);
+
+    // Trigger a download of the image when the button is clicked
+    downloadButton.addEventListener('click', function() {
+        const image = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = image;
+        link.download = 'qwebr-canvas-image.png';
+        link.click();
+    });
+}
+
+
 // Function to parse the pager results
-globalThis.qwebrParseTypePager = async function (msg) { 
+globalThis.qwebrParseTypePager = async function (msg) {
 
     // Split out the event data
-    const { path, title, deleteFile } = msg.data; 
+    const { path, title, deleteFile } = msg.data;
 
     // Process the pager data by reading the information from disk
     const paged_data = await mainWebR.FS.readFile(path).then((data) => {
@@ -923,7 +1379,7 @@ globalThis.qwebrParseTypePager = async function (msg) {
 
         // Remove excessive backspace characters until none remain
         while(content.match(/.[\b]/)){
-        content = content.replace(/.[\b]/g, '');
+            content = content.replace(/.[\b]/g, '');
         }
 
         // Returned cleaned data
@@ -931,22 +1387,41 @@ globalThis.qwebrParseTypePager = async function (msg) {
     });
 
     // Unlink file if needed
-    if (deleteFile) { 
-        await mainWebR.FS.unlink(path); 
-    } 
+    if (deleteFile) {
+        await mainWebR.FS.unlink(path);
+    }
 
     // Return extracted data with spaces
     return paged_data;
-} 
+};
+
+
+// Function to parse the browse results
+globalThis.qwebrParseTypeBrowse = async function (msg) {
+
+    // msg.type === "browse"
+    const path = msg.data.url;
+
+    // Process the browse data by reading the information from disk
+    const browse_data = await mainWebR.FS.readFile(path).then((data) => {
+        // Obtain the file content
+        let content = new TextDecoder().decode(data);
+
+        return content;
+    });
+
+    // Return extracted data as-is
+    return browse_data;
+};
 
 // Function to run the code using webR and parse the output
 globalThis.qwebrComputeEngine = async function(
-    codeToRun, 
-    elements, 
+    codeToRun,
+    elements,
     options) {
 
     // Call into the R compute engine that persists within the document scope.
-    // To be prepared for all scenarios, the following happens: 
+    // To be prepared for all scenarios, the following happens:
     // 1. We setup a canvas device to write to by making a namespace call into the {webr} package
     // 2. We use values inside of the options array to set the figure size.
     // 3. We capture the output stream information (STDOUT and STERR)
@@ -966,11 +1441,11 @@ globalThis.qwebrComputeEngine = async function(
         processOutput = qwebrIdentity;
     }
 
-    // ---- 
+    // ----
     // Convert from Inches to Pixels by using DPI (dots per inch)
     // for bitmap devices (dpi * inches = pixels)
-    let fig_width = options["fig-width"] * options["dpi"]
-    let fig_height = options["fig-height"] * options["dpi"]
+    let fig_width = options["fig-width"] * options["dpi"];
+    let fig_height = options["fig-height"] * options["dpi"];
 
     // Initialize webR
     await mainWebR.init();
@@ -982,7 +1457,7 @@ globalThis.qwebrComputeEngine = async function(
         captureConditions: false,
         // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
     };
-    
+
     // Determine if the browser supports OffScreen
     if (qwebrOffScreenCanvasSupport()) {
         // Mirror default options of webr::canvas()
@@ -999,6 +1474,9 @@ globalThis.qwebrComputeEngine = async function(
         captureOutputOptions.captureGraphics = false;
     }
 
+    // Store the code to run in history
+    qwebrLogCodeToHistory(codeToRun, options);
+
     // Setup a webR canvas by making a namespace call into the {webr} package
     // Evaluate the R code
     // Remove the active canvas silently
@@ -1011,18 +1489,18 @@ globalThis.qwebrComputeEngine = async function(
 
     // Start attempting to parse the result data
     processResultOutput:try {
-        
+
         // Avoid running through output processing
-        if (options.results === "hide" || options.output === "false") { 
-            break processResultOutput; 
+        if (options.results === "hide" || options.output === "false") {
+            break processResultOutput;
         }
 
         // Merge output streams of STDOUT and STDErr (messages and errors are combined.)
-        // Require both `warning` and `message` to be true to display `STDErr`. 
+        // Require both `warning` and `message` to be true to display `STDErr`.
         const out = result.output
         .filter(
-            evt => evt.type === "stdout" || 
-            ( evt.type === "stderr" && (options.warning === "true" && options.message === "true")) 
+            evt => evt.type === "stdout" ||
+            ( evt.type === "stderr" && (options.warning === "true" && options.message === "true"))
         )
         .map((evt, index) => {
             const className = `qwebr-output-code-${evt.type}`;
@@ -1034,15 +1512,31 @@ globalThis.qwebrComputeEngine = async function(
 
         // Clean the state
         // We're now able to process pager events.
-        // As a result, we cannot maintain a true 1-to-1 output order 
+        // As a result, we cannot maintain a true 1-to-1 output order
         // without individually feeding each line
         const msgs = await mainWebR.flush();
 
         // Use `map` to process the filtered "pager" events asynchronously
-        const pager = await Promise.all(
-            msgs.filter(msg => msg.type === 'pager').map(
+        const pager = [];
+        const browse = [];
+
+        await Promise.all(
+            msgs.map(
                 async (msg) => {
-                    return await qwebrParseTypePager(msg);
+
+                    const msgType = msg.type || "unknown";
+
+                    switch(msgType) {
+                        case 'pager':
+                            const pager_data = await qwebrParseTypePager(msg);
+                            pager.push(pager_data);
+                            break;
+                        case 'browse':
+                            const browse_data = await qwebrParseTypeBrowse(msg);
+                            browse.push(browse_data);
+                            break;
+                    }
+                    return;
                 }
             )
         );
@@ -1074,13 +1568,19 @@ globalThis.qwebrComputeEngine = async function(
 
         // Determine if we have graphs to display
         if (result.images.length > 0) {
+
             // Create figure element
-            const figureElement = document.createElement('figure');
+            const figureElement = document.createElement("figure");
+            figureElement.className = "qwebr-canvas-image";
 
             // Place each rendered graphic onto a canvas element
             result.images.forEach((img) => {
+
                 // Construct canvas for object
                 const canvas = document.createElement("canvas");
+
+                // Add an image download button
+                qwebrImageCanvasDownloadButton(canvas, figureElement);
 
                 // Set canvas size to image
                 canvas.width = img.width;
@@ -1099,9 +1599,10 @@ globalThis.qwebrComputeEngine = async function(
                 // Draw image onto Canvas
                 const ctx = canvas.getContext("2d");
                 ctx.drawImage(img, 0, 0, img.width, img.height);
-          
+
                 // Append canvas to figure output area
                 figureElement.appendChild(canvas);
+
             });
 
             if (options['fig-cap']) {
@@ -1109,28 +1610,46 @@ globalThis.qwebrComputeEngine = async function(
                 const figcaptionElement = document.createElement('figcaption');
                 figcaptionElement.innerText = options['fig-cap'];
                 // Append figcaption to figure
-                figureElement.appendChild(figcaptionElement);    
+                figureElement.appendChild(figcaptionElement);
             }
 
             elements.outputGraphDiv.appendChild(figureElement);
+
         }
 
         // Display the pager data
-        if (pager) {
-        // Use the `pre` element to preserve whitespace.
-        pager.forEach((paged_data, index) => {
-            let pre_pager = document.createElement("pre");
-            pre_pager.innerText = paged_data;
-            pre_pager.classList.add("qwebr-output-code-pager");
-            pre_pager.setAttribute("id", `qwebr-output-code-pager-editor-${elements.id}-result-${index + 1}`);
-            elements.outputCodeDiv.appendChild(pre_pager);
-        });
+        if (pager.length > 0) {
+            // Use the `pre` element to preserve whitespace.
+            pager.forEach((paged_data, index) => {
+                const pre_pager = document.createElement("pre");
+                pre_pager.innerText = paged_data;
+                pre_pager.classList.add("qwebr-output-code-pager");
+                pre_pager.setAttribute("id", `qwebr-output-code-pager-editor-${elements.id}-result-${index + 1}`);
+                elements.outputCodeDiv.appendChild(pre_pager);
+            });
+        }
+
+        // Display the browse data
+        if (browse.length > 0) {
+            // Use the `pre` element to preserve whitespace.
+            browse.forEach((browse_data, index) => {
+                const iframe_browse = document.createElement('iframe');
+                iframe_browse.classList.add("qwebr-output-code-browse");
+                iframe_browse.setAttribute("id", `qwebr-output-code-browse-editor-${elements.id}-result-${index + 1}`);
+                iframe_browse.style.width = "100%";
+                iframe_browse.style.minHeight = "500px";
+                elements.outputCodeDiv.appendChild(iframe_browse);
+
+                iframe_browse.contentWindow.document.open();
+                iframe_browse.contentWindow.document.write(browse_data);
+                iframe_browse.contentWindow.document.close();
+            });
         }
     } finally {
         // Clean up the remaining code
         mainWebRCodeShelter.purge();
     }
-}
+};
 
 // Function to execute the code (accepts code as an argument)
 globalThis.qwebrExecuteCode = async function (
@@ -1140,12 +1659,12 @@ globalThis.qwebrExecuteCode = async function (
 
     // If options are not passed, we fall back on the bare minimum to handle the computation
     if (qwebrIsObjectEmpty(options)) {
-        options = { 
-            "context": "interactive", 
-            "fig-width": 7, "fig-height": 5, 
-            "out-width": "700px", "out-height": "", 
+        options = {
+            "context": "interactive",
+            "fig-width": 7, "fig-height": 5,
+            "out-width": "700px", "out-height": "",
             "dpi": 72,
-            "results": "markup", 
+            "results": "markup",
             "warning": "true", "message": "true",
         };
     }
@@ -1187,19 +1706,19 @@ globalThis.qwebrExecuteCode = async function (
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4_selecting.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Selecting and Summarizing Studies</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -1211,7 +1730,8 @@ globalThis.qwebrExecuteCode = async function (
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./OH8004.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./OH8004.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./OH8004.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">OH8004 Knowledge Synthesis in Occupational and Public Health</a> 
@@ -1307,7 +1827,7 @@ globalThis.qwebrExecuteCode = async function (
   <ul class="collapse">
   <li><a href="#pilot-testing" id="toc-pilot-testing" class="nav-link" data-scroll-target="#pilot-testing"><span class="header-section-number">4.1.1</span> Pilot Testing</a></li>
   <li><a href="#systematic-review-management-software" id="toc-systematic-review-management-software" class="nav-link" data-scroll-target="#systematic-review-management-software"><span class="header-section-number">4.1.2</span> Systematic Review Management Software</a></li>
-  <li><a href="#machine-learning-for-relevance-screening" id="toc-machine-learning-for-relevance-screening" class="nav-link" data-scroll-target="#machine-learning-for-relevance-screening"><span class="header-section-number">4.1.3</span> Machine Learning for Relevance Screening</a></li>
+  <li><a href="#machine-learning-and-ai-tools-for-relevance-screening" id="toc-machine-learning-and-ai-tools-for-relevance-screening" class="nav-link" data-scroll-target="#machine-learning-and-ai-tools-for-relevance-screening"><span class="header-section-number">4.1.3</span> Machine Learning and AI Tools for Relevance Screening</a></li>
   </ul></li>
   <li><a href="#article-procurement" id="toc-article-procurement" class="nav-link" data-scroll-target="#article-procurement"><span class="header-section-number">4.2</span> Article Procurement</a></li>
   <li><a href="#article-characterization" id="toc-article-characterization" class="nav-link" data-scroll-target="#article-characterization"><span class="header-section-number">4.3</span> Article Characterization</a>
@@ -1380,6 +1900,12 @@ updateMonacoEditorsOnBodyClassChange();
 // Global array to store Monaco Editor instances
 globalThis.qwebrEditorInstances = [];
 
+function isValidCodeLineNumbers(stringCodeLineNumbers) {
+  // Regular expression to match valid input strings
+  const regex = /^(\d+(-\d+)?)(,\d+(-\d+)?)*$/;
+  return regex.test(stringCodeLineNumbers);
+}
+
 // Function that builds and registers a Monaco Editor instance    
 globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
@@ -1409,7 +1935,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
       renderLineHighlight: "none",      // Disable current line highlighting
       hideCursorInOverviewRuler: true,  // Remove cursor indictor in right hand side scroll bar
       readOnly: qwebrOptions['read-only'] ?? false,
-      quickSuggestions: qwebrOptions['editor-quick-suggestions'] ?? false
+      quickSuggestions: qwebrOptions['editor-quick-suggestions'] ?? false,
+      wordWrap: (qwebrOptions['editor-word-wrap'] == 'true' ? "on" : "off")
     });
 
     // Store the official counter ID to be used in keyboard shortcuts
@@ -1432,7 +1959,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
     const model = editor.getModel();
     // Set EOL for the model
     model.setEOL(monaco.editor.EndOfLineSequence.LF);
-
+    
     // Dynamically modify the height of the editor window if new lines are added.
     let ignoreEvent = false;
     const updateHeight = () => {
@@ -1457,6 +1984,56 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
         ignoreEvent = false;
       }
     };
+
+    // Function to generate decorations to highlight lines
+    // in the editor based on input string.
+    function decoratorHighlightLines(codeLineNumbers) {
+      // Store the lines to be lighlight
+      let linesToHighlight = [];
+      
+      // Parse the codeLineNumbers string to get the line numbers to highlight
+      // First, split the string by commas
+      codeLineNumbers.split(',').forEach(part => {
+        // Check if we have a range of lines
+        if (part.includes('-')) {
+            // Handle range of lines (e.g., "6-8")
+            const [start, end] = part.split('-').map(Number);
+            for (let i = start; i <= end; i++) {
+                linesToHighlight.push(i);
+            }
+        } else {
+            // Handle single line (e.g., "7")
+            linesToHighlight.push(Number(part));
+        }
+      });
+  
+      // Create monaco decorations for the lines to highlight
+      const decorations = linesToHighlight.map(lineNumber => ({
+          range: new monaco.Range(lineNumber, 1, lineNumber, 1),
+          options: {
+              isWholeLine: true,
+              className: 'qwebr-editor-highlight-line'
+          }
+      }));
+  
+      // Return decorations to be applied to the editor
+      return decorations;
+    }
+
+    // Ensure that the editor-code-line-numbers option is set and valid
+    // then apply styling
+    if (qwebrOptions['editor-code-line-numbers']) {
+      // Remove all whitespace from the string
+      const codeLineNumbers = qwebrOptions['editor-code-line-numbers'].replace(/\s/g,'');
+      // Check if the string is valid for line numbers, e.g., "1,3-5,7"
+      if (isValidCodeLineNumbers(codeLineNumbers)) {
+        // Apply the decorations to the editor
+        editor.createDecorationsCollection(decoratorHighlightLines(codeLineNumbers));
+      } else {
+        // Warn the user that the input is invalid
+        console.warn(`Invalid "editor-code-line-numbers" value in code cell ${qwebrOptions['label']}: ${codeLineNumbers}`);
+      }
+    }
 
     // Helper function to check if selected text is empty
     function isEmptyCodeText(selectedCodeText) {
@@ -1577,7 +2154,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Multiple reviewers
+<span class="screen-reader-only">Important</span>Multiple reviewers
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1608,7 +2185,7 @@ Multiple reviewers
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Kappa Agreement Example
+<span class="screen-reader-only">Note</span>Kappa Agreement Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1621,7 +2198,7 @@ Kappa Agreement Example
 <p>The agreement is moderate, and below an ideal level of 0.8 or higher.</p>
 <p>What happens if we edit the simulated data so that this time each reviewer only differs by one abstract each (i.e., there are only two conflicts)?</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code Editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Answer</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Code Editor</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Answer</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="qwebr-insertion-location-3"></div>
@@ -1642,17 +2219,18 @@ Kappa Agreement Example
 <p>Systematic management programs, such as <strong>Covidence</strong>, automatically calculate a kappa agreement statistic, along with other inter-rater reliability measures. The relevance screening form in Covidence defaults to having three options: yes, no, or maybe. Answers of <em>maybe</em> are considered the same as <em>yes</em> for screening and inter-rated reliability calculation purposes. For Covidence, a CSV file can be downloaded to show the screening reliability statistics for each pair of reviewers. An example of this output is shown in the figure below.</p>
 <p><img src="images/covidence_kappa.png" class="img-fluid"></p>
 </section>
-<section id="machine-learning-for-relevance-screening" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="machine-learning-for-relevance-screening"><span class="header-section-number">4.1.3</span> Machine Learning for Relevance Screening</h3>
+<section id="machine-learning-and-ai-tools-for-relevance-screening" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="machine-learning-and-ai-tools-for-relevance-screening"><span class="header-section-number">4.1.3</span> Machine Learning and AI Tools for Relevance Screening</h3>
 <p>Many systematic management programs have implemented or are developing <strong>machine learning tools</strong> to semi-automate the relevance screening process. The tools work by prioritizing the abstracts that are most likely to be included (<em>screening prioritization</em>), and suggesting a percentage that can be “safely” excluded (<em>screening truncation</em>), which can both enhance review efficiency. The screening truncation process usually uses a stopping rule or threshold, such as 95% estimated recall, after which point the review team can decide not to review the remaining references or to use a modified process (e.g., only one reviewer).</p>
-<p>These tools requires careful training and pilot testing on a subset of abstracts (e.g., 2% of total abstracts) to ensure the algorithm can make more accurate predictions. Research has shown that such machine learning tools can perform with high accuracy and reliability, and can result in substantial time savings for review teams <span class="citation" data-cites="hamelEvaluationDistillerSRMachine2020 tsouMachineLearningScreening2020">(<a href="references.html#ref-hamelEvaluationDistillerSRMachine2020" role="doc-biblioref">Hamel et al. 2020</a>; <a href="references.html#ref-tsouMachineLearningScreening2020" role="doc-biblioref">Tsou et al. 2020</a>)</span>. <a href="https://doi.org/10.1186/s12874-021-01451-2">Recent guidance is available</a> for reviewers who are interested to adopt these tools in their review <span class="citation" data-cites="hamelGuidanceUsingArtificial2021">(<a href="references.html#ref-hamelGuidanceUsingArtificial2021" role="doc-biblioref">Hamel et al. 2021</a>)</span>.</p>
+<p>These tools requires careful training and pilot testing on a subset of abstracts (e.g., 2% of total abstracts) to ensure the algorithm can make more accurate predictions. Research has shown that such machine learning tools can perform with high accuracy and reliability, and can result in substantial time savings for review teams <span class="citation" data-cites="hamelEvaluationDistillerSRMachine2020 tsouMachineLearningScreening2020">(<a href="references.html#ref-hamelEvaluationDistillerSRMachine2020" role="doc-biblioref">Hamel et al. 2020</a>; <a href="references.html#ref-tsouMachineLearningScreening2020" role="doc-biblioref">Tsou et al. 2020</a>)</span>.</p>
+<p>Recent guidance is available on the <a href="https://osf.io/fwaud/overview">Responsible Use of AI in Evidence SynthEsis (RAISE)</a>. The <strong>RAISE</strong> recommendations are supported by multiple international organizations involved in knowledge synthesis <span class="citation" data-cites="flemyngPositionStatementArtificial2025">(<a href="references.html#ref-flemyngPositionStatementArtificial2025" role="doc-biblioref">Flemyng et al. 2025</a>)</span>. Additionally, the Cochrane Collaboration is currently conducting a study called the <strong>Cochrane Evaluation of (Semi-)Automated Review Methods (CESAR)</strong><span class="citation" data-cites="gartlehnerCochraneEvaluationSemiautomated2026">(<a href="references.html#ref-gartlehnerCochraneEvaluationSemiautomated2026" role="doc-biblioref">Gartlehner et al. 2026</a>)</span>. The study is evaluating the performance of multiple AI tools against human-only process for relevance screening, full-text screening, and data extraction using and adaptive approach.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Relevance Screening Exercise
+<span class="screen-reader-only">Tip</span>Relevance Screening Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1670,7 +2248,7 @@ Relevance Screening Exercise
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Finding Articles
+<span class="screen-reader-only">Important</span>Finding Articles
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1701,7 +2279,7 @@ Finding Articles
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Multiple reports of the same study
+<span class="screen-reader-only">Warning</span>Multiple reports of the same study
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1717,7 +2295,7 @@ Multiple reports of the same study
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Article Characterization Exercise
+<span class="screen-reader-only">Tip</span>Article Characterization Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1746,7 +2324,7 @@ Article Characterization Exercise
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Summary Article Characterization Table Example
+<span class="screen-reader-only">Note</span>Summary Article Characterization Table Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1754,7 +2332,7 @@ Summary Article Characterization Table Example
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display dataset as an interactive table</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display dataset as an interactive table</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rio)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
@@ -1766,18 +2344,18 @@ Summary Article Characterization Table Example
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">list</span>(</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">columnDefs =</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="at">className =</span> <span class="st">'dt-center'</span>, </span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">targets =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">4</span>)))) <span class="sc">|&gt;</span> </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatStyle</span>(<span class="at">columns =</span> <span class="fu">colnames</span>(Young_2019_chart), <span class="at">fontSize =</span> <span class="st">'70%'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatStyle</span>(<span class="at">columns =</span> <span class="fu">colnames</span>(Young_2019_chart), <span class="at">fontSize =</span> <span class="st">'70%'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-e3c65a00688b17ea93c2" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-e3c65a00688b17ea93c2">{"x":{"filter":"none","vertical":false,"data":[["122","195","438","441","557","655","684","730","733","745","801","815","887","931","1231","1416","1580","1668","1676","1681","1760","1761","1900","1955","1972","2066","2071","2241","2278","2295","2404","2433","2434","2772","2900","2917","2977","2979","2981","2983","2984","2986","2987","2990","2996","3006","3013"],["Abernathy and Hart (2004)","Al-Mohaithef (2014)","Brannon et al. (2009)","Bratton-Jeffery (1998)","Chaifetz (2015)","Cotterchio et al. (1998)","Da Cunha et al. (2014)","DeFee (1999)","DeLegge (2009)","DeSario (2013)","Dworkin et al. (2012)","Ehiri et al. (1997)","Farzianpour et al. (2012)","Fraser (1995)","Chang et al. (2003)","Kirby and Gardiner (1997)","Lillquist et al. (2005)","Makari (2014)","Mancini et al. (2012)","Manes et al. (2014)","McIntyre et al. (2014)","McIntyre et al. (2013)","Nabali et al. (1986)","Nik Husain et al. (2016)","Nummer et al. (2010)","Park et al. (2010)","Parwanda et al. (2015)","Richard et al. (2013)","Romano and D'Argenio (1998)","Rowell et al. (2013)","Serafim et al. (2015)","Sheth and Sukul (2007)","Sheth et al. (2007)","Walker et al. (2006)","Yeung (2014)","York et al. (2009)","Howes et al. (1996)","Strohbehn et al. (2013)","Craggs-Dino (2002)","Ituma et al. (2017)","Maung et al. (2017)","Nyamari (2013)","Rajagopal and Strohbehn (2013)","Kirshner (1990)","Soneff et al. (1994)","Cook and Casey (1979)","Kim and Lee (2014)"],["2004","2014","2009","1998","2015","1998","2014","1999","2009","2013","2012","1997","2012","1995","2003","1997","2005","2014","2012","2014","2014","2013","1986","2016","2010","2010","2015","2013","1998","2013","2015","2007","2007","2006","2014","2009","1996","2013","2002","2017","2017","2013","2013","1990","1994","1979","2014"],["Journal article","Thesis","Journal article","Thesis","Thesis","Journal article","Journal article","Thesis","Thesis","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Thesis","Journal article","Thesis","Journal article","Journal article","Journal article"],["English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","Italian","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","Korean"],["Canada","Saudi Arabia","US","US","US","US","Brazil","US","US","US","US","UK","Iran","US","South Korea","UK","US","US","Canada","US","Canada","Canada","Bahrain","Malaysia","US","South Korea","India","US","Italy","US","Brazil","India","India","US","US","US","Canada","US","US","Nigeria","Myanmar","Kenya","US","Canada","Canada","US","South Korea"],["Controlled before-and-after study","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Controlled before-and-after study","Randomized controlled trial (RCT)","Non-randomized controlled trial","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial"],["Yes","No","Yes","No","No","Yes","Yes","No","Yes","Yes","Yes","No","Yes","No","No","Yes","No","No","No","Yes","No","Yes","No","No","No","Yes","No","No","No","No","No","No","No","No","No","Yes","No","Yes","No","Yes","No","No","No","Yes","No","No","No"],["Multi-faceted","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Training course or session","Messaging materials","Training course or session","Training course or session","Messaging materials","Training course or session","Training course or session","Training course or session","Training course or session","Multi-faceted","Messaging materials","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Messaging materials","Training course or session","Consulting services","Multi-faceted","Multi-faceted","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Multi-faceted","Training course or session","Multi-faceted","Training course or session","Multi-faceted"],["No","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","No","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","No","Yes","No","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","No","Yes"],["No / not reported","No / not reported","No / not reported","Yes","Yes","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported"],["Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes"],["Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","Yes","Yes","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","Yes","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","Yes","Yes","Yes","No / not reported","No / not reported"],["Not reported","Less than 1 day","Not reported","Less than 1 day","Not reported","1 day or longer","1 day or longer","Less than 1 day","Not reported","1 day or longer","N/a","Not reported","Not reported","N/a","Less than 1 day","Less than 1 day","Less than 1 day","Not reported","Less than 1 day","N/a","1 day or longer","Not reported","1 day or longer","Less than 1 day","1 day or longer","Less than 1 day","Not reported","Not reported","N/a","1 day or longer","N/a","Not reported","Not reported","Not reported","Less than 1 day","Less than 1 day","N/a","Not reported","Less than 1 day","1 day or longer","1 day or longer","Not reported","Less than 1 day","Less than 1 day","1 day or longer","1 day or longer","1 day or longer"],["No intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","Standard/traditional intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention"],["Yes","Yes","No","Yes","No","No","Yes","Yes","No","No","Yes","Yes","Yes","No","Yes","No","Yes","Yes","No","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","No","No","No","No","Yes"],["No","Yes","Yes","No","No","No","Yes","No","No","No","No","No","No","Yes","No","No","Yes","Yes","No","No","No","Yes","No","No","No","No","No","Yes","No","No","No","No","No","Yes","No","No","No","Yes","Yes","No","Yes","No","No","No","No","No","No"],["No","Yes","No","No","No","No","Yes","No","No","No","No","No","No","No","Yes","No","No","No","No","No","No","Yes","No","Yes","No","Yes","Yes","Yes","No","Yes","No","Yes","Yes","Yes","No","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","No","No","No","No"],["Yes","No","No","No","Yes","Yes","No","No","Yes","Yes","No","No","No","No","No","Yes","No","No","Yes","No","No","No","Yes","No","No","Yes","No","Yes","No","Yes","Yes","No","No","No","No","No","No","No","Yes","No","Yes","No","No","Yes","Yes","Yes","No"],["No / not specified","Yes","No / not specified","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","No / not specified","No / not specified","Yes","Yes","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Refid<\/th>\n      <th>Author (year)<\/th>\n      <th>Year<\/th>\n      <th>Document type<\/th>\n      <th>Language<\/th>\n      <th>Country<\/th>\n      <th>Study design<\/th>\n      <th>Setting includes restaurants<\/th>\n      <th>Intervention type<\/th>\n      <th>Intervention content described<\/th>\n      <th>Intervention informed by theory<\/th>\n      <th>Intervention informed by research<\/th>\n      <th>Stakeholder engagement used<\/th>\n      <th>Intervention duration<\/th>\n      <th>Comparison group<\/th>\n      <th>Outcome - knowledge<\/th>\n      <th>Outcome - attitudes<\/th>\n      <th>Outcome - behaviour<\/th>\n      <th>Outcome - inspection scores<\/th>\n      <th>Collection tool pre-tested<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":[0,1,2,3,4]},{"name":"Refid","targets":0},{"name":"Author (year)","targets":1},{"name":"Year","targets":2},{"name":"Document type","targets":3},{"name":"Language","targets":4},{"name":"Country","targets":5},{"name":"Study design","targets":6},{"name":"Setting includes restaurants","targets":7},{"name":"Intervention type","targets":8},{"name":"Intervention content described","targets":9},{"name":"Intervention informed by theory","targets":10},{"name":"Intervention informed by research","targets":11},{"name":"Stakeholder engagement used","targets":12},{"name":"Intervention duration","targets":13},{"name":"Comparison group","targets":14},{"name":"Outcome - knowledge","targets":15},{"name":"Outcome - attitudes","targets":16},{"name":"Outcome - behaviour","targets":17},{"name":"Outcome - inspection scores","targets":18},{"name":"Collection tool pre-tested","targets":19}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'70%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'70%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'70%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'70%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'70%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'70%'});\nvar value=data[11]; $(this.api().cell(row, 11).node()).css({'font-size':'70%'});\nvar value=data[12]; $(this.api().cell(row, 12).node()).css({'font-size':'70%'});\nvar value=data[13]; $(this.api().cell(row, 13).node()).css({'font-size':'70%'});\nvar value=data[14]; $(this.api().cell(row, 14).node()).css({'font-size':'70%'});\nvar value=data[15]; $(this.api().cell(row, 15).node()).css({'font-size':'70%'});\nvar value=data[16]; $(this.api().cell(row, 16).node()).css({'font-size':'70%'});\nvar value=data[17]; $(this.api().cell(row, 17).node()).css({'font-size':'70%'});\nvar value=data[18]; $(this.api().cell(row, 18).node()).css({'font-size':'70%'});\nvar value=data[19]; $(this.api().cell(row, 19).node()).css({'font-size':'70%'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-cc014de52f854e6360f5" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-cc014de52f854e6360f5">{"x":{"filter":"none","vertical":false,"data":[["122","195","438","441","557","655","684","730","733","745","801","815","887","931","1231","1416","1580","1668","1676","1681","1760","1761","1900","1955","1972","2066","2071","2241","2278","2295","2404","2433","2434","2772","2900","2917","2977","2979","2981","2983","2984","2986","2987","2990","2996","3006","3013"],["Abernathy and Hart (2004)","Al-Mohaithef (2014)","Brannon et al. (2009)","Bratton-Jeffery (1998)","Chaifetz (2015)","Cotterchio et al. (1998)","Da Cunha et al. (2014)","DeFee (1999)","DeLegge (2009)","DeSario (2013)","Dworkin et al. (2012)","Ehiri et al. (1997)","Farzianpour et al. (2012)","Fraser (1995)","Chang et al. (2003)","Kirby and Gardiner (1997)","Lillquist et al. (2005)","Makari (2014)","Mancini et al. (2012)","Manes et al. (2014)","McIntyre et al. (2014)","McIntyre et al. (2013)","Nabali et al. (1986)","Nik Husain et al. (2016)","Nummer et al. (2010)","Park et al. (2010)","Parwanda et al. (2015)","Richard et al. (2013)","Romano and D'Argenio (1998)","Rowell et al. (2013)","Serafim et al. (2015)","Sheth and Sukul (2007)","Sheth et al. (2007)","Walker et al. (2006)","Yeung (2014)","York et al. (2009)","Howes et al. (1996)","Strohbehn et al. (2013)","Craggs-Dino (2002)","Ituma et al. (2017)","Maung et al. (2017)","Nyamari (2013)","Rajagopal and Strohbehn (2013)","Kirshner (1990)","Soneff et al. (1994)","Cook and Casey (1979)","Kim and Lee (2014)"],["2004","2014","2009","1998","2015","1998","2014","1999","2009","2013","2012","1997","2012","1995","2003","1997","2005","2014","2012","2014","2014","2013","1986","2016","2010","2010","2015","2013","1998","2013","2015","2007","2007","2006","2014","2009","1996","2013","2002","2017","2017","2013","2013","1990","1994","1979","2014"],["Journal article","Thesis","Journal article","Thesis","Thesis","Journal article","Journal article","Thesis","Thesis","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Journal article","Thesis","Journal article","Journal article","Thesis","Journal article","Thesis","Journal article","Journal article","Journal article"],["English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","Italian","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","English","Korean"],["Canada","Saudi Arabia","US","US","US","US","Brazil","US","US","US","US","UK","Iran","US","South Korea","UK","US","US","Canada","US","Canada","Canada","Bahrain","Malaysia","US","South Korea","India","US","Italy","US","Brazil","India","India","US","US","US","Canada","US","US","Nigeria","Myanmar","Kenya","US","Canada","Canada","US","South Korea"],["Controlled before-and-after study","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Controlled before-and-after study","Randomized controlled trial (RCT)","Non-randomized controlled trial","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Controlled before-and-after study","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Controlled before-and-after study","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial","Randomized controlled trial (RCT)","Randomized controlled trial (RCT)","Controlled before-and-after study","Non-randomized controlled trial"],["Yes","No","Yes","No","No","Yes","Yes","No","Yes","Yes","Yes","No","Yes","No","No","Yes","No","No","No","Yes","No","Yes","No","No","No","Yes","No","No","No","No","No","No","No","No","No","Yes","No","Yes","No","Yes","No","No","No","Yes","No","No","No"],["Multi-faceted","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Training course or session","Messaging materials","Training course or session","Training course or session","Messaging materials","Training course or session","Training course or session","Training course or session","Training course or session","Multi-faceted","Messaging materials","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Messaging materials","Training course or session","Consulting services","Multi-faceted","Multi-faceted","Training course or session","Training course or session","Multi-faceted","Training course or session","Training course or session","Training course or session","Training course or session","Multi-faceted","Training course or session","Multi-faceted","Training course or session","Multi-faceted","Training course or session","Multi-faceted"],["No","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","No","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","No","Yes","No","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","No","Yes"],["No / not reported","No / not reported","No / not reported","Yes","Yes","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported"],["Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes"],["Yes","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","No / not reported","Yes","Yes","No / not reported","No / not reported","No / not reported","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","Yes","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","No / not reported","Yes","Yes","No / not reported","Yes","No / not reported","No / not reported","No / not reported","Yes","Yes","Yes","Yes","No / not reported","No / not reported"],["Not reported","Less than 1 day","Not reported","Less than 1 day","Not reported","1 day or longer","1 day or longer","Less than 1 day","Not reported","1 day or longer","N/a","Not reported","Not reported","N/a","Less than 1 day","Less than 1 day","Less than 1 day","Not reported","Less than 1 day","N/a","1 day or longer","Not reported","1 day or longer","Less than 1 day","1 day or longer","Less than 1 day","Not reported","Not reported","N/a","1 day or longer","N/a","Not reported","Not reported","Not reported","Less than 1 day","Less than 1 day","N/a","Not reported","Less than 1 day","1 day or longer","1 day or longer","Not reported","Less than 1 day","Less than 1 day","1 day or longer","1 day or longer","1 day or longer"],["No intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","Standard/traditional intervention","Standard/traditional intervention","No intervention","No intervention","Standard/traditional intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention","No intervention"],["Yes","Yes","No","Yes","No","No","Yes","Yes","No","No","Yes","Yes","Yes","No","Yes","No","Yes","Yes","No","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","No","No","No","No","Yes"],["No","Yes","Yes","No","No","No","Yes","No","No","No","No","No","No","Yes","No","No","Yes","Yes","No","No","No","Yes","No","No","No","No","No","Yes","No","No","No","No","No","Yes","No","No","No","Yes","Yes","No","Yes","No","No","No","No","No","No"],["No","Yes","No","No","No","No","Yes","No","No","No","No","No","No","No","Yes","No","No","No","No","No","No","Yes","No","Yes","No","Yes","Yes","Yes","No","Yes","No","Yes","Yes","Yes","No","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","No","No","No","No"],["Yes","No","No","No","Yes","Yes","No","No","Yes","Yes","No","No","No","No","No","Yes","No","No","Yes","No","No","No","Yes","No","No","Yes","No","Yes","No","Yes","Yes","No","No","No","No","No","No","No","Yes","No","Yes","No","No","Yes","Yes","Yes","No"],["No / not specified","Yes","No / not specified","Yes","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","Yes","Yes","Yes","No / not specified","Yes","Yes","No / not specified","No / not specified","No / not specified","No / not specified","No / not specified","Yes","Yes","No / not specified","No / not specified","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Refid<\/th>\n      <th>Author (year)<\/th>\n      <th>Year<\/th>\n      <th>Document type<\/th>\n      <th>Language<\/th>\n      <th>Country<\/th>\n      <th>Study design<\/th>\n      <th>Setting includes restaurants<\/th>\n      <th>Intervention type<\/th>\n      <th>Intervention content described<\/th>\n      <th>Intervention informed by theory<\/th>\n      <th>Intervention informed by research<\/th>\n      <th>Stakeholder engagement used<\/th>\n      <th>Intervention duration<\/th>\n      <th>Comparison group<\/th>\n      <th>Outcome - knowledge<\/th>\n      <th>Outcome - attitudes<\/th>\n      <th>Outcome - behaviour<\/th>\n      <th>Outcome - inspection scores<\/th>\n      <th>Collection tool pre-tested<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-center","targets":[0,1,2,3,4]},{"name":"Refid","targets":0},{"name":"Author (year)","targets":1},{"name":"Year","targets":2},{"name":"Document type","targets":3},{"name":"Language","targets":4},{"name":"Country","targets":5},{"name":"Study design","targets":6},{"name":"Setting includes restaurants","targets":7},{"name":"Intervention type","targets":8},{"name":"Intervention content described","targets":9},{"name":"Intervention informed by theory","targets":10},{"name":"Intervention informed by research","targets":11},{"name":"Stakeholder engagement used","targets":12},{"name":"Intervention duration","targets":13},{"name":"Comparison group","targets":14},{"name":"Outcome - knowledge","targets":15},{"name":"Outcome - attitudes","targets":16},{"name":"Outcome - behaviour","targets":17},{"name":"Outcome - inspection scores","targets":18},{"name":"Collection tool pre-tested","targets":19}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[0]; $(this.api().cell(row, 0).node()).css({'font-size':'70%'});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'font-size':'70%'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'font-size':'70%'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'font-size':'70%'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'font-size':'70%'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'font-size':'70%'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'font-size':'70%'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'font-size':'70%'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'font-size':'70%'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'font-size':'70%'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'font-size':'70%'});\nvar value=data[11]; $(this.api().cell(row, 11).node()).css({'font-size':'70%'});\nvar value=data[12]; $(this.api().cell(row, 12).node()).css({'font-size':'70%'});\nvar value=data[13]; $(this.api().cell(row, 13).node()).css({'font-size':'70%'});\nvar value=data[14]; $(this.api().cell(row, 14).node()).css({'font-size':'70%'});\nvar value=data[15]; $(this.api().cell(row, 15).node()).css({'font-size':'70%'});\nvar value=data[16]; $(this.api().cell(row, 16).node()).css({'font-size':'70%'});\nvar value=data[17]; $(this.api().cell(row, 17).node()).css({'font-size':'70%'});\nvar value=data[18]; $(this.api().cell(row, 18).node()).css({'font-size':'70%'});\nvar value=data[19]; $(this.api().cell(row, 19).node()).css({'font-size':'70%'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Now we can produce some summary statistics and tabulations of the variables and organize them into a table to present in our results.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># First convert Year variable to numeric</span></span>
@@ -1794,27 +2372,26 @@ Summary Article Characterization Table Example
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">statistic =</span> Year <span class="sc">~</span> <span class="st">"{median} ({min}-{max})"</span>,</span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>              <span class="at">sort =</span> <span class="fu">list</span>(<span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="st">"frequency"</span>),</span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">digits =</span> <span class="fu">list</span>(<span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)))</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>Young_2019_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>Young_2019_summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div>
-<div id="onxsjzhzus" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#onxsjzhzus table {
+<div id="goqbexcebm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#goqbexcebm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#onxsjzhzus thead, #onxsjzhzus tbody, #onxsjzhzus tfoot, #onxsjzhzus tr, #onxsjzhzus td, #onxsjzhzus th {
+#goqbexcebm thead, #goqbexcebm tbody, #goqbexcebm tfoot, #goqbexcebm tr, #goqbexcebm td, #goqbexcebm th {
   border-style: none;
 }
 
-#onxsjzhzus p {
+#goqbexcebm p {
   margin: 0;
   padding: 0;
 }
 
-#onxsjzhzus .gt_table {
+#goqbexcebm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1840,12 +2417,12 @@ Summary Article Characterization Table Example
   border-left-color: #D3D3D3;
 }
 
-#onxsjzhzus .gt_caption {
+#goqbexcebm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#onxsjzhzus .gt_title {
+#goqbexcebm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1857,7 +2434,7 @@ Summary Article Characterization Table Example
   border-bottom-width: 0;
 }
 
-#onxsjzhzus .gt_subtitle {
+#goqbexcebm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1869,7 +2446,7 @@ Summary Article Characterization Table Example
   border-top-width: 0;
 }
 
-#onxsjzhzus .gt_heading {
+#goqbexcebm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1881,13 +2458,13 @@ Summary Article Characterization Table Example
   border-right-color: #D3D3D3;
 }
 
-#onxsjzhzus .gt_bottom_border {
+#goqbexcebm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#onxsjzhzus .gt_col_headings {
+#goqbexcebm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1902,7 +2479,7 @@ Summary Article Characterization Table Example
   border-right-color: #D3D3D3;
 }
 
-#onxsjzhzus .gt_col_heading {
+#goqbexcebm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1922,7 +2499,7 @@ Summary Article Characterization Table Example
   overflow-x: hidden;
 }
 
-#onxsjzhzus .gt_column_spanner_outer {
+#goqbexcebm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1934,15 +2511,15 @@ Summary Article Characterization Table Example
   padding-right: 4px;
 }
 
-#onxsjzhzus .gt_column_spanner_outer:first-child {
+#goqbexcebm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#onxsjzhzus .gt_column_spanner_outer:last-child {
+#goqbexcebm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#onxsjzhzus .gt_column_spanner {
+#goqbexcebm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1954,11 +2531,11 @@ Summary Article Characterization Table Example
   width: 100%;
 }
 
-#onxsjzhzus .gt_spanner_row {
+#goqbexcebm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#onxsjzhzus .gt_group_heading {
+#goqbexcebm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1984,7 +2561,7 @@ Summary Article Characterization Table Example
   text-align: left;
 }
 
-#onxsjzhzus .gt_empty_group_heading {
+#goqbexcebm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1999,15 +2576,15 @@ Summary Article Characterization Table Example
   vertical-align: middle;
 }
 
-#onxsjzhzus .gt_from_md > :first-child {
+#goqbexcebm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#onxsjzhzus .gt_from_md > :last-child {
+#goqbexcebm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#onxsjzhzus .gt_row {
+#goqbexcebm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2026,7 +2603,7 @@ Summary Article Characterization Table Example
   overflow-x: hidden;
 }
 
-#onxsjzhzus .gt_stub {
+#goqbexcebm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2039,7 +2616,7 @@ Summary Article Characterization Table Example
   padding-right: 5px;
 }
 
-#onxsjzhzus .gt_stub_row_group {
+#goqbexcebm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2053,15 +2630,15 @@ Summary Article Characterization Table Example
   vertical-align: top;
 }
 
-#onxsjzhzus .gt_row_group_first td {
+#goqbexcebm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#onxsjzhzus .gt_row_group_first th {
+#goqbexcebm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#onxsjzhzus .gt_summary_row {
+#goqbexcebm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2071,16 +2648,16 @@ Summary Article Characterization Table Example
   padding-right: 5px;
 }
 
-#onxsjzhzus .gt_first_summary_row {
+#goqbexcebm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#onxsjzhzus .gt_first_summary_row.thick {
+#goqbexcebm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#onxsjzhzus .gt_last_summary_row {
+#goqbexcebm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2090,7 +2667,7 @@ Summary Article Characterization Table Example
   border-bottom-color: #D3D3D3;
 }
 
-#onxsjzhzus .gt_grand_summary_row {
+#goqbexcebm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2100,7 +2677,7 @@ Summary Article Characterization Table Example
   padding-right: 5px;
 }
 
-#onxsjzhzus .gt_first_grand_summary_row {
+#goqbexcebm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2110,7 +2687,7 @@ Summary Article Characterization Table Example
   border-top-color: #D3D3D3;
 }
 
-#onxsjzhzus .gt_last_grand_summary_row_top {
+#goqbexcebm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2120,11 +2697,11 @@ Summary Article Characterization Table Example
   border-bottom-color: #D3D3D3;
 }
 
-#onxsjzhzus .gt_striped {
+#goqbexcebm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#onxsjzhzus .gt_table_body {
+#goqbexcebm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2133,7 +2710,7 @@ Summary Article Characterization Table Example
   border-bottom-color: #D3D3D3;
 }
 
-#onxsjzhzus .gt_footnotes {
+#goqbexcebm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2147,7 +2724,7 @@ Summary Article Characterization Table Example
   border-right-color: #D3D3D3;
 }
 
-#onxsjzhzus .gt_footnote {
+#goqbexcebm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2156,7 +2733,7 @@ Summary Article Characterization Table Example
   padding-right: 5px;
 }
 
-#onxsjzhzus .gt_sourcenotes {
+#goqbexcebm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2170,7 +2747,7 @@ Summary Article Characterization Table Example
   border-right-color: #D3D3D3;
 }
 
-#onxsjzhzus .gt_sourcenote {
+#goqbexcebm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2178,76 +2755,85 @@ Summary Article Characterization Table Example
   padding-right: 5px;
 }
 
-#onxsjzhzus .gt_left {
+#goqbexcebm .gt_left {
   text-align: left;
 }
 
-#onxsjzhzus .gt_center {
+#goqbexcebm .gt_center {
   text-align: center;
 }
 
-#onxsjzhzus .gt_right {
+#goqbexcebm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#onxsjzhzus .gt_font_normal {
+#goqbexcebm .gt_font_normal {
   font-weight: normal;
 }
 
-#onxsjzhzus .gt_font_bold {
+#goqbexcebm .gt_font_bold {
   font-weight: bold;
 }
 
-#onxsjzhzus .gt_font_italic {
+#goqbexcebm .gt_font_italic {
   font-style: italic;
 }
 
-#onxsjzhzus .gt_super {
+#goqbexcebm .gt_super {
   font-size: 65%;
 }
 
-#onxsjzhzus .gt_footnote_marks {
+#goqbexcebm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#onxsjzhzus .gt_asterisk {
+#goqbexcebm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#onxsjzhzus .gt_indent_1 {
+#goqbexcebm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#onxsjzhzus .gt_indent_2 {
+#goqbexcebm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#onxsjzhzus .gt_indent_3 {
+#goqbexcebm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#onxsjzhzus .gt_indent_4 {
+#goqbexcebm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#onxsjzhzus .gt_indent_5 {
+#goqbexcebm .gt_indent_5 {
   text-indent: 25px;
+}
+
+#goqbexcebm .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#goqbexcebm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
 }
 </style>
 
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <thead>
-<tr class="header gt_col_headings">
-<th id="<strong>Characteristic</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="<strong>N = 47</strong><span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;><sup>1</sup></span>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 47</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="stat_0" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 47</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -2494,9 +3080,9 @@ Summary Article Characterization Table Example
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;No / not specified</td>
 <td class="gt_row gt_center" headers="stat_0">18 (38.3%)</td>
 </tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
-<td colspan="2" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Median (Minimum-Maximum); n (%)</td>
+</tbody><tfoot>
+<tr class="gt_footnotes odd">
+<td colspan="2" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Median (Min-Max); n (%)</td>
 </tr>
 </tfoot>
 
@@ -2505,8 +3091,7 @@ Summary Article Characterization Table Example
 </div>
 </div>
 </div>
-</div>
-<p>We can further adjust the settings and presentation of the table as needed, see the <a href="https://epirhandbook.com/en/descriptive-tables.html#tbl_gt">Epi R Handbook</a> section on the <strong>gtsummary package</strong> for more information. We can also copy and paste our table from the HTML viewer in RStudio into a Word document for easy editing and inclusion in our report.</p>
+<p>We can further adjust the settings and presentation of the table as needed, see the <a href="https://epirhandbook.com/en/new_pages/tables_descriptive.html">Epi R Handbook</a> section on the <strong>gtsummary package</strong> for more information. We can also copy and paste our table from the HTML viewer in RStudio into a Word document for easy editing and inclusion in our report.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -2515,7 +3100,7 @@ Summary Article Characterization Table Example
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Flow Chart and Article Summary Exercise
+<span class="screen-reader-only">Tip</span>Flow Chart and Article Summary Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2530,7 +3115,7 @@ Flow Chart and Article Summary Exercise
 </section>
 <section id="homework" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="homework"><span class="header-section-number">4.6</span> Homework</h2>
-<p>Students will be assigned a risk-of-bias <em>domain</em> from <a href="5_bias.html" class="quarto-xref"><span>Chapter 5</span></a> to review and present in class next week. The bias domains to be assigned include:</p>
+<p>Students will be assigned a risk-of-bias <em>domain</em> from <a href="5_bias.html" class="quarto-xref"><span>Chapter 5</span></a> to review and present in class as per the course outline schedule. The bias domains to be assigned include:</p>
 <ul>
 <li>Bias arising from the randomization process</li>
 <li>Bias due to deviations from intended interventions</li>
@@ -2546,12 +3131,15 @@ Flow Chart and Article Summary Exercise
 <p>You can read in detail about the first five domains in the <a href="https://drive.google.com/file/d/19R9savfPdCHC8XLz2iiMvL_71lPJERWK/view?usp=sharing">Cochrane RCT risk-of-bias tool guidance document</a>. Information on the other four domains can be found in the <a href="https://drive.google.com/file/d/1bcOVMna3CJJXpsIm5vobFJMP0-13CW8Q/view?usp=sharing">ROBINS-E tool for cohort studies</a>. For the qualitative methodological assessment, details can be found starting in <a href="https://doi.org/10.1002/cesm.12058">section 4.4 of this article describing the CAMELOT tool</a>.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-bartlettSystematicReviewMetaanalysis2019" class="csl-entry" role="listitem">
-Bartlett, Larissa, Angela Martin, Amanda L. Neil, Kate Memish, Petr Otahal, Michelle Kilpatrick, and Kristy Sanderson. 2019. <span>“A Systematic Review and Meta-Analysis of Workplace Mindfulness Training Randomized Controlled Trials.”</span> <em>Journal of Occupational Health Psychology</em> 24: 108–26. <a href="https://doi.org/10.1037/ocp0000146">https://doi.org/10.1037/ocp0000146</a>.
+Bartlett, Larissa, Angela Martin, Amanda L. Neil, et al. 2019. <span>“A Systematic Review and Meta-Analysis of Workplace Mindfulness Training Randomized Controlled Trials.”</span> <em>Journal of Occupational Health Psychology</em> (US) 24: 108–26. <a href="https://doi.org/10.1037/ocp0000146">https://doi.org/10.1037/ocp0000146</a>.
 </div>
-<div id="ref-hamelGuidanceUsingArtificial2021" class="csl-entry" role="listitem">
-Hamel, C., M. Hersi, S. E. Kelly, A. C. Tricco, Sharon Straus, G. Wells, B. Pham, and B. Hutton. 2021. <span>“Guidance for Using Artificial Intelligence for Title and Abstract Screening While Conducting Knowledge Syntheses.”</span> <em>BMC Medical Research Methodology</em> 21 (1): 285. <a href="https://doi.org/10.1186/s12874-021-01451-2">https://doi.org/10.1186/s12874-021-01451-2</a>.
+<div id="ref-flemyngPositionStatementArtificial2025" class="csl-entry" role="listitem">
+Flemyng, Ella, Anna Noel-Storr, Biljana Macura, et al. 2025. <span>“Position Statement on Artificial Intelligence (<span>AI</span>) Use in Evidence Synthesis Across <span>Cochrane</span>, the <span>Campbell Collaboration</span>, <span>JBI</span> and the <span>Collaboration</span> for <span>Environmental Evidence</span> 2025.”</span> <em>Cochrane Database of Systematic Reviews</em>, no. 10. <a href="https://doi.org/10.1002/14651858.ED000178">https://doi.org/10.1002/14651858.ED000178</a>.
+</div>
+<div id="ref-gartlehnerCochraneEvaluationSemiautomated2026" class="csl-entry" role="listitem">
+Gartlehner, Gerald, Susan Banda, Max Callaghan, et al. 2026. <span>“Cochrane Evaluation of (Semi-)automated Review Methods: Protocol for an Adaptive Platform Study Within Reviews.”</span> <em>Journal of Clinical Epidemiology</em> 198 (October): 112390. <a href="https://doi.org/10.1016/j.jclinepi.2026.112390">https://doi.org/10.1016/j.jclinepi.2026.112390</a>.
 </div>
 <div id="ref-hamelEvaluationDistillerSRMachine2020" class="csl-entry" role="listitem">
 Hamel, C., S. E. Kelly, K. Thavorn, D. B. Rice, G. A. Wells, and B. Hutton. 2020. <span>“An Evaluation of <span>DistillerSR</span>’s Machine Learning-Based Prioritization Tool for Title/Abstract Screening – Impact on Reviewer-Relevant Outcomes.”</span> <em>BMC Medical Research Methodology</em> 20 (1): 256. <a href="https://doi.org/10.1186/s12874-020-01129-1">https://doi.org/10.1186/s12874-020-01129-1</a>.
@@ -2570,43 +3158,58 @@ Young, Ian, Judy Greig, Barbara J. Wilhelm, and Lisa A. Waddell. 2019. <span>“
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
@@ -2614,184 +3217,184 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
       return codeEl.innerText;
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2799,185 +3402,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./3_searching.html" class="pagination-link" aria-label="Search Strategy">
@@ -3085,6 +3664,10 @@ qwebrInstance.then(
           break;
         case 'setup':
           const activeDiv = document.getElementById(`qwebr-noninteractive-setup-area-${qwebrCounter}`);
+
+          // Store code in history
+          qwebrLogCodeToHistory(cellCode, entry.options);
+
           // Run the code in a non-interactive state with all output thrown away
           await mainWebR.evalRVoid(`${cellCode}`);
           break;
