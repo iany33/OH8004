@@ -5,7 +5,7 @@ A **knowledge synthesis** refers to a structured, transparent, and reproducible 
 
 The **Canadian Institutes of Health Research (CIHR)** defines a knowledge synthesis as:
 
-> The contextualization and integration of research findings of individual research studies within the larger body of knowledge on the topic. A synthesis must be reproducible and transparent in its methods, using quantitative and/or qualitative methods. It could take the form of a systematic review, follow the methods developed by the Cochrane Collaboration, result from a consensus conference or expert panel or synthesize qualitative or quantitative results. Realist syntheses, narrative syntheses, meta-analyses, meta-syntheses and practice guidelines are all forms of synthesis. <https://cihr-irsc.gc.ca/e/29418.html>
+> The contextualization and integration of research findings of individual research studies within the larger body of knowledge on the topic. A synthesis must be reproducible and transparent in its methods, using quantitative and/or qualitative methods. It could take the form of a systematic review, follow the methods developed by the Cochrane Collaboration, result from a consensus conference or expert panel or synthesize qualitative or quantitative results. Realist syntheses, narrative syntheses, meta-analyses, meta-syntheses and practice guidelines are all forms of synthesis. <https://cihr-irsc.gc.ca/e/34190.html#s>
 
 ![](images/meme_sr.jpg)
 
