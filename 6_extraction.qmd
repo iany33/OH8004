@@ -1,6 +1,7 @@
 ---
 webr:
   packages: ['dplyr', 'esc']
+engine: knitr
 ---
 
 # Data Extraction, Outcome Measures, and Introduction to Meta-Analysis {#sec-extraction}

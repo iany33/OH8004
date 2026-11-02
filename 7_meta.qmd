@@ -197,11 +197,7 @@ Young_2018 |> datatable(
 
 We can see that some article and study characteristics are also included in this dataset. For these data, we will subset the **training outcome** only for illustration purposes. This outcome shows the proportion of participants (i.e., restaurant and food service staff) in each study that reported receiving training about food allergies.
 
-```{r}
-#| code-fold: false
-# Note that this model does not work in webr, and must be run in R/RStudio. 
-library(meta)
-
+```{webr-r}
 Young_2018_meta <- 
   metaprop(event = n.positive, 
            n = n.total,
@@ -262,24 +258,26 @@ We can see in the results that the $Q$ test for heterogeneity is significant, an
 Below we will create a forest plot from the meta-analysis of music interventions on reducing anxiety levels in people with cancer, from the earlier example [@bradtMusicInterventionsImproving2021]. Using the **meta package**, we can generate a forest plot for our saved meta-analysis results using the `forest` function.
 
 ```{webr-r}
-Bradt_meta |> forest(digits.mean = 1,  # Limiting significant digits on left columns
-                    digits.sd = 1,
-                    fontsize = 7,           # Decrease fontsize so all text fits on image
-                    spacing = 0.9           # Decrease spacing to ensure text fits
+Bradt_meta |> 
+  forest(digits.mean = 1, # Limiting significant digits
+         digits.sd = 1,   # Limiting significant digits
+         fontsize = 7,    # Decrease fontsize
+         spacing = 0.9    # Decrease spacing
                     )
 ```
 
 We can clean up the display of this plot by removing the data on the left side of the plot, and also adding in a prediction interval at the bottom. Other [customization options](https://cran.r-project.org/web/packages/meta/meta.pdf) can be made as needed.
 
 ```{webr-r}
-Bradt_meta |> forest(sortvar = TE,        # sort studies by effect size
-                    prediction = TRUE,         # add prediction interval
-                    print.tau2 = FALSE,        # do not show tau2 at the bottom
-                    leftcols = "study",        # show only the study ID on the left
-                    leftlabs = "Study",        # relabel study column
-                    col.diamond = "steelblue", # colour customization
-                    col.predict = "darkblue",
-                    spacing = 0.85)
+Bradt_meta |> 
+  forest(sortvar = TE,      # sort studies by effect size
+         prediction = TRUE,  # add prediction interval
+         print.tau2 = FALSE, # do not show tau2 at bottom
+         leftcols = "study", # show only the study ID on left
+         leftlabs = "Study",        # relabel study column
+         col.diamond = "steelblue", # colour customization
+         col.predict = "darkblue",  # colour customization
+         spacing = 0.85)
 ```
 
 ::: callout-tip
@@ -338,14 +336,15 @@ Examine and interpret the results.
 We can now create a customized forest plot to visualize the results and include the prediction interval. How would you interpret the interval?
 
 ```{webr-r}
-Young_2019_meta |> forest(sortvar = TE,         # sort studies by effect size
-                    prediction = TRUE,          # add prediction interval
-                    print.tau2 = FALSE,         # do not show tau2 at the bottom
-                    leftcols = "author_year",   # show only the study ID on the left
-                    leftlabs = "Author (Year)", # relabel study column
-                    col.diamond = "steelblue",  # colour customization
-                    col.predict = "darkblue",
-                    spacing = 0.85)
+Young_2019_meta |> 
+  forest(sortvar = TE,         # sort studies by effect size
+         prediction = TRUE,          # add prediction interval
+         print.tau2 = FALSE,         # do not show tau2 at bottom
+         leftcols = "author_year",   # show only the study ID on left
+         leftlabs = "Author (Year)", # relabel study column
+         col.diamond = "steelblue",  # colour customization
+         col.predict = "darkblue",
+         spacing = 0.85)
 ```
 
 Now conduct and interpret meta-analyses, including forest plots, for the following subsets:
