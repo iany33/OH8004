@@ -1,5 +1,5 @@
 
-## Chp. 7 Meta-analysis Part 1 Exercise Answers
+## Meta-analysis Part 1 Exercise Answers
 
 # First import the datasets for exercises
 
